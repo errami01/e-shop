@@ -1,6 +1,7 @@
 :root{
   --first-Color: #F89B1D;
-  --second-Color: #CB653E
+  --second-Color: #CB653E;
+  font-family: 'Roboto', sans-serif;
 
 }
 body{
