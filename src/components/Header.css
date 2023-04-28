@@ -1,5 +1,13 @@
+
 .header-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: 700;
     color: white;
     height: 64px;
+    padding: 20px;
     background-color: var(--first-Color);
 }
