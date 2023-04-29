@@ -11,3 +11,7 @@
     padding: 20px;
     background-color: var(--first-Color);
 }
+.fa-cart-shopping{
+    margin-left: auto;
+    margin-right: 24px;
+}
