@@ -1,9 +1,14 @@
 *{
   box-sizing: border-box;
+  /* margin:0;
+  padding:0; */
 }
 :root{
+  margin: 0;
+  padding:0;
   --first-Color: #F89B1D;
   --second-Color: #CB653E;
+  --header-height: 64px;
   font-family: 'Roboto', sans-serif;  
 
 }
