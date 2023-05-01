@@ -1,9 +1,42 @@
 .barsMenu-container{
-    height: calc(100% - var(--header-height));
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 0;
     width: 100%;
-    background-color: green;
+    background-color: var(--first-Color);
     position: absolute;
-    /* margin:0; */
     top: var(--header-height);
-    left: 0
+    left: 0;
+    overflow: hidden;
+    /* opacity: 0.95; */
+    transition: height 1s
+}
+.closedMenu{
+    height: 0;
+}
+.openedMenu{
+    height: 200px;
+    
+}
+.barsMenu-container > ul{
+    /* background-color: black; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    width: 100%;
+    list-style-type: none;
+    padding: 20px 0;
+    /* justify-content: space-between; */
+    
+}
+.barsMenu-container li{
+    text-align: center;
+    /* margin-bottom: 20px; */
+    padding: 10px 0;
+    width: 100%;
+
+}
+.barsMenu-container li:hover{
+    background-color: var(--second-Color);
 }
