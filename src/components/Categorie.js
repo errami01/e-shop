@@ -1,5 +1,12 @@
-export default function Categorie(){
+import { useState } from "react"
+export default function Categorie({name,imgUrl}){
+    const[windowWidth, setWindowWidth] = useState(document.documentElement.clientWidth)
+    window.addEventListener('resize',()=> setWindowWidth(document.documentElement.clientWidth))
     return(
-        <h1>This categorie container</h1>
+        <div className="categorie-container">
+            <header>{windowWidth}</header>
+            <img src={imgUrl} width={200}/>
+           
+        </div>
     )
 }
