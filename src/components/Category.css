@@ -26,6 +26,9 @@
     border-radius: 10px 10px 0 0;
     cursor: pointer;
 }
+.category-name:hover{
+    background-color: var(--second-Color);
+}
 .image{
     display: block;
     /* border: 1px solid black; */
