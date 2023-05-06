@@ -1,17 +1,41 @@
-import Categorie from "../components/Categorie"
+import Category from "../components/Category"
 import { useLoaderData } from "react-router-dom"
 import { getData } from "../utils/fetcher"
 
 export async function loader(){
     const categories =  await getData('categories')
     const products =  await getData()
-    return [categories, products]
+    return {categories, products}
         
 }
+
 export default function Home(){
     const loadedData = useLoaderData()
-    console.log(loadedData[0])
-    return(
-        <Categorie name="men's clothing" imgUrl="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"/>
+    const categoryElements = loadedData.categories.map(
+        category=>{
+            const fiveArr = []
+            
+            loadedData.products.forEach(product=>{
+                if(fiveArr.length < 5){
+                    
+                    if(product.category===category){                     
+                        fiveArr.push(product)
+                    }
+                }else return
+            })
+            return <Category 
+                    category={category}
+                    products={fiveArr}
+                    key={category}
+                    />
+        }
+        
     )
+    
+    
+    return(
+        <>
+        {categoryElements}
+        </>
+        )
 }
