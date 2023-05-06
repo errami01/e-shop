@@ -1,5 +1,9 @@
+import Product from "../components/Product"
 export default function CategoryPage(){
     return(
-        <h1>Products by category go here</h1>
+        <>
+            <Product />
+            <h1>Products by category go here</h1>
+        </>
     )
 }
