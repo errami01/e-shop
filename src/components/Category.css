@@ -24,6 +24,7 @@
     background-color: var(--first-Color);
     padding: 8px;
     border-radius: 10px 10px 0 0;
+    cursor: pointer;
 }
 .image{
     display: block;

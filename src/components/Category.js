@@ -1,9 +1,11 @@
 import { useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Category.css'
 
 
 export default function Categorie({category,products}){
+    const[productsToRender, setProductsToRender] = useState(setNumberOfProduct())
+    const navigate = useNavigate()
     function setNumberOfProduct(){
         const windowWidth= parseInt(document.documentElement.clientWidth)
         if(windowWidth > 900 ) return 5;
@@ -12,7 +14,6 @@ export default function Categorie({category,products}){
         if(windowWidth > 450 ) return 2;
         return 1
     }
-    const[productsToRender, setProductsToRender] = useState(setNumberOfProduct())
     window.addEventListener('resize',()=> {
         setProductsToRender(setNumberOfProduct())
     })
@@ -28,7 +29,7 @@ export default function Categorie({category,products}){
     )
     return(<>
         <div className="categorie-container">
-            <header className="category-name">{category}</header>
+            <header className="category-name" onClick={()=> navigate(`${category}`)}>{category}</header>
             <div className="image-container">
                 {images}
             </div>
