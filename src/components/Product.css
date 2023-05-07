@@ -1,0 +1,6 @@
+.product-container{
+    display: flex;
+
+    /* background-color: green; */
+    align-items: center;
+}

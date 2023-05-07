@@ -3,7 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import Home, {loader as homeLoader} from './pages/Home'
 import Layout from './components/Layout';
 import PrdoductDetails from './pages/ProductDetails';
-import CategoryPage from './pages/CategoryPage';
+import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />}>
     <Route 
@@ -12,6 +12,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={homeLoader}/>
     <Route 
       path=':category'
+      loader= {categoryPageLoader}
       element={<CategoryPage />}
       />
     <Route 
