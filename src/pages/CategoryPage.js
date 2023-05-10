@@ -20,10 +20,10 @@ export default function CategoryPage(){
         
     )
     return(
-        <>
+        <div className="categorypage-container">
             <div className="products-grid">
                 {productComponents}
             </div>
-        </>
+        </div>
     )
 }

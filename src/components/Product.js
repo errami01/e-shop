@@ -4,17 +4,21 @@ export default function Product(product){
     // console.log(rating)
     return(
         <div className="product-container">
-            <img src={image} width='200'/>
-            <h5 className="product-name">{title}</h5>
-            <div className="product-rating">
-                <span className='rate'>{rating.rate}</span>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <span className='count'>({rating.count})</span>
-            </div>
+            <section className='product-image-section'>
+                <img className="product-image" src={image} />
+            </section>
+            <section className='name-and-rating'>
+                <div className="product-name">{title}</div>    
+                <div className="product-rating">
+                    <span className='rate'>{rating.rate}</span>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <span className='count'>({rating.count})</span>
+                </div>
+            </section>
 
         </div>
     )

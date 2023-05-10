@@ -8,8 +8,10 @@
     font-weight: 700;
     color: white;
     height: var(--header-height);
+    width: 100%;
     padding: 20px;
     background-color: var(--first-Color);
+    margin-bottom: 80px;
 }
 .fa-cart-shopping{
     margin-left: auto;
