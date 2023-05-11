@@ -49,8 +49,10 @@
     font-size: 1.2em;
     margin-left: 5px;
     font-weight: 900;
-
     /* background-color: red; */
+}
+.product-rating i{
+    color: gold
 }
 .count{
     margin-right: 5px;
