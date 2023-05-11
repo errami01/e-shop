@@ -8,6 +8,6 @@
     grid-template-columns: repeat(auto-fill,200px);
     grid-auto-rows: 1fr;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     /* background-color: blue; */
 }

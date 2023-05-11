@@ -10,13 +10,13 @@ export default function Product(product){
             <section className='name-and-rating'>
                 <div className="product-name">{title}</div>    
                 <div className="product-rating">
-                    <span className='rate'>{rating.rate}</span>
+                    <span className='count'>({rating.count})</span>
                     <i className="fa-regular fa-star"></i>
                     <i className="fa-regular fa-star"></i>
                     <i className="fa-regular fa-star"></i>
                     <i className="fa-regular fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <span className='count'>({rating.count})</span>
+                    <span className='rate'>{rating.rate}</span>
                 </div>
             </section>
 
