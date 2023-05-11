@@ -24,6 +24,10 @@
     /* height: 200px; */
     
 }
+.price{
+    font-size: 1.5em;
+    font-weight: 900;
+}
 .name-and-rating{
     /* background-color: aqua; */
     margin-top: 20px;
@@ -57,4 +61,5 @@
 .count{
     margin-right: 5px;
 }
+
 

@@ -1,6 +1,6 @@
 import './Product.css'
 export default function Product(product){
-    const {image, title, rating}= product
+    const {image, title, price, rating}= product
     function setStars(rate){
         const starIcons = []
         let counter=1;
@@ -28,6 +28,7 @@ export default function Product(product){
                 <img className="product-image" src={image} />
             </section>
             <section className='name-and-rating'>
+                <div className='price'>{Number.isInteger(price)? price+'.00':price}$</div>
                 <div className="product-name">{title}</div>    
                 <div className="product-rating">
                     <span className='count'>({rating.count})</span>
