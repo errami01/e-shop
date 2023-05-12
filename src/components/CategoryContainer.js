@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
-import './Category.css'
+import './CategoryContainer.css'
 
 
 export default function CategoryContainer({category,products}){
