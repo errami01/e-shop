@@ -1,4 +1,4 @@
-import Category from "../components/Category"
+import CategoryContainer from "../components/CategoryContainer"
 import { useLoaderData } from "react-router-dom"
 import { getData } from "../utils/fetcher"
 
@@ -23,7 +23,7 @@ export default function Home(){
                     }
                 }else return
             })
-            return <Category 
+            return <CategoryContainer 
                     category={category}
                     products={fiveArr}
                     key={category}

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import './Category.css'
 
 
-export default function Categorie({category,products}){
+export default function CategoryContainer({category,products}){
     const[productsToRender, setProductsToRender] = useState(setNumberOfProduct())
     const navigate = useNavigate()
     function setNumberOfProduct(){
