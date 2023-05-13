@@ -1,0 +1,19 @@
+.productDetails-container{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: aquamarine;
+
+}
+.prdct-img-prdctDetails{
+    width: 300px;
+}
+.details-productDetails{
+    /* background-color: red; */
+    
+    padding: 20px;
+}
+.title-productDetails{
+    font-size: 1.5em;
+    margin: 0;
+}

@@ -1,4 +1,4 @@
-import './Product.css'
+import './ProductCard.css'
 export default function Product(product){
     const {image, title, price, rating}= product
     function setStars(rate){
@@ -32,11 +32,6 @@ export default function Product(product){
                 <div className="product-name">{title}</div>    
                 <div className="product-rating">
                     <span className='count'>({rating.count})</span>
-                    {/* <i className="fa-regular fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                    <i className="fa-solid fa-star"></i> */}
                     {setStars(rating.rate)}
                     <span className='rate'>{rating.rate}</span>
                 </div>

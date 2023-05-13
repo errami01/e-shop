@@ -1,4 +1,4 @@
-import Product from "../components/Product"
+import Product from "../components/ProductCard"
 import "./CategoryPage.css"
 import { getProductsByCategory } from "../utils/fetcher" 
 import { useLoaderData } from "react-router-dom"

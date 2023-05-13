@@ -1,6 +1,7 @@
 import CategoryContainer from "../components/CategoryContainer"
 import { useLoaderData } from "react-router-dom"
 import { getData } from "../utils/fetcher"
+import "./Home.css"
 
 export async function loader(){
     const categories =  await getData('categories')

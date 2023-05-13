@@ -1,6 +1,7 @@
 .product-container{
     /* background-color: green; */
     width: 200px;
+    height: 100%;
     font-size: 0.9em;
     box-shadow: 2px 2px 10px 1px gray;
     padding: 1px;
