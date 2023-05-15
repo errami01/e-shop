@@ -13,7 +13,9 @@
     background-color: var(--first-Color);
     margin-bottom: 80px;
 }
-.fa-cart-shopping{
+.cartIconLink-header{
+    /* background-color: red; */
     margin-left: auto;
+    color: inherit;
     margin-right: 24px;
 }

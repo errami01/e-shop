@@ -12,7 +12,7 @@ export default function Header(){
     return(
         <header className="header-container">
             <div className='logo'>E-commerce</div>
-            <Link to='cart'> <i className="fa-solid fa-cart-shopping"></i></Link>
+            <Link className='cartIconLink-header' to='cart'> <i className="fa-solid fa-cart-shopping"></i></Link>
             <i className="fa-solid fa-bars" onClick={handleBarsClick}></i>
             <BarsMenu isOpen={isMenuOpen}/>
         </header>
