@@ -10,6 +10,9 @@ export default function PrdoductDetails(){
     const stars = useRate(product.rating.rate)
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
+    function handleAddToCart(){
+        setCartItems(prev=> prev.push({...product}))
+    }
     
     return(
         <div className="productDetails-container">
@@ -22,7 +25,10 @@ export default function PrdoductDetails(){
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
                     <div className="descr-productDetails">{product.description}</div>
                     <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>
-                    <button className="addToCart-prdctDetails">Add to Cart</button>
+                    <button 
+                        className="addToCart-prdctDetails"
+                        onClick={handleAddToCart}
+                        >Add to Cart</button>
                 </div>
             {/* </div> */}
         </div>
