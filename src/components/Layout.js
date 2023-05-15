@@ -7,7 +7,7 @@ export default function Layout(){
     return(
         <>
             <Header cartLength={cartItems.length}/>
-            <Outlet context={{cartItems: [cartItems, setCartItems]}}/>
+            <Outlet context={{cart: [cartItems, setCartItems]}}/>
         </>
        
     )

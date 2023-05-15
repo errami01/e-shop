@@ -1,5 +1,5 @@
 import { getData } from "../utils/fetcher"
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useOutletContext } from "react-router-dom"
 import "./ProductDetails.css"
 import { useRate } from "../utils/useRate"
 export function loader({params}){
@@ -8,6 +8,9 @@ export function loader({params}){
 export default function PrdoductDetails(){
     const product = useLoaderData()
     const stars = useRate(product.rating.rate)
+    const {cart} = useOutletContext()
+    const [cartItems, setCartItems] = cart;
+    
     return(
         <div className="productDetails-container">
             {/* <div className="grid-productDetails"> */}
