@@ -2,7 +2,6 @@ import './BarsMenu.css'
 import { useRef } from 'react'
 export default function BarsMenu({isOpen}){
     const container = useRef()
-    console.log(container.current)
     return(
         <div 
         className={`barsMenu-container ${isOpen? 'openedMenu':'closedMenu'}`}
