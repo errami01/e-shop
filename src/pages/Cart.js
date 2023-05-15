@@ -1,5 +1,8 @@
+import CartItem from "../components/CartItem"
+import { useOutletContext } from "react-router-dom"
 export default function Cart(){
+    
     return (
-        <h1>Cart Items go here</h1>
+        <CartItem />
     )
 }
