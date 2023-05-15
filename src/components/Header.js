@@ -1,6 +1,7 @@
 import './Header.css'
 import BarsMenu from './BarsMenu'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 export default function Header(){
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     function handleBarsClick(){
@@ -11,7 +12,7 @@ export default function Header(){
     return(
         <header className="header-container">
             <div className='logo'>E-commerce</div>
-            <i className="fa-solid fa-cart-shopping"></i>
+            <Link to='cart'> <i className="fa-solid fa-cart-shopping"></i></Link>
             <i className="fa-solid fa-bars" onClick={handleBarsClick}></i>
             <BarsMenu isOpen={isMenuOpen}/>
         </header>
