@@ -33,3 +33,7 @@ body{
 .gold-star{
   color: gold
 }
+a{
+  color: initial;
+  text-decoration: none;
+}
