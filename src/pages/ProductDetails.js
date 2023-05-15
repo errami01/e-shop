@@ -11,7 +11,7 @@ export default function PrdoductDetails(){
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
     function handleAddToCart(){
-        setCartItems(prev=> prev.push({...product}))
+        setCartItems(prev=> [...prev, product])
     }
     
     return(

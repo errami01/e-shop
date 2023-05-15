@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export default function Layout(){
     const [cartItems, setCartItems] = useState([])
-    console.log(cartItems)
+    console.log(cartItems[0])
     return(
         <>
             <Header cartLength={cartItems.length}/>
