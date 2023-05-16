@@ -1,0 +1,15 @@
+.cart-container{
+    width: 90%;
+    color: var(--text-color)
+    /* background-color: aqua; */
+}
+.title-cart{
+    margin-left: 20px;
+    padding-top: 10px;
+
+}
+.items-cart{
+    background-color: rgb(246, 222, 189);
+    padding-bottom: 20px 
+
+}

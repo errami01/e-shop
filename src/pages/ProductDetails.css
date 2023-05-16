@@ -32,7 +32,7 @@
     margin: 0;
 }
 .descr-productDetails{
-    color: #57504f;
+    color: var(--text-color);
     line-height: 1.5em;
 }
 .price-productDetails{

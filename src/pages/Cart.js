@@ -1,5 +1,6 @@
 import CartItem from "../components/CartItem"
 import { useOutletContext } from "react-router-dom"
+import './Cart.css'
 export default function Cart(){
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
@@ -8,7 +9,11 @@ export default function Cart(){
     })
     return (
         <div className="cart-container">
-            {cartItemsElements}
+            <div className="items-cart">
+                <h2 className="title-cart">My Cart</h2>
+                {cartItemsElements}
+            </div>
+           
         </div>
     )
 }
