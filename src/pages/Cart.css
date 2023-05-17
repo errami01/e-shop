@@ -1,6 +1,6 @@
 .cart-container{
-    width: 90%;
-    color: var(--text-color)
+    width: 95%;
+    color: var(--text-color);
     /* background-color: aqua; */
 }
 .title-cart{
@@ -10,6 +10,8 @@
 }
 .items-cart{
     background-color: rgb(250, 204, 139);
-    padding-bottom: 20px 
+    padding-bottom: 20px;
+    border-radius: 5px;
+
 
 }

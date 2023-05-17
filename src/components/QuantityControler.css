@@ -1,0 +1,26 @@
+.quantityControler-container{
+    align-items: center;
+}
+.quantityControler-container >span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 32px;
+    text-align: center;
+    border: 1px solid var(--first-Color)
+    /* box-shadow: 5px 5px 5px gray; */
+    
+    /* height: 50px; */
+    /* background-color: aqua; */
+}
+.minus-quantityControler, .plus-quantityControler{
+    background-color: var(--first-Color);
+    /* border-radius: 5px */
+}
+.minus-quantityControler{
+    border-radius: 5px 0 0 5px;
+}
+.plus-quantityControler{
+    border-radius: 0 5px 5px 0;
+}
