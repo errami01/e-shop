@@ -1,4 +1,5 @@
 import './CartItem.css'
+import QuantityControler from './QuantityControler'
 
 export default function CartItem(item){
     return (
@@ -13,7 +14,8 @@ export default function CartItem(item){
             {/* </section> */}
             {/* <section className='price-quantity-delete-cartItem'> */}
                 <span className='price-carItem'>{Number.isInteger(item.price)? item.price+'.00':item.price}$</span>
-                <span className='quantity-cartItem'>Quantity controler</span>
+                {/* <span className='quantity-cartItem'>Quantity controler</span> */}
+                <QuantityControler />
                 <span className='trash-cartItem'><i className="fa-solid fa-trash-can"></i></span>
             {/* </section> */}
 
