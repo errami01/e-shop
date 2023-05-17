@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     /* grid-template-rows: fill ; */
+    justify-content: center;
     margin: 10px;
     /* gap:5px; */
     background-color: white;
@@ -51,12 +52,12 @@
     padding-top: 5px;
     border-radius: 0 0 5px 5px;
 }
-.price-quantity-delete-cartItem{
+/* .price-quantity-delete-cartItem{
     display: flex;
     justify-content: space-around;
     background-color: aqua;
     flex-basis: 100%;
-}
+} */
 .trash-cartItem{
     grid-column: 6;
     color: red

@@ -1,5 +1,7 @@
 .quantityControler-container{
-    align-items: center;
+   /* width: 100%; */
+    /* background-color: aqua; */
+
 }
 .quantityControler-container >span{
     display: flex;
