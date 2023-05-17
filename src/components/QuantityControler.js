@@ -1,5 +1,9 @@
 export  default function QuantityControler(){
     return(
-        <h1>QuantityControler</h1>
+        <div className="quantityControler-container">
+            <span className="minus-quantityControler">-</span>
+            <span className="minus-quantityControler">5</span>
+            <span className="minus-quantityControler">+</span>
+        </div>
     )
 }
