@@ -5,6 +5,7 @@
     justify-content: center;
     margin: 10px;
     /* gap:5px; */
+    column-gap: 5px;
     background-color: white;
     margin-bottom: 10px;
     border-radius: 50px;
