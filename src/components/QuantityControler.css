@@ -1,8 +1,8 @@
-.quantityControler-container{
-   /* width: 100%; */
-    /* background-color: aqua; */
+/* .quantityControler-container{
+   width: 100%;
+    background-color: aqua;
 
-}
+} */
 .quantityControler-container >span{
     display: flex;
     align-items: center;

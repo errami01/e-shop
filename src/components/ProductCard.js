@@ -1,6 +1,8 @@
 import './ProductCard.css'
+import { useRate } from '../utils/useRate';
 export default function Product(product){
     const {image, title, price, rating}= product
+    const stars= useRate(rating.rate)
     function setStars(rate){
         const starIcons = []
         let counter=1;
@@ -32,7 +34,7 @@ export default function Product(product){
                 <div className="product-name">{title}</div>    
                 <div className="product-rating">
                     <span className='count'>({rating.count})</span>
-                    {setStars(rating.rate)}
+                    {stars}
                     <span className='rate'>{rating.rate}</span>
                 </div>
             </section>
