@@ -15,7 +15,7 @@ export default function CartItem(item){
             {/* <section className='price-quantity-delete-cartItem'> */}
                 <span className='price-carItem'>{Number.isInteger(item.price)? item.price+'.00':item.price}$</span>
                 {/* <span className='quantity-cartItem'>Quantity controler</span> */}
-                <QuantityControler />
+                <QuantityControler className='quantity-cartItem'/>
                 <span className='trash-cartItem'><i className="fa-solid fa-trash-can"></i></span>
             {/* </section> */}
 
