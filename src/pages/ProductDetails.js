@@ -2,6 +2,7 @@ import { getData } from "../utils/fetcher"
 import { useLoaderData, useOutletContext } from "react-router-dom"
 import "./ProductDetails.css"
 import { useRate } from "../utils/useRate"
+import QuantityControler from "../components/QuantityControler"
 export function loader({params}){
     return getData(params.id)
 }
@@ -10,17 +11,17 @@ export default function PrdoductDetails(){
     const stars = useRate(product.rating.rate)
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
-    const isInCart = cartItems.some(item => item.id===product.id)
+    const inCart = cartItems.filter(item => item.id===product.id)[0]
     function handleAddToCart(){
-        setCartItems(prev=> {
-            const targetItem = prev.filter(item=> item.id === product.id)[0]
-            if(targetItem){
-                console.log(targetItem.orderedQuantity) 
-                return [...prev.filter(item=> item.id !== product.id),
-                    {...targetItem, orderedQuantity: targetItem.orderedQuantity + 1}]
-            }
-            return [...prev, {...product, orderedQuantity: 1, isInCart: true}]
-        })
+        setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
+            // const targetItem = prev.filter(item=> item.id === product.id)[0]
+            // if(targetItem){
+            //     console.log(targetItem.orderedQuantity) 
+            //     return [...prev.filter(item=> item.id !== product.id),
+            //         {...targetItem, orderedQuantity: targetItem.orderedQuantity + 1}]
+            // }
+             
+        
     }
     
     return(
@@ -34,10 +35,10 @@ export default function PrdoductDetails(){
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
                     <div className="descr-productDetails">{product.description}</div>
                     <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>
-                    <button 
+                    {inCart? <QuantityControler quantity={inCart.orderedQuantity}/> : <button 
                         className="addToCart-prdctDetails"
                         onClick={handleAddToCart}
-                        >Add to Cart</button>
+                        >Add to Cart</button> }
                 </div>
             {/* </div> */}
         </div>
