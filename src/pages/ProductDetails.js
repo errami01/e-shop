@@ -35,7 +35,7 @@ export default function PrdoductDetails(){
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
                     <div className="descr-productDetails">{product.description}</div>
                     <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>
-                    {inCart? <QuantityControler quantity={inCart.orderedQuantity}/> : <button 
+                    {inCart? <QuantityControler quantity={inCart.orderedQuantity} className='quantity-cartItem'/> : <button 
                         className="addToCart-prdctDetails"
                         onClick={handleAddToCart}
                         >Add to Cart</button> }

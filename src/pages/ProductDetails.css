@@ -15,9 +15,7 @@
 }
 .prdct-img-prdctDetails{
     width: 250px;
-    /* max-height: 100%; */
     padding-top: 20px;
-    /* box-shadow: 2px 0px 10px 0px gray; */
 }
 .details-productDetails{
     display: flex;
