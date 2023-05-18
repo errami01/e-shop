@@ -10,6 +10,7 @@ export default function PrdoductDetails(){
     const stars = useRate(product.rating.rate)
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
+    const isInCart = cartItems.some(item => item.id===product.id)
     function handleAddToCart(){
         setCartItems(prev=> {
             const targetItem = prev.filter(item=> item.id === product.id)[0]
@@ -18,7 +19,7 @@ export default function PrdoductDetails(){
                 return [...prev.filter(item=> item.id !== product.id),
                     {...targetItem, orderedQuantity: targetItem.orderedQuantity + 1}]
             }
-            return [...prev, {...product, orderedQuantity: 1}]
+            return [...prev, {...product, orderedQuantity: 1, isInCart: true}]
         })
     }
     
