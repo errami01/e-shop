@@ -11,7 +11,15 @@ export default function PrdoductDetails(){
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
     function handleAddToCart(){
-        setCartItems(prev=> [...prev, product])
+        setCartItems(prev=> {
+            const targetItem = prev.filter(item=> item.id === product.id)[0]
+            if(targetItem){
+                console.log(targetItem.orderedQuantity) 
+                return [...prev.filter(item=> item.id !== product.id),
+                    {...targetItem, orderedQuantity: targetItem.orderedQuantity + 1}]
+            }
+            return [...prev, {...product, orderedQuantity: 1}]
+        })
     }
     
     return(

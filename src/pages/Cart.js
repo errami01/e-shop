@@ -5,7 +5,7 @@ import {nanoid} from 'nanoid'
 export default function Cart(){
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
-    console.log(nanoid())
+    console.log(cartItems)
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  key={nanoid()}{...item} />
     })
