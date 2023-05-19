@@ -20,7 +20,6 @@ export default function CategoryContainer({category,products}){
     window.addEventListener('resize',()=> {
         setProductsToRender(setNumberOfProduct())
     })
-    console.log(productsToRender,)
     const imagesToRender = [... products]
     imagesToRender.length = productsToRender
     const images = imagesToRender.map(

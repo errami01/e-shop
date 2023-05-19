@@ -4,7 +4,6 @@ import { useOutletContext } from 'react-router-dom'
 export  default function QuantityControler(props){
     const {cart} = useOutletContext()
     const [cartItem, setCartItems] = cart
-    console.log(cartItem)
     
     return(
         <div className={`quantityControler-container ${props.className}`}>
