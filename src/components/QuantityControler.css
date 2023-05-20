@@ -9,6 +9,7 @@
 }
 .minus-quantityControler, .plus-quantityControler{
     background-color: var(--first-Color) ;
+    cursor: pointer;
 }
 .minus-quantityControler{
     border-radius: 5px 0 0 5px;

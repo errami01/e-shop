@@ -36,7 +36,8 @@
 }
 .trash-cartItem{
     grid-column: 6;
-    color: red
+    color: red;
+    cursor: pointer;
 }
 .price-carItem{
     grid-column: 5;
