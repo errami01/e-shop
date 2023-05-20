@@ -1,11 +1,14 @@
 import './ProductCard.css'
 import { useRate } from '../utils/useRate';
-export default function Product(product){
+import { Link } from 'react-router-dom';
+// import {nanoid} from 'nanoid'
+export default function ProductCard(product){
     const {image, title, price, rating}= product
     const stars= useRate(rating.rate)
     // console.log(rating)
     return(
         <div className="product-container">
+            <Link  to={`/${product.category}/${product.id}`}>
             <section className='product-image-section'>
                 <img className="product-image" src={image} />
             </section>
@@ -18,7 +21,7 @@ export default function Product(product){
                     <span className='rate'>{rating.rate}</span>
                 </div>
             </section>
-
+            </Link>
         </div>
     )
 } 

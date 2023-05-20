@@ -14,14 +14,6 @@ export default function PrdoductDetails(){
     const inCart = cartItems.filter(item => item.id===product.id)[0]
     function handleAddToCart(){
         setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
-            // const targetItem = prev.filter(item=> item.id === product.id)[0]
-            // if(targetItem){
-            //     console.log(targetItem.orderedQuantity) 
-            //     return [...prev.filter(item=> item.id !== product.id),
-            //         {...targetItem, orderedQuantity: targetItem.orderedQuantity + 1}]
-            // }
-             
-        
     }
     
     return(

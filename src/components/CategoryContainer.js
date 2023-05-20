@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
-import Product from "./ProductCard";
+import ProductCard from "./ProductCard";
 import './CategoryContainer.css'
 import {nanoid} from 'nanoid'
 
@@ -23,10 +23,7 @@ export default function CategoryContainer({category,products}){
     const imagesToRender = [... products]
     imagesToRender.length = productsToRender
     const images = imagesToRender.map(
-        product=><Link key={nanoid()} to={`${product.category}/${product.id}`}><Product 
-                    
-                    {...product}
-                    /></Link>
+        product=><ProductCard {...product}/>
     )
     return(<>
         <div className="categorie-container">

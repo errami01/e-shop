@@ -1,4 +1,4 @@
-import Product from "../components/ProductCard"
+import ProductCard from "../components/ProductCard"
 import "./CategoryPage.css"
 import { getProductsByCategory } from "../utils/fetcher" 
 import { useLoaderData } from "react-router-dom"
@@ -11,7 +11,7 @@ export default function CategoryPage(){
     const productComponents = products.map(
         (product)=>{
 
-            return <Product 
+            return <ProductCard 
                 key={product.id}
                 {...product}
                 // title={product.title}

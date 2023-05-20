@@ -19,12 +19,14 @@ const router = createBrowserRouter(createRoutesFromElements(
       path=':category'
       loader= {categoryPageLoader}
       element={<CategoryPage />}
-      />
+    />
     <Route 
       path=':category/:id'
       loader={productDetailLoader}
       element={<PrdoductDetails />}
       />
+
+    
       
   </Route>
  
