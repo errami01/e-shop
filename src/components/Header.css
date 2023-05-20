@@ -14,8 +14,23 @@
     margin-bottom: 80px;
 }
 .cartIconLink-header{
-    /* background-color: red; */
+    position: relative;
+    /* background-color: green; */
     margin-left: auto;
     color: inherit;
     margin-right: 24px;
+}
+.items-counter-header{
+    display: flex;
+    position: absolute;
+    right: -25%;
+    top: -25%;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5em;
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    
 }
