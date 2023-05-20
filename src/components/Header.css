@@ -12,6 +12,8 @@
     padding: 20px;
     background-color: var(--first-Color);
     margin-bottom: 80px;
+    position: sticky;
+    top:0
 }
 .logo{
     color: white;
