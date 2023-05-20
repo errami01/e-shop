@@ -6,7 +6,7 @@ export default function Cart(){
     const {cart} = useOutletContext()
     const [cartItems, setCartItems] = cart;
     const cartItemsElements = cartItems.map((item)=>{
-        return <CartItem  key={nanoid()}{...item} />
+        return <CartItem  key={nanoid()} item={item} cart={cart}/>
     })
     return (
         <div className="cart-container">

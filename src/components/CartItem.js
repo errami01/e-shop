@@ -1,7 +1,14 @@
 import './CartItem.css'
 import QuantityControler from './QuantityControler'
 //This component is rendered in Cart.js
-export default function CartItem(item){
+export default function CartItem(props){
+    const {item} = props
+    const [cartItems, setCartItems] = props.cart
+    function handleTrashClick(){
+        setCartItems(prev=>{
+            return prev.filter(product=> product.id !== item.id)
+        })
+    }
     return (
         <div className="cartItem-container">
                 <img className="img-cartItem" src={item.image}/>
@@ -9,7 +16,9 @@ export default function CartItem(item){
                 <p className='delevery-date-cartItem'>Delivery between Wednesday, May 17, 2023 and Friday, May 19, 2023</p> 
                 <span className='price-carItem'>{Number.isInteger(item.price)? item.price+'.00':item.price}$</span>
                 <QuantityControler itemId={item.id} className='quantity-cartItem' quantity={item.orderedQuantity}/>
-                <span className='trash-cartItem'><i className="fa-solid fa-trash-can"></i></span>
+                <span className='trash-cartItem' onClick={handleTrashClick}>
+                    <i className="fa-solid fa-trash-can"></i>
+                </span>
 
         </div>
     )
