@@ -11,7 +11,9 @@ export default function Header(props){
     // console.log(isMenuOpen)
     return(
         <header className="header-container">
-            <div className='logo'>E-commerce</div>
+            <Link to={''}>
+                <div className='logo'>E-commerce</div>
+            </Link>
             <Link className='cartIconLink-header' to='cart'>
                  <i className="fa-solid fa-cart-shopping"></i>
                  <span className='items-counter-header'>{props.cartItemsNumber}</span>

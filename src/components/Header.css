@@ -13,6 +13,9 @@
     background-color: var(--first-Color);
     margin-bottom: 80px;
 }
+.logo{
+    color: white;
+}
 .cartIconLink-header{
     position: relative;
     /* background-color: green; */
