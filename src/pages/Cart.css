@@ -1,5 +1,6 @@
 .cart-container{
     width: 95%;
+    max-width: 800px;
     color: var(--text-color);
     /* background-color: aqua; */
 }
