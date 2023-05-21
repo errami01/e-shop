@@ -14,6 +14,7 @@
 }
 .img-container-cartItem{
     grid-column: 1/3;
+    /* grid-row: 2/4; */
 }
 .img-cartItem{
     width: 64px;
