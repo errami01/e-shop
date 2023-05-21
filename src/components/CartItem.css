@@ -1,6 +1,7 @@
 .cartItem-container{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto 120px auto;
     justify-content: center;
     margin: 10px;
     column-gap: 5px;
@@ -15,6 +16,11 @@
 .img-container-cartItem{
     grid-column: 1/3;
     /* grid-row: 2/4; */
+}
+.image-link-cartItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .img-cartItem{
     width: 64px;

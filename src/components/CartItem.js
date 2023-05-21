@@ -12,7 +12,7 @@ export default function CartItem(props){
     }
     return (
         <div className="cartItem-container">
-                <Link to={`/${item.category}/${item.id}`}>
+                <Link to={`/${item.category}/${item.id}`} className='image-link-cartItem'>
                     <img className="img-cartItem" src={item.image}/>
                 </Link>
                 <h5 className='item-title-cartItem'>{item.title}</h5>
