@@ -13,6 +13,21 @@
     background-color: rgb(250, 204, 139);
     padding-bottom: 20px;
     border-radius: 5px;
-
-
+}
+.total-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 5px 10px;
+    background-color: white;
+    margin: 10px;
+    color: var(--text-color);
+    font-size: 1.3em;
+    font-weight: 900;
+}
+/* .total-label-cart{
+  
+} */
+.amount-cart{
+    text-decoration: underline;
 }

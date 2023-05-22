@@ -16,7 +16,7 @@ export default function Cart(){
                 {cartItemsElements}
                 <div className="total-cart">
                     <span className="total-label-cart">Total</span>
-                    <span className="amount-cart">{totalAmount.toFixed(2)}</span>
+                    <span className="amount-cart">{totalAmount.toFixed(2)}$</span>
                 </div>
             </div>
             
