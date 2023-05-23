@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import Cart from './pages/Cart';
+import Login from './pages/Login';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />}>
     <Route 
@@ -14,6 +15,10 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route 
       path='cart'
       element={<Cart />}
+      />
+    <Route 
+      path='login'
+      element={<Login />}
       />
     <Route 
       path=':category'
