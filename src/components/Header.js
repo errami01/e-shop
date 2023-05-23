@@ -14,7 +14,7 @@ export default function Header(props){
             <Link to={''}>
                 <div className='logo'>E-commerce</div>
             </Link>
-            <Link className='user-icon-header'>
+            <Link to='login' className='user-icon-header'>
                 <i class="fa-regular fa-user" ></i>
             </Link>
             <Link className='cartIconLink-header' to='cart'>
