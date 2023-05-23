@@ -12,9 +12,9 @@ export default function CategoryContainer({category,products}){
     function setNumberOfProduct(){
         const windowWidth= parseInt(document.documentElement.clientWidth)
         // if(windowWidth > 900 ) return 5;
-        if(windowWidth > 700 ) return 4;
-        if(windowWidth > 500 ) return 3;
-        if(windowWidth > 450 ) return 2;
+        if(windowWidth > 1060 ) return 4;
+        if(windowWidth > 800 ) return 3;
+        if(windowWidth > 550 ) return 2;
         return 1
     }
     window.addEventListener('resize',()=> {
