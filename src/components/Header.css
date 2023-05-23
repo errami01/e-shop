@@ -17,13 +17,21 @@
 }
 .logo{
     color: white;
+    margin-left: 10px;
+}
+.user-icon-header{
+    /* margin-left: auto; */
+    /* margin-right: 24px; */
+    color: white;
+
+
 }
 .cartIconLink-header{
     position: relative;
     /* background-color: green; */
-    margin-left: auto;
+    /* margin-left: auto; */
     color: inherit;
-    margin-right: 24px;
+    /* margin-right: 24px; */
 }
 .items-counter-header{
     display: flex;
