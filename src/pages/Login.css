@@ -29,5 +29,9 @@
     border-radius: 30px;
     border: none;
     background-color: var(--first-Color);
+    color: white;
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 

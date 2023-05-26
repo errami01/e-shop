@@ -17,7 +17,7 @@ export default function Login(){
             type='password'
             icon={<i className="fa-solid fa-key fa"></i>}
             />  
-            <button className='submit-btn--login'>Submit</button>
+            <button className='submit-btn--login'>Login</button>
         </div>
     )
 }
