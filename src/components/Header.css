@@ -1,7 +1,6 @@
 
 .header-container{
     display: flex;
-    /* position: relative; */
     align-items: center;
     justify-content: space-between;
     font-size: 1.5em;
@@ -17,14 +16,27 @@
 }
 .logo{
     color: white;
-    margin-left: 10px;
+}
+.icon-container--header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    font-weight: 400;
+    font-size: 0.9em;
+
+}
+.icon-label--header{
+    font-family: 'Roboto', sans-serif;  
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    /* display: none; */
 }
 .user-icon-header{
-    /* margin-left: auto; */
+    margin-left: auto;
     /* margin-right: 24px; */
     color: white;
-
-
 }
 .cartIconLink-header{
     position: relative;
@@ -44,6 +56,8 @@
     background-color: red;
     border-radius: 50%;
     width: 20px;
-    height: 20px;
-    
+    height: 20px; 
+}
+.bars-icon-container--header{
+    margin-right: 0;
 }
