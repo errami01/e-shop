@@ -9,7 +9,6 @@ export default function Layout(){
     function countCartItems(cart){
        return cart.reduce((acc, curr)=> acc + curr.orderedQuantity,0)
     }
-    console.log(cartItemsNumber.current)
     useEffect(()=>{
         localStorage.setItem('cart', JSON.stringify(cartItems))
     },[cartItems])
