@@ -65,3 +65,6 @@
 .place-order-cart:hover{
     background-color: var(--second-Color);
 }
+.empty--cart{
+    text-align: center;
+}
