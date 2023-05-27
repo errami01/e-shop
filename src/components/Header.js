@@ -14,15 +14,19 @@ export default function Header(props){
             <Link to={''}>
                 <div className='logo'>E-commerce</div>
             </Link>
-            <Link to='login' className='user-icon-header'>
+            <Link to='login' className='user-icon-header icon-container--header'>
                 <i class="fa-regular fa-user" ></i>
+                <span className='icon-label--header'>Sign in</span>
             </Link>
-            <Link className='cartIconLink-header' to='cart'>
+            <Link className='cartIconLink-header icon-container--header' to='cart'>
                  <i className="fa-solid fa-cart-shopping"></i>
                  {props.cartItemsNumber>0 && <span className='items-counter-header'>{props.cartItemsNumber}</span>}
+                <span className='icon-label--header'>My cart</span>
             </Link>
-            
-            <i className="fa-solid fa-bars" onClick={handleBarsClick}></i>
+            <div className='icon-container--header bars-icon-container--header'>     
+                <i className="fa-solid fa-bars" onClick={handleBarsClick}></i>
+                <span className='icon-label--header'>Categories</span>
+            </div>
             <BarsMenu isOpen={isMenuOpen}/>
         </header>
     )
