@@ -19,8 +19,10 @@ export default function Header(props){
                 <span className='icon-label--header'>Sign in</span>
             </Link>
             <Link className='cartIconLink-header icon-container--header' to='cart'>
-                 <i className="fa-solid fa-cart-shopping"></i>
-                 {props.cartItemsNumber>0 && <span className='items-counter-header'>{props.cartItemsNumber}</span>}
+                 <i className="fa-solid fa-cart-shopping">
+                    {props.cartItemsNumber>0 && <span className='items-counter-header'>{props.cartItemsNumber}</span>}
+                 </i>
+                 
                 <span className='icon-label--header'>My cart</span>
             </Link>
             <div className='icon-container--header bars-icon-container--header' onClick={handleBarsClick}>     
