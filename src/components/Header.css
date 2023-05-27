@@ -27,11 +27,7 @@
 
 }
 .icon-label--header{
-    font-family: 'Roboto', sans-serif;  
-    font-size: 0.65em;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    /* display: none; */
+    display: none;
 }
 .user-icon-header{
     margin-left: auto;
@@ -64,3 +60,15 @@
 .bars-icon-container--header{
     margin-right: 0;
 }
+
+@media screen and (min-width: 700px){
+    .icon-label--header{
+        font-family: 'Roboto', sans-serif;  
+        font-size: 0.65em;
+        letter-spacing: 1px;
+        margin-top: 5px;
+        display: inline;
+    }
+}
+    
+
