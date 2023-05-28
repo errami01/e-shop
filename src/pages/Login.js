@@ -7,6 +7,7 @@ export default function Login(){
             <span className='big-user-icon--login'>
                 <i className="fa-regular fa-user" ></i>
             </span>
+            <h3 className='sign-in-urge--login'>Sign in to your account</h3>
             <InputComponent 
                 label='Username' 
                 type='text'

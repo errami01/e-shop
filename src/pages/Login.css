@@ -21,7 +21,12 @@
     color: var(--first-Color);
     font-weight: 300;
     border-radius: 50%;
+    margin-bottom: 20px;
+}
+.sign-in-urge--login{
+    margin: 0;
     margin-bottom: 30px;
+    color: var(--text-color);
 }
 .submit-btn--login{
     width: 60%;
