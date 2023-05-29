@@ -28,6 +28,13 @@
     margin-bottom: 30px;
     color: var(--text-color);
 }
+.form--login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   
+}
 .submit-btn--login{
     width: 60%;
     height: 40px;
