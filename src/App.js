@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import Cart from './pages/Cart';
-import Login from './pages/Login';
+import Login, {action as loginAction} from './pages/Login';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />}>
     <Route 
@@ -18,6 +18,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       />
     <Route 
       path='login'
+      action={loginAction}
       element={<Login />}
       />
     <Route 
