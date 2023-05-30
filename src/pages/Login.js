@@ -1,9 +1,19 @@
 import './Login.css'
 import InputComponent from '../components/InputComponent'
 import { Form } from 'react-router-dom'
+import { loginUser } from '../utils/fetcher'
 
-export function action(){
-    console.log('this is Action in action')
+export async function action({request}){
+    const formData = await request.formData()
+    const username =  formData.get('username')
+    const password = formData.get('password')
+    try{
+          console.log(await loginUser(username, password))
+    }catch(e){
+        console.log(e.message)
+    }
+    
+  
     return null
 }
 export default function Login(){
@@ -17,14 +27,16 @@ export default function Login(){
             <h3 className='sign-in-urge--login'>Sign in to your account</h3>
             <Form method='post' className='form--login'>
                 <InputComponent 
+                    name='username'
                     label='Username' 
                     type='text'
                     icon = {<i className="fa-solid fa-user fa" ></i>}
                     />
                 <InputComponent 
-                label='Password' 
-                type='password'
-                icon={<i className="fa-solid fa-key fa"></i>}
+                    name='password'
+                    label='Password' 
+                    type='password'
+                    icon={<i className="fa-solid fa-key fa"></i>}
                 />  
                 <button className='submit-btn--login'>Login</button>
             </Form>
