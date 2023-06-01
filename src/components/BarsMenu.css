@@ -11,7 +11,7 @@
     right: 0;
     overflow: hidden;
     /* opacity: 0.95; */
-    transition: height 1s
+    transition: height 0.5s
 }
 .closedMenu{
     height: 0;
