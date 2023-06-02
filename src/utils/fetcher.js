@@ -44,3 +44,37 @@ export async function loginUser(user, pass){
     return await response.json()
             
 }
+export async function fetchData(param){
+    if(!param){
+        throw{
+            message: 'I should set a parameter to fetchData()'
+        }
+    }
+    const localData = localStorage.getItem(param)
+    if(!localData){
+        let path;
+        if(param==='products'){
+            path= ''
+        }
+        else if(param==='categories'){
+            path = param
+        }
+        else{
+            path = `category/${param}`
+        }
+        const promiseData = await fetch(`https://fakestoreapi.com/products/${path}`)
+        if(!promiseData.ok){
+            throw{
+                message: "Failed to fetch categories",
+                statusText: promiseData.statusText,
+                statas: promiseData.status
+            }
+        }
+        const data = await promiseData.json()
+        localStorage.setItem('categories', JSON.stringify(data))
+        return data
+    }
+    return localData
+    
+
+}
