@@ -6,10 +6,23 @@ export async function getData(param){
 }
 
 export async function getProductsByCategory(category){
-    const data = await fetch(`https://fakestoreapi.com/products/category/${category}`)
-    // const products = await data.json()
-    return await data.json()
-}
+    const localData = localStorage.getItem('categories')
+    if(!localData){
+        const promiseData = await fetch(`https://fakestoreapi.com/products/category/${category}`)
+        if(!promiseData.ok){
+            throw{
+                message: "Failed to fetch categories",
+                statusText: data.statusText,
+                statas: data.status
+            }
+        }
+        const data = await promiseData.json()
+        localStorage.setItem('categories', JSON.stringify(data))
+        return data
+    }
+    return localData
+    }
+    
 export async function loginUser(user, pass){
     const response = await fetch('https://fakestoreapi.com/auth/login',{
             method:'POST',
@@ -18,8 +31,8 @@ export async function loginUser(user, pass){
               },
             
             body:JSON.stringify({
-                username: 'mor_2314',
-                password: '83r5^_'
+                username: user,
+                password: pass
             })
         })
     if(!response.ok){
