@@ -1,5 +1,9 @@
 import './BarsMenu.css'
 import { useRef } from 'react'
+
+export function loader(){
+
+}
 export default function BarsMenu({isOpen}){
     const container = useRef()
     return(
