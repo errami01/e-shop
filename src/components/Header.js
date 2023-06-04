@@ -6,9 +6,7 @@ export default function Header(props){
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     function handleBarsClick(){
         setIsMenuOpen(prev=> !prev)
-        
     }
-    // console.log(isMenuOpen)
     return(
         <header className="header-container">
             <Link to={''}>
@@ -29,7 +27,7 @@ export default function Header(props){
                 <i className="fa-solid fa-bars" ></i>
                 <span className='icon-label--header'>Categories</span>
             </div>
-            <BarsMenu isOpen={isMenuOpen}/>
+            <BarsMenu isOpen={isMenuOpen} categories={props.categories}/>
         </header>
     )
 }

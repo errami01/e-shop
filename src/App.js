@@ -1,13 +1,17 @@
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import Home, {loader as homeLoader} from './pages/Home'
-import Layout from './components/Layout';
+import Layout, {loader as layoutLoader} from './components/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import Cart from './pages/Cart';
 import Login, {action as loginAction} from './pages/Login';
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route path='/' element={<Layout />}>
+  <Route 
+    path='/' 
+    loader={layoutLoader}
+    element={<Layout />}
+    >
     <Route 
       index 
       element={<Home />}

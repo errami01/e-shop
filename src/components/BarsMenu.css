@@ -16,12 +16,12 @@
     
 }
 .barsMenu-container > ul{
-    width: 100%;
-    list-style-type: none;
+    /* width: 100%; */
+    /* list-style-type: none; */
     padding: 20px 0;    
 }
 .barsMenu-container li{
-    text-align: center;
+    /* text-align: left; */
     padding: 10px 0;
     width: 100%;
     cursor: pointer;

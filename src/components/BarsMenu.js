@@ -1,21 +1,22 @@
 import './BarsMenu.css'
 import { useRef } from 'react'
+import {nanoid} from 'nanoid'
 
-export function loader(){
-    
-}
-export default function BarsMenu({isOpen}){
+export default function BarsMenu({isOpen, categories}){
     const container = useRef()
+    const categoryItems = categories.map(category=>{
+        return <li key={nanoid()}>{category}</li>
+    })
     function handleLocalStorage(){
         localStorage.clear()
     }
+
     return(
         <div 
         className={`barsMenu-container ${isOpen? 'openedMenu':'closedMenu'}`}
         ref={container}>
             <ul>
-                <li>Sign In</li>
-                <li>Sign Up</li>
+                {categoryItems}
                 <li onClick={handleLocalStorage}>Clear local storage</li>
             </ul>
         </div>
