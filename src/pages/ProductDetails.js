@@ -1,10 +1,10 @@
-import { getData } from "../utils/fetcher"
+import { getData, fetchSingleProduct } from "../utils/fetcher"
 import { useLoaderData, useOutletContext } from "react-router-dom"
 import "./ProductDetails.css"
 import { useRate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
 export function loader({params}){
-    return getData(params.id)
+    return fetchSingleProduct(params.id)
 }
 export default function PrdoductDetails(){
     const product = useLoaderData()
