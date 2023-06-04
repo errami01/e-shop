@@ -6,7 +6,7 @@ export async function getData(param){
 }
 
 export async function getProductsByCategory(category){
-    const localData = localStorage.getItem('categories')
+    const localData = JSON.parse(localStorage.getItem('categories'))
     if(!localData){
         const promiseData = await fetch(`https://fakestoreapi.com/products/category/${category}`)
         if(!promiseData.ok){
@@ -50,7 +50,8 @@ export async function fetchData(param){
             message: 'I should set a parameter to fetchData()'
         }
     }
-    const localData = localStorage.getItem(param)
+    const localData = JSON.parse(localStorage.getItem(param))
+    console.log(localData)
     if(!localData){
         let path;
         if(param==='products'){
@@ -65,16 +66,32 @@ export async function fetchData(param){
         const promiseData = await fetch(`https://fakestoreapi.com/products/${path}`)
         if(!promiseData.ok){
             throw{
-                message: "Failed to fetch categories",
+                message: "Failed to fetch ",
                 statusText: promiseData.statusText,
                 statas: promiseData.status
             }
         }
         const data = await promiseData.json()
-        localStorage.setItem('categories', JSON.stringify(data))
+        localStorage.setItem(param, JSON.stringify(data))
         return data
     }
     return localData
-    
-
+}
+export async function fetchSingleProduct(id){
+    const index = id - 1
+    const localData = JSON.parse(localStorage.getItem('products'))
+    if(!localData){
+        const promiseData = await fetch(`https://fakestoreapi.com/products`)
+        if(!promiseData.ok){
+            throw{
+                message: "Failed to fetch Data",
+                statusText: promiseData.statusText,
+                statas: promiseData.status
+            }
+        }
+        const data = await promiseData.json()
+        localStorage.setItem('products', JSON.stringify(data))
+        return data[index]
+    }
+    return localData[index]
 }
