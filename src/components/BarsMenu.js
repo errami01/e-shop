@@ -6,6 +6,9 @@ export function loader(){
 }
 export default function BarsMenu({isOpen}){
     const container = useRef()
+    function handleLocalStorage(){
+        localStorage.clear()
+    }
     return(
         <div 
         className={`barsMenu-container ${isOpen? 'openedMenu':'closedMenu'}`}
@@ -13,6 +16,7 @@ export default function BarsMenu({isOpen}){
             <ul>
                 <li>Sign In</li>
                 <li>Sign Up</li>
+                <li onClick={handleLocalStorage}>Clear local storage</li>
             </ul>
         </div>
     )
