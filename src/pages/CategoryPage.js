@@ -1,10 +1,10 @@
 import ProductCard from "../components/ProductCard"
 import "./CategoryPage.css"
-import { getProductsByCategory } from "../utils/fetcher" 
+import {fetchData } from "../utils/fetcher" 
 import { useLoaderData } from "react-router-dom"
 
 export function loader({params}){
-    return getProductsByCategory(params.category)
+    return fetchData(params.category)
 }
 export default function CategoryPage(){
     const products = useLoaderData()
@@ -14,10 +14,8 @@ export default function CategoryPage(){
             return <ProductCard 
                 key={product.id}
                 {...product}
-                // title={product.title}
             />
-        }
-        
+        }   
     )
     return(
         <div className="categorypage-container">
