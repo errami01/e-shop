@@ -23,7 +23,7 @@ export default function CategoryContainer({category,products}){
     const imagesToRender = [... products]
     imagesToRender.length = productsToRender
     const images = imagesToRender.map(
-        product=><ProductCard {...product}/>
+        product=><ProductCard key={nanoid()}  {...product}/>
     )
     return(<>
         <div className="categorie-container">
