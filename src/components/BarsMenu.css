@@ -24,7 +24,7 @@
     text-align: center;
     padding: 10px 0;
     width: 100%;
-
+    cursor: pointer;
 }
 .barsMenu-container li:hover{
     background-color: var(--second-Color);
