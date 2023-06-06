@@ -5,7 +5,8 @@ import {nanoid} from 'nanoid'
 export default function BarsMenu({isOpen, categories}){
     const container = useRef()
     const categoryItems = categories.map(category=>{
-        return <li key={nanoid()}>{category}</li>
+        const upperCaseFirstLetter = category.charAt(0).toUpperCase() + category.slice(1)
+        return <li key={nanoid()}>{upperCaseFirstLetter}</li>
     })
     function handleLocalStorage(){
         localStorage.clear()
