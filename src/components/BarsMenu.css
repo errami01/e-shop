@@ -5,23 +5,17 @@
     position: absolute;
     top: var(--header-height);
     right: 0;
-    overflow: hidden;
-    transition: height 0.5s
+    max-height: 100vh;
+    transition: max-height 0.5s;
 }
 .closedMenu{
-    height: 0;
+    max-height: 0;
 }
-.openedMenu{
-    height: 200px;
-    
-}
+
 .barsMenu-container > ul{
-    /* width: 100%; */
-    /* list-style-type: none; */
-    padding: 20px 0;    
+    list-style-type: none;
 }
 .barsMenu-container li{
-    /* text-align: left; */
     padding: 10px 0;
     width: 100%;
     cursor: pointer;
