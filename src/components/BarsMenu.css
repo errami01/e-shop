@@ -14,11 +14,16 @@
 
 .barsMenu-container > ul{
     list-style-type: none;
+    padding: 0;
+    /* width: 80%; */
 }
 .barsMenu-container li{
+    font-size: 0.7em;
+    font-weight: 300;
     padding: 10px 0;
     width: 100%;
     cursor: pointer;
+    padding-left: 30px;
 }
 .barsMenu-container li:hover{
     background-color: var(--second-Color);
