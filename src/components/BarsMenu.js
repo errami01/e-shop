@@ -2,7 +2,7 @@ import './BarsMenu.css'
 import { useRef } from 'react'
 import {nanoid} from 'nanoid'
 
-export default function BarsMenu({isOpen, categories}){
+export default function BarsMenu({isOpen, onMouseLeave, onMouseEnter, categories}){
     const container = useRef()
     const categoryItems = categories.map(category=>{
         const upperCaseFirstLetter = category.charAt(0).toUpperCase() + category.slice(1)
@@ -11,11 +11,13 @@ export default function BarsMenu({isOpen, categories}){
     function handleLocalStorage(){
         localStorage.clear()
     }
-
     return(
         <div 
         className={`barsMenu-container ${isOpen? 'openedMenu':'closedMenu'}`}
-        ref={container}>
+        ref={container}
+        onMouseLeave={onMouseLeave}
+        onMouseEnter={onMouseEnter}
+        >
             <ul>
                 {categoryItems}
                 <li onClick={handleLocalStorage}>Clear local storage</li>

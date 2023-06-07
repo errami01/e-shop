@@ -7,6 +7,12 @@ export default function Header(props){
     function handleBarsClick(){
         setIsMenuOpen(prev=> !prev)
     }
+    function handleBarsMenuMouseLeave(){
+        setIsMenuOpen(false)
+    }
+    function handleBarsMenuMouseEnter(){
+        setIsMenuOpen(true)
+    }
     return(
         <header className="header-container">
             <Link to={''}>
@@ -23,11 +29,20 @@ export default function Header(props){
                  
                 <span className='icon-label--header'>My cart</span>
             </Link>
-            <div className='icon-container--header bars-icon-container--header' onClick={handleBarsClick}>     
+            <div 
+                className='icon-container--header bars-icon-container--header' 
+                onClick={handleBarsClick}
+                onMouseLeave={handleBarsMenuMouseLeave}
+                >     
                 <i className="fa-solid fa-bars" ></i>
                 <span className='icon-label--header'>Categories</span>
             </div>
-            <BarsMenu isOpen={isMenuOpen} categories={props.categories}/>
+            <BarsMenu 
+                isOpen={isMenuOpen} 
+                setIsOpen={setIsMenuOpen}
+                onMouseLeave={handleBarsMenuMouseLeave}
+                onMouseEnter={handleBarsMenuMouseEnter}
+                categories={props.categories}/>
         </header>
     )
 }
