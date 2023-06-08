@@ -1,12 +1,16 @@
 import './BarsMenu.css'
 import { useRef } from 'react'
 import {nanoid} from 'nanoid'
+import { Link } from 'react-router-dom'
 
 export default function BarsMenu({isOpen, onMouseLeave, onMouseEnter, categories}){
     const container = useRef()
     const categoryItems = categories.map(category=>{
         const upperCaseFirstLetter = category.charAt(0).toUpperCase() + category.slice(1)
-        return <li key={nanoid()}>{upperCaseFirstLetter}</li>
+        return (
+            <Link to={category}>
+                <li key={nanoid()}>{upperCaseFirstLetter}</li>
+            </Link>)
     })
     function handleLocalStorage(){
         localStorage.clear()
