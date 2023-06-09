@@ -6,6 +6,7 @@ import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDet
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import Cart from './pages/Cart';
 import Login, {action as loginAction} from './pages/Login';
+import NotFound from './pages/NotFound';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -36,7 +37,10 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={productDetailLoader}
       element={<PrdoductDetails />}
       />
-
+    <Route
+      path='*'
+      element={<NotFound />} 
+    />
     
       
   </Route>
