@@ -12,7 +12,8 @@ export async function loginUser(user, pass){
         })
     if(!response.ok){
         throw{
-            message: response.status
+            message: response.statusText,
+            status: response.status
         }
     }
     

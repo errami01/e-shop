@@ -7,14 +7,7 @@ export async function action({request}){
     const formData = await request.formData()
     const username =  formData.get('username')
     const password = formData.get('password')
-    try{
-          console.log(await loginUser(username, password))
-    }catch(e){
-        console.log(e.message)
-    }
-    
-  
-    return null
+    return await loginUser(username, password)
 }
 export default function Login(){
 
