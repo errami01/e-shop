@@ -38,3 +38,10 @@ a{
   color: initial;
   text-decoration: none;
 }
+.btn{
+  background-color: var(--first-Color);
+  color: white;
+}
+.btn:hover{
+  background-color: var(--second-Color);
+}
