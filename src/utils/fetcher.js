@@ -1,5 +1,6 @@
 export async function loginUser(user, pass){
-    const response = await fetch('https://fakestoreapi.com/auth/login',{
+    let 
+    response = await fetch('https://fakestoreapi.com/auth/login',{
             method:'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -13,7 +14,8 @@ export async function loginUser(user, pass){
     console.log(response)
     if(!response.ok){
         throw{
-            message: response.statusText,
+            message: "No user with those credentials found",
+            statusText: response.statusText,
             status: response.status
         }
     }
