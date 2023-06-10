@@ -28,7 +28,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       element={<Login />}
       />
     <Route 
-      path=':category'
+      path='category/:category'
       loader= {categoryPageLoader}
       element={<CategoryPage />}
     />

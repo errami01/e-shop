@@ -27,7 +27,7 @@ export default function CategoryContainer({category,products}){
     )
     return(<>
         <div className="categorie-container">
-            <header className="category-name" onClick={()=> navigate(`${category}`)}>{category}</header>
+            <header className="category-name" onClick={()=> navigate(`category/${category}`)}>{category}</header>
             <div className="products-container">
                 {images}
             </div>
