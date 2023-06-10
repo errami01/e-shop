@@ -10,6 +10,7 @@ export async function loginUser(user, pass){
                 password: pass
             })
         })
+    console.log(response)
     if(!response.ok){
         throw{
             message: response.statusText,

@@ -8,8 +8,8 @@ export default function BarsMenu({isOpen, onMouseLeave, onMouseEnter, categories
     const categoryItems = categories.map(category=>{
         const upperCaseFirstLetter = category.charAt(0).toUpperCase() + category.slice(1)
         return (
-            <Link to={'category/'+category}>
-                <li key={nanoid()}>{upperCaseFirstLetter}</li>
+            <Link key={nanoid()} to={'category/'+category}>
+                <li >{upperCaseFirstLetter}</li>
             </Link>)
     })
     function handleLocalStorage(){
