@@ -7,12 +7,13 @@ import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import Cart from './pages/Cart';
 import Login, {action as loginAction} from './pages/Login';
 import NotFound from './pages/NotFound';
+import ErrorComponent from './components/ErrorComponent';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
     loader={layoutLoader}
     element={<Layout />}
-    errorElement={<h1>An error has occured</h1>}
+    errorElement={<ErrorComponent/>}
     >
     <Route 
       index 
