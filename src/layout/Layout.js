@@ -1,5 +1,5 @@
 import { Outlet, useLoaderData } from "react-router-dom"
-import Header from "./Header"
+import Header from "../components/Header"
 import { useState, useEffect, useRef } from "react"
 import { fetchData } from "../utils/fetcher"
 
