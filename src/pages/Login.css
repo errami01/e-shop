@@ -28,6 +28,11 @@
     margin-bottom: 30px;
     color: var(--text-color);
 }
+.error-message-login{
+    color: red;
+    margin:0;
+    margin-bottom: 30px;
+}
 .form--login{
     display: flex;
     flex-direction: column;
