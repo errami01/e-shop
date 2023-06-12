@@ -1,13 +1,14 @@
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import Home, {loader as homeLoader} from './pages/Home'
-import Layout, {loader as layoutLoader} from './components/Layout';
+import Layout, {loader as layoutLoader} from './layout/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import Cart from './pages/Cart';
 import Login, {action as loginAction} from './pages/Login';
 import NotFound from './pages/NotFound';
 import ErrorComponent from './components/ErrorComponent';
+import CustomerLayout from './layout/CustomerLayout'
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -19,6 +20,12 @@ const router = createBrowserRouter(createRoutesFromElements(
       index 
       element={<Home />}
       loader={homeLoader}/>
+    <Route
+      path='customer'
+      element={<CustomerLayout />} 
+    >
+
+    </Route>
     <Route 
       path='cart'
       element={<Cart />}
