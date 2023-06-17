@@ -1,0 +1,6 @@
+.customer-layout-container{
+    display: flex;
+    /* background-color: green; */
+    justify-content: center;
+    width: 90%;
+}
