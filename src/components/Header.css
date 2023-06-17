@@ -54,8 +54,11 @@
     height: 15px; 
 }
 .bars-icon-container--header{
+    cursor: pointer;
     margin-right: 0;
+    /* align-self: stretch; */
 }
+
 
 @media screen and (min-width: 700px){
     .icon-label--header{
