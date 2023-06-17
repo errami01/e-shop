@@ -1,6 +1,6 @@
 import './Login.css'
 import InputComponent from '../components/InputComponent'
-import { Form } from 'react-router-dom'
+import { Form, redirect } from 'react-router-dom'
 import { loginUser } from '../utils/fetcher'
 import { useActionData } from 'react-router-dom'
 
@@ -10,7 +10,7 @@ export async function action({request}){
     const password = formData.get('password')
     try{
          await loginUser(username, password)
-         return null
+         return redirect("/customer")
     }
     catch(e){
         return e.message
