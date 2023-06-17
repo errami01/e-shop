@@ -11,7 +11,7 @@ export async function loginUser(user, pass){
                 password: pass
             })
         })
-    console.log(response)
+    // console.log(response)
     if(!response.ok){
         throw{
             message: "No user with those credentials found",
@@ -19,8 +19,9 @@ export async function loginUser(user, pass){
             status: response.status
         }
     }
-    
-    return await response.json()
+    const token = await response.json()
+    localStorage.setItem('token', JSON.stringify(token.token))
+    return token
             
 }
 export async function fetchData(param){
@@ -72,4 +73,22 @@ export async function fetchSingleProduct(id){
         return data[index]
     }
     return localData[index]
+}
+
+export async function fetchSingleUser(id){
+    const localData = JSON.parse(localStorage.getItem('user'))
+    if(!localData){
+        const promiseData = await fetch(`https://fakestoreapi.com/users/${id}`)
+        if(!promiseData.ok){
+            throw{
+                message: "Failed to fetch Data",
+                statusText: promiseData.statusText,
+                statas: promiseData.status
+            }
+        }
+        const data = await promiseData.json()
+        localStorage.setItem('user', JSON.stringify(data))
+        return data
+    }
+    return localData
 }
