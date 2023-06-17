@@ -8,8 +8,8 @@ import Cart from './pages/Cart';
 import Login, {action as loginAction} from './pages/Login';
 import NotFound from './pages/NotFound';
 import ErrorComponent from './components/ErrorComponent';
-import CustomerLayout from './layout/CustomerLayout'
-import MyAccount from './pages/MyAccount';
+import CustomerLayout, {loader as customerLayoutLoader} from './layout/CustomerLayout'
+import MyAccount, {loader as myAccountLoader} from './pages/MyAccount';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -23,11 +23,13 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={homeLoader}/>
     <Route
       path='customer'
+      loader={customerLayoutLoader}
       element={<CustomerLayout />} 
     >
         <Route 
           index
           element={<MyAccount />}
+          // loader={myAccountLoader}
         />
 
     </Route>
