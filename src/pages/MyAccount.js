@@ -8,6 +8,7 @@ export function loader({request}){
 }
 export default function MyAccount(){
     const {userData} = useOutletContext()
+    const {name, email, phone, address} = userData
     console.log(userData)
     return(
         <div className="myAccount-container">
@@ -19,8 +20,9 @@ export default function MyAccount(){
                     </header>
                     <div className="details-section--myAccount">
                         <ul>
-                            <li></li>
-                            <li></li>
+                            <li>{name.firstname} {name.lastname}</li>
+                            <li>{email}</li>
+                            <li>{phone}</li>
                         </ul>
                     </div>
                 </div>
@@ -30,8 +32,9 @@ export default function MyAccount(){
                     </header>
                     <div className="details-section--myAccount">
                         <ul>
-                            <li></li>
-                            <li></li>
+                            <li>{address.number} {address.street}</li>
+                            <li>{address.zipcode}</li>
+                            <li>{address.city}</li>
                         </ul>
                     </div>
                 </div>
@@ -41,8 +44,7 @@ export default function MyAccount(){
                     </header>
                     <div className="details-section--myAccount">
                         <ul>
-                            <li></li>
-                            <li></li>
+                            <li>You are not currently subscribed to any of our newsletters.</li>
                         </ul>
                     </div>
                 </div>
