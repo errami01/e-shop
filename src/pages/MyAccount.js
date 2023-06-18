@@ -1,11 +1,14 @@
 
 import "./MyAccount.css"
+import { useOutletContext } from "react-router-dom"
 
-// export function loader({request}){
-//     console.log(request)
-//     return null
-// }
+export function loader({request}){
+    console.log(request)
+    return null
+}
 export default function MyAccount(){
+    const {userData} = useOutletContext()
+    console.log(userData)
     return(
         <div className="myAccount-container">
             <h1 className="title--myAccount">Your Account</h1>
