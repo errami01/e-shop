@@ -17,7 +17,7 @@ export default function CustomerLayout(){
     console.log(userData)
     return(
         <div className="customer-layout-container">
-            <Outlet />
+            <Outlet context={{userData}}/>
         </div>
     )
 }
