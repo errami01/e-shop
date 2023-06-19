@@ -4,6 +4,13 @@ import { Form, redirect } from 'react-router-dom'
 import { loginUser } from '../utils/fetcher'
 import { useActionData } from 'react-router-dom'
 
+export function loader(){
+    console.log("loader")
+    if(JSON.parse(localStorage.getItem('token'))){
+        throw redirect('/customer')
+    }
+    return null
+}
 export async function action({request}){
     const formData = await request.formData()
     const username =  formData.get('username')
@@ -27,7 +34,7 @@ export default function Login(){
             </span>
             <h3 className='sign-in-urge--login'>Sign in to your account</h3>
             {errorMessage && <h5 className='error-message-login'>{errorMessage}</h5>}
-            <Form method='post' className='form--login'>
+            <Form method='post' className='form--login' replace>
                 <InputComponent 
                     name='username'
                     label='Username' 
