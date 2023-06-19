@@ -18,10 +18,18 @@ export default function Header(props){
             <Link to={''}>
                 <div className='logo'>E-commerce</div>
             </Link>
-            <Link to='login' className='user-icon-header icon-container--header'>
-                <i className="fa-regular fa-user" ></i>
-                <span className='icon-label--header'>Sign in</span>
-            </Link>
+            {props.userData?
+                <div>
+                    <i class="fa-solid fa-user-check"></i>
+                    <span className='icon-label--header'>Hello {props.userData.name.firstname}</span>
+                </div>               
+                :
+                <Link to='login' className='user-icon-header icon-container--header'>
+                    <i className="fa-regular fa-user" ></i>
+                    <span className='icon-label--header'>Sign in</span>
+                </Link>
+            }
+            
             <Link className='cartIconLink-header icon-container--header' to='cart'>
                  <i className="fa-solid fa-cart-shopping">
                     {props.cartItemsNumber>0 && <span className='items-counter-header'>{props.cartItemsNumber}</span>}
