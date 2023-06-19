@@ -5,7 +5,7 @@ import Layout, {loader as layoutLoader} from './layout/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import Cart from './pages/Cart';
-import Login, {action as loginAction} from './pages/Login';
+import Login, {action as loginAction, loader as loginLoader} from './pages/Login';
 import NotFound from './pages/NotFound';
 import ErrorComponent from './components/ErrorComponent';
 import CustomerLayout, {loader as customerLayoutLoader} from './layout/CustomerLayout'
@@ -40,6 +40,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route 
       path='login'
       action={loginAction}
+      loader={loginLoader}
       element={<Login />}
       />
     <Route 
