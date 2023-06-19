@@ -1,9 +1,10 @@
 
 import "./MyAccount.css"
 import { useOutletContext } from "react-router-dom"
+import { requireAuth } from "../utils/requireAuth"
 
-export function loader({request}){
-    console.log(request)
+export function loader(){
+    requireAuth()
     return null
 }
 export default function MyAccount(){
