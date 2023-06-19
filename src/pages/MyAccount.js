@@ -10,7 +10,6 @@ export function loader(){
 export default function MyAccount(){
     const {userData} = useOutletContext()
     const {name, email, phone, address} = userData
-    console.log(userData)
     return(
         <div className="myAccount-container">
             <h1 className="title--myAccount">Your Account</h1>
