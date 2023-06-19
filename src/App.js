@@ -29,7 +29,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           index
           element={<MyAccount />}
-          // loader={myAccountLoader}
+          loader={myAccountLoader}
         />
 
     </Route>
