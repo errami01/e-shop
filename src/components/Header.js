@@ -19,7 +19,7 @@ export default function Header(props){
                 <div className='logo'>E-commerce</div>
             </Link>
             {props.userData?
-                <div>
+                <div className='user-icon-header icon-container--header'>
                     <i class="fa-solid fa-user-check"></i>
                     <span className='icon-label--header'>Hello {props.userData.name.firstname}</span>
                 </div>               
