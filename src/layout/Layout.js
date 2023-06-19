@@ -23,7 +23,11 @@ export default function Layout(){
     },[cartItems])
     return(
         <>
-            <Header cartItemsNumber={cartItemsNumber.current} categories={categories}/>
+            <Header 
+                cartItemsNumber={cartItemsNumber.current} 
+                categories={categories}
+                userData={userData}
+                />
             <Outlet 
                 context={
                     {
