@@ -6,9 +6,7 @@ import { requireAuth } from "../utils/requireAuth"
 
 export async function loader(){
     requireAuth()
-    return await fetchSingleUser(1)
-    // return null
-     
+    return await fetchSingleUser(1)     
 }
 export default function CustomerLayout(){
     const {userData, setUserData} = useOutletContext()
@@ -17,7 +15,7 @@ export default function CustomerLayout(){
     console.log(userData)
     return(
         <div className="customer-layout-container">
-            <Outlet context={{userData}}/>
+            {userData && <Outlet context={{userData}}/>}
         </div>
     )
 }
