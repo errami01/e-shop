@@ -24,7 +24,9 @@
     margin-right: 20px;
     font-weight: 400;
     font-size: 1em;
-
+}
+.icon-container--header:hover{
+    color: var(--second-Color)
 }
 .icon-label--header{
     display: none;
