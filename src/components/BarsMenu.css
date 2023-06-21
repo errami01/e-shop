@@ -6,9 +6,7 @@
     top: var(--header-height);
     overflow: hidden;
     right: 0;
-    max-height: 100vh;
     transition: max-height 0.5s;
-    /* background-color: red; */
 }
 .closedMenu{
     max-height: 0;
