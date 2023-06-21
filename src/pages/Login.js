@@ -5,7 +5,6 @@ import { loginUser } from '../utils/fetcher'
 import { useActionData } from 'react-router-dom'
 
 export function loader(){
-    console.log("loader")
     if(JSON.parse(localStorage.getItem('token'))){
         throw redirect('/customer')
     }
