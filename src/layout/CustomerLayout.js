@@ -12,7 +12,6 @@ export default function CustomerLayout(){
     const {userData, setUserData} = useOutletContext()
     const userLoadedData = useLoaderData()
     useEffect(()=> setUserData(userLoadedData),[userLoadedData])
-    console.log(userData)
     return(
         <div className="customer-layout-container">
             {userData && <Outlet context={{userData}}/>}
