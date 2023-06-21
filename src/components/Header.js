@@ -2,6 +2,7 @@ import './Header.css'
 import BarsMenu from './BarsMenu'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import UserMenuTop from './UserMenuTop'
 export default function Header(props){
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     function handleBarsClick(){
@@ -13,6 +14,9 @@ export default function Header(props){
     function handleBarsMenuMouseEnter(){
         setIsMenuOpen(true)
     }
+    function handleUserIconClick(){
+
+    }
     return(
         <header className="header-container">
             <Link to={''}>
@@ -22,6 +26,7 @@ export default function Header(props){
                 <div className='user-icon-header icon-container--header'>
                     <i class="fa-solid fa-user-check"></i>
                     <span className='icon-label--header'>Hello {props.userData.name.firstname}</span>
+                    <UserMenuTop />
                 </div>               
                 :
                 <Link to='login' className='user-icon-header icon-container--header'>
@@ -51,6 +56,7 @@ export default function Header(props){
                 onMouseLeave={handleBarsMenuMouseLeave}
                 onMouseEnter={handleBarsMenuMouseEnter}
                 categories={props.categories}/>
+            
         </header>
     )
 }
