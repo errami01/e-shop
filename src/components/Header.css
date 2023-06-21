@@ -1,14 +1,13 @@
 
 .header-container{
     display: flex;
-    align-items: center;
     justify-content: space-between;
     font-size: 1.5em;
     font-weight: 700;
     color: white;
     height: var(--header-height);
     width: 100%;
-    padding: 20px;
+    padding: 0 20px;
     background-color: var(--first-Color);
     margin-bottom: 80px;
     position: sticky;
@@ -21,6 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-right: 20px;
     font-weight: 400;
     font-size: 1em;
@@ -32,6 +32,7 @@
     display: none;
 }
 .user-icon-header{
+    position: relative;
     margin-left: auto;
     color: white;
 }
