@@ -60,6 +60,7 @@
     height: 15px; 
 }
 .bars-icon-container--header{
+    position: relative;
     cursor: pointer;
 }
 
