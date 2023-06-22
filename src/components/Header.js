@@ -40,7 +40,7 @@ export default function Header(props){
         <header className="header-container">
             <div 
                 className='icon-container--header bars-icon-container--header' 
-                onClick={handleBarsClick}
+                onClick={showBarsAndUserMenu}
                 onMouseLeave={handleBarsMenuMouseLeave}
                 >     
                 <i className="fa-solid fa-bars" ></i>
