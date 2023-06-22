@@ -1,11 +1,10 @@
 .barsMenu-container{
-    width: 50%;
-    max-width: 250px;
+    width: 200px;
     background-color: var(--first-Color);
     position: absolute;
     top: var(--header-height);
     overflow: hidden;
-    right: 0;
+    left: 0;
     transition: max-height 0.5s;
 }
 .closedMenu{
