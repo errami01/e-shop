@@ -17,7 +17,6 @@ export default function BarsMenu({isOpen, onMouseLeave, onMouseEnter, categories
     }
     return(
         <div 
-        id='barsIconContainer'
         className={`barsMenu-container ${isOpen? 'openedMenu':'closedMenu'}`}
         ref={container}
         onMouseLeave={onMouseLeave}
