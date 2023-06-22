@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import {nanoid} from 'nanoid'
 import { Link } from 'react-router-dom'
 
-export default function BarsMenu({isOpen, onMouseLeave, onMouseEnter, categories}){
+export default function BarsMenu({isOpen,categories}){
     const container = useRef()
     const categoryItems = categories.map(category=>{
         const upperCaseFirstLetter = category.charAt(0).toUpperCase() + category.slice(1)
@@ -19,8 +19,6 @@ export default function BarsMenu({isOpen, onMouseLeave, onMouseEnter, categories
         <div 
         className={`barsMenu-container ${isOpen? 'openedMenu':'closedMenu'}`}
         ref={container}
-        onMouseLeave={onMouseLeave}
-        onMouseEnter={onMouseEnter}
         >
             <ul>
                 {categoryItems}
