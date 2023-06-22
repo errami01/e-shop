@@ -44,7 +44,12 @@ export default function Header(props){
                 onMouseLeave={handleBarsMenuMouseLeave}
                 >     
                 <i className="fa-solid fa-bars" ></i>
-                {/* <span className='icon-label--header'>Categories</span> */}
+                <BarsMenu 
+                isOpen={isMenuOpen.barsIconContainer} 
+                setIsOpen={setIsMenuOpen}
+                onMouseLeave={handleBarsMenuMouseLeave}
+                onMouseEnter={handleBarsMenuMouseEnter}
+                categories={props.categories}/>
             </div>
             <Link to={''} className='logo'>E-commerce</Link>
             {props.userData?
@@ -73,15 +78,7 @@ export default function Header(props){
                  </i>
                  
                 <span className='icon-label--header'>My cart</span>
-            </Link>
-            
-            <BarsMenu 
-                isOpen={isMenuOpen.barsIconContainer} 
-                setIsOpen={setIsMenuOpen}
-                onMouseLeave={handleBarsMenuMouseLeave}
-                onMouseEnter={handleBarsMenuMouseEnter}
-                categories={props.categories}/>
-            
+            </Link>       
         </header>
     )
 }
