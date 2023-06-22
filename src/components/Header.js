@@ -9,28 +9,17 @@ export default function Header(props){
         barsIconContainer:false
 
     })
-    function handleBarsClick(){
-        // setIsMenuOpen(prev=> !prev)
-    }
     function handleBarsAndUserMenuMouseLeave(event){
-        console.log(isMenuOpen)
         setIsMenuOpen({
             loggedInIcon: false,
             barsIconContainer:false
         })
-    }
-    function handleBarsMenuMouseEnter(){
-        // setIsMenuOpen(true)
-    }
-    function handleBarsMenuMouseLeave(){
-
     }
     function showBarsAndUserMenu(event){
         const targetId = event.currentTarget.id
         setIsMenuOpen((prev)=> {
             const newObj = {...prev}
             newObj[targetId] = !newObj[targetId]
-            console.log(newObj)
             return newObj
         })
     }
