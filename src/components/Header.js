@@ -38,9 +38,7 @@ export default function Header(props){
     }
     return(
         <header className="header-container">
-            <Link to={''}>
-                <div className='logo'>E-commerce</div>
-            </Link>
+            <Link to={''} className='logo'>E-commerce</Link>
             {props.userData?
                 <div 
                     id='loggedInIcon' 
