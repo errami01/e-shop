@@ -6,6 +6,7 @@
     top: 100%;
     margin:0;
     list-style-type: none;
+    overflow: hidden;
     padding: 0;
 }
 .container--userMenuTop li{
