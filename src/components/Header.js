@@ -38,6 +38,14 @@ export default function Header(props){
     }
     return(
         <header className="header-container">
+            <div 
+                className='icon-container--header bars-icon-container--header' 
+                onClick={handleBarsClick}
+                onMouseLeave={handleBarsMenuMouseLeave}
+                >     
+                <i className="fa-solid fa-bars" ></i>
+                <span className='icon-label--header'>Categories</span>
+            </div>
             <Link to={''} className='logo'>E-commerce</Link>
             {props.userData?
                 <div 
@@ -66,14 +74,7 @@ export default function Header(props){
                  
                 <span className='icon-label--header'>My cart</span>
             </Link>
-            <div 
-                className='icon-container--header bars-icon-container--header' 
-                onClick={handleBarsClick}
-                onMouseLeave={handleBarsMenuMouseLeave}
-                >     
-                <i className="fa-solid fa-bars" ></i>
-                <span className='icon-label--header'>Categories</span>
-            </div>
+            
             <BarsMenu 
                 isOpen={isMenuOpen.barsIconContainer} 
                 setIsOpen={setIsMenuOpen}
