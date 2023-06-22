@@ -44,7 +44,7 @@ export default function Header(props){
                 onMouseLeave={handleBarsMenuMouseLeave}
                 >     
                 <i className="fa-solid fa-bars" ></i>
-                <span className='icon-label--header'>Categories</span>
+                {/* <span className='icon-label--header'>Categories</span> */}
             </div>
             <Link to={''} className='logo'>E-commerce</Link>
             {props.userData?
