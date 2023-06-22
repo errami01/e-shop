@@ -44,11 +44,8 @@ export default function Header(props){
                 >     
                 <i className="fa-solid fa-bars" ></i>
                 <BarsMenu 
-                isOpen={isMenuOpen.barsIconContainer} 
-                setIsOpen={setIsMenuOpen}
-                onMouseLeave={handleBarsMenuMouseLeave}
-                onMouseEnter={handleBarsMenuMouseEnter}
-                categories={props.categories}/>
+                 isOpen={isMenuOpen.barsIconContainer} 
+                 categories={props.categories}/>
             </div>
             <Link to={''} className='logo'>E-commerce</Link>
             {props.userData?
