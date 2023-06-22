@@ -4,18 +4,37 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 export default function Header(props){
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState({
+        loggedInIcon: false,
+        barsIconContainer:false
+
+    })
     function handleBarsClick(){
-        setIsMenuOpen(prev=> !prev)
+        // setIsMenuOpen(prev=> !prev)
     }
-    function handleBarsMenuMouseLeave(){
-        setIsMenuOpen(false)
+    function handleBarsAndUserMenuMouseLeave(event){
+        const targetId = event.currentTarget.id
+        setIsMenuOpen((prev)=> {
+            const newObj = {...prev}
+            newObj[targetId] = false
+            console.log(newObj)
+            return newObj
+        })
     }
     function handleBarsMenuMouseEnter(){
-        setIsMenuOpen(true)
+        // setIsMenuOpen(true)
     }
-    function handleUserIconClick(){
+    function handleBarsMenuMouseLeave(){
 
+    }
+    function showBarsAndUserMenu(event){
+        const targetId = event.currentTarget.id
+        setIsMenuOpen((prev)=> {
+            const newObj = {...prev}
+            newObj[targetId] = !newObj[targetId]
+            console.log(newObj)
+            return newObj
+        })
     }
     return(
         <header className="header-container">
@@ -23,10 +42,17 @@ export default function Header(props){
                 <div className='logo'>E-commerce</div>
             </Link>
             {props.userData?
-                <div id='logged-in-icon' className='user-icon-header icon-container--header'>
-                    <i class="fa-solid fa-user-check"></i>
-                    <span className='icon-label--header'>Hello {props.userData.name.firstname}</span>
-                    <UserMenuTop />
+                <div 
+                    id='loggedInIcon' 
+                    className='user-icon-header icon-container--header' 
+                    onClick ={showBarsAndUserMenu}
+                    onMouseLeave={handleBarsAndUserMenuMouseLeave}
+                    >
+                        <i className="fa-solid fa-user-check"></i>
+                        <span className='icon-label--header'>Hello {props.userData.name.firstname}</span>
+                        <UserMenuTop
+                            isOpen = {isMenuOpen.loggedInIcon}
+                        />
                 </div>               
                 :
                 <Link to='login' className='user-icon-header icon-container--header'>
@@ -51,7 +77,7 @@ export default function Header(props){
                 <span className='icon-label--header'>Categories</span>
             </div>
             <BarsMenu 
-                isOpen={isMenuOpen} 
+                isOpen={isMenuOpen.barsIconContainer} 
                 setIsOpen={setIsMenuOpen}
                 onMouseLeave={handleBarsMenuMouseLeave}
                 onMouseEnter={handleBarsMenuMouseEnter}
