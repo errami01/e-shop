@@ -13,12 +13,10 @@ export default function Header(props){
         // setIsMenuOpen(prev=> !prev)
     }
     function handleBarsAndUserMenuMouseLeave(event){
-        const targetId = event.currentTarget.id
-        setIsMenuOpen((prev)=> {
-            const newObj = {...prev}
-            newObj[targetId] = false
-            console.log(newObj)
-            return newObj
+        console.log(isMenuOpen)
+        setIsMenuOpen({
+            loggedInIcon: false,
+            barsIconContainer:false
         })
     }
     function handleBarsMenuMouseEnter(){
@@ -39,6 +37,7 @@ export default function Header(props){
     return(
         <header className="header-container">
             <div 
+                id='barsIconContainer'
                 className='icon-container--header bars-icon-container--header' 
                 onClick={showBarsAndUserMenu}
                 onMouseLeave={handleBarsMenuMouseLeave}
