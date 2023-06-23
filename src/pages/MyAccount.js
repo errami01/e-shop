@@ -1,5 +1,5 @@
 
-import "./MyAccount.css"
+import "./CustAccount.css"
 import { useOutletContext } from "react-router-dom"
 import { requireAuth } from "../utils/requireAuth"
 
