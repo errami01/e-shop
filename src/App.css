@@ -1,7 +1,5 @@
 *{
   box-sizing: border-box;
-  /* margin:0;
-  padding:0; */
 }
 :root{
   margin: 0;
@@ -9,25 +7,19 @@
   --first-Color: #F89B1D;
   --second-Color: #CB653E;
   --text-color: #57504f;
+  --body-background-color: #ffe8c8;
   --header-height: 75px;
   font-family: 'Roboto', sans-serif;  
-  /* width: 100%; */
-  
-
 }
 
 body{
-  /* padding: 0; */
   margin: 0;
-  background-color: #ffddae;
-  /* width: 100%; */
+  background-color: var(--body-background-color);
 }
 #root{
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #CB653E; */
-  /* width: 100%; */
 }
 .App {
   text-align: center;
