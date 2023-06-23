@@ -9,11 +9,15 @@
     overflow: hidden;
     padding: 0;
 }
-.container--userMenuTop li{
+.container--userMenuTop a{
+    display: block;
     color: white;
     font-size: 0.7em;
     font-weight: 400;
     padding: 10px 0 10px 30px;
     width: 100%;
     cursor: pointer;
+}
+.container--userMenuTop a:hover{
+    background-color: var(--second-Color);
 }
