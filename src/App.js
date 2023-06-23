@@ -9,7 +9,7 @@ import Login, {action as loginAction, loader as loginLoader} from './pages/Login
 import NotFound from './pages/NotFound';
 import ErrorComponent from './components/ErrorComponent';
 import CustomerLayout, {loader as customerLayoutLoader} from './layout/CustomerLayout'
-import MyAccount, {loader as myAccountLoader} from './pages/MyAccount';
+import CustAccount, {loader as myAccountLoader} from './pages/CustAccount';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -28,7 +28,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     >
         <Route 
           index
-          element={<MyAccount />}
+          element={<CustAccount />}
           loader={myAccountLoader}
         />
 

@@ -7,7 +7,7 @@ export function loader(){
     requireAuth()
     return null
 }
-export default function MyAccount(){
+export default function CustAccount(){
     const {userData} = useOutletContext()
     const {name, email, phone, address} = userData
     return(
