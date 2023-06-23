@@ -1,32 +1,25 @@
 .myAccount-container{
 
     width: 100%;
-    /* height: 500px; */
     box-shadow: 0 0 9px 0px #ac9b9b;
-    /* background-color: red; */
-    /* padding: 20px; */
-    --border-color: #ac9b9b;
+    background-color: white;
+    --border-color: #ffce8b;
     --margin : 5px;
+    border-radius: 15px;
 }
 .title--myAccount{
     font-size: 1.5em;
     color: var(--text-color);
-    /* margin: 0 0 15px 0; */
-    /* margin-bottom: 15px; */
     border-bottom: 1px solid var(--border-color);
     padding: 0 0 0 var(--margin);
 }
 .grid--myAccount{
     display: grid;
-    /* justify-content: center; */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows:  repeat(3, minmax(200px, auto));
     gap: 10px;
-    /* background-color: #ac9b9b; */
-
 }
 .info--myAccount{
-    /* background-color: blue; */
     border: 1px solid var(--border-color);
     margin: 0 var(--margin)
 }
