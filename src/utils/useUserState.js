@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export function useUserState(){
-    const [local, setLocal] = useState()
+export function useUserState(initialState){
+    const [local, setLocal] = useState(initialState)
     function setUserState(data){
         if(!data) localStorage.removeItem('user') 
         else localStorage.setItem('user', JSON.stringify(data))
