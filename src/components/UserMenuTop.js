@@ -6,11 +6,11 @@ export default function UserMenuTop(props){
     }
     return(
         <ul className={`container--userMenuTop ${props.isOpen? 'openedMenu':'closedMenu'}`} onClick={handleUserMenuTopClick}>
-            <Link>Your account</Link>
-            <Link>Your orders</Link>
-            <Link>Mailbox</Link>
-            <Link>Your wishlist</Link>
-            <Link>Logout</Link>
+            <Link to={'customer'}>Your account</Link>
+            <Link to={'customer/orders'}>Your orders</Link>
+            <Link to={'customer/mailbox'}>Mailbox</Link>
+            <Link to={'customer/wishlist'}>Your Wishlist</Link>
+            <Link >Logout</Link>
         </ul>
     )
 }
