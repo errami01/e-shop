@@ -32,17 +32,14 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           index
           element={<CustAccount />}
-          loader={myAccountLoader}
         />
         <Route 
           path='orders'
           element={<CustOrders />}
-          loader={myAccountLoader}
         />
         <Route 
           path='mailbox'
           element={<CustMailbox />}
-          loader={myAccountLoader}
         />
         <Route 
           path='wishlist'
