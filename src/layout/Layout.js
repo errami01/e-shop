@@ -10,8 +10,7 @@ export async function loader(){
 
 export default function Layout(){
     const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cart'))||[])
-    const [userData, setUserData] = useUserState()
-    // console.log(setUserData)
+    const [userData, setUserData] = useUserState(()=>JSON.parse(localStorage.getItem('user')))
     const cartItemsNumber = useRef()
     const categories = useLoaderData()
     cartItemsNumber.current= countCartItems(cartItems)
