@@ -3,6 +3,7 @@ import "./CustomerLayout.css"
 import { fetchSingleUser } from "../utils/fetcher"
 import { useEffect } from "react"
 import { requireAuth } from "../utils/requireAuth"
+import UserMenuTop from "../components/UserMenuTop"
 
 export async function loader(){
     requireAuth()
@@ -14,6 +15,7 @@ export default function CustomerLayout(){
     useEffect(()=> setUserData(userLoadedData),[userLoadedData])
     return(
         <div className="customer-layout-container">
+            <UserMenuTop isBig={true}/>
             {userData && <Outlet context={{userData}}/>}
         </div>
     )
