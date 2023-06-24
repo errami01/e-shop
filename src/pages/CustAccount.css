@@ -1,11 +1,9 @@
 .myAccount-container{
-
-    width: 100%;
-    box-shadow: 0 0 9px 0px #ac9b9b;
+    min-width: 70%;
+    box-shadow: var(--box-shadow);
     background-color: white;
-    --border-color: #ffce8b;
-    --margin : 5px;
-    border-radius: 15px;
+    border-radius: 5px;
+    padding-bottom: 20px;
 }
 .title--myAccount{
     font-size: 1.5em;
@@ -18,6 +16,7 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows:  repeat(3, minmax(200px, auto));
     gap: 10px;
+    justify-content: center;
 }
 .info--myAccount{
     border: 1px solid var(--border-color);
