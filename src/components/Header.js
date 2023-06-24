@@ -48,6 +48,7 @@ export default function Header(props){
                         <span className='icon-label--header'>Hello {props.userData.name.firstname}</span>
                         <UserMenuTop
                             isOpen = {isMenuOpen.loggedInIcon}
+                            isBig={false}
                         />
                 </div>               
                 :
