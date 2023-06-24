@@ -1,6 +1,9 @@
 .customer-layout-container{
+    --border-color: #ffce8b;
+    --margin : 15px;
+    --box-shadow: 0 0 2px 0px #c2bcbc;
     display: flex;
-    /* background-color: green; */
     justify-content: center;
+    gap: 10px;
     width: 90%;
 }
