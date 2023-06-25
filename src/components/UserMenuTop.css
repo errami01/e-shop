@@ -28,7 +28,7 @@
         display: flex;
         flex-direction: column;
         width: 300px;
-        padding:var(--margin) 0  ;
+        padding:30px 0  ;
         margin:0;
         /* padding-top: var(--margin); */
         border-radius: 5px;
@@ -39,10 +39,12 @@
         display: block;
         color: var(--text-color);
         font-size: 1em;
-        font-weight: 400;
+        font-weight: 600;
+        letter-spacing: 0.1em;
         padding: var(--margin);
         width: 100%;
         cursor: pointer;
+        /* border-top: 1px solid var(--border-color); */
     }
     .big-container--userMenuTop a:hover{
         background-color: var(--body-background-color);
