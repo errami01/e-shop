@@ -5,7 +5,6 @@
     background-color: var(--first-Color);
     top: 100%;
     margin:0;
-    list-style-type: none;
     overflow: hidden;
     padding: 0;
 }
@@ -20,4 +19,32 @@
 }
 .container--userMenuTop a:hover{
     background-color: var(--second-Color);
+}
+.big-container--userMenuTop{
+    display: none;
+}
+@media screen and (min-width: 700px){
+    .big-container--userMenuTop{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        padding:var(--margin) 0  ;
+        margin:0;
+        /* padding-top: var(--margin); */
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: var(--box-shadow);
+    }
+    .big-container--userMenuTop a{
+        display: block;
+        color: var(--text-color);
+        font-size: 1em;
+        font-weight: 400;
+        padding: var(--margin);
+        width: 100%;
+        cursor: pointer;
+    }
+    .big-container--userMenuTop a:hover{
+        background-color: var(--body-background-color);
+    }
 }
