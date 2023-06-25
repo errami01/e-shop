@@ -11,8 +11,8 @@ export default function CustAccount(){
     const {userData} = useOutletContext()
     const {name, email, phone, address} = userData
     return(
-        <div className="myAccount-container">
-            <h1 className="title--myAccount">Your Account</h1>
+        <div className="myAccount-container customer-page-container">
+            <h1 className="title--customerLayout">Your Account</h1>
             <div className="grid--myAccount">
                 <div className="info--myAccount">
                     <header className="section-header--myAccount">
