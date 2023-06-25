@@ -1,5 +1,8 @@
 export default function CustWishlist(){
     return(
-        <h1>CustWishlist goes here</h1>
+        <div className="custMailbox-container customer-page-container">
+            <h1 className="title--customerLayout">Your Wishlist</h1>
+
+        </div>
     )
 }
