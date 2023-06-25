@@ -13,7 +13,7 @@
     color: white;
     font-size: 0.7em;
     font-weight: 400;
-    padding: 10px 0 10px 30px;
+    padding: 10px 0 10px 15px;
     width: 100%;
     cursor: pointer;
 }
@@ -22,6 +22,9 @@
 }
 .big-container--userMenuTop{
     display: none;
+}
+.cust-menu-ul i{
+    margin-right: 10px;
 }
 @media screen and (min-width: 700px){
     .big-container--userMenuTop{
