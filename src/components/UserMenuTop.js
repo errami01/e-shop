@@ -9,14 +9,27 @@ export default function UserMenuTop(props){
         <ul 
             className={
                 `${isBig? 'big-container--userMenuTop':'container--userMenuTop'} 
-                ${isOpen? 'openedMenu':'closedMenu'}`} 
+                ${isOpen? 'openedMenu':'closedMenu'}
+                cust-menu-ul `
+            } 
             onClick={handleUserMenuTopClick}
             >
-            <Link to={'/customer'}>Your account</Link>
-            <Link to={'/customer/orders'}>Your orders</Link>
-            <Link to={'/customer/mailbox'}>Mailbox</Link>
-            <Link to={'/customer/wishlist'}>Your Wishlist</Link>
-            <Link >Logout</Link>
+            <Link to={'/customer'}>
+                <i className="fa-regular fa-user" ></i>
+                Your account</Link>
+            <Link to={'/customer/orders'}>
+            <i className="fa-solid fa-bag-shopping"></i>
+                Your orders
+                </Link>
+            <Link to={'/customer/mailbox'}>
+                <i className="fa-regular fa-envelope"></i>
+                Mailbox</Link>
+            <Link to={'/customer/wishlist'}>
+                <i class="fa-regular fa-heart"></i>
+                Your Wishlist</Link>
+            <Link >
+                <i className="fa-solid fa-right-from-bracket"></i>
+                Logout</Link>
         </ul>
     )
 }
