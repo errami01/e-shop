@@ -1,5 +1,9 @@
+
 export default function CustMailbox(){
     return(
-        <h1>Mailbox goes here</h1>
+        <div className="custMailbox-container customer-page-container">
+            <h1 className="title--customerLayout">Messages</h1>
+
+        </div>
     )
 }
