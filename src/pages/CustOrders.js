@@ -1,5 +1,8 @@
 export default function CustOrders(){
     return(
-        <h1>CustOrders goes here</h1>
+        <div className="custMailbox-container customer-page-container">
+            <h1 className="title--customerLayout">Your orders</h1>
+
+        </div>
     )
 }
