@@ -1,7 +1,7 @@
 
 import "./CustAccount.css"
 import { useOutletContext } from "react-router-dom"
-import { requireAuth } from "../utils/requireAuth"
+import { requireAuth } from "../../utils/requireAuth"
 
 export function loader(){
     requireAuth()
