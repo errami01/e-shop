@@ -1,0 +1,19 @@
+.title--custOrders{
+    margin-bottom:0
+}
+.nav-bar--custOrders{
+    margin:0 10px;
+    padding: 0;
+    border-bottom: 1px solid var(--body-background-color);
+}
+.nav-bar--custOrders a{
+    display: inline-block;
+    height: 40px;
+    padding: 10px 20px;
+    color: grey;
+    font-weight: 600;
+}
+
+.nav-bar--custOrders a:hover{
+    color: var(--first-Color)
+}
