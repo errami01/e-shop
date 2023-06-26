@@ -17,6 +17,6 @@
 .title--customerLayout{
     font-size: 1.5em;
     color: var(--text-color);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--body-background-color);
     padding: 0 0 0 var(--margin);
 }
