@@ -1,4 +1,4 @@
-
+import './OpenOrders.css'
 export default function OpenOrders(){
     return(
         <div className="container--open-orders">
