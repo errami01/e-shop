@@ -11,6 +11,8 @@ import ErrorComponent from './components/ErrorComponent';
 import CustomerLayout, {loader as customerLayoutLoader} from './layout/CustomerLayout'
 import CustAccount, {loader as myAccountLoader} from './pages/customer/CustAccount';
 import CustOrders from './pages/customer/CustOrders';
+import OpenOrders from './pages/customer/OpenOrders';
+import ClosedOrders from './pages/customer/ClosedOrders';
 import CustMailbox from './pages/customer/CustMailbox';
 import CustWishlist from './pages/customer/CustWishlist';
 const router = createBrowserRouter(createRoutesFromElements(
@@ -36,7 +38,16 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           path='orders'
           element={<CustOrders />}
-        />
+        >
+          <Route
+            path='open' 
+            element={<OpenOrders />}
+          />
+          <Route
+            path='closed' 
+            element={<ClosedOrders />}
+          />
+        </Route>
         <Route 
           path='mailbox'
           element={<CustMailbox />}
