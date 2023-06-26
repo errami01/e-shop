@@ -12,7 +12,7 @@ import CustomerLayout, {loader as customerLayoutLoader} from './layout/CustomerL
 import CustAccount, {loader as myAccountLoader} from './pages/customer/CustAccount';
 import CustOrders from './pages/customer/CustOrders';
 import CustMailbox from './pages/customer/CustMailbox';
-import CustWishlist from './pages/CustWishlist';
+import CustWishlist from './pages/customer/CustWishlist';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
