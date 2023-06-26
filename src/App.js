@@ -40,7 +40,7 @@ const router = createBrowserRouter(createRoutesFromElements(
           element={<CustOrders />}
         >
           <Route
-            path='open' 
+            index
             element={<OpenOrders />}
           />
           <Route
