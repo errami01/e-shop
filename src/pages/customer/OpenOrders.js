@@ -1,5 +1,13 @@
+
 export default function OpenOrders(){
     return(
-        <h1>Open orders go here</h1>
+        <div className="container--open-orders">
+            <div className="empty--open-orders">
+                <i className="fa-solid fa-cart-flatbed-suitcase"></i>
+                <h5>You have not placed any orders!</h5>
+                <p>All your orders will be saved here so you can check their status at any time.</p>
+            </div>
+            
+        </div>
     )
 }
