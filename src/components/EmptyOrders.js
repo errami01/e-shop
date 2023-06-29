@@ -5,5 +5,6 @@ export default function EmptyOrders(props){
             <div className="container--EmptyOrders">
             </div>   
                 <i className="fa-solid fa-cart-flatbed-suitcase"></i> 
+                <h5>{props.notification}</h5>
     )
 }
