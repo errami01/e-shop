@@ -34,3 +34,6 @@
     cursor: pointer;
     box-shadow: 0px 2px 5px 0px gray;
 }
+.container--EmptyOrders button:active{
+    box-shadow: none;
+}
