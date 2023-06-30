@@ -37,3 +37,6 @@
 .container--EmptyOrders button:active{
     box-shadow: none;
 }
+.container--EmptyOrders button:hover{
+    background-color: var(--second-Color);
+}
