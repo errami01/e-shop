@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function EmptyCustPage(props){
     return(
             <div className="container--EmptyCustPage">
-                <i className="fa-solid fa-cart-flatbed-suitcase"></i>
+                {props.icon}
                 <h5>{props.notification}</h5>
                 <p>{props.explanation}</p>
                 {props.btnText && <Link to='/'>
