@@ -6,12 +6,14 @@
     padding: 10px;
 }
 .container--EmptyCustPage i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 3em;
     background-color: var(--body-background-color);
     color: var(--first-Color);
     width: 100px;
     height: 100px;
-    padding: 20px;
     border-radius: 50%;
 }
 .container--EmptyCustPage p{
