@@ -38,6 +38,7 @@
     margin-left: auto;
     margin-right: 20px;
     color: white;
+    cursor: pointer;
 }
 .cartIconLink-header{
     position: relative;
