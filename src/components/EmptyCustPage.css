@@ -1,11 +1,11 @@
-.container--EmptyOrders{
+.container--EmptyCustPage{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 30px 0;
     padding: 10px;
 }
-.container--EmptyOrders i{
+.container--EmptyCustPage i{
     font-size: 3em;
     background-color: var(--body-background-color);
     color: var(--first-Color);
@@ -14,14 +14,14 @@
     padding: 20px;
     border-radius: 50%;
 }
-.container--EmptyOrders p{
+.container--EmptyCustPage p{
     text-align: center;
     font-size: 0.9em;
     color: var(--text-color);
     width: 400px;
     margin:0
 }
-.container--EmptyOrders button{
+.container--EmptyCustPage button{
     margin-top: 30px;
     height: 50px;
     padding: 0 20px;
@@ -34,9 +34,9 @@
     cursor: pointer;
     box-shadow: 0px 2px 5px 0px gray;
 }
-.container--EmptyOrders button:active{
+.container--EmptyCustPage button:active{
     box-shadow: none;
 }
-.container--EmptyOrders button:hover{
+.container--EmptyCustPage button:hover{
     background-color: var(--second-Color);
 }
