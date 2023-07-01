@@ -7,9 +7,9 @@ export default function EmptyCustPage(props){
                 <i className="fa-solid fa-cart-flatbed-suitcase"></i>
                 <h5>{props.notification}</h5>
                 <p>{props.explanation}</p>
-                <Link to='/'>
+                {props.btnText && <Link to='/'>
                   <button>{props.btnText}</button>
-                </Link>
+                </Link>}
             </div>  
     )
 }
