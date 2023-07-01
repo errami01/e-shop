@@ -1,5 +1,5 @@
 import './UserMenuTop.css'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 export default function UserMenuTop(props){
     const {isBig=false, isOpen=true} = props
     function handleUserMenuTopClick(e){
@@ -14,19 +14,48 @@ export default function UserMenuTop(props){
             } 
             onClick={handleUserMenuTopClick}
             >
-            <Link to={'/customer'}>
+            <NavLink 
+                to={'/customer'}
+                end
+                style={({isActive})=>{
+                    return{
+                        backgroundColor: isActive? 'var(--body-background-color)':''
+                    }
+                }}
+                >
                 <i className="fa-regular fa-user" ></i>
-                Your account</Link>
-            <Link to={'/customer/orders'}>
+                Your account</NavLink>
+            <NavLink 
+                to={'/customer/orders'}
+                style={({isActive})=>{
+                    return{
+                        backgroundColor: isActive? 'var(--body-background-color)':''
+                    }
+                }}
+                >
             <i className="fa-solid fa-bag-shopping"></i>
                 Your orders
-                </Link>
-            <Link to={'/customer/mailbox'}>
+                </NavLink>
+            <NavLink 
+                to={'/customer/mailbox'}
+                style={({isActive})=>{
+                    return{
+                        backgroundColor: isActive? 'var(--body-background-color)':''
+                    }
+                }}
+                >
                 <i className="fa-regular fa-envelope"></i>
-                Mailbox</Link>
-            <Link to={'/customer/wishlist'}>
+                Mailbox</NavLink>
+            <NavLink 
+                to={'/customer/wishlist'}
+                style={({isActive})=>{
+                    return{
+                        backgroundColor: isActive? 'var(--body-background-color)':''
+                    }
+                }}
+                >
                 <i class="fa-regular fa-heart"></i>
-                Your Wishlist</Link>
+                Your Wishlist</NavLink>
             <Link >
                 <i className="fa-solid fa-right-from-bracket"></i>
                 Logout</Link>
