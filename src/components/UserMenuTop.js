@@ -65,7 +65,7 @@ export default function UserMenuTop(props){
                 >
                 <i class="fa-regular fa-heart"></i>
                 Your Wishlist</NavLink>
-            <Link >
+            <Link onClick={()=>props.setUserData()} >
                 <i className="fa-solid fa-right-from-bracket"></i>
                 Logout</Link>
         </ul>
