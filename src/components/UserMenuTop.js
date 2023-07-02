@@ -1,6 +1,7 @@
 import './UserMenuTop.css'
 import { Link, NavLink } from 'react-router-dom'
 export default function UserMenuTop(props){
+    const activeBackgroundColor = '#ffdba8'
     const {isBig=false, isOpen=true} = props
     function handleUserMenuTopClick(e){
         e.stopPropagation()
@@ -20,7 +21,7 @@ export default function UserMenuTop(props){
                 style={({isActive})=>{
                     if(isBig){
                         return{
-                        backgroundColor: isActive? 'var(--body-background-color)':''
+                        backgroundColor: isActive? activeBackgroundColor:''
                         }
                     }
                 }}
@@ -32,7 +33,7 @@ export default function UserMenuTop(props){
                 style={({isActive})=>{
                     if(isBig){
                         return{
-                        backgroundColor: isActive? 'var(--body-background-color)':''
+                        backgroundColor: isActive? activeBackgroundColor:''
                         }
                     }
                 }}
@@ -45,11 +46,9 @@ export default function UserMenuTop(props){
                 style={({isActive})=>{
                     if(isBig){
                         return{
-                        backgroundColor: isActive? 'var(--body-background-color)':''
-                    }
-
-                    }
-                    
+                        backgroundColor: isActive? activeBackgroundColor:''
+                        }
+                    }    
                 }}
                 >
                 <i className="fa-regular fa-envelope"></i>
@@ -59,7 +58,7 @@ export default function UserMenuTop(props){
                 style={({isActive})=>{
                     if(isBig){
                         return{
-                            backgroundColor: isActive? 'var(--body-background-color)':''
+                            backgroundColor: isActive? activeBackgroundColor:''
                         }
                     }
                 }}
