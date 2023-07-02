@@ -26,6 +26,7 @@ export default function Layout(){
                 cartItemsNumber={cartItemsNumber.current} 
                 categories={categories}
                 userData={userData}
+                setUserData={setUserData}
                 />
             <Outlet 
                 context={
