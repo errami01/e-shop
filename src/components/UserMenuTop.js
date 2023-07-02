@@ -18,8 +18,10 @@ export default function UserMenuTop(props){
                 to={'/customer'}
                 end
                 style={({isActive})=>{
-                    return{
+                    if(isBig){
+                        return{
                         backgroundColor: isActive? 'var(--body-background-color)':''
+                        }
                     }
                 }}
                 >
@@ -28,8 +30,10 @@ export default function UserMenuTop(props){
             <NavLink 
                 to={'/customer/orders'}
                 style={({isActive})=>{
-                    return{
+                    if(isBig){
+                        return{
                         backgroundColor: isActive? 'var(--body-background-color)':''
+                        }
                     }
                 }}
                 >
@@ -39,9 +43,13 @@ export default function UserMenuTop(props){
             <NavLink 
                 to={'/customer/mailbox'}
                 style={({isActive})=>{
-                    return{
+                    if(isBig){
+                        return{
                         backgroundColor: isActive? 'var(--body-background-color)':''
                     }
+
+                    }
+                    
                 }}
                 >
                 <i className="fa-regular fa-envelope"></i>
@@ -49,8 +57,10 @@ export default function UserMenuTop(props){
             <NavLink 
                 to={'/customer/wishlist'}
                 style={({isActive})=>{
-                    return{
-                        backgroundColor: isActive? 'var(--body-background-color)':''
+                    if(isBig){
+                        return{
+                            backgroundColor: isActive? 'var(--body-background-color)':''
+                        }
                     }
                 }}
                 >
