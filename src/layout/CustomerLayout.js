@@ -15,7 +15,7 @@ export default function CustomerLayout(){
     useEffect(()=> setUserData(userLoadedData),[userLoadedData])
     return(
         <div className="customer-layout-container">
-            <UserMenuTop isBig={true}/>
+            <UserMenuTop isBig={true} setUserData={setUserData}/>
             {userData && <Outlet context={{userData}}/>}
         </div>
     )
