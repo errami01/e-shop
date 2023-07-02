@@ -49,6 +49,7 @@ export default function Header(props){
                         <UserMenuTop
                             isOpen = {isMenuOpen.loggedInIcon}
                             isBig={false}
+                            setUserData={props.setUserData}
                         />
                 </div>               
                 :
