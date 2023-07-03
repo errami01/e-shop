@@ -8,7 +8,7 @@
     overflow: hidden;
     padding: 0;
 }
-.container--userMenuTop a{
+.menu-item-userMenutop{
     display: block;
     color: white;
     font-size: 0.7em;
@@ -16,6 +16,9 @@
     padding: 10px 0 10px 15px;
     width: 100%;
     cursor: pointer;
+}
+.logout--userMenuTop{
+    color: red;
 }
 .container--userMenuTop a:hover{
     background-color: var(--second-Color);

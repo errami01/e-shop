@@ -16,6 +16,7 @@ export default function UserMenuTop(props){
             onClick={handleUserMenuTopClick}
             >
             <NavLink 
+                className='menu-item-userMenutop'
                 to={'/customer'}
                 end
                 style={({isActive})=>{
@@ -29,6 +30,7 @@ export default function UserMenuTop(props){
                 <i className="fa-regular fa-user" ></i>
                 Your account</NavLink>
             <NavLink 
+                className='menu-item-userMenutop'
                 to={'/customer/orders'}
                 style={({isActive})=>{
                     if(isBig){
@@ -42,6 +44,7 @@ export default function UserMenuTop(props){
                 Your orders
                 </NavLink>
             <NavLink 
+                className='menu-item-userMenutop'
                 to={'/customer/mailbox'}
                 style={({isActive})=>{
                     if(isBig){
@@ -54,6 +57,7 @@ export default function UserMenuTop(props){
                 <i className="fa-regular fa-envelope"></i>
                 Mailbox</NavLink>
             <NavLink 
+                className='menu-item-userMenutop'
                 to={'/customer/wishlist'}
                 style={({isActive})=>{
                     if(isBig){
@@ -65,7 +69,7 @@ export default function UserMenuTop(props){
                 >
                 <i class="fa-regular fa-heart"></i>
                 Your Wishlist</NavLink>
-            <Link onClick={()=>props.setUserData()} >
+            <Link onClick={()=>props.setUserData()} className='logout--userMenuTop menu-item-userMenutop'>
                 <i className="fa-solid fa-right-from-bracket"></i>
                 Logout</Link>
         </ul>
