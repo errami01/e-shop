@@ -20,7 +20,7 @@ export default function CategoryContainer({category,products}){
     window.addEventListener('resize',()=> {
         setProductsToRender(setNumberOfProduct())
     })
-    const imagesToRender = [... products]
+    const imagesToRender = [...products]
     imagesToRender.length = productsToRender
     const images = imagesToRender.map(
         product=><ProductCard key={nanoid()}  {...product}/>
