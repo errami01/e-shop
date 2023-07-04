@@ -13,7 +13,7 @@ export default function CartItem(props){
     return (
         <div className="cartItem-container">
                 <Link to={`/${item.category}/${item.id}`} className='image-link-cartItem'>
-                    <img className="img-cartItem" src={item.image}/>
+                    <img className="img-cartItem" src={item.image} alt='cart item'/>
                 </Link>
                 <h5 className='item-title-cartItem'>{item.title}</h5>
                 <p className='delevery-date-cartItem'>Delivery between Wednesday, May 17, 2023 and Friday, May 19, 2023</p> 
