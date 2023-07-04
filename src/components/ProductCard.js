@@ -10,7 +10,7 @@ export default function ProductCard(product){
         <div className="product-container">
             <Link  to={`/${product.category}/${product.id}`}>
             <section className='product-image-section'>
-                <img className="product-image" src={image} />
+                <img className="product-image" src={image} alt='product image'/>
             </section>
             <section className='name-and-rating'>
                 <div className='price'>{Number.isInteger(price)? price+'.00':price}$</div>
