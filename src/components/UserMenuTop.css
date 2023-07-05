@@ -8,7 +8,7 @@
     overflow: hidden;
     padding: 0;
 }
-.menu-item-userMenutop{
+.container--userMenuTop .menu-item--userMenutop{
     display: block;
     color: white;
     font-size: 0.7em;
@@ -17,7 +17,7 @@
     width: 100%;
     cursor: pointer;
 }
-.logout--userMenuTop{
+.container--userMenuTop .logout--userMenuTop{
     color: red;
 }
 .container--userMenuTop a:hover{
@@ -41,7 +41,7 @@
         background-color: white;
         box-shadow: var(--box-shadow);
     }
-    .big-container--userMenuTop a{
+    .big-container--userMenuTop .menu-item--userMenutop{
         display: block;
         color: var(--text-color);
         font-size: 1em;
@@ -51,6 +51,9 @@
         width: 100%;
         cursor: pointer;
         /* border-top: 1px solid var(--border-color); */
+    }
+    .big-container--userMenuTop .logout--userMenuTop{
+        color: red;
     }
     .big-container--userMenuTop a:hover{
         background-color: var(--body-background-color);
