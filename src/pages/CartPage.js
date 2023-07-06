@@ -1,8 +1,8 @@
 import CartItem from "../components/CartItem"
 import { useOutletContext } from "react-router-dom"
-import './Cart.css'
+import './CartPage.css'
 import {nanoid} from 'nanoid'
-export default function Cart(){
+export default function CartPage(){
     const {cart, cartItemsNumber} = useOutletContext()
     const [cartItems, setCartItems] = cart;
     const cartItemsElements = cartItems.map((item)=>{

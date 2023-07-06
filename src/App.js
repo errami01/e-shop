@@ -4,7 +4,7 @@ import Home, {loader as homeLoader} from './pages/Home'
 import Layout, {loader as layoutLoader} from './layout/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
-import Cart from './pages/Cart';
+import CartPage from './pages/CartPage';
 import Login, {action as loginAction, loader as loginLoader} from './pages/Login';
 import NotFound from './pages/NotFound';
 import ErrorComponent from './components/ErrorComponent';
@@ -61,7 +61,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     </Route>
     <Route 
       path='cart'
-      element={<Cart />}
+      element={<CartPage />}
       />
     <Route 
       path='login'
