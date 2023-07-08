@@ -1,5 +1,7 @@
 import { getData, fetchSingleProduct } from "../utils/fetcher"
-import { useLoaderData, useOutletContext } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "../contexts/CartContext"
 import "./ProductDetails.css"
 import { useRate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
@@ -9,8 +11,8 @@ export function loader({params}){
 export default function PrdoductDetails(){
     const product = useLoaderData()
     const stars = useRate(product.rating.rate)
-    const {cart} = useOutletContext()
-    const [cartItems, setCartItems] = cart;
+    const cart = useContext(CartContext)
+    const {cartItems, setCartItems} = cart;
     const inCart = cartItems.filter(item => item.id===product.id)[0]
     function handleAddToCart(){
         setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
