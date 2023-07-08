@@ -1,9 +1,12 @@
 import './Header.css'
 import BarsMenu from './BarsMenu'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { CartContext } from '../contexts/CartContext'
 import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 export default function Header(props){
+    const cart = useContext(CartContext)
+    const {cartItemsNumber} = cart
     const [isMenuOpen, setIsMenuOpen] = useState({
         loggedInIcon: false,
         barsIconContainer:false
@@ -61,7 +64,7 @@ export default function Header(props){
             
             <Link className='cartIconLink-header icon-container--header' to='cart'>
                  <i className="fa-solid fa-cart-shopping">
-                    {props.cartItemsNumber>0 && <span className='items-counter-header'>{props.cartItemsNumber}</span>}
+                    {cartItemsNumber>0 && <span className='items-counter-header'>{cartItemsNumber}</span>}
                  </i>
                  
                 <span className='icon-label--header'>My cart</span>

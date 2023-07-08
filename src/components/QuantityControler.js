@@ -1,9 +1,10 @@
 import './QuantityControler.css'
-import { useOutletContext } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext'
 //This component is rendered in CartItem.js and productDetails
 export  default function QuantityControler(props){
-    const {cart} = useOutletContext()
-    const [cartItems, setCartItems] = cart
+    const cart = useContext(CartContext)
+    const {cartItems, setCartItems} = cart
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
     const targetItemIndex = cartItems.indexOf(targetItem)
     function handleQuantity(event){

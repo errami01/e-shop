@@ -1,10 +1,11 @@
 import CartItem from "../components/CartItem"
-import { useOutletContext } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "../contexts/CartContext"
 import './CartPage.css'
 import {nanoid} from 'nanoid'
 export default function CartPage(){
-    const {cart, cartItemsNumber} = useOutletContext()
-    const [cartItems, setCartItems] = cart;
+    const cart = useContext(CartContext)
+    const {cartItems, cartItemsNumber} = cart
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  key={nanoid()} item={item} cart={cart}/>
     })
