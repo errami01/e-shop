@@ -4,7 +4,9 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
+import { UserDataContext } from '../contexts/UserDataContext'
 export default function Header(props){
+    const {userData, setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
     const {cartItemsNumber} = cart
     const [isMenuOpen, setIsMenuOpen] = useState({
@@ -40,7 +42,7 @@ export default function Header(props){
                  categories={props.categories}/>
             </div>
             <Link to={''} className='logo'>E-commerce</Link>
-            {props.userData?
+            {userData?
                 <div 
                     id='loggedInIcon' 
                     className='user-icon-header icon-container--header' 
@@ -48,11 +50,11 @@ export default function Header(props){
                     onMouseLeave={handleBarsAndUserMenuMouseLeave}
                     >
                         <i className="fa-solid fa-user-check"></i>
-                        <span className='icon-label--header'>Hello {props.userData.name.firstname}</span>
+                        <span className='icon-label--header'>Hello {userData.name.firstname}</span>
                         <UserMenuTop
                             isOpen = {isMenuOpen.loggedInIcon}
                             isBig={false}
-                            setUserData={props.setUserData}
+                            setUserData={setUserData}
                         />
                 </div>               
                 :
