@@ -1,14 +1,15 @@
 
 import "./CustAccount.css"
-import { useOutletContext } from "react-router-dom"
 import { requireAuth } from "../../utils/requireAuth"
+import { useContext } from "react"
+import { UserDataContext } from "../../contexts/UserDataContext"
 
 export function loader(){
     requireAuth()
     return null
 }
 export default function CustAccount(){
-    const {userData} = useOutletContext()
+    const {userData} = useContext(UserDataContext)
     const {name, email, phone, address} = userData
     return(
         <div className="myAccount-container customer-page-container">
