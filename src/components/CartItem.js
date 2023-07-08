@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 //This component is rendered in Cart.js
 export default function CartItem(props){
     const {item} = props
-    const [cartItems, setCartItems] = props.cart
+    const {setCartItems} = props.cart
     function handleTrashClick(){
         setCartItems(prev=>{
             return prev.filter(product=> product.id !== item.id)
