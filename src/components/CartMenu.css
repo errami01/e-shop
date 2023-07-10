@@ -1,0 +1,13 @@
+.container--cartMenu{
+    width: 400px;
+    position: absolute;
+    top: 100%;
+    right: 00%;
+    max-height: 600px;
+    overflow: auto;
+    background-color: red;
+    border: 1px solid red;
+}
+.closed--cartMenu{
+    display: none;
+}
