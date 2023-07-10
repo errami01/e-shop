@@ -1,13 +1,17 @@
 .container-cart{
     background-color: rgb(250, 204, 139);
     padding-bottom: 20px;
+    padding-top: 10px;
     border-radius: 5px;
     /* height: 50%; */
 }
 .title-cart{
-    margin: 0;
-    margin-left: 20px;
-    padding-top: 10px;
+    margin: 0px 10px 0px 10px;
+    padding: 5px;
+    font-size: 1.3rem;
+    background-color: var(--first-Color);
+    border-radius: 5px;
+    color: white
 }
 .total-cart{
     display: grid;
@@ -19,7 +23,6 @@
     color: white;
     font-size: 1.3rem;
     font-weight: 900;
-    /* position: sticky; */
     bottom: 0;
 }
 .total-cart *{
