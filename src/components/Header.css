@@ -2,7 +2,7 @@
 .header-container{
     display: flex;
     justify-content: space-between;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 700;
     color: white;
     height: var(--header-height);
@@ -17,15 +17,15 @@
     display: flex;
     align-items: center;
     color: white;
-    /* margin-left: 10px; */
 }
 .icon-container--header{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
     font-weight: 400;
-    font-size: 1em;
+    background-color: red;
 }
 .icon-container--header:hover{
     color: var(--second-Color)
@@ -66,7 +66,6 @@
     align-items: flex-start;
     cursor: pointer;
 }
-
 
 @media screen and (min-width: 700px){
     .icon-label--header{
