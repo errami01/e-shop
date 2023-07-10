@@ -4,6 +4,7 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
+import CartMenu from './CartMenu'
 import { UserDataContext } from '../contexts/UserDataContext'
 export default function Header(props){
     const {userData, setUserData} = useContext(UserDataContext)
@@ -71,6 +72,7 @@ export default function Header(props){
                  
                 <span className='icon-label--header'>My cart</span>
             </Link>       
+                <CartMenu isOpen={isMenuOpen.cartMenu}/>       
         </header>
     )
 }
