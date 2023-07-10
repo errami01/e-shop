@@ -4,7 +4,7 @@ export default function CartMenu(props){
     const {isOpen} = props
     return(
         <div  className={`container--cartMenu ${!isOpen && 'closed--cartMenu'}`}>
-            <Cart />
+            <Cart withoutDeliveryDate/>
         </div>
     )
 }
