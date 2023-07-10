@@ -1,5 +1,6 @@
 .container--cartMenu{
     width: 400px;
+    max-width: 90vw;
     position: absolute;
     top: 100%;
     right: 00%;
