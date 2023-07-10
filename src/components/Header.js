@@ -12,13 +12,15 @@ export default function Header(props){
     const {cartItemsNumber} = cart
     const [isMenuOpen, setIsMenuOpen] = useState({
         loggedInIcon: false,
-        barsIconContainer:false
+        barsIconContainer:false,
+        cartMenu: false
 
     })
     function handleBarsAndUserMenuMouseLeave(event){
         setIsMenuOpen({
             loggedInIcon: false,
-            barsIconContainer:false
+            barsIconContainer:false,
+            cartMenu: false
         })
     }
     function showBarsAndUserMenu(event){
