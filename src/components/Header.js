@@ -67,7 +67,7 @@ export default function Header(props){
                 </Link>
             }
             
-            <Link className='cartIconLink-header icon-container--header' to='cart'>
+            <div 
                 id='cartMenu'
                 className='cartIconLink-header icon-container--header' 
                 onClick={showBarsAndUserMenu}
@@ -76,8 +76,8 @@ export default function Header(props){
                     {cartItemsNumber>0 && <span className='items-counter-header'>{cartItemsNumber}</span>}
                  </i>
                 <span className='icon-label--header'>My cart</span>
-            </Link>       
-                <CartMenu isOpen={isMenuOpen.cartMenu}/>       
+                <CartMenu isOpen={isMenuOpen.cartMenu}/>
+            </div>       
         </header>
     )
 }
