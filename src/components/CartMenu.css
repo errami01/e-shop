@@ -2,12 +2,10 @@
     width: 400px;
     max-width: 90vw;
     position: absolute;
-    top: 00%;
+    top: 0;
     right: 0;
-    max-height: 100vh;
+    height: 100vh;
     overflow: auto;
-    /* background-color: red; */
-    /* border: 1px solid red; */
 }
 .closed--cartMenu{
     display: none;
@@ -19,4 +17,5 @@
 .container--cartMenu .total-cart{
     position: sticky;
     bottom: 0;
+    margin-top: auto;
 }
