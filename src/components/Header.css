@@ -23,7 +23,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     font-weight: 400;
     background-color: red;
 }
@@ -41,7 +40,6 @@
     cursor: pointer;
 }
 .cartIconLink-header{
-    position: relative;
     color: inherit;
 }
 .fa-cart-shopping{
