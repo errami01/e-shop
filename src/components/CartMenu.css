@@ -2,13 +2,21 @@
     width: 400px;
     max-width: 90vw;
     position: absolute;
-    top: 100%;
-    right: 00%;
-    max-height: 600px;
+    top: 00%;
+    right: 0;
+    max-height: 100vh;
     overflow: auto;
-    background-color: red;
-    border: 1px solid red;
+    /* background-color: red; */
+    /* border: 1px solid red; */
 }
 .closed--cartMenu{
     display: none;
+}
+.container--cartMenu .title-cart{
+    position: sticky;
+    top: 0;
+}
+.container--cartMenu .total-cart{
+    position: sticky;
+    bottom: 0;
 }
