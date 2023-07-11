@@ -1,6 +1,9 @@
 .container-cart{
+    display: flex;
+    flex-direction: column;
     background-color: rgb(250, 204, 139);
     border-radius: 5px;
+    height: 100%;
 }
 .title-cart{
     margin: 0px 0px 0px 10px;
