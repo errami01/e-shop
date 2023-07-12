@@ -18,8 +18,8 @@ export default function Cart(props){
     const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
     return (
             <div className="container-cart">
-                <h2 className="title-cart">My Cart</h2>
                 <div className="items-container--cart">
+                    <h2 className="title-cart">My Cart</h2>
                     {cartItemsElements}
                 </div>
                 {
