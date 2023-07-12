@@ -19,7 +19,9 @@ export default function Cart(props){
     return (
             <div className="container-cart">
                 <h2 className="title-cart">My Cart</h2>
-                {cartItemsElements}
+                <div className="items-container--cart">
+                    {cartItemsElements}
+                </div>
                 {
                     cartItemsNumber ? 
                     <div className="total-cart">
