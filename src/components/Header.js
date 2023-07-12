@@ -71,6 +71,7 @@ export default function Header(props){
                 id='cartMenu'
                 className='cartIconLink-header icon-container--header' 
                 onClick={showBarsAndUserMenu}
+                onMouseLeave={handleBarsAndUserMenuMouseLeave}
                 >
                  <i className="fa-solid fa-cart-shopping">
                     {cartItemsNumber>0 && <span className='items-counter-header'>{cartItemsNumber}</span>}
