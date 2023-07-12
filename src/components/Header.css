@@ -24,7 +24,6 @@
     align-items: center;
     justify-content: center;
     font-weight: 400;
-    background-color: red;
 }
 .icon-container--header:hover{
     color: var(--second-Color)
