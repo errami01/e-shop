@@ -54,8 +54,7 @@
     grid-column: 2/span 3;
     grid-row: 2;
 }
-
-@media screen and (min-width: 700px){
+@media screen and (min-width: 1150px){
     .cartItem-container-page{
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: auto auto auto;
