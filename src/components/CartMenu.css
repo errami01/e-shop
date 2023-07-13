@@ -14,7 +14,10 @@
     position: sticky;
     top: 0;
 }
-.container--cartMenu .total--cart{
+.container--cartMenu .items-container--cart{
+    flex-grow: 1;
+}
+.container--cartMenu .totals--cart{
     position: sticky;
     bottom: 0;
     margin-top: auto;
