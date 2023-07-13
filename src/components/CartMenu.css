@@ -10,11 +10,11 @@
 .closed--cartMenu{
     display: none;
 }
-.container--cartMenu .title-cart{
+.container--cartMenu .title--cart{
     position: sticky;
     top: 0;
 }
-.container--cartMenu .total-cart{
+.container--cartMenu .total--cart{
     position: sticky;
     bottom: 0;
     margin-top: auto;
