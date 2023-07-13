@@ -1,6 +1,20 @@
-.cart-container{
-    width: 95%;
-    max-width: 800px;
+.container--cartPage{
+    width: 100%;
+    /* max-width: 1000px; */
     color: var(--text-color);
     /* background-color: aqua; */
+    padding: 0 20px;
 }
+@media screen and (min-width: 700px){
+    .container--cartPage>.container--cart{
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px
+    }
+    .container--cartPage .totals--cart{
+        background-color: unset;
+        min-width: 300px;
+    }
+
+}
+
