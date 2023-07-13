@@ -26,11 +26,11 @@ export default function Cart(props){
                     cartItemsNumber ? 
                     <div className="totals--cart">
                         <div className="total--cart items-total--cart">
-                            <span className="total-label--cart">Total items :</span>
-                            <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
+                            <span className="total-label--cart">Total items </span>
+                            <span className="amount--cart">{cartItemsNumber}</span>
                         </div>
                         <div className="total--cart prices-total--cart">
-                            <span className="total-label--cart">TOTAL :</span>
+                            <span className="total-label--cart">TOTAL </span>
                             <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
                         </div>
                         <button className="place-order--cart">Place order</button>
