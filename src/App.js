@@ -15,6 +15,7 @@ import OpenOrders from './pages/customer/OpenOrders';
 import ClosedOrders from './pages/customer/ClosedOrders';
 import CustMailbox from './pages/customer/CustMailbox';
 import CustWishlist from './pages/customer/CustWishlist';
+import CheckoutLayout from './layout/CheckoutLayout';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -79,6 +80,10 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={productDetailLoader}
       element={<PrdoductDetails />}
       />
+    <Route 
+      path='checkout'
+      element={<CheckoutLayout />}
+    />
     <Route
       path='*'
       element={<NotFound />} 
