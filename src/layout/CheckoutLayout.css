@@ -1,4 +1,5 @@
 .container--checkoutLayout{
+    display: flex;
     background-color: blue;
 }
 .phases--checkoutLayout{
