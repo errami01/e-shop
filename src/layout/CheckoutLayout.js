@@ -4,7 +4,7 @@ import Cart from "../components/Cart"
 export default function CheckoutLayout(){
     return(
         <div className="container--checkoutLayout">
-            <div className='checkout-section--checkoutLayout'>
+            <div className='infos-section--checkoutLayout'>
                 <ul className='phases--checkoutLayout'>
                     <li>Account</li>
                     <li>-- <i className="fa-solid fa-circle-check"></i> --</li>
