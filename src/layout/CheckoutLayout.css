@@ -2,19 +2,22 @@
     display: flex;
     width: 95%;
     justify-content: center;
-    background-color: red;
+    color: var(--text-color)
 }
 .infos-section--checkoutLayout{
     background-color: rgb(250, 204, 139);
     flex-basis: 600px;
-
+    padding: 10px ;
+    border-radius: 20px;
+    align-self: flex-start;
 }
 .phases--checkoutLayout{
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    padding: 0;
-    background-color: red;
+    padding: 20px 50px;
+    background-color: white;
+    border-radius: 5px;
 }
 .container--checkoutLayout > .container--cart{
     display: none;
