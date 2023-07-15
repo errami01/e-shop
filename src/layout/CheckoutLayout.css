@@ -16,3 +16,7 @@
     padding: 0;
     background-color: red;
 }
+.container--checkoutLayout > .container--cart{
+    display: none;
+}
+}
