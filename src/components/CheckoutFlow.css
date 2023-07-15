@@ -1,0 +1,25 @@
+.container--checkoutFlow{
+    background-color: white;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+.container--checkoutFlow form{
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: gray;
+    padding-bottom: 20px;
+}
+
+.container--checkoutFlow input{
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(250, 204, 139);
+    border: none;
+    color: var(--text-color);
+    font-weight: 600;
+    border-radius: 5px;
+}
