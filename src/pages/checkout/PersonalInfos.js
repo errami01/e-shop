@@ -1,5 +1,9 @@
+import CheckoutFlow from "../../components/CheckoutFlow"
 export default function PersonalInfos(){
     return(
-        <h1>Personal infos Go here</h1>
+        <CheckoutFlow>
+            <h1>Personal infos Go here</h1>
+        </CheckoutFlow>
+        
     )
 }
