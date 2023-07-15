@@ -1,6 +1,8 @@
 .container--checkoutLayout{
     display: flex;
-    /* background-color: rgb(250, 204, 139); */
+    width: 95%;
+    justify-content: center;
+    background-color: red;
 }
 .infos-section--checkoutLayout{
     background-color: rgb(250, 204, 139);
