@@ -1,3 +1,4 @@
+import './CheckoutFlow.css'
 export default function CheckoutFlow({children}){
     return(
         <div className="container--checkoutFlow">
