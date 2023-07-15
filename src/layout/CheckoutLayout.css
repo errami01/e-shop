@@ -24,5 +24,8 @@
         display: flex;
         flex-basis: 350px;
     }
+    .infos-section--checkoutLayout{
+        flex-basis: 500px;
+        margin-right : 20px
     }
 }
