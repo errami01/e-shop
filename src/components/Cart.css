@@ -52,16 +52,7 @@
 
 .place-order--cart{
     width: 100%;
-    background-color:var(--first-Color);
-    border: none;
-    color: rgb(244, 241, 236);
-    cursor: pointer;
-    padding: 10px 0;
-    border-radius: 0 0 5px 5px;
     margin-top: 10px;
-}
-.place-order--cart:hover{
-    background-color: var(--second-Color);
 }
 .empty--cart{
     text-align: center;
