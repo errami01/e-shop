@@ -3,6 +3,7 @@ import { useContext } from "react"
 import { CartContext } from "../contexts/CartContext"
 import './Cart.css'
 import {nanoid} from 'nanoid'
+import { Link } from "react-router-dom"
 export default function Cart(props){
     const cart = useContext(CartContext)
     const {isPage, withoutDeliveryDate} = props
@@ -33,7 +34,9 @@ export default function Cart(props){
                             <span className="total-label--cart">TOTAL </span>
                             <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
                         </div>
-                        <button className="place-order--cart btn--app">Place order</button>
+                        <Link to={'/checkout'}>
+                            <button className="place-order--cart btn--app">Place order</button>
+                        </Link>
                     </div>
                     :
                     <h1 className="empty--cart">Your cart is empty</h1>
