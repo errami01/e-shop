@@ -33,7 +33,7 @@ export default function Cart(props){
                             <span className="total-label--cart">TOTAL </span>
                             <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
                         </div>
-                        <button className="place-order--cart">Place order</button>
+                        <button className="place-order--cart btn--app">Place order</button>
                     </div>
                     :
                     <h1 className="empty--cart">Your cart is empty</h1>
