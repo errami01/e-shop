@@ -21,7 +21,7 @@ export default function PersonalInfos(){
                     Email
                     <input />
                 </label>
-                <button>Next</button>
+                <button className="btn--app">Next</button>
             </Form>
             
         </CheckoutFlow>
