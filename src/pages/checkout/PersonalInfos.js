@@ -11,19 +11,19 @@ export default function PersonalInfos(){
             <Form>
                 <label>
                     First Name
-                    <input type='text' defaultValue={name.firstname}/>
+                    <input type='text' defaultValue={name.firstname} required/>
                 </label>
                 <label>
                     Last Name
-                    <input type='text' defaultValue={name.lastname}/>
+                    <input type='text' defaultValue={name.lastname} required/>
                 </label>
                 <label>
                     Phone
-                    <input defaultValue={phone} type='text'/>
+                    <input defaultValue={phone} type='text' required/>
                 </label>
                 <label>
                     Email
-                    <input defaultValue={email} type='email'/>
+                    <input defaultValue={email} type='email' required/>
                 </label>
                 <button className="btn--app">Next</button>
             </Form>
