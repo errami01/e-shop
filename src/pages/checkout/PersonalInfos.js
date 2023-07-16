@@ -2,6 +2,9 @@ import { Form, redirect } from "react-router-dom"
 import CheckoutFlow from "../../components/CheckoutFlow"
 import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
+export function action(){
+    redirect('/shipping')
+}
 export default function PersonalInfos(){
     const {userData} = useContext(UserDataContext)
     const {name, phone, email} = userData
