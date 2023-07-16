@@ -1,4 +1,4 @@
-import { Form } from "react-router-dom"
+import { Form, redirect } from "react-router-dom"
 import CheckoutFlow from "../../components/CheckoutFlow"
 import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
@@ -8,7 +8,7 @@ export default function PersonalInfos(){
     return(
         <CheckoutFlow>
             <h5>Account Details</h5>
-            <Form>
+            <Form action="post">
                 <label>
                     First Name
                     <input type='text' defaultValue={name.firstname} required/>
