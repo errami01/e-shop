@@ -3,7 +3,8 @@ import CheckoutFlow from "../../components/CheckoutFlow"
 import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
 export function action(){
-    redirect('/shipping')
+    return redirect('/shipping')
+    
 }
 export default function PersonalInfos(){
     const {userData} = useContext(UserDataContext)
@@ -11,7 +12,7 @@ export default function PersonalInfos(){
     return(
         <CheckoutFlow>
             <h5>Account Details</h5>
-            <Form action="post">
+            <Form method="post">
                 <label>
                     First Name
                     <input type='text' defaultValue={name.firstname} required/>
