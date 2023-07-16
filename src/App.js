@@ -17,6 +17,7 @@ import CustMailbox from './pages/customer/CustMailbox';
 import CustWishlist from './pages/customer/CustWishlist';
 import CheckoutLayout from './layout/CheckoutLayout';
 import PersonalInfos, {action as personalInfosAction} from './pages/checkout/PersonalInfos';
+import Shipping from './pages/checkout/Shipping';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -85,11 +86,16 @@ const router = createBrowserRouter(createRoutesFromElements(
       path='checkout'
       element={<CheckoutLayout />}
     >
-      <Route 
-        index
-        element={<PersonalInfos />}
-        action={personalInfosAction}
-      />
+        <Route 
+          index
+          element={<PersonalInfos />}
+          action={personalInfosAction}
+        />
+        <Route 
+          path='shipping'
+          element={<Shipping />}
+          // action={shippingAction}
+        />
     </Route>
     <Route
       path='*'
