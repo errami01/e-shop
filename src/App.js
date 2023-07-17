@@ -18,6 +18,7 @@ import CustWishlist from './pages/customer/CustWishlist';
 import CheckoutLayout from './layout/CheckoutLayout';
 import PersonalInfos, {action as personalInfosAction} from './pages/checkout/PersonalInfos';
 import Shipping, {action as shippingAction} from './pages/checkout/Shipping';
+import Payment from './pages/checkout/Payment';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -95,6 +96,10 @@ const router = createBrowserRouter(createRoutesFromElements(
           path='shipping'
           element={<Shipping />}
           action={shippingAction}
+        />
+        <Route 
+          path='payment'
+          element={<Payment />}
         />
     </Route>
     <Route
