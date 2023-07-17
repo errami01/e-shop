@@ -4,7 +4,7 @@ import { Form, redirect } from "react-router-dom";
 import { UserDataContext } from "../../contexts/UserDataContext";
 
 export function action(){
-    return redirect('payment')
+    return redirect('../payment')
 }
 export default function Shipping(){
     const {userData} = useContext(UserDataContext)
