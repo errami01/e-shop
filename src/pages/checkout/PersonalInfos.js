@@ -23,7 +23,7 @@ export default function PersonalInfos(){
                 </label>
                 <label>
                     Phone
-                    <input defaultValue={phone} type='text' required/>
+                    <input defaultValue={phone} type='tel' required/>
                 </label>
                 <label>
                     Email
