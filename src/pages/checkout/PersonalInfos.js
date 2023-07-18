@@ -29,7 +29,10 @@ export default function PersonalInfos(){
                     Email
                     <input defaultValue={email} type='email' required/>
                 </label>
-                <button className="btn--app">Next</button>
+                <div className="bottom-btns--checkoutFlow">
+                    <button className="cancel-btn--checkoutFlow ">Cancel order</button>
+                    <button className="continue-btn--checkoutFlow btn--app">Shipping details</button>
+                </div>
             </Form>
             
         </CheckoutFlow>

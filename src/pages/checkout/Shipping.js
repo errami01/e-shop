@@ -29,7 +29,10 @@ export default function Shipping(){
                     Postcode
                     <input defaultValue={zipcode} type='text' required/>
                 </label>
-                <button className="btn--app">Next</button>
+                <div className="bottom-btns--checkoutFlow">
+                    <button className="cancel-btn--checkoutFlow ">Cancel order</button>
+                    <button className="continue-btn--checkoutFlow btn--app">Payment</button>
+                </div>
             </Form>
         </CheckoutFlow>
     )

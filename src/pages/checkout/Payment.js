@@ -29,7 +29,10 @@ export default function Payment(){
                         <input type="tel"/>
                     </label>
                 </div>
-                <button className="btn--app">Complete order</button>
+                <div className="bottom-btns--checkoutFlow">
+                    <button className="cancel-btn--checkoutFlow ">Cancel order</button>
+                    <button className="continue-btn--checkoutFlow btn--app">Complete order</button>
+                </div>
             </Form>
         </CheckoutFlow>
         
