@@ -13,7 +13,7 @@ export default function Payment(){
                 </label>
                 <label>
                     Card number
-                    <input type="tel"/>
+                    <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"/>
                 </label>
                 <div className="expiration-cvc--payment">
                     <label >
@@ -26,7 +26,7 @@ export default function Payment(){
                     </label> 
                     <label className="cvc--payment">
                         CVC
-                        <input type="text"/>
+                        <input type="tel"/>
                     </label>
                 </div>
                 <button className="btn--app">Complete order</button>
