@@ -28,4 +28,18 @@
     justify-content: flex-end;
     margin-top: 20px;
 }
+.cancel-btn--checkoutFlow{
+    background-color: unset;
+    border: unset;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.cancel-btn--checkoutFlow:hover{
+    background-color: var(--second-Color);
+    color: white;
+    border-radius: 5px;
+}
 }
