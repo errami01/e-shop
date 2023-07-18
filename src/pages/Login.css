@@ -55,4 +55,8 @@
 .submit-btn--login:hover{
     background-color: var(--second-Color);
 }
+.customer--login{
+    opacity: 0.5;
+    font-size: 0.9rem;
+}
 

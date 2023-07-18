@@ -50,6 +50,7 @@ export default function Login(){
                 />  
                 <button className='submit-btn--login'>Login</button>
             </Form>
+            <p className='customer--login'>Username: johnd, Password: m38rmF$</p>
         </div>
     )
 }
