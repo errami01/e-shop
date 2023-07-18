@@ -1,0 +1,22 @@
+.expiration-cvc--payment{
+    display: flex;
+    align-items: center;
+}
+.expiration-cvc--payment .date--payment{
+    width: 50%;
+    text-align: center;
+}
+.card-expiration--payment{
+    display: flex;
+    align-items: center;
+}
+.expiration-cvc--payment>label{
+    flex-basis: 50%;
+}
+.slash--payment{
+    width: 20px;
+    text-align: center;
+}
+.cvc--payment{
+    padding-left: 20px;
+}
