@@ -42,4 +42,6 @@
     color: white;
     border-radius: 5px;
 }
+.continue-btn--checkoutFlow{
+    margin: 0;
 }
