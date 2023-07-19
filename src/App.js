@@ -15,7 +15,7 @@ import OpenOrders from './pages/customer/OpenOrders';
 import ClosedOrders from './pages/customer/ClosedOrders';
 import CustMailbox from './pages/customer/CustMailbox';
 import CustWishlist from './pages/customer/CustWishlist';
-import CheckoutLayout from './layout/CheckoutLayout';
+import CheckoutLayout, {loader as checkoutLayoutLoader} from './layout/CheckoutLayout';
 import PersonalInfos, {action as personalInfosAction} from './pages/checkout/PersonalInfos';
 import Shipping, {action as shippingAction} from './pages/checkout/Shipping';
 import Payment from './pages/checkout/Payment';
@@ -86,6 +86,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route 
       path='checkout'
       element={<CheckoutLayout />}
+      loader={checkoutLayoutLoader}
     >
         <Route 
           index
