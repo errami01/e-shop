@@ -1,6 +1,13 @@
 import './CheckoutLayout.css'
 import { Outlet } from "react-router-dom"
 import Cart from "../components/Cart"
+import {requireAuth} from  '../utils/requireAuth'
+import {fetchSingleUser} from  '../utils/fetcher'
+
+export async function loader(){
+    requireAuth()
+    return null     
+}
 export default function CheckoutLayout(){
     return(
         <div className="container--checkoutLayout">
