@@ -5,7 +5,7 @@ import {requireAuth} from  '../utils/requireAuth'
 import {fetchSingleUser} from  '../utils/fetcher'
 
 export async function loader(){
-    requireAuth()
+    requireAuth('/checkout')
     return null     
 }
 export default function CheckoutLayout(){
