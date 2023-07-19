@@ -19,6 +19,7 @@ import CheckoutLayout, {loader as checkoutLayoutLoader} from './layout/CheckoutL
 import PersonalInfos, {action as personalInfosAction} from './pages/checkout/PersonalInfos';
 import Shipping, {action as shippingAction} from './pages/checkout/Shipping';
 import Payment from './pages/checkout/Payment';
+import { requireAuth } from './utils/requireAuth';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -38,10 +39,18 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           index
           element={<CustAccount />}
+          loader={()=>{
+            requireAuth()
+            return null
+          }}
         />
         <Route 
           path='orders'
           element={<CustOrders />}
+          loader={()=>{
+            requireAuth('/orders')
+            return null
+          }}
         >
           <Route
             index
@@ -50,11 +59,19 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route
             path='closed' 
             element={<ClosedOrders />}
+            loader={()=>{
+              requireAuth('/closed')
+              return null
+            }}
           />
         </Route>
         <Route 
           path='mailbox'
           element={<CustMailbox />}
+          loader={()=>{
+            requireAuth('/mailbox')
+            return null
+          }}
         />
         <Route 
           path='wishlist'
