@@ -6,6 +6,7 @@
   padding:0;
   --first-Color: #F89B1D;
   --second-Color: #CB653E;
+  --forth-Color: #b30000;
   --text-color: #57504f;
   --body-background-color: #ffe8c8;
   --header-height: 75px;
@@ -65,7 +66,7 @@ a{
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #b30000; 
+  background: var(--forth-Color);
   border-radius: 15px;
 }
 
