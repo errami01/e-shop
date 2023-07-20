@@ -3,6 +3,10 @@
     padding: 20px 50px;
     border-radius: 10px;
 }
+.pageTitle--checkoutFlow{
+    width: fit-content;
+    border-bottom: 1px solid;
+}
 .container--checkoutFlow form{
     display: flex;
     flex-direction: column;
