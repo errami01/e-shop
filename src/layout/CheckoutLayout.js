@@ -24,7 +24,7 @@ export default function CheckoutLayout(){
                     <li>-- <i className="fa-solid fa-circle-check"></i> --</li>
                     <li>Payment</li>
                 </ul>
-                <Outlet />
+                {userData && <Outlet />}
             </div>     
             <Cart />
         </div>
