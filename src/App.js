@@ -47,7 +47,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           path='orders'
           element={<CustOrders />}
-          loader={(request)=>{
+          loader={({request})=>{
             requireAuth(request)
             return null
           }}
