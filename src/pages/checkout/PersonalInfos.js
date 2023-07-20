@@ -11,7 +11,7 @@ export default function PersonalInfos(){
     const {name, phone, email} = userData
     return(
         <CheckoutFlow>
-            <h5>Account Details</h5>
+            <h5 className="pageTitle--checkoutFlow">Account Details</h5>
             <Form method="post">
                 <label>
                     First Name

@@ -11,7 +11,7 @@ export default function Shipping(){
     const {number, street, city,zipcode} = userData.address
     return(
         <CheckoutFlow>
-            <h5>Shipping details</h5>
+            <h5 className="pageTitle--checkoutFlow">Shipping details</h5>
             <Form method="post">
                 <label>
                     Address

@@ -5,7 +5,7 @@ import './Payment.css'
 export default function Payment(){
     return(
         <CheckoutFlow>
-            <h5>Paymet Details</h5>
+            <h5 className="pageTitle--checkoutFlow">Paymet Details</h5>
             <Form>
                 <label>
                     Name on card
