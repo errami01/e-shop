@@ -3,9 +3,8 @@ import { Outlet } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 
-export async function loader(){
-    requireAuth('/checkout')
-    return null     
+export async function loader({request}){
+    requireAuth(request)
 }
 export default function CheckoutLayout(){
     return(
