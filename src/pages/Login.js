@@ -15,6 +15,7 @@ export async function action({request}){
     const formData = await request.formData()
     const username =  formData.get('username')
     const password = formData.get('password')
+    const pathToGo = url.searchParams.get('redirectTo') || '/customer'
     try{
          await loginUser(username, password)
          return redirect(url.searchParams.get('redirectTo'))
