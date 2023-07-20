@@ -47,8 +47,8 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           path='orders'
           element={<CustOrders />}
-          loader={()=>{
-            requireAuth('/orders')
+          loader={(request)=>{
+            requireAuth(request)
             return null
           }}
         >
@@ -59,8 +59,8 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route
             path='closed' 
             element={<ClosedOrders />}
-            loader={()=>{
-              requireAuth('/closed')
+            loader={({request})=>{
+              requireAuth(request)
               return null
             }}
           />
@@ -68,15 +68,18 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           path='mailbox'
           element={<CustMailbox />}
-          loader={()=>{
-            requireAuth('/mailbox')
+          loader={({request})=>{
+            requireAuth(request)
             return null
           }}
         />
         <Route 
           path='wishlist'
           element={<CustWishlist />}
-          loader={myAccountLoader}
+          loader={({request})=>{
+            requireAuth(request)
+            return null
+          }}
         />
 
     </Route>
