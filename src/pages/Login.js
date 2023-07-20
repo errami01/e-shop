@@ -18,7 +18,7 @@ export async function action({request}){
     const pathToGo = url.searchParams.get('redirectTo') || '/customer'
     try{
          await loginUser(username, password)
-         return redirect(url.searchParams.get('redirectTo'))
+         return redirect(pathToGo)
     }
     catch(e){
         return e.message
