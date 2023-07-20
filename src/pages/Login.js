@@ -11,17 +11,17 @@ export function loader(){
     return null
 }
 export async function action({request}){
+    const url = new URL (request.url)
     const formData = await request.formData()
     const username =  formData.get('username')
     const password = formData.get('password')
     try{
          await loginUser(username, password)
-         return redirect("/customer")
+         return redirect(url.searchParams.get('redirectTo'))
     }
     catch(e){
         return e.message
-    }
-    
+    } 
 }
 export default function Login(){
     const errorMessage = useActionData()
