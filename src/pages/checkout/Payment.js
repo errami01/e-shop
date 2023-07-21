@@ -13,7 +13,7 @@ export default function Payment(){
                 </label>
                 <label>
                     Card number
-                    <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"/>
+                    <input id="ccn" type="tel" inputMode="numeric" pattern="[0-9\s]{13,19}" autoComplete="cc-number" maxLength="19" placeholder="xxxx xxxx xxxx xxxx"/>
                 </label>
                 <div className="expiration-cvc--payment">
                     <label >
