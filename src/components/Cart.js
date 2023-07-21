@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 export default function Cart(props){
     const cart = useContext(CartContext)
     const {isPage, withoutDeliveryDate} = props
-    const {cartItems, cartItemsNumber} = cart
+    const {cartItems, cartItemsNumber, totalAmount} = cart
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
                     key={nanoid()} 
@@ -16,7 +16,6 @@ export default function Cart(props){
                     isPage={isPage} 
                     withoutDeliveryDate={withoutDeliveryDate}/>
     })
-    const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
     return (
             <div className="container--cart">
                 <div className="items-container--cart">
