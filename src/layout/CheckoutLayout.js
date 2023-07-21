@@ -19,7 +19,9 @@ export default function CheckoutLayout(){
             <div className='infos-section--checkoutLayout'>
                 <ul className='phases--checkoutLayout'>
                     <li>Account <i className="fa-solid fa-circle-check"></i></li>
+                    {'>'}
                     <li>Shipping <i className="fa-solid fa-circle-check"></i></li>
+                    {'>'}
                     <li>Payment <i className="fa-solid fa-circle-check"></i></li>
                 </ul>
                 {userData && <Outlet />}
