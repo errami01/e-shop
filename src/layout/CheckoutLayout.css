@@ -17,9 +17,10 @@
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    padding: 20px 50px;
+    padding: 20px 30px;
     background-color: white;
     border-radius: 5px;
+    font-weight: 700;
 }
 .container--checkoutLayout > .container--cart{
     display: none;
