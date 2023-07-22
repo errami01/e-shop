@@ -20,6 +20,7 @@ import PersonalInfos, {action as personalInfosAction} from './pages/checkout/Per
 import Shipping, {action as shippingAction} from './pages/checkout/Shipping';
 import Payment from './pages/checkout/Payment';
 import { requireAuth } from './utils/requireAuth';
+import CheckoutPhase from './pages/checkout/CheckoutPhase';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
@@ -112,6 +113,10 @@ const router = createBrowserRouter(createRoutesFromElements(
           index
           element={<PersonalInfos />}
           action={personalInfosAction}
+        />
+        <Route 
+          path=':phase'
+          element={<CheckoutPhase />}
         />
         <Route 
           path='shipping'
