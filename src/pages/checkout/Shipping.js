@@ -1,10 +1,11 @@
 import CheckoutFlow from "../../components/CheckoutFlow";
 import { useContext } from "react";
-import { Form, redirect } from "react-router-dom";
+import { Form } from "react-router-dom";
 import { UserDataContext } from "../../contexts/UserDataContext";
+import { myHistory } from "../../utils/myHistory";
 
 export function action(){
-    return redirect('../payment')
+    return myHistory.navigate('checkout/payment')
 }
 export default function Shipping(){
     const {userData} = useContext(UserDataContext)
