@@ -11,3 +11,13 @@ export default function useOngoingOrder(initialState){
     }
     return [ongoingOrder, setOngoingOrderState]
 }
+export function ongoingOrder(){
+    const setOngoingOrder = (ongoingOrder)=>{
+        if(!ongoingOrder){
+            localStorage.removeItem('ongoingOrder')
+        }
+        else localStorage.setItem('ongoingOrder',JSON.stringify(ongoingOrder))
+    }
+    const ongoingOrder = JSON.parse(localStorage.getItem('ongoingOrder'))
+    return [ongoingOrder, setOngoingOrder]
+}
