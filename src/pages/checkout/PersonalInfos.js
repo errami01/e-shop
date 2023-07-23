@@ -1,10 +1,11 @@
-import { Form, redirect } from "react-router-dom"
+import { Form } from "react-router-dom"
 import CheckoutFlow from "../../components/CheckoutFlow"
 import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
+import { myHistory } from "../../utils/myHistory"
+
 export function action(){
-    return redirect('shipping')
-    
+    return myHistory.navigate('checkout/shipping', {state:{name: 'abdellatif'}})
 }
 export default function PersonalInfos(){
     const {userData} = useContext(UserDataContext)
@@ -12,7 +13,7 @@ export default function PersonalInfos(){
     return(
         <CheckoutFlow>
             <h5 className="pageTitle--checkoutFlow">Account Details</h5>
-            <Form method="post">
+            <Form method="post" >
                 <label>
                     First Name
                     <input type='text' defaultValue={name.firstname} required/>
