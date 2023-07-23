@@ -5,6 +5,7 @@ import {requireAuth} from  '../utils/requireAuth'
 import { fetchSingleUser } from '../utils/fetcher'
 import { useContext, useEffect } from 'react'
 import { UserDataContext } from '../contexts/UserDataContext'
+import { CartContext } from '../contexts/CartContext'
 
 export async function loader({request}){
     requireAuth(request)
@@ -12,6 +13,7 @@ export async function loader({request}){
 }
 export default function CheckoutLayout(){
     const {userData, setUserData} = useContext(UserDataContext)
+    const cart = useContext(CartContext)
     const userLoadedData = useLoaderData()
     useEffect(()=> setUserData(userLoadedData),[userLoadedData])
     return(
