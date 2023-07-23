@@ -111,12 +111,12 @@ const router = createBrowserRouter(createRoutesFromElements(
     >
         <Route 
           index
-          element={<PersonalInfos />}
-          action={personalInfosAction}
+          element={<CheckoutPhase />}
         />
         <Route 
-          path=':phase'
-          element={<CheckoutPhase />}
+          path='personalInfos'
+          element={<PersonalInfos />}
+          action={personalInfosAction}
         />
         <Route 
           path='shipping'
