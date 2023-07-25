@@ -3,9 +3,16 @@ import CheckoutFlow from "../../components/CheckoutFlow"
 import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
 import { myHistory } from "../../utils/myHistory"
-
+import { setOngoingOrder } from "../../utils/useOngoingOrder"
 export function action(){
-    return myHistory.navigate('checkout/shipping', {state:{name: 'abdellatif'}})
+    const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
+    updateOngoingOrder(
+        {
+            ...ongoingOrder,
+            phase: 'shipping'
+        }
+    )
+    return myHistory.navigate(`checkout/shipping`)
 }
 export default function PersonalInfos(){
     const {userData} = useContext(UserDataContext)
