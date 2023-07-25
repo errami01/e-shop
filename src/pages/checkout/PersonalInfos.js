@@ -1,4 +1,4 @@
-import { Form } from "react-router-dom"
+import { Form, Link, useOutletContext } from "react-router-dom"
 import CheckoutFlow from "../../components/CheckoutFlow"
 import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
@@ -16,6 +16,7 @@ export function action(){
 }
 export default function PersonalInfos(){
     const {userData} = useContext(UserDataContext)
+    const { cancelOrder } = useOutletContext()
     const {name, phone, email} = userData
     return(
         <CheckoutFlow>
@@ -38,7 +39,12 @@ export default function PersonalInfos(){
                     <input defaultValue={email} type='email' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
-                    <button className="cancel-btn--checkoutFlow ">Cancel order</button>
+                    <Link 
+                        to='/cart' 
+                        className="cancel-btn--checkoutFlow " 
+                        onClick={cancelOrder}>
+                    Cancel order
+                    </Link>
                     <button className="continue-btn--checkoutFlow btn--app">Shipping details</button>
                 </div>
             </Form>

@@ -1,6 +1,6 @@
 import CheckoutFlow from "../../components/CheckoutFlow";
 import { useContext } from "react";
-import { Form } from "react-router-dom";
+import { Form, Link, useOutletContext } from "react-router-dom";
 import { UserDataContext } from "../../contexts/UserDataContext";
 import { myHistory } from "../../utils/myHistory";
 import { setOngoingOrder } from "../../utils/useOngoingOrder";
@@ -17,6 +17,7 @@ export function action(){
 }
 export default function Shipping(){
     const {userData} = useContext(UserDataContext)
+    const {cancelOrder} = useOutletContext()
     const {number, street, city,zipcode} = userData.address
     return(
         <CheckoutFlow>
@@ -39,7 +40,12 @@ export default function Shipping(){
                     <input defaultValue={zipcode} type='text' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
-                    <button className="cancel-btn--checkoutFlow ">Cancel order</button>
+                    <Link 
+                        to='/cart' 
+                        className="cancel-btn--checkoutFlow " 
+                        onClick={cancelOrder}>
+                    Cancel order
+                    </Link>
                     <button className="continue-btn--checkoutFlow btn--app">Payment</button>
                 </div>
             </Form>

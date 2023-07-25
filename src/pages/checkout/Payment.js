@@ -1,8 +1,9 @@
-import { Form } from "react-router-dom";
+import { Form, Link, useOutletContext } from "react-router-dom";
 import CheckoutFlow from "../../components/CheckoutFlow";
 import './Payment.css'
 
 export default function Payment(){
+    const { cancelOrder } = useOutletContext()
     return(
         <CheckoutFlow>
             <h5 className="pageTitle--checkoutFlow">Paymet Details</h5>
@@ -30,7 +31,12 @@ export default function Payment(){
                     </label>
                 </div>
                 <div className="bottom-btns--checkoutFlow">
-                    <button className="cancel-btn--checkoutFlow ">Cancel order</button>
+                    <Link 
+                        to='/cart' 
+                        className="cancel-btn--checkoutFlow " 
+                        onClick={cancelOrder}>
+                    Cancel order
+                    </Link>
                     <button className="continue-btn--checkoutFlow btn--app">Complete order</button>
                 </div>
             </Form>
