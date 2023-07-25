@@ -20,6 +20,9 @@ export default function CheckoutLayout(){
         phase: 'personalInfos'
     })
     const userLoadedData = useLoaderData()
+    const cancelOrder =()=>{
+        updateOngoingOrder()
+    }
     useEffect(()=> setUserData(userLoadedData),[userLoadedData])
     return(
         <div className="container--checkoutLayout">
@@ -31,7 +34,7 @@ export default function CheckoutLayout(){
                     {'>'}
                     <li>Payment <i className="fa-solid fa-circle-check"></i></li>
                 </ul>
-                {userData && <Outlet context={{ongoingOrder, cancelOrder}}/>}
+                {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
             </div>     
             <Cart />
         </div>
