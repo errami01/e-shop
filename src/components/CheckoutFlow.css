@@ -33,18 +33,21 @@
     margin-top: 20px;
 }
 .cancel-btn--checkoutFlow{
-    background-color: unset;
+    display: flex;
+    align-items: center;
     border: unset;
     font-size: inherit;
     color: inherit;
     font-weight: inherit;
     margin-right: 10px;
+    padding: 0 20px;
     cursor: pointer;
 }
 .cancel-btn--checkoutFlow:hover{
     background-color: var(--second-Color);
     color: white;
     border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px gray;
 }
 .continue-btn--checkoutFlow{
     margin: 0;
