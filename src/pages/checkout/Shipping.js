@@ -3,9 +3,17 @@ import { useContext } from "react";
 import { Form } from "react-router-dom";
 import { UserDataContext } from "../../contexts/UserDataContext";
 import { myHistory } from "../../utils/myHistory";
+import { setOngoingOrder } from "../../utils/useOngoingOrder";
 
 export function action(){
-    return myHistory.navigate('checkout/payment')
+    const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
+    updateOngoingOrder(
+        {
+            ...ongoingOrder,
+            phase: 'payment'
+        }
+    )
+    return myHistory.navigate(`checkout/payment`)
 }
 export default function Shipping(){
     const {userData} = useContext(UserDataContext)
