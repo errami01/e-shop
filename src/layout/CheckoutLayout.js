@@ -5,8 +5,8 @@ import {requireAuth} from  '../utils/requireAuth'
 import { fetchSingleUser } from '../utils/fetcher'
 import { useContext, useEffect } from 'react'
 import { UserDataContext } from '../contexts/UserDataContext'
-import useOngoingOrder from '../utils/useOngoingOrder'
 import { CartContext } from '../contexts/CartContext'
+import { setOngoingOrder } from '../utils/useOngoingOrder'
 
 export async function loader({request}){
     requireAuth(request)
@@ -15,7 +15,7 @@ export async function loader({request}){
 export default function CheckoutLayout(){
     const {userData, setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
-    const [ongoingOrder, setOngoingOrder] = useOngoingOrder({
+    const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
         cart,
         phase: 'personalInfos'
     })
@@ -31,7 +31,7 @@ export default function CheckoutLayout(){
                     {'>'}
                     <li>Payment <i className="fa-solid fa-circle-check"></i></li>
                 </ul>
-                {userData && <Outlet context={{ongoingOrder, setOngoingOrder}}/>}
+                {userData && <Outlet context={{ongoingOrder, cancelOrder}}/>}
             </div>     
             <Cart />
         </div>
