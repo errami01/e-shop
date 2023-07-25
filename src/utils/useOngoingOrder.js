@@ -12,15 +12,24 @@ export default function useOngoingOrder(initialState){
     return [ongoingOrder, setOngoingOrderState]
 }
 export function setOngoingOrder(newOngoingOrder){
+    const initialValue = localStorage.getItem('ongoingOrder')
     let ongoingOrder
-    if(!newOngoingOrder){
-        localStorage.removeItem('ongoingOrder')
-        ongoingOrder = null
-        return ongoingOrder
+    if(!initialValue) {
+        localStorage.setItem('ongoingOrder',JSON.stringify(newOngoingOrder))
+        ongoingOrder = newOngoingOrder
+    }    
+    else ongoingOrder = JSON.parse(initialValue)                        
+    
+    function updateOngoingOrder(updatedOngoingOrder){
+        if (!updatedOngoingOrder) {
+            localStorage.removeItem('ongoingOrder');
+            ongoingOrder = null
+            return 
+        }
+        updatedOngoingOrder = updatedOngoingOrder instanceof Function ? updatedOngoingOrder(JSON.parse(localStorage.getItem('ongoingOrder'))) : updatedOngoingOrder
+        localStorage.setItem('ongoingOrder',JSON.stringify(updatedOngoingOrder))
+        ongoingOrder = JSON.parse(localStorage.getItem('ongoingOrder'))
+        return 
     }
-    console.log(newOngoingOrder instanceof Function)
-    newOngoingOrder = newOngoingOrder instanceof Function ? newOngoingOrder(JSON.parse(localStorage.getItem('ongoingOrder'))) : newOngoingOrder
-    localStorage.setItem('ongoingOrder',JSON.stringify(newOngoingOrder))
-    ongoingOrder = JSON.parse(localStorage.getItem('ongoingOrder'))
-    return ongoingOrder
+    return [ongoingOrder, updateOngoingOrder]
 }
