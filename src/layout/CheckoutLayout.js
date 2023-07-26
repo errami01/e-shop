@@ -20,6 +20,7 @@ export default function CheckoutLayout(){
         phase: 'personalInfos'
     })
     const phases = ['personalInfos', 'shipping', 'payment']
+    const currentPhaseIndex = phases.indexOf(ongoingOrder.phase)
     const userLoadedData = useLoaderData()
     const cancelOrder =()=>{
         updateOngoingOrder()
