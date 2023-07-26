@@ -19,6 +19,7 @@ export default function CheckoutLayout(){
         cart,
         phase: 'personalInfos'
     })
+    const phases = ['personalInfos', 'shipping', 'payment']
     const userLoadedData = useLoaderData()
     const cancelOrder =()=>{
         updateOngoingOrder()
