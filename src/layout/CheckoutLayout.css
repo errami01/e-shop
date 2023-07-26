@@ -25,6 +25,9 @@
 .container--checkoutLayout > .container--cart{
     display: none;
 }
+.completed-phase--checkoutLayout{
+    color: green;
+}
 @media screen and (min-width: 960px) {
     .container--checkoutLayout > .container--cart{
         display: flex;
