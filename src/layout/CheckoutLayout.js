@@ -30,15 +30,18 @@ export default function CheckoutLayout(){
         <div className="container--checkoutLayout">
             <div className='infos-section--checkoutLayout'>
                 <ul className='phases--checkoutLayout'>
-                    <NavLink>
+                    <NavLink
+                    className={currentPhaseIndex > 0 && 'completed-phase--checkoutLayout'}
+                    >
                         Account <i className="fa-solid fa-circle-check"></i>
                     </NavLink>
                     {'->'}
-                    <NavLink>
+                    <NavLink 
+                    className={currentPhaseIndex > 1 && 'completed-phase--checkoutLayout'}>
                         Shipping <i className="fa-solid fa-circle-check"></i>
                     </NavLink>
                     {'->'}
-                    <NavLink>
+                    <NavLink >
                         Payment <i className="fa-solid fa-circle-check"></i>
                     </NavLink>
                 </ul>
