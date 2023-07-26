@@ -1,5 +1,5 @@
 import './CheckoutLayout.css'
-import { Outlet, useLoaderData } from "react-router-dom"
+import { NavLink, Outlet, useLoaderData } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 import { fetchSingleUser } from '../utils/fetcher'
@@ -30,11 +30,17 @@ export default function CheckoutLayout(){
         <div className="container--checkoutLayout">
             <div className='infos-section--checkoutLayout'>
                 <ul className='phases--checkoutLayout'>
-                    <li>Account <i className="fa-solid fa-circle-check"></i></li>
-                    {'>'}
-                    <li>Shipping <i className="fa-solid fa-circle-check"></i></li>
-                    {'>'}
-                    <li>Payment <i className="fa-solid fa-circle-check"></i></li>
+                    <NavLink>
+                        Account <i className="fa-solid fa-circle-check"></i>
+                    </NavLink>
+                    {'->'}
+                    <NavLink>
+                        Shipping <i className="fa-solid fa-circle-check"></i>
+                    </NavLink>
+                    {'->'}
+                    <NavLink>
+                        Payment <i className="fa-solid fa-circle-check"></i>
+                    </NavLink>
                 </ul>
                 {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
             </div>     
