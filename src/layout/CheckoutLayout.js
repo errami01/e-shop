@@ -31,17 +31,22 @@ export default function CheckoutLayout(){
             <div className='infos-section--checkoutLayout'>
                 <ul className='phases--checkoutLayout'>
                     <NavLink
+                    end
+                    to={currentPhaseIndex >=0 && 'personalInfos'}
                     className={currentPhaseIndex > 0 && 'completed-phase--checkoutLayout'}
                     >
                         Account <i className="fa-solid fa-circle-check"></i>
                     </NavLink>
                     {'->'}
-                    <NavLink 
+                    <NavLink
+                    end
+                    to={currentPhaseIndex >=1 && 'shipping'} 
                     className={currentPhaseIndex > 1 && 'completed-phase--checkoutLayout'}>
                         Shipping <i className="fa-solid fa-circle-check"></i>
                     </NavLink>
                     {'->'}
-                    <NavLink >
+                    <NavLink
+                    to={currentPhaseIndex >=2 && 'payment'} >
                         Payment <i className="fa-solid fa-circle-check"></i>
                     </NavLink>
                 </ul>
