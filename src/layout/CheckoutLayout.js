@@ -39,7 +39,6 @@ export default function CheckoutLayout(){
                     </NavLink>
                     {'->'}
                     <NavLink
-                    end
                     to={currentPhaseIndex >=1 && 'shipping'} 
                     className={currentPhaseIndex > 1 && 'completed-phase--checkoutLayout'}>
                         Shipping <i className="fa-solid fa-circle-check"></i>
