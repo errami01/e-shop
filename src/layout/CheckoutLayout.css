@@ -22,8 +22,11 @@
     border-radius: 5px;
     font-weight: 700;
 }
-.phases--checkoutLayout > a{
-    color: inherit
+.phase-link--checkoutLayout{
+    color: black;
+}
+.phase-li--checkoutLayout{
+    color: var(--text-color)
 }
 .container--checkoutLayout > .container--cart{
     display: none;
