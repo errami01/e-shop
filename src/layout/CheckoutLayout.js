@@ -7,6 +7,7 @@ import { useContext, useEffect } from 'react'
 import { UserDataContext } from '../contexts/UserDataContext'
 import { CartContext } from '../contexts/CartContext'
 import { setOngoingOrder } from '../utils/useOngoingOrder'
+import CheckoutPhase from '../components/CheckoutPhase'
 
 export async function loader({request}){
     requireAuth(request)
@@ -21,6 +22,9 @@ export default function CheckoutLayout(){
     })
     const phases = ['personalInfos', 'shipping', 'payment']
     const currentPhaseIndex = phases.indexOf(ongoingOrder.phase)
+    const style = {
+        borderBottom: '4px solid'
+    }
     const userLoadedData = useLoaderData()
     const cancelOrder =()=>{
         updateOngoingOrder()
@@ -30,24 +34,27 @@ export default function CheckoutLayout(){
         <div className="container--checkoutLayout">
             <div className='infos-section--checkoutLayout'>
                 <ul className='phases--checkoutLayout'>
-                    <NavLink
-                    end
+                    <CheckoutPhase
                     to={currentPhaseIndex >=0 && 'personalInfos'}
-                    className={currentPhaseIndex > 0 && 'completed-phase--checkoutLayout'}
-                    >
+                    style={({isActive})=> {return isActive? style:{}}}
+                    className={`${currentPhaseIndex > 0 && 'completed-phase--checkoutLayout'} phase-link--checkoutLayout`}>
                         Account <i className="fa-solid fa-circle-check"></i>
-                    </NavLink>
+                    </CheckoutPhase>
                     {'->'}
-                    <NavLink
-                    to={currentPhaseIndex >=1 && 'shipping'} 
-                    className={currentPhaseIndex > 1 && 'completed-phase--checkoutLayout'}>
+                    <CheckoutPhase
+                    to={currentPhaseIndex >=1? 'shipping':undefined} 
+                    style={({isActive})=> {return isActive? style:{}}}
+                    className={`${currentPhaseIndex > 1 && 'completed-phase--checkoutLayout'} phase-link--checkoutLayout`}
+                    >
                         Shipping <i className="fa-solid fa-circle-check"></i>
-                    </NavLink>
+                    </CheckoutPhase>
                     {'->'}
-                    <NavLink
-                    to={currentPhaseIndex >=2 && 'payment'} >
+                    <CheckoutPhase
+                    to={currentPhaseIndex >=2 && 'payment'}
+                    style={({isActive})=> isActive? style:{}}
+                    >
                         Payment <i className="fa-solid fa-circle-check"></i>
-                    </NavLink>
+                    </CheckoutPhase>
                 </ul>
                 {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
             </div>     
