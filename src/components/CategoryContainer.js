@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 import './CategoryContainer.css'
 import {nanoid} from 'nanoid'
 import { fetchData } from "../utils/fetcher"; 
+import Spinner from "./Spinner";
 
 
 
@@ -32,7 +33,7 @@ export default function CategoryContainer({category}){
         <div className="categorie-container">
             <header className="category-name" onClick={()=> navigate(`category/${category}`)}>{category}</header>
             <div className="products-container">
-                <Suspense fallback={<h1>Products are loading...</h1>}>
+                <Suspense fallback={<Spinner />}>
                     <Await resolve={fetchData(category)}>
                         {awaitChild}
                     </Await>
