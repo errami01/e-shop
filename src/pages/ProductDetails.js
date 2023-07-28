@@ -1,26 +1,26 @@
-import { getData, fetchSingleProduct } from "../utils/fetcher"
-import { useLoaderData } from "react-router-dom"
-import { useContext } from "react"
+import { fetchSingleProduct } from "../utils/fetcher"
+import { useLoaderData, defer, Await } from "react-router-dom"
+import { useContext, Suspense } from "react"
 import { CartContext } from "../contexts/CartContext"
 import "./ProductDetails.css"
-import { useRate } from "../utils/useRate"
+import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
+import Spinner from "../components/Spinner"
 export function loader({params}){
-    return fetchSingleProduct(params.id)
+    return defer({singleProduct:fetchSingleProduct(params.id)})
 }
 export default function PrdoductDetails(){
-    const product = useLoaderData()
-    const stars = useRate(product.rating.rate)
+    const productPromise = useLoaderData()
     const cart = useContext(CartContext)
-    const {cartItems, setCartItems} = cart;
-    const inCart = cartItems.filter(item => item.id===product.id)[0]
-    function handleAddToCart(){
-        setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
-    }
-    
-    return(
-        <div className="productDetails-container">
-            {/* <div className="grid-productDetails"> */}
+    const awaitChild =(product)=>{
+        const stars = rate(product.rating.rate)
+        const {cartItems, setCartItems} = cart;
+        const inCart = cartItems.filter(item => item.id===product.id)[0]
+        function handleAddToCart(){
+            setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
+        }
+        return(
+            <>
                 <div className="img-section-prdctDetails">
                     <img className="prdct-img-prdctDetails" src={product.image} />
                 </div>
@@ -34,7 +34,17 @@ export default function PrdoductDetails(){
                         onClick={handleAddToCart}
                         >Add to Cart</button> }
                 </div>
-            {/* </div> */}
+            </>
+        )
+    }
+    return(
+        <div className="productDetails-container">
+                    <Suspense fallback={<Spinner />}>
+                        <Await resolve={productPromise.singleProduct}>
+                            {awaitChild}
+                        </Await>
+                    </Suspense>
+                
         </div>
     )
 }
