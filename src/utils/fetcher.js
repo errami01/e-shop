@@ -24,7 +24,15 @@ export async function loginUser(user, pass){
     return token
             
 }
+export async function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve()
+        }, ms)
+    })
+}
 export async function fetchData(param){
+    await sleep(3000)
     if(!param){
         throw{
             message: 'I should set a parameter to fetchData()'
