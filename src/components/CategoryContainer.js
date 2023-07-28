@@ -1,12 +1,13 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { useState, Suspense } from "react"
+import { useNavigate, Await } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import './CategoryContainer.css'
 import {nanoid} from 'nanoid'
+import { fetchData } from "../utils/fetcher"; 
 
 
 
-export default function CategoryContainer({category,products}){
+export default function CategoryContainer({category}){
     const[productsToRender, setProductsToRender] = useState(setNumberOfProduct())
     const navigate = useNavigate()
     function setNumberOfProduct(){
@@ -20,16 +21,22 @@ export default function CategoryContainer({category,products}){
     window.addEventListener('resize',()=> {
         setProductsToRender(setNumberOfProduct())
     })
-    const imagesToRender = [...products]
-    imagesToRender.length = productsToRender
-    const images = imagesToRender.map(
-        product=><ProductCard key={nanoid()}  {...product}/>
-    )
+    const awaitChild = (products)=>{
+        products.length = productsToRender
+        const cards = products.map(
+            product=> <ProductCard key={nanoid()}  {...product}/>
+        )
+        return cards
+    }
     return(<>
         <div className="categorie-container">
             <header className="category-name" onClick={()=> navigate(`category/${category}`)}>{category}</header>
             <div className="products-container">
-                {images}
+                <Suspense fallback={<h1>Products are loading...</h1>}>
+                    <Await resolve={fetchData(category)}>
+                        {awaitChild}
+                    </Await>
+                </Suspense>
             </div>
         </div>
 
