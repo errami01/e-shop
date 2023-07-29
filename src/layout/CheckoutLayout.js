@@ -1,5 +1,5 @@
 import './CheckoutLayout.css'
-import { Outlet, useLoaderData } from "react-router-dom"
+import { Await, Outlet, useLoaderData } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 import { fetchSingleUser } from '../utils/fetcher'
@@ -9,13 +9,14 @@ import { CartContext } from '../contexts/CartContext'
 import { setOngoingOrder } from '../utils/useOngoingOrder'
 import CheckoutPhase from '../components/CheckoutPhase'
 import Spinner from '../components/Spinner'
+import { UpdateState } from '../components/UpdateState'
 
 export async function loader({request}){
     requireAuth(request)
-    return await fetchSingleUser(1)     
+    return null     
 }
 export default function CheckoutLayout(){
-    const {userData, setUserData} = useContext(UserDataContext)
+    const {setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
         cart,
@@ -26,11 +27,19 @@ export default function CheckoutLayout(){
     const style = {
         borderBottom: '4px solid'
     }
-    const userLoadedData = useLoaderData()
+    // const userLoadedData = useLoaderData()
     const cancelOrder =()=>{
         updateOngoingOrder()
     }
-    useEffect(()=> setUserData(userLoadedData),[userLoadedData])
+    const awaitChild = (userLoadedData)=>{
+        return(
+            <>
+                <Outlet context={{ ongoingOrder, cancelOrder }}/>
+                <UpdateState data={userLoadedData} setState={setUserData}/>
+            </>
+           
+        )
+    }
     return(
         <div className="container--checkoutLayout">
             <div className='infos-section--checkoutLayout'>
@@ -58,7 +67,9 @@ export default function CheckoutLayout(){
                     </CheckoutPhase>
                 </ul>
                 <Suspense fallback={<Spinner />}>
-                   {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
+                    <Await resolve={fetchSingleUser(1)}>
+                        {awaitChild}
+                    </Await>
                 </Suspense>
             </div>     
             <Cart />
