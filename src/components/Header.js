@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 import CartMenu from './CartMenu'
 import { UserDataContext } from '../contexts/UserDataContext'
-export default function Header(props){
+export default function Header(){
     const {userData, setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
     const {cartItemsNumber} = cart
@@ -40,9 +40,7 @@ export default function Header(props){
                 onMouseLeave={handleBarsAndUserMenuMouseLeave}
                 >     
                 <i className="fa-solid fa-bars" ></i>
-                <BarsMenu 
-                 isOpen={isMenuOpen.barsIconContainer} 
-                 categories={props.categories}/>
+                <BarsMenu isOpen={isMenuOpen.barsIconContainer} />
             </div>
             <Link to={''} className='logo'>E-commerce</Link>
             {userData?
