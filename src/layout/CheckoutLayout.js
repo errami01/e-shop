@@ -1,9 +1,9 @@
 import './CheckoutLayout.css'
-import { NavLink, Outlet, useLoaderData } from "react-router-dom"
+import { Outlet, useLoaderData } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 import { fetchSingleUser } from '../utils/fetcher'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, Suspense } from 'react'
 import { UserDataContext } from '../contexts/UserDataContext'
 import { CartContext } from '../contexts/CartContext'
 import { setOngoingOrder } from '../utils/useOngoingOrder'
@@ -56,7 +56,9 @@ export default function CheckoutLayout(){
                         Payment <i className="fa-solid fa-circle-check"></i>
                     </CheckoutPhase>
                 </ul>
-                {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
+                <Suspense>
+                   {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
+                </Suspense>
             </div>     
             <Cart />
         </div>
