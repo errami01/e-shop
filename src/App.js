@@ -1,7 +1,7 @@
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import Home, {loader as homeLoader} from './pages/Home'
-import Layout, {loader as layoutLoader} from './layout/Layout';
+import Layout from './layout/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import CartPage from './pages/CartPage';
@@ -24,7 +24,6 @@ import CheckoutPhase from './pages/checkout/CheckoutPhase';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route 
     path='/' 
-    loader={layoutLoader}
     element={<Layout />}
     errorElement={<ErrorComponent/>}
     >
