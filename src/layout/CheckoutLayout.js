@@ -8,6 +8,7 @@ import { UserDataContext } from '../contexts/UserDataContext'
 import { CartContext } from '../contexts/CartContext'
 import { setOngoingOrder } from '../utils/useOngoingOrder'
 import CheckoutPhase from '../components/CheckoutPhase'
+import Spinner from '../components/Spinner'
 
 export async function loader({request}){
     requireAuth(request)
@@ -56,7 +57,7 @@ export default function CheckoutLayout(){
                         Payment <i className="fa-solid fa-circle-check"></i>
                     </CheckoutPhase>
                 </ul>
-                <Suspense>
+                <Suspense fallback={<Spinner />}>
                    {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
                 </Suspense>
             </div>     
