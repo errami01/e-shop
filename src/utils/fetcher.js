@@ -32,7 +32,7 @@ export async function sleep(ms) {
     })
 }
 export async function fetchData(param){
-    await sleep(3000)
+    // await sleep(3000)
     if(!param){
         throw{
             message: 'I should set a parameter to fetchData()'
@@ -65,6 +65,7 @@ export async function fetchData(param){
     return localData
 }
 export async function fetchSingleProduct(id){
+    // await sleep(3000)
     const index = id - 1
     const localData = JSON.parse(localStorage.getItem('products'))
     if(!localData){
@@ -84,6 +85,7 @@ export async function fetchSingleProduct(id){
 }
 
 export async function fetchSingleUser(id){
+    // await sleep(3000)
     const localData = JSON.parse(localStorage.getItem('user'))
     if(!localData){
         const promiseData = await fetch(`https://fakestoreapi.com/users/${id}`)
