@@ -1,5 +1,7 @@
+import './AdminLayout.css'
 export default function AdminLayout(){
     return(
-        <h1>Admin Panel goes Here</h1>
+        <div className="container--adminLayout">
+        </div>
     )
 }
