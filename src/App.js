@@ -21,7 +21,9 @@ import Shipping, {action as shippingAction} from './pages/checkout/Shipping';
 import Payment from './pages/checkout/Payment';
 import { requireAuth } from './utils/requireAuth';
 import CheckoutPhase from './pages/checkout/CheckoutPhase';
+import AdminLayout from './layout/AdminLayout';
 const router = createBrowserRouter(createRoutesFromElements(
+  <>
   <Route 
     path='/' 
     element={<Layout />}
@@ -134,7 +136,11 @@ const router = createBrowserRouter(createRoutesFromElements(
     
       
   </Route>
- 
+  <Route
+    path='/admin'
+    element={<AdminLayout />}
+  />
+  </>
 ))
 
 function App() {
