@@ -14,12 +14,12 @@ export async function loader(){
     return null      
 }
 export default function CustomerLayout(){
-    const {setUserData} = useContext(UserDataContext)
+    const {userData, setUserData} = useContext(UserDataContext)
     const awaitChild = (userLoadedData)=>{
         return(
             <>
-                <Outlet />
                 <UpdateState setState={setUserData} data={userLoadedData}/>
+                {userData && <Outlet />}
             </>
         )
     }
