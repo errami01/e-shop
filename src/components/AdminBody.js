@@ -1,5 +1,7 @@
 export default function AdminBody(){
     return(
-        <h1>This is AdminBody</h1>
+        <div className="container--adminBody">
+
+        </div>
     )
 }
