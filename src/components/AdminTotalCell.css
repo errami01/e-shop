@@ -18,6 +18,8 @@
 }
 .cell-title--adminTotalCell{
     margin: 0;
+    margin-bottom: 5px;
+    color: rgb(188, 187, 187)
 }
 .total-value--adminTotalCell{
     margin: 0; 
