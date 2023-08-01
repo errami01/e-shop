@@ -1,3 +1,9 @@
 .container--adminTotal-cell{
     display: flex;
 }
+.cell-title--adminTotalCell{
+    margin: 0;
+}
+.total-value--adminTotalCell{
+    margin: 0; 
+}
