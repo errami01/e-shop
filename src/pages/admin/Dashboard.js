@@ -10,17 +10,22 @@ export default function Dashboard(){
                     totalLabel ={'Total Sales'}
                     totalValue ={1000}
                 />
+            </AdminDashCell>
+            <AdminDashCell>
                 <AdminTotalCell 
                     iconClass ={'fa-solid fa-cart-shopping'}
                     totalLabel ={'Total orders'}
                     totalValue ={1000}
                 />
+            </AdminDashCell>
+            <AdminDashCell>
                 <AdminTotalCell 
                     iconClass ={'fa-solid fa-bag-shopping'}
                     totalLabel ={'Total products'}
                     totalValue ={1000}
                 />
-            </AdminDashCell>  
+            </AdminDashCell>
+              
         </div>
     )
 }
