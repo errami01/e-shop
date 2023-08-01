@@ -11,8 +11,10 @@
     justify-content: center;
     border-radius: 50%;
     background-color: green;
-    width: 25px;
-    height: 25px;
+    outline: 5px solid rgba(0, 128, 0, .2);
+    color: white;
+    width: 45px;
+    height: 45px;
 }
 .cell-title--adminTotalCell{
     margin: 0;
