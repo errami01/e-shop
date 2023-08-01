@@ -22,6 +22,7 @@ import Payment from './pages/checkout/Payment';
 import { requireAuth } from './utils/requireAuth';
 import CheckoutPhase from './pages/checkout/CheckoutPhase';
 import AdminLayout from './layout/AdminLayout';
+import Dashboard from './pages/admin/Dashboard';
 const router = createBrowserRouter(createRoutesFromElements(
   <>
   <Route 
@@ -139,7 +140,11 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route
     path='/admin'
     element={<AdminLayout />}
-  />
+  >
+    <Route
+      index
+      element={<Dashboard />}/>
+  </Route>
   </>
 ))
 
