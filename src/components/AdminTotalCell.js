@@ -1,3 +1,4 @@
+import './AdminTotalCell.css'
 export default function AdminTotalCell({iconClass, totalLabel, totalValue }){
     return(
         <div className="container--adminTotal-cell">
