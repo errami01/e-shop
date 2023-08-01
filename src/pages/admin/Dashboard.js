@@ -5,7 +5,11 @@ export default function Dashboard(){
     return (
         <div className="container--dashboard">
             <AdminDashCell>
-                
+                <AdminTotalCell 
+                    iconClass ={'fa-solid fa-dollar-sign'}
+                    totalLabel ={'Total Sales'}
+                    totalValue ={1000}
+                />
             </AdminDashCell>  
         </div>
     )
