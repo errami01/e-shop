@@ -1,6 +1,8 @@
 .container--adminTotal-cell{
     display: flex;
+    align-items: center;
     background-color: red;
+    gap: 10px;
 }
 .icon--adminTotalCell{
     display: flex;
