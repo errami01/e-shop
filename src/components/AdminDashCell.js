@@ -1,6 +1,6 @@
-export default function AdminDashCell({children, ...rest}){
+export default function AdminDashCell({children,className}){
     return(
-        <div className="container--adminDashCell" {...rest}>
+        <div className={`container--adminDashCell ${className}`} >
             {children}
         </div>
     )
