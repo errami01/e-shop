@@ -1,5 +1,6 @@
 import AdminDashCell from "../../components/AdminDashCell";
 import AdminTotalCell from "../../components/AdminTotalCell";
+import './Dashboard.css'
 
 export default function Dashboard(){
     return (
