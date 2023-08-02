@@ -5,6 +5,9 @@
     grid-auto-rows: 85px;
     gap: 20px;
 }
+.sales-chart--dashboard{
+    grid-row: span 3;
+}
 
 @media screen and (min-width: 560px) {
     .sales-chart--dashboard{
