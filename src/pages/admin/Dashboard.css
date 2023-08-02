@@ -14,3 +14,8 @@
         grid-column: span 2;
     }
 }
+@media screen and (min-width: 830px) {
+    .sales-chart--dashboard{
+        grid-column: span 3;
+    }
+}
