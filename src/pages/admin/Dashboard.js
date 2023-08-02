@@ -28,7 +28,7 @@ export default function Dashboard(){
             </AdminDashCell>
             <AdminDashCell>
                 <AdminTotalCell 
-                    iconClass ={"fa-solid fa-user-check"}
+                    iconClass ={"fa-solid fa-user"}
                     totalLabel ={'Total customers'}
                     totalValue ={1000}
                 />
