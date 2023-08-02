@@ -26,6 +26,13 @@ export default function Dashboard(){
                     totalValue ={1000}
                 />
             </AdminDashCell>
+            <AdminDashCell>
+                <AdminTotalCell 
+                    iconClass ={"fa-solid fa-user-check"}
+                    totalLabel ={'Total customers'}
+                    totalValue ={1000}
+                />
+            </AdminDashCell>
             <AdminDashCell className='sales-chart--dashboard'>
                 <h1>Sales statistics</h1>
 
