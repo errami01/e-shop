@@ -26,6 +26,10 @@ export default function Dashboard(){
                     totalValue ={1000}
                 />
             </AdminDashCell>
+            <AdminDashCell className='sales-chart--dashboard'>
+                <h1>Sales statistics</h1>
+
+            </AdminDashCell>
               
         </div>
     )
