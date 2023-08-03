@@ -1,8 +1,26 @@
 import AdminDashCell from "../../components/AdminDashCell";
 import AdminTotalCell from "../../components/AdminTotalCell";
+import BarChart from "../../components/BarChart";
 import './Dashboard.css'
 
 export default function Dashboard(){
+    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = ["red", "green","blue","orange","brown"];
+    const data = {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }],
+          options: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: "World Wine Production 2018"
+            }
+        }
+    }
     return (
         <div className="container--dashboard">
             <AdminDashCell>
@@ -34,8 +52,8 @@ export default function Dashboard(){
                 />
             </AdminDashCell>
             <AdminDashCell className='sales-chart--dashboard'>
-                <h1>Sales statistics</h1>
-
+                <h1 style={{margin:0}}>Sales statistics</h1>
+                <BarChart chartData={data}></BarChart>
             </AdminDashCell>
               
         </div>
