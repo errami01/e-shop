@@ -1,12 +1,11 @@
 .container--dashboard{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: repeat(5, 85px);
     grid-auto-rows: 85px;
     gap: 20px;
 }
 .sales-chart--dashboard{
-    height: fit-content;
+    grid-row: span 3;
 }
 
 @media screen and (min-width: 560px) {
