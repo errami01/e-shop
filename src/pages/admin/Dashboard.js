@@ -51,8 +51,7 @@ export default function Dashboard(){
                     totalValue ={1000}
                 />
             </AdminDashCell>
-            <AdminDashCell className='sales-chart--dashboard'>
-                <h1 style={{margin:0}}>Sales statistics</h1>
+            <AdminDashCell className='sales-chart--dashboard' title='Sales statistics'>
                 <BarChart chartData={data}></BarChart>
             </AdminDashCell>
               
