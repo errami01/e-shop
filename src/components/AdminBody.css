@@ -3,6 +3,7 @@
 }
 .content--adminBody{
     flex-grow: 1;
+    padding: 20px;
 }
 .page-title--adminBody{
     margin:0;
