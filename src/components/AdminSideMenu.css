@@ -18,7 +18,12 @@
         background-color: var(--body-background-color);
         border-radius: 5px;
     }
+    .container--adminSideMenu a:hover{
+        background-color: #fff2e0;
+        border-radius: 5px;
+    }
     .container--adminSideMenu i{
         margin-right: 10px;
     }
+
 }
