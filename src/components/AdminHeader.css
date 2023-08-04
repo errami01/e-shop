@@ -2,7 +2,7 @@
     display: flex;
     padding: 20px;
     background-color: white;
-    box-shadow: 1px 0px 6px 0px gray;
+    box-shadow: 1px 0px 6px 0px #d4c6b4;
 }
 .bars-icon-container--adminHeader{
     width: 25px;
