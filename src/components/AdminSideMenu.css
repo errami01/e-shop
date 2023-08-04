@@ -1,0 +1,10 @@
+.container--adminSideMenu{
+    display: none;
+}
+@media screen and (min-width: 1030px) {
+    .container--adminSideMenu{
+        display: block;
+        flex-basis: 200px;
+        background-color: blue;
+    }
+}
