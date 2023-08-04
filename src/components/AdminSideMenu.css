@@ -5,6 +5,6 @@
     .container--adminSideMenu{
         display: block;
         flex-basis: 200px;
-        background-color: blue;
+        background-color: white;
     }
 }
