@@ -1,6 +1,10 @@
 .container--adminBody{
+    display: flex;
     padding: 20px;
 }
+.content--adminBody{
+    flex-grow: 1;
+}
 .page-title--adminBody{
-    margin-top:0;
+    margin:0;
 }
