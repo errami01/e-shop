@@ -1,6 +1,5 @@
 .container--adminBody{
     display: flex;
-    padding: 20px;
 }
 .content--adminBody{
     flex-grow: 1;
