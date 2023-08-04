@@ -12,6 +12,7 @@
     }
     .container--adminSideMenu a{
         padding: 10px;
+        margin-bottom: 5px;
     }
     .container--adminSideMenu a.active{
         background-color: var(--body-background-color);
