@@ -1,9 +1,0 @@
-.container--adminDashCell{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: white;
-}
-.cell-title--adminDashCell{
-    margin: 0;
-}
