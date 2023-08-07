@@ -1,17 +1,15 @@
 
 import './InputComponent.css'
-export default function InputComponent(props){
+export default function InputComponent({label,icon, ...rest}){
     return (
     <div className='input-container'>
-        {props.icon}
+        {icon}
         <input 
-            name={props.name}  
+            {...rest}
             className='input--inputComponent' 
-            type={props.type} 
             placeholder=' '
-            required = {props.required}
         />
-        <label className='label--inputComponent'>{props.label}</label>
+        <label className='label--inputComponent'>{label}</label>
         <div className='bottom-line--inputComponent'></div>
     </div>)
 }
