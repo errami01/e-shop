@@ -4,11 +4,11 @@ import InputComponent from "../components/InputComponent";
 export default function SignUp(){
     return(
         <div className="container--signUp">
-            <From>
+            <Form>
                 <InputComponent 
                     type='email'
                 />
-            </From>
+            </Form>
         </div>
     )
 }
