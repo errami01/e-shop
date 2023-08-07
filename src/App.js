@@ -23,6 +23,7 @@ import { requireAuth } from './utils/requireAuth';
 import CheckoutPhase from './pages/checkout/CheckoutPhase';
 import AdminLayout from './layout/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
+import SignUp from './pages/SignUp';
 const router = createBrowserRouter(createRoutesFromElements(
   <>
   <Route 
@@ -96,6 +97,10 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={loginLoader}
       element={<Login />}
       />
+    <Route 
+      path='signup'
+      element={<SignUp />}
+    />
     <Route 
       path='category/:category'
       loader= {categoryPageLoader}
