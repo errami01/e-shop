@@ -1,6 +1,6 @@
 import './Login.css'
 import InputComponent from '../components/InputComponent'
-import { Form, redirect } from 'react-router-dom'
+import { Form, redirect, Link } from 'react-router-dom'
 import { loginUser } from '../utils/fetcher'
 import { useActionData } from 'react-router-dom'
 
@@ -51,6 +51,8 @@ export default function Login(){
                 />  
                 <button className='submit-btn--login'>Login</button>
             </Form>
+            <p className='customer--login'>Don't have an account? 
+            <Link> Sign-up</Link></p>
             <p className='customer--login'>Username: johnd, Password: m38rmF$</p>
         </div>
     )
