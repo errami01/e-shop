@@ -3,8 +3,8 @@ import {InputComponent} from "../components/InputComponent";
 import { useRef } from "react";
 
 export default function SignUp(){
-    const emailElement = useRef()
-    const passElement = useRef()
+    const emailInputElement = useRef()
+    const emailContainerElement = useRef()
     return(
         <div className="login-container">
             
@@ -14,7 +14,10 @@ export default function SignUp(){
             <h3 className='sign-in-urge--login'>Create your account</h3>
             <Form method='post' className='form--login' replace>
                 <InputComponent 
-                    ref = {emailElement}
+                    ref = {{
+                        inputRef:emailInputElement, 
+                        containerRef: emailContainerElement, 
+                    }}
                     name='email'
                     label='Email' 
                     type='email'
