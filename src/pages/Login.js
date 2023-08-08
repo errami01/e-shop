@@ -1,5 +1,5 @@
 import './Login.css'
-import InputComponent from '../components/InputComponent'
+import {InputComponent} from '../components/InputComponent'
 import { Form, redirect, Link } from 'react-router-dom'
 import { loginUser } from '../utils/fetcher'
 import { useActionData } from 'react-router-dom'
