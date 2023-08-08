@@ -1,5 +1,5 @@
 import { Form } from "react-router-dom";
-import InputComponent from "../components/InputComponent";
+import {InputComponent} from "../components/InputComponent";
 
 export default function SignUp(){
     return(
