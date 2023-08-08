@@ -6,6 +6,14 @@
     margin-bottom: 40px;
     border-bottom: 0.5px solid var(--theme-color);
 }
+.invalid--inputComponent::after{
+    content: attr(invalidMessage);
+    position: absolute;
+    color: red;
+    top: 100%;
+    left: var(--label-position-left);
+    margin-top: 2px;
+    font-size: 0.8rem;
 }
 .input-container > i{
     color: var(--theme-color);
