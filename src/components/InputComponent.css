@@ -1,21 +1,21 @@
 .input-container{
+    --theme-color: var(--first-Color);
+    --label-position-left: 15%;
     position: relative;
     width: 80%;
     margin-bottom: 30px;
-    border-bottom: 0.5px solid var(--first-Color);
-    
+    border-bottom: 0.5px solid var(--theme-color);
+}
 }
 .input-container > i{
-    color: var(--first-Color);
+    color: var(--theme-color);
     width: 10%;
     text-align: center;
 }
 .input--inputComponent{
-    /* width: 90%; */
     border: 0;
   }
 .input--inputComponent:focus{
-    /* width: 90%; */
     outline: none;
   }
   .label--inputComponent{
@@ -29,13 +29,12 @@
 }
 .input--inputComponent:focus + .label--inputComponent, .input--inputComponent:not(:placeholder-shown) + .label--inputComponent {
     top: -100%;
-    color: var(--first-Color)
-    /* margin-left: -5px */
+    color: var(--theme-color)
 }
 
 .bottom-line--inputComponent{
     visibility: hidden;
-    border: 1px solid var(--first-Color);
+    border: 1px solid var(--theme-color);
     width: 0;
     margin: auto;
     transition:  0.5s;
@@ -43,5 +42,4 @@
 .input--inputComponent:focus ~ .bottom-line--inputComponent {
     width: 100%;
     visibility: visible;
-    /* margin-left: -5px */
 }
