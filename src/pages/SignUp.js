@@ -5,6 +5,8 @@ import { useRef } from "react";
 export default function SignUp(){
     const emailInputElement = useRef()
     const emailContainerElement = useRef()
+    const passInputElement = useRef()
+    const passContainerElement = useRef()
     function checkEmail(){
         const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
         if(!emailInputElement.current.value.match(pattern)){
@@ -43,7 +45,11 @@ export default function SignUp(){
                     required
                     />
                 <InputComponent 
-                    ref = {passElement}
+                    ref = {
+                        {
+                            inputRef: passInputElement,
+                            containerRef: passContainerElement,
+                        }}
                     name='password'
                     label='Password' 
                     type='password'
