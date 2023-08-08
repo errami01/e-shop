@@ -29,7 +29,7 @@
   .label--inputComponent{
     position: absolute;
     top:0;
-    left: 15%;
+    left: var(--label-position-left);
     transition:  top 0.5s;
     pointer-events: none;
     color: rgb(169, 163, 163);
