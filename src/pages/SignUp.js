@@ -23,6 +23,16 @@ export default function SignUp(){
             return 
         }
     }
+    function checkPass(){
+        const pattern = /^[a-zA-Z0-9]{4,}$/
+        if(!passInputElement.current.value.match(pattern)){
+            passContainerElement.current.style.setProperty('--theme-color', 'red')
+            passContainerElement.current.setAttribute(
+                'invalidMessage', 'Minimum 4 alphanum characters (ex: 1234 ) :)')
+            return
+        }
+        
+    }
     return(
         <div className="login-container">
             
@@ -54,6 +64,7 @@ export default function SignUp(){
                     label='Password' 
                     type='password'
                     icon={<i className="fa-solid fa-key fa"></i>}
+                    onBlur= {checkPass}
                     required
                 />  
                 <button className='submit-btn--login'>Sign up</button>
