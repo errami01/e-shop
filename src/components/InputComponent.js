@@ -2,16 +2,17 @@
 import { forwardRef } from 'react'
 import './InputComponent.css'
 export const InputComponent = forwardRef(({label,icon, ...rest}, ref)=>{
+    const {containerRef, inputRef, labelRef, bottomLineRef} = ref
     return (
-    <div className='input-container'>
+    <div ref={containerRef} className='input-container invalid--inputComponent'>
         {icon}
         <input 
             {...rest}
-            ref={ref}
+            ref={inputRef}
             className='input--inputComponent' 
             placeholder=' '
         />
-        <label className='label--inputComponent'>{label}</label>
-        <div className='bottom-line--inputComponent'></div>
+        <label ref={labelRef} className='label--inputComponent'>{label}</label>
+        <div ref={bottomLineRef} className='bottom-line--inputComponent '></div>
     </div>)
     })
