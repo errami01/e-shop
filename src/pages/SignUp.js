@@ -13,6 +13,14 @@ export default function SignUp(){
             return 
         }
     }
+    function checkEmailOnChange(){
+        const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+        if(emailInputElement.current.value.match(pattern)){
+            emailContainerElement.current.style.setProperty('--theme-color', 'var(--first-Color)')
+            emailContainerElement.current.setAttribute('invalidMessage', '')
+            return 
+        }
+    }
     return(
         <div className="login-container">
             
@@ -31,6 +39,7 @@ export default function SignUp(){
                     type='email'
                     icon = {<i className="fas fa-envelope"></i>}
                     onBlur = {checkEmail}
+                    onChange = { checkEmailOnChange }
                     required
                     />
                 <InputComponent 
