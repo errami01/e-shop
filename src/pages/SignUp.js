@@ -33,6 +33,14 @@ export default function SignUp(){
         }
         
     }
+    function checkPassOnChange(){
+        const pattern = /^[a-zA-Z0-9]{4,}$/
+        if(passInputElement.current.value.match(pattern)){
+            passContainerElement.current.style.setProperty('--theme-color', 'var(--first-Color)')
+            passContainerElement.current.setAttribute('invalidMessage', '')
+            return
+        }
+    }
     return(
         <div className="login-container">
             
@@ -65,6 +73,7 @@ export default function SignUp(){
                     type='password'
                     icon={<i className="fa-solid fa-key fa"></i>}
                     onBlur= {checkPass}
+                    onChange= { checkPassOnChange }
                     required
                 />  
                 <button className='submit-btn--login'>Sign up</button>
