@@ -1,6 +1,9 @@
 import { Form } from "react-router-dom";
 import {InputComponent} from "../components/InputComponent";
 import { useRef, useState } from "react";
+export function action(){
+    return null
+}
 
 export default function SignUp(){
     const [isFormReady, setIsFormReady] = useState({})
