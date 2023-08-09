@@ -27,6 +27,13 @@ export default function SignUp(){
             })
             return 
         }
+        setIsFormReady((prev)=> {
+            return {
+                ...prev,
+                elementToCheck: false,
+            }
+        })
+    }
     }
     return(
         <div className="login-container">
