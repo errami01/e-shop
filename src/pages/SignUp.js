@@ -34,6 +34,9 @@ export default function SignUp(){
             }
         })
     }
+    function validateForm(){
+        if(!Object.values(isFormReady).length) return false
+        return Object.values(isFormReady).every((e)=> e)
     }
     return(
         <div className="login-container">
