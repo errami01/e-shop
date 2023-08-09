@@ -19,6 +19,12 @@ export default function SignUp(){
         if(elementToCheck.current.value.match(pattern)){
             elementToUpdate.current.style.setProperty('--theme-color', 'var(--first-Color)')
             elementToUpdate.current.setAttribute('invalidMessage', '')
+            setIsFormReady((prev)=> {
+                return {
+                    ...prev,
+                    elementToCheck: true,
+                }
+            })
             return 
         }
     }
