@@ -1,8 +1,9 @@
 import { Form } from "react-router-dom";
 import {InputComponent} from "../components/InputComponent";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function SignUp(){
+    const [isFormReady, setIsFormReady] = useState({})
     const emailInputElement = useRef()
     const emailContainerElement = useRef()
     const passInputElement = useRef()
