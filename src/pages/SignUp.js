@@ -91,7 +91,7 @@ export default function SignUp(){
                     ) }
                     required
                 />  
-                <button className='submit-btn--login'>Sign up</button>
+                <button className='submit-btn--login' disabled={!validateForm()}>Sign up</button>
             </Form>
         </div>
     )
