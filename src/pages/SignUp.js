@@ -38,6 +38,9 @@ export default function SignUp(){
         if(!Object.values(isFormReady).length) return false
         return Object.values(isFormReady).every((e)=> e)
     }
+    function formSubmit(e){
+        if(!validateForm()) e.preventDefault()
+    }
     return(
         <div className="login-container">
             
@@ -45,7 +48,7 @@ export default function SignUp(){
                 <i className="fa-regular fa-user" ></i>
             </span>
             <h3 className='sign-in-urge--login'>Create your account</h3>
-            <Form method='post' className='form--login' replace>
+            <Form method='post' className='form--login' onSubmit={formSubmit} replace>
                 <InputComponent 
                     ref = {{
                         inputRef:emailInputElement, 
