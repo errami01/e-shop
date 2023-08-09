@@ -7,38 +7,18 @@ export default function SignUp(){
     const emailContainerElement = useRef()
     const passInputElement = useRef()
     const passContainerElement = useRef()
-    function checkEmail(){
-        const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-        if(!emailInputElement.current.value.match(pattern)){
-            emailContainerElement.current.style.setProperty('--theme-color', 'red')
-            emailContainerElement.current.setAttribute('invalidMessage', 'Please enter a valid email')
+    function checkNegativeValidity(pattern, elementToCheck, elementToUpdate, message){
+        if(!elementToCheck.current.value.match(pattern)){
+            elementToUpdate.current.style.setProperty('--theme-color', 'red')
+            elementToUpdate.current.setAttribute('invalidMessage', message)
             return 
         }
     }
-    function checkEmailOnChange(){
-        const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-        if(emailInputElement.current.value.match(pattern)){
-            emailContainerElement.current.style.setProperty('--theme-color', 'var(--first-Color)')
-            emailContainerElement.current.setAttribute('invalidMessage', '')
+    function checkPositiveValidity(pattern, elementToCheck, elementToUpdate){
+        if(elementToCheck.current.value.match(pattern)){
+            elementToUpdate.current.style.setProperty('--theme-color', 'var(--first-Color)')
+            elementToUpdate.current.setAttribute('invalidMessage', '')
             return 
-        }
-    }
-    function checkPass(){
-        const pattern = /^[a-zA-Z0-9]{4,}$/
-        if(!passInputElement.current.value.match(pattern)){
-            passContainerElement.current.style.setProperty('--theme-color', 'red')
-            passContainerElement.current.setAttribute(
-                'invalidMessage', 'Minimum 4 alphanum characters (ex: 1234 ) :)')
-            return
-        }
-        
-    }
-    function checkPassOnChange(){
-        const pattern = /^[a-zA-Z0-9]{4,}$/
-        if(passInputElement.current.value.match(pattern)){
-            passContainerElement.current.style.setProperty('--theme-color', 'var(--first-Color)')
-            passContainerElement.current.setAttribute('invalidMessage', '')
-            return
         }
     }
     return(
@@ -58,8 +38,17 @@ export default function SignUp(){
                     label='Email' 
                     type='email'
                     icon = {<i className="fas fa-envelope"></i>}
-                    onBlur = {checkEmail}
-                    onChange = { checkEmailOnChange }
+                    onBlur = {()=> checkNegativeValidity(
+                        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                        emailInputElement,
+                        emailContainerElement,
+                        'Please enter a valid email'
+                    )}
+                    onChange = { ()=> checkPositiveValidity(
+                        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                        emailInputElement,
+                        emailContainerElement,
+                    ) }
                     required
                     />
                 <InputComponent 
@@ -72,8 +61,17 @@ export default function SignUp(){
                     label='Password' 
                     type='password'
                     icon={<i className="fa-solid fa-key fa"></i>}
-                    onBlur= {checkPass}
-                    onChange= { checkPassOnChange }
+                    onBlur= {()=> checkNegativeValidity(
+                        /^[a-zA-Z0-9]{4,}$/,
+                        passInputElement,
+                        passContainerElement,
+                        'Minimum 4 alphanum characters (ex: 1234 ) :)'
+                    )}
+                    onChange= { ()=> checkPositiveValidity(
+                        /^[a-zA-Z0-9]{4,}$/,
+                        passInputElement,
+                        passContainerElement,
+                    ) }
                     required
                 />  
                 <button className='submit-btn--login'>Sign up</button>
