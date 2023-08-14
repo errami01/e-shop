@@ -102,3 +102,23 @@ export async function fetchSingleUser(id){
     }
     return localData
 }
+
+// Firebase realtime database
+export async function getCategories(){
+    const localData = JSON.parse(sessionStorage.getItem('categories'))
+    if(!localData){
+        const promiseData = await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/categories.json`)
+        if(!promiseData.ok){
+            throw{
+                message: "Failed to fetch Data",
+                statusText: promiseData.statusText,
+                statas: promiseData.status
+            }
+        }
+        const data = await promiseData.json()
+        sessionStorage.setItem('categories', JSON.stringify(data))
+        return data
+    }
+    return  localData
+}
+
