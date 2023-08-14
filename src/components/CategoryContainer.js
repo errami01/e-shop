@@ -3,7 +3,7 @@ import { useNavigate, Await } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import './CategoryContainer.css'
 import {nanoid} from 'nanoid'
-import { fetchData } from "../utils/fetcher"; 
+import { getProductsByCategory } from "../utils/fetcher"; 
 import Spinner from "./Spinner";
 
 
@@ -23,6 +23,7 @@ export default function CategoryContainer({category}){
         setProductsToRender(setNumberOfProduct())
     })
     const awaitChild = (products)=>{
+        products = Object.values(products)
         products.length = productsToRender
         const cards = products.map(
             product=> <ProductCard key={nanoid()}  {...product}/>
@@ -34,7 +35,7 @@ export default function CategoryContainer({category}){
             <header className="category-name" onClick={()=> navigate(`category/${category}`)}>{category}</header>
             <div className="products-container">
                 <Suspense fallback={<Spinner />}>
-                    <Await resolve={fetchData(category)}>
+                    <Await resolve={getProductsByCategory(category)}>
                         {awaitChild}
                     </Await>
                 </Suspense>
