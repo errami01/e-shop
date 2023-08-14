@@ -2,7 +2,7 @@ import './BarsMenu.css'
 import { useRef, Suspense } from 'react'
 import {nanoid} from 'nanoid'
 import { Link, Await } from 'react-router-dom'
-import { fetchData } from '../utils/fetcher'
+import { getCategories } from '../utils/fetcher'
 import Spinner from './Spinner'
 
 export default function BarsMenu({isOpen}){
@@ -27,7 +27,7 @@ export default function BarsMenu({isOpen}){
         >
             <ul>
                 <Suspense fallback={<Spinner />}>
-                    <Await resolve={fetchData('categories')}>
+                    <Await resolve={getCategories()}>
                         {awaitChild}
                     </Await>
                 </Suspense>
