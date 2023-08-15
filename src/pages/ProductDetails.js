@@ -1,4 +1,4 @@
-import { fetchSingleProduct } from "../utils/fetcher"
+import { getSingleProduct } from "../utils/fetcher"
 import { useLoaderData, defer, Await } from "react-router-dom"
 import { useContext, Suspense } from "react"
 import { CartContext } from "../contexts/CartContext"
@@ -7,7 +7,7 @@ import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
 import Spinner from "../components/Spinner"
 export function loader({params}){
-    return defer({singleProduct:fetchSingleProduct(params.id)})
+    return defer({singleProduct: getSingleProduct(params.id)})
 }
 export default function PrdoductDetails(){
     const productPromise = useLoaderData()
