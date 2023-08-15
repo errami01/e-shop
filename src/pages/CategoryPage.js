@@ -1,17 +1,17 @@
 import ProductCard from "../components/ProductCard"
 import "./CategoryPage.css"
-import {fetchData } from "../utils/fetcher" 
+import {fetchData, getProductsByCategory } from "../utils/fetcher" 
 import { useLoaderData, defer, Await } from "react-router-dom"
 import { Suspense } from "react"
 import Spinner from "../components/Spinner"
 
 export function loader({params}){
-    return defer({productsPromise: fetchData(params.category)})
+    return defer({productsPromise: getProductsByCategory(params.category)})
 }
 export default function CategoryPage(){
     const loadedData = useLoaderData()
     const awaitChild=(products)=>{
-        const productComponents = products.map(
+        const productComponents = Object.values(products).map(
             (product)=>{
     
                 return <ProductCard 
