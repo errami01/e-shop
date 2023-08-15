@@ -19,6 +19,7 @@ export default function BarsMenu({isOpen}){
     }
     function handleLocalStorage(){
         localStorage.clear()
+        sessionStorage.clear()
     }
     return(
         <div 
