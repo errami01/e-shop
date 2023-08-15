@@ -138,4 +138,23 @@ export async function getCategories(){
     }
     return  localData
 }
-
+export async function getSingleProduct(id){
+    // await sleep(3000)
+    const localData = JSON.parse(sessionStorage.getItem('products')) || {}
+    if(!localData[id]){
+        const promiseData = await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/products.json?orderBy=%22id%22&equalTo=${id}`)
+        if(!promiseData.ok){
+            throw{
+                message: "Failed to fetch Data",
+                statusText: promiseData.statusText,
+                statas: promiseData.status
+            }
+        }
+        const data = await promiseData.json()
+        localData[id] = Object.values(data)[0]
+        sessionStorage.setItem('products', JSON.stringify(localData))
+        return localData[id]
+    }
+    console.log(localData)
+    return localData[id]
+}
