@@ -64,26 +64,6 @@ export async function fetchData(param){
     }
     return localData
 }
-export async function fetchSingleProduct(id){
-    // await sleep(3000)
-    const index = id - 1
-    const localData = JSON.parse(localStorage.getItem('products'))
-    if(!localData){
-        const promiseData = await fetch(`https://fakestoreapi.com/products`)
-        if(!promiseData.ok){
-            throw{
-                message: "Failed to fetch Data",
-                statusText: promiseData.statusText,
-                statas: promiseData.status
-            }
-        }
-        const data = await promiseData.json()
-        localStorage.setItem('products', JSON.stringify(data))
-        return data[index]
-    }
-    return localData[index]
-}
-
 export async function fetchSingleUser(id){
     // await sleep(3000)
     const localData = JSON.parse(localStorage.getItem('user'))
