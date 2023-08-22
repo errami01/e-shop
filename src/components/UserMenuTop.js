@@ -1,11 +1,8 @@
 import './UserMenuTop.css'
 import { Link, NavLink } from 'react-router-dom'
-import { useContext } from 'react'
-import { UserDataContext } from '../contexts/UserDataContext'
-import { signOut } from 'firebase/auth'
-import { auth } from '../config/firbase'
+import { useSignOut } from '../utils/useSignOut'
 export default function UserMenuTop(props){
-    const {setUserData} = useContext(UserDataContext)
+    const logOut = useSignOut()
     const activeBackgroundColor = '#ffdba8'
     const {isBig=false, isOpen=true} = props
     function handleUserMenuTopClick(e){
@@ -74,10 +71,7 @@ export default function UserMenuTop(props){
                 >
                 <i className="fa-regular fa-heart"></i>
                 Your Wishlist</NavLink>
-            <Link to='#' onClick={()=>  {
-                setUserData()
-                signOut(auth)
-            }} className='logout--userMenuTop menu-item--userMenutop'>
+            <Link to='#' onClick={logOut} className='logout--userMenuTop menu-item--userMenutop'>
                 <i className="fa-solid fa-right-from-bracket"></i>
                 Logout</Link>
         </ul>
