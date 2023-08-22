@@ -1,11 +1,12 @@
 import './Login.css'
 import {InputComponent} from '../components/InputComponent'
 import { Form, redirect, Link } from 'react-router-dom'
-import { loginUser } from '../utils/fetcher'
 import { useActionData } from 'react-router-dom'
+import { auth } from "../config/firbase";
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 export function loader(){
-    if(JSON.parse(localStorage.getItem('token'))){
+    if(JSON.parse(localStorage.getItem('user'))){
         throw redirect('/customer')
     }
     return null
@@ -17,7 +18,11 @@ export async function action({request}){
     const password = formData.get('password')
     const pathToGo = url.searchParams.get('redirectTo') || '/customer'
     try{
-         await loginUser(username, password)
+         const credentials = await signInWithEmailAndPassword(auth, username, password)
+         localStorage.setItem('user', JSON.stringify({
+            id: credentials.user.uid,
+            email: credentials.user.email
+         }))
          return redirect(pathToGo)
     }
     catch(e){
