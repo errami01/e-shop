@@ -7,8 +7,7 @@ export function requireAuth(request){
         path = url.pathname
     }
     const param = path? `?redirectTo=${path}` :''
-    if(!JSON.parse(localStorage.getItem('token'))) {
+    if(!JSON.parse(localStorage.getItem('user'))) {
         throw redirect(`/login${param}`)
-        
     }
 }
