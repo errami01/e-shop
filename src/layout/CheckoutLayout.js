@@ -1,8 +1,8 @@
 import './CheckoutLayout.css'
-import { Await, Outlet, useLoaderData } from "react-router-dom"
+import { Await, Outlet, defer, useLoaderData } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
-import { fetchSingleUser } from '../utils/fetcher'
+import { getUserData } from '../utils/fetcher'
 import { useContext, useEffect, Suspense } from 'react'
 import { UserDataContext } from '../contexts/UserDataContext'
 import { CartContext } from '../contexts/CartContext'
@@ -12,12 +12,14 @@ import Spinner from '../components/Spinner'
 import { UpdateState } from '../components/UpdateState'
 
 export async function loader({request}){
+    console.log('loader checkoutLayout')
     requireAuth(request)
-    return null     
+    return defer({userDataPromise: getUserData(`"drLAqnXla5dpjz1izbyxU4jOuXe2"`)})     
 }
 export default function CheckoutLayout(){
-    const {setUserData} = useContext(UserDataContext)
+    const {userData, setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
+    const {userDataPromise} = useLoaderData()
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
         cart,
         phase: 'personalInfos'
@@ -34,8 +36,8 @@ export default function CheckoutLayout(){
     const awaitChild = (userLoadedData)=>{
         return(
             <>
-                <Outlet context={{ ongoingOrder, cancelOrder }}/>
                 <UpdateState data={userLoadedData} setState={setUserData}/>
+                {userData && <Outlet context={{ ongoingOrder, cancelOrder }}/>}
             </>
            
         )
@@ -67,7 +69,7 @@ export default function CheckoutLayout(){
                     </CheckoutPhase>
                 </ul>
                 <Suspense fallback={<Spinner />}>
-                    <Await resolve={fetchSingleUser(1)}>
+                    <Await resolve={userDataPromise}>
                         {awaitChild}
                     </Await>
                 </Suspense>
