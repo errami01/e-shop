@@ -1,53 +1,9 @@
-export async function loginUser(user, pass){
-    let 
-    response = await fetch('https://fakestoreapi.com/auth/login',{
-            method:'POST',
-            headers: {
-                "Content-Type": "application/json",
-              },
-            
-            body:JSON.stringify({
-                username: user,
-                password: pass
-            })
-        })
-    // console.log(response)
-    if(!response.ok){
-        throw{
-            message: "No user with those credentials found",
-            statusText: response.statusText,
-            status: response.status
-        }
-    }
-    const token = await response.json()
-    localStorage.setItem('token', JSON.stringify(token.token))
-    return token
-            
-}
 export async function sleep(ms) {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve()
         }, ms)
     })
-}
-export async function fetchSingleUser(id){
-    // await sleep(3000)
-    const localData = JSON.parse(localStorage.getItem('user'))
-    if(!localData){
-        const promiseData = await fetch(`https://fakestoreapi.com/users/${id}`)
-        if(!promiseData.ok){
-            throw{
-                message: "Failed to fetch Data",
-                statusText: promiseData.statusText,
-                statas: promiseData.status
-            }
-        }
-        const data = await promiseData.json()
-        localStorage.setItem('user', JSON.stringify(data))
-        return data
-    }
-    return localData
 }
 
 // Firebase realtime database
@@ -104,4 +60,22 @@ export async function getSingleProduct(id){
     }
     console.log(localData)
     return localData[id]
+}
+export async function getUserData(id){
+    // await sleep(3000)
+    const localData = JSON.parse(localStorage.getItem('user'))
+    if(!localData){
+        const promiseData = await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users.json?orderBy=%22id%22&equalTo=${id}`)
+        if(!promiseData.ok){
+            throw{
+                message: "Failed to fetch Data",
+                statusText: promiseData.statusText,
+                statas: promiseData.status
+            }
+        }
+        const data = await promiseData.json()
+        localStorage.setItem('user', JSON.stringify(data))
+        return data
+    }
+    return localData
 }
