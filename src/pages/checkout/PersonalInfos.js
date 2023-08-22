@@ -24,11 +24,11 @@ export default function PersonalInfos(){
             <Form method="post" >
                 <label>
                     First Name
-                    <input type='text' defaultValue={name.firstname} required/>
+                    <input type='text' defaultValue={name?.firstname} required/>
                 </label>
                 <label>
                     Last Name
-                    <input type='text' defaultValue={name.lastname} required/>
+                    <input type='text' defaultValue={name?.lastname} required/>
                 </label>
                 <label>
                     Phone
