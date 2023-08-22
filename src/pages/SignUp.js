@@ -1,8 +1,22 @@
-import { Form } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
 import {InputComponent} from "../components/InputComponent";
 import { useRef, useState } from "react";
-export function action(){
-    return null
+import { signUp } from "../utils/authentication";
+
+export async function action({request}){
+    
+    const formData = await request.formData()
+    const email = formData.get('email')
+    const password = formData.get('password')
+    try{
+        console.log('before create user')
+        signUp(email, password)
+        return redirect('/')
+    }
+    catch(e){
+        return e.message
+    }
+
 }
 
 export default function SignUp(){
