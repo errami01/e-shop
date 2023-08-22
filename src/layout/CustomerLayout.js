@@ -1,6 +1,6 @@
-import { Await, Outlet} from "react-router-dom"
+import { Await, Outlet, defer, useLoaderData} from "react-router-dom"
 import "./CustomerLayout.css"
-import { fetchSingleUser } from "../utils/fetcher"
+import { getUserData } from "../utils/fetcher"
 import { Suspense } from "react"
 import { requireAuth } from "../utils/requireAuth"
 import UserMenuTop from "../components/UserMenuTop"
@@ -9,12 +9,16 @@ import { UserDataContext } from "../contexts/UserDataContext"
 import Spinner from "../components/Spinner"
 import { UpdateState } from "../components/UpdateState"
 
-export async function loader(){
+export function loader(){
+    console.log('customer Layout loader')
     requireAuth()
-    return null      
+    return defer({userDataPromise: getUserData('"drLAqnXla5dpjz1izbyxU4jOuXe2"')})      
 }
 export default function CustomerLayout(){
     const {userData, setUserData} = useContext(UserDataContext)
+    const {userDataPromise} = useLoaderData()
+    console.log('customer Layout component')
+    
     const awaitChild = (userLoadedData)=>{
         return(
             <>
@@ -27,7 +31,7 @@ export default function CustomerLayout(){
         <div className="customer-layout-container">
             <UserMenuTop isBig={true} setUserData={setUserData}/>
             <Suspense fallback={<Spinner />}>
-                <Await resolve={fetchSingleUser(1)}>
+                <Await resolve={userDataPromise}>
                     {awaitChild}
                 </Await>
             </Suspense>
