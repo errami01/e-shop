@@ -21,7 +21,7 @@ export default function CustAccount(){
                     </header>
                     <div className="details-section--myAccount">
                         <ul>
-                            <li>{name.firstname} {name.lastname}</li>
+                            <li>{name?.firstname} {name?.lastname}</li>
                             <li>{email}</li>
                             <li>{phone}</li>
                         </ul>
@@ -33,9 +33,9 @@ export default function CustAccount(){
                     </header>
                     <div className="details-section--myAccount">
                         <ul>
-                            <li>{address.number} {address.street}</li>
-                            <li>{address.zipcode}</li>
-                            <li>{address.city}</li>
+                            <li>{address?.number} {address?.street}</li>
+                            <li>{address?.zipcode}</li>
+                            <li>{address?.city}</li>
                         </ul>
                     </div>
                 </div>
