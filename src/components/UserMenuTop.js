@@ -5,9 +5,6 @@ export default function UserMenuTop(props){
     const logOut = useSignOut()
     const activeBackgroundColor = '#ffdba8'
     const {isBig=false, isOpen=true} = props
-    function handleUserMenuTopClick(e){
-        e.stopPropagation()
-    }
     return(
         <ul 
             className={
@@ -15,7 +12,6 @@ export default function UserMenuTop(props){
                 ${isOpen? 'openedMenu':'closedMenu'}
                 cust-menu-ul `
             } 
-            onClick={handleUserMenuTopClick}
             >
             <NavLink 
                 className='menu-item--userMenutop'
