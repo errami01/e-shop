@@ -35,7 +35,7 @@ export default function Header(){
                 )
             }
         }
-        console.log(`useEFFect: ${JSON.stringify(isMenuOpen)}`)
+        window.addEventListener('click', handleBarsAndUserMenuOutsideClick)
         return ()=> window.removeEventListener('click', handleBarsAndUserMenuOutsideClick)
     }, [isMenuOpen])
     function showBarsAndUserMenu(event){
