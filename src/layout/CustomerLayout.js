@@ -10,15 +10,12 @@ import Spinner from "../components/Spinner"
 import { UpdateState } from "../components/UpdateState"
 
 export function loader(){
-    console.log('customer Layout loader')
     requireAuth()
     return defer({userDataPromise: getUserData('"drLAqnXla5dpjz1izbyxU4jOuXe2"')})      
 }
 export default function CustomerLayout(){
     const {userData, setUserData} = useContext(UserDataContext)
-    const {userDataPromise} = useLoaderData()
-    console.log('customer Layout component')
-    
+    const {userDataPromise} = useLoaderData()    
     const awaitChild = (userLoadedData)=>{
         return(
             <>
