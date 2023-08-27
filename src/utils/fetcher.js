@@ -1,3 +1,5 @@
+import { getLocalIdToken } from "./utils"
+
 export async function sleep(ms) {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -64,8 +66,9 @@ export async function getSingleProduct(id){
 export async function getUserData(id){
     // await sleep(3000)
     const localData = JSON.parse(localStorage.getItem('user'))
+    const idToken = getLocalIdToken()
     if(!localData){
-        const promiseData = await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users.json?orderBy=%22id%22&equalTo=${id}`)
+        const promiseData = await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json?auth=${idToken}`)
         if(!promiseData.ok){
             throw{
                 message: "Failed to fetch Data",
