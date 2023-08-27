@@ -1,12 +1,13 @@
 import { auth } from "../config/firbase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { getUserData } from "./fetcher";
+import { setLocalIdToken } from "./utils";
 
 export async function signUp(email, pass){
     try{
         const credentials = await createUserWithEmailAndPassword(auth, email, pass)
         const idToken = await credentials.user.getIdToken()
-        localStorage.setItem('token', JSON.stringify(idToken))
+        setLocalIdToken(idToken)
         await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users/${credentials.user.uid}.json?auth=${idToken}`,{
             method: 'PUT',
             headers: {
