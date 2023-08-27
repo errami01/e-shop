@@ -9,14 +9,12 @@ export async function action({request}){
     const email = formData.get('email')
     const password = formData.get('password')
     try{
-        console.log('before create user')
         signUp(email, password)
         return redirect('/')
     }
     catch(e){
         return e.message
     }
-
 }
 
 export default function SignUp(){
