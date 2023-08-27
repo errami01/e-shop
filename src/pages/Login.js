@@ -4,6 +4,7 @@ import { Form, redirect, Link } from 'react-router-dom'
 import { useActionData } from 'react-router-dom'
 import { auth } from "../config/firbase";
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import { getUserData } from '../utils/fetcher';
 
 export function loader(){
     if(JSON.parse(localStorage.getItem('user'))){
@@ -19,10 +20,7 @@ export async function action({request}){
     const pathToGo = url.searchParams.get('redirectTo') || '/customer'
     try{
          const credentials = await signInWithEmailAndPassword(auth, username, password)
-         localStorage.setItem('user', JSON.stringify({
-            id: credentials.user.uid,
-            email: credentials.user.email
-         }))
+         await getUserData(credentials.user.uid)
          return redirect(pathToGo)
     }
     catch(e){
