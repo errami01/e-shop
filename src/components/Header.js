@@ -9,7 +9,6 @@ import { UserDataContext } from '../contexts/UserDataContext'
 export default function Header(){
     const {userData, setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
-    console.log(['this is header',userData])
     const {cartItemsNumber} = cart
     const [isMenuOpen, setIsMenuOpen] = useState({
         loggedInIcon: false,
