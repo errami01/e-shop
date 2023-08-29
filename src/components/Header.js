@@ -9,6 +9,7 @@ import { UserDataContext } from '../contexts/UserDataContext'
 export default function Header(){
     const {userData, setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
+    console.log(['this is header',userData])
     const {cartItemsNumber} = cart
     const [isMenuOpen, setIsMenuOpen] = useState({
         loggedInIcon: false,
@@ -38,6 +39,12 @@ export default function Header(){
         window.addEventListener('click', handleBarsAndUserMenuOutsideClick)
         return ()=> window.removeEventListener('click', handleBarsAndUserMenuOutsideClick)
     }, [isMenuOpen])
+    useEffect(()=>{
+        //After login, the user data is stored in localStorage. So we need to update the userData state 
+        //and cause a re-render to the header and the whole app to display user info
+        const localUserData = JSON.parse(localStorage.getItem('user'))
+        if(!userData && localUserData) setUserData(localUserData)
+    })
     function showBarsAndUserMenu(event){
         event.stopPropagation()
         const targetId = event.currentTarget.id
