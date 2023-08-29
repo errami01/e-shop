@@ -9,7 +9,7 @@ export async function action({request}){
     const email = formData.get('email')
     const password = formData.get('password')
     try{
-        signUp(email, password)
+        await signUp(email, password)
         return redirect('/')
     }
     catch(e){
