@@ -5,8 +5,8 @@ import { signOut } from "firebase/auth"
 
 export function useSignOut(){
     const { setUserData} = useContext(UserDataContext)
-      function  logOut(){
-        signOut(auth)
+      async function  logOut(){
+        await signOut(auth)
         setUserData()
     }
     return logOut
