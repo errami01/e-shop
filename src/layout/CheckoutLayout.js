@@ -12,7 +12,6 @@ import Spinner from '../components/Spinner'
 import { UpdateState } from '../components/UpdateState'
 
 export async function loader({request}){
-    console.log('loader checkoutLayout')
     requireAuth(request)
     return defer({userDataPromise: getUserData(`"drLAqnXla5dpjz1izbyxU4jOuXe2"`)})     
 }
