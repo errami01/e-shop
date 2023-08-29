@@ -60,7 +60,6 @@ export async function getSingleProduct(id){
         sessionStorage.setItem('products', JSON.stringify(localData))
         return localData[id]
     }
-    console.log(localData)
     return localData[id]
 }
 export async function getUserData(id){
