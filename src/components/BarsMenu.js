@@ -25,8 +25,9 @@ export default function BarsMenu({isOpen}){
         <div 
         className={`barsMenu-container ${isOpen? 'openedMenu':'closedMenu'}`}
         ref={container}
+        data-test = 'barsMenuContainer'
         >
-            <ul>
+            <ul data-test='categoriesList'>
                 <Suspense fallback={<Spinner />}>
                     <Await resolve={getCategories()}>
                         {awaitChild}
