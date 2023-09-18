@@ -19,13 +19,14 @@
     /* border: solid red */
 }
 .category-name{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
     color: white;
     font-weight: 700;
-    /* border: 1px solid var(--first-Color); */
     width: fit-content;
     background-color: var(--first-Color);
-    padding: 8px;
-    border-radius: 10px 10px 0 0;
+    padding: 20px 8px;
+    border-radius: 10px 0 0 10px ;
     cursor: pointer;
 }
 .category-name:hover{
@@ -33,12 +34,9 @@
 }
 .image{
     display: block;
-    /* border: 1px solid black; */
     width: 150px;
-    /* box-shadow:  10px 10px 10px 0px gray; */
     transition: width 1s;
     cursor: pointer;
-    
 }
 .image:hover{
     width: 155px
