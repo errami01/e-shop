@@ -3,9 +3,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit,400px);
     grid-auto-rows: 1fr;
-    width: 100%;
+    width: 80%;
+    max-width: 800px;
     justify-content: center;
-    /* background-color: red; */
+    background-color: white;
+    border-radius: 50px;
 }
 .img-section-prdctDetails{
     /* background-color: green; */
