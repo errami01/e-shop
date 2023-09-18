@@ -8,32 +8,25 @@
     border-radius: 10px;
 }
 .product-container:hover{
-    box-shadow: inset 2px 2px 10px 1px var(--first-Color);
+    box-shadow: 2px 2px 10px 1px rgb(224, 146, 2);
 }
 .product-image-section{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: aqua; */
     height: 70%;
-    /* border: 1px solid red */
 }
 .product-image{
     width: 80%;
     max-height: 100%;
-    z-index: -1;
-    /* height: 200px; */
-    
 }
 .price{
     font-size: 1.5em;
     font-weight: 900;
 }
 .name-and-rating{
-    /* background-color: aqua; */
     margin-top: 20px;
     padding: 5px;
-    
 }
 .product-name{
     white-space : nowrap;
@@ -44,9 +37,7 @@
     text-overflow: ellipsis;
    }
 .product-rating{
-    /* height: 5%; */
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     margin-top: 10px;
 }
@@ -54,7 +45,6 @@
     font-size: 1.2em;
     margin-left: 5px;
     font-weight: 900;
-    /* background-color: red; */
 }
 .product-rating i{
     color: gold
