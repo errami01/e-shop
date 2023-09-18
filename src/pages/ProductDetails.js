@@ -23,16 +23,17 @@ export default function PrdoductDetails(){
             <>
                 <div className="img-section-prdctDetails">
                     <img className="prdct-img-prdctDetails" src={product.image} />
-                </div>
-                <div className="details-productDetails">
-                    <h5 className="title-productDetails">{product.title}</h5>
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
-                    <div className="descr-productDetails">{product.description}</div>
-                    <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>
                     {inCart? <QuantityControler itemId={product.id} quantity={inCart.orderedQuantity} className='quantity-cartItem'/> : <button 
                         className="addToCart-prdctDetails"
                         onClick={handleAddToCart}
                         >Add to Cart</button> }
+                    <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>                  
+                </div>
+                <div className="details-productDetails">
+                    <h5 className="title-productDetails">{product.title}</h5>
+                    <div className="descr-productDetails">{product.description}</div>
+                    
                 </div>
             </>
         )
