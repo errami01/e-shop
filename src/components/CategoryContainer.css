@@ -1,5 +1,5 @@
-.categorie-container{
-    /* border: 1px solid black; */
+.category-container{
+    display: flex;
     margin-top: 16px;
     padding: 16px;
     width: 100%;
