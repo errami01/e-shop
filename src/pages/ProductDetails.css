@@ -27,8 +27,6 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* background-color: aquamarine; */
-    justify-content: space-between;
     padding: 20px
 }
 .title-productDetails{
@@ -38,6 +36,9 @@
 .descr-productDetails{
     color: var(--text-color);
     line-height: 1.5em;
+}
+.details-productDetails >*{
+    margin-bottom: 30px;
 }
 .price-productDetails{
     font-size: 1.5em;
