@@ -10,7 +10,8 @@
     border-radius: 50px;
 }
 .img-section-prdctDetails{
-    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
