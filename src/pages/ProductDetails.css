@@ -16,6 +16,9 @@
     justify-content: center;
     align-items: center;
 }
+.img-section-prdctDetails >*{
+    margin-bottom: 10px;
+}
 .prdct-img-prdctDetails{
     width: 250px;
     padding-top: 20px;
