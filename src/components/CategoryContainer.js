@@ -31,8 +31,8 @@ export default function CategoryContainer({category}){
         return cards
     }
     return(<>
-        <div className="categorie-container">
-            <header className="category-name" onClick={()=> navigate(`category/${category}`)}>{category}</header>
+        <div className="category-container">
+            <header className="category-name" onClick={()=> navigate(`category/${category}`)}>{category.toUpperCase()}</header>
             <div className="products-container">
                 <Suspense fallback={<Spinner />}>
                     <Await resolve={getProductsByCategory(category)}>
