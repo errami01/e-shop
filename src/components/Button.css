@@ -15,3 +15,6 @@
 .btn--Button:hover{
     background-color: var(--second-Color);
   }
+.btn--Button:active{
+box-shadow: none;
+}
