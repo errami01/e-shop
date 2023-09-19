@@ -40,21 +40,6 @@
     width: 100%;
    
 }
-.submit-btn--login{
-    width: 60%;
-    height: 40px;
-    border-radius: 30px;
-    border: none;
-    background-color: var(--first-Color);
-    color: white;
-    font-size: 1em;
-    font-weight: 900;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
-.submit-btn--login:hover{
-    background-color: var(--second-Color);
-}
 .customer--login{
     opacity: 0.5;
     font-size: 0.9rem;
