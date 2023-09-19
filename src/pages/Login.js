@@ -6,6 +6,7 @@ import { auth } from "../config/firbase";
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { getUserData } from '../utils/fetcher';
 import { setLocalIdToken } from '../utils/utils';
+import Button from '../components/Button';
 
 export function loader(){
     if(JSON.parse(localStorage.getItem('user'))){
@@ -54,7 +55,7 @@ export default function Login(){
                     icon={<i className="fa-solid fa-key fa"></i>}
                     required
                 />  
-                <button className='submit-btn--login'>Login</button>
+                <Button style={{width: '60%'}}>Login</Button>
             </Form>
             <p className='customer--login'>Don't have an account? 
             <Link to='/signup'> Sign-up</Link></p>
