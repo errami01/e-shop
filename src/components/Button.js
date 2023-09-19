@@ -1,6 +1,7 @@
+import './Button.css'
 export default function Button({children}){
     return (
-        <button>
+        <button className="btn--Button">
             {children}
         </button>
     )
