@@ -4,6 +4,7 @@ import { CartContext } from "../contexts/CartContext"
 import './Cart.css'
 import {nanoid} from 'nanoid'
 import { Link } from "react-router-dom"
+import Button from "./Button"
 export default function Cart(props){
     const cart = useContext(CartContext)
     const {isPage, withoutDeliveryDate} = props
@@ -34,7 +35,7 @@ export default function Cart(props){
                             <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
                         </div>
                         <Link to={'/checkout'}>
-                            <button className="place-order--cart btn--app">Place order</button>
+                            <Button style={{width: '100%', marginTop: '10px'}}>Place order</Button>
                         </Link>
                     </div>
                     :
