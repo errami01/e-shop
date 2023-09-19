@@ -2,6 +2,7 @@ import { Form, redirect } from "react-router-dom";
 import {InputComponent} from "../components/InputComponent";
 import { useRef, useState } from "react";
 import { signUp } from "../utils/authentication";
+import Button from "../components/Button";
 
 export async function action({request}){
     
@@ -103,13 +104,13 @@ export default function SignUp(){
                         'Minimum 4 alphanum characters (ex: 1234 ) :)'
                     )}
                     onChange= { ()=> checkPositiveValidity(
-                        /^[a-zA-Z0-9]{4,}$/,
+                        /^[a-zA-Z0-9]{6,}$/,
                         passInputElement,
                         passContainerElement,
                     ) }
                     required
                 />  
-                <button type='submit' className='submit-btn--login' disabled={!validateForm()}>Sign up</button>
+                <Button type='submit' disabled={!validateForm()}>Sign up</Button>
             </Form>
         </div>
     )
