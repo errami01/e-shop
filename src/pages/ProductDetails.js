@@ -6,6 +6,7 @@ import "./ProductDetails.css"
 import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
 import Spinner from "../components/Spinner"
+import Button from "../components/Button"
 export function loader({params}){
     return defer({singleProduct: getSingleProduct(params.id)})
 }
@@ -24,10 +25,19 @@ export default function PrdoductDetails(){
                 <div className="img-section-prdctDetails">
                     <img className="prdct-img-prdctDetails" src={product.image} />
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
-                    {inCart? <QuantityControler itemId={product.id} quantity={inCart.orderedQuantity} className='quantity-cartItem'/> : <button 
-                        className="addToCart-prdctDetails"
-                        onClick={handleAddToCart}
-                        >Add to Cart</button> }
+                    {inCart? 
+                            <QuantityControler 
+                            itemId={product.id} 
+                            quantity={inCart.orderedQuantity} 
+                            className='quantity-cartItem'/> 
+                        : 
+                            <Button 
+                            className="add-to-cart-btn--productsDetails" 
+                            onClick={handleAddToCart}>
+                                Add to Cart
+                            </Button>
+                    }
+                    
                     <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>                  
                 </div>
                 <div className="details-productDetails">
