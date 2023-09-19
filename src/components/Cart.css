@@ -49,11 +49,6 @@
 .amount--cart{
     text-align: end;
 }
-
-.place-order--cart{
-    width: 100%;
-    margin-top: 10px;
-}
 .empty--cart{
     text-align: center;
 }
