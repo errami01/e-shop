@@ -2,6 +2,7 @@
 .productDetails-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,400px);
+    --image-width: 250px;
     /* grid-auto-rows: 1fr; */
     width: 80%;
     max-width: 800px;
@@ -20,7 +21,7 @@
     margin-bottom: 10px;
 }
 .prdct-img-prdctDetails{
-    width: 250px;
+    width: var(--image-width);
     padding-top: 20px;
 }
 .details-productDetails{
@@ -52,7 +53,7 @@
     font-size: 1.2em;
     border-radius: 20px;
     cursor: pointer;
-
+    width: var(--image-width);
 }
 
 
