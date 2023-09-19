@@ -34,7 +34,7 @@ export default function Cart(props){
                             <span className="total-label--cart">TOTAL </span>
                             <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
                         </div>
-                        <Link to={'/checkout'}>
+                        <Link to={'/cart'}>
                             <Button style={{width: '100%', marginTop: '10px'}}>Go to cart</Button>
                         </Link>
                     </div>
