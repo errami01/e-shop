@@ -1,7 +1,7 @@
 import './Button.css'
-export default function Button({children}){
+export default function Button({children,className, ...rest}){
     return (
-        <button className="btn--Button">
+        <button className={`btn--Button ${className}`} {...rest}>
             {children}
         </button>
     )
