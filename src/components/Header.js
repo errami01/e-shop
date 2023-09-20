@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 import CartMenu from './CartMenu'
 import { UserDataContext } from '../contexts/UserDataContext'
+import { myHistory } from '../utils/myHistory'
 export default function Header(){
     const {userData, setUserData} = useContext(UserDataContext)
     const cart = useContext(CartContext)
@@ -52,10 +53,21 @@ export default function Header(){
             const newObj = {
                 ...prev,
             }
+            //Close any other menu if open
             if(openMenu && openMenu != targetId) newObj[openMenu] = false
             newObj[targetId] = !newObj[targetId]
             return newObj
         })
+    }
+    function showAndHideCartMenu(event){
+        event.stopPropagation()
+        const targetId = event.currentTarget.id
+        const newState = {
+            loggedInIcon: false,
+            barsIconContainer:false,
+            cartMenu: myHistory.location.pathname.slice(1)=='cart'? false : !isMenuOpen[targetId]
+        }
+        setIsMenuOpen(newState)
     }
     return(
         <header className="header-container">
@@ -92,7 +104,7 @@ export default function Header(){
             <div 
                 id='cartMenu'
                 className='cartIconLink-header icon-container--header' 
-                onClick={showBarsAndUserMenu}
+                onClick={showAndHideCartMenu}
                 >
                  <i className="fa-solid fa-cart-shopping">
                     {cartItemsNumber>0 && <span className='items-counter-header'>{cartItemsNumber}</span>}
