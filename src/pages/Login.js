@@ -59,7 +59,6 @@ export default function Login(){
             </Form>
             <p className='customer--login'>Don't have an account? 
             <Link to='/signup'> Sign-up</Link></p>
-            <p className='customer--login'>Username: johnd, Password: m38rmF$</p>
         </div>
     )
 }
