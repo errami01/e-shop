@@ -18,26 +18,26 @@ export function action(){
 export default function Shipping(){
     const {userData} = useContext(UserDataContext)
     const {cancelOrder} = useOutletContext()
-    const {number, street, city,zipcode} = userData.address
+    const {address} = userData
     return(
         <CheckoutFlow>
             <h5 className="pageTitle--checkoutFlow">Shipping details</h5>
             <Form method="post">
                 <label>
                     Address
-                    <input type='text' defaultValue={number} required/>
+                    <input type='text' defaultValue={address?.number} required/>
                 </label>
                 <label>
                     Street
-                    <input type='text' defaultValue={street} required/>
+                    <input type='text' defaultValue={address?.street} required/>
                 </label>
                 <label>
                     City
-                    <input defaultValue={city} type='text' required/>
+                    <input defaultValue={address?.city} type='text' required/>
                 </label>
                 <label>
                     Postcode
-                    <input defaultValue={zipcode} type='text' required/>
+                    <input defaultValue={address?.zipcode} type='text' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
                     <Link 
