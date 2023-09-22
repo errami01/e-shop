@@ -5,6 +5,7 @@ import './Cart.css'
 import {nanoid} from 'nanoid'
 import { Link } from "react-router-dom"
 import Button from "./Button"
+import { myHistory } from "../utils/myHistory"
 export default function Cart(props){
     const cart = useContext(CartContext)
     const {isPage, withoutDeliveryDate} = props
@@ -17,6 +18,9 @@ export default function Cart(props){
                     isPage={isPage} 
                     withoutDeliveryDate={withoutDeliveryDate}/>
     })
+    const currentLocation = myHistory.location.pathname.slice(1)
+    const linkTarget = currentLocation === 'cart'? 'checkout': 'cart'
+    const buttonText = currentLocation === 'cart'? 'checkout': 'Go to cart'
     return (
             <div className="container--cart">
                 <div className="items-container--cart">
@@ -34,8 +38,8 @@ export default function Cart(props){
                             <span className="total-label--cart">TOTAL </span>
                             <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
                         </div>
-                        <Link to={'/cart'}>
-                            <Button id='go-to-cart-btn' style={{width: '100%', marginTop: '10px'}}>Go to cart</Button>
+                        <Link to={`/${linkTarget}`}>
+                            <Button id='go-to-cart-btn' style={{width: '100%', marginTop: '10px'}}>{buttonText}</Button>
                         </Link>
                     </div>
                     :
