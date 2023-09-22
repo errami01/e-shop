@@ -23,7 +23,7 @@ export default function PrdoductDetails(){
         return(
             <>
                 <div className="img-section-prdctDetails">
-                    <img className="prdct-img-prdctDetails" src={product.image} />
+                    <img alt='product-image' className="prdct-img-prdctDetails" src={product.image} />
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
                     {inCart? 
                             <QuantityControler 
