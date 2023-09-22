@@ -24,19 +24,19 @@ export default function PersonalInfos(){
             <Form method="post" >
                 <label>
                     First Name
-                    <input type='text' defaultValue={name?.firstname} required/>
+                    <input name='firstname' type='text' defaultValue={name?.firstname} required/>
                 </label>
                 <label>
                     Last Name
-                    <input type='text' defaultValue={name?.lastname} required/>
+                    <input name='lastname' type='text' defaultValue={name?.lastname} required/>
                 </label>
                 <label>
                     Phone
-                    <input defaultValue={phone} type='tel' required/>
+                    <input name='phone'defaultValue={phone} type='tel' required/>
                 </label>
                 <label>
                     Email
-                    <input defaultValue={email} type='email' required/>
+                    <input name='email' defaultValue={email} type='email' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
                     <Link 
