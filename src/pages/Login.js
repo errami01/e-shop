@@ -5,11 +5,11 @@ import { useActionData } from 'react-router-dom'
 import { auth } from "../config/firbase";
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { getUserData } from '../utils/fetcher';
-import { setLocalIdToken } from '../utils/utils';
+import { getLocalUserData, setLocalIdToken } from '../utils/utils';
 import Button from '../components/Button';
 
 export function loader(){
-    if(JSON.parse(localStorage.getItem('user'))){
+    if(getLocalUserData()){
         throw redirect('/customer')
     }
     return null
