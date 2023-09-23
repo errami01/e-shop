@@ -1,4 +1,4 @@
-import { getLocalIdToken } from "./utils"
+import { getLocalIdToken, getLocalUserData, setLocalUserData } from "./utils"
 
 export async function sleep(ms) {
     return new Promise((resolve) => {
@@ -40,11 +40,11 @@ export async function getSingleProduct(id){
 }
 export async function getUserData(id){
     // await sleep(3000)
-    const localData = JSON.parse(localStorage.getItem('user'))
+    const localData = getLocalUserData()
     const idToken = getLocalIdToken()
     if(!localData){
         const data = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json?auth=${idToken}`)
-        localStorage.setItem('user', JSON.stringify(data))
+        setLocalUserData(data)
         return data
     }
     return localData
