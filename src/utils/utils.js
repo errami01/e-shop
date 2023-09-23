@@ -4,3 +4,6 @@ export function setLocalIdToken(id){
 export function getLocalIdToken(){
     return JSON.parse(localStorage.getItem('idToken'))
 }
+export function getLocalUserData(){
+    return JSON.parse(localStorage.getItem('user'))
+}
