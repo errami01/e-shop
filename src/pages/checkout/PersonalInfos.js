@@ -4,7 +4,9 @@ import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
 import { myHistory } from "../../utils/myHistory"
 import { setOngoingOrder } from "../../utils/useOngoingOrder"
-export function action(){
+import sendFormData from "../../utils/sendFormData"
+
+export async function action({request}){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
     updateOngoingOrder(
         {
@@ -12,7 +14,14 @@ export function action(){
             phase: 'shipping'
         }
     )
-    return myHistory.navigate(`checkout/shipping`)
+    try{
+        await sendFormData(request)
+        return myHistory.navigate(`checkout/shipping`)
+    }
+    catch(error){
+        return error.message
+    }
+    
 }
 export default function PersonalInfos(){
     const {userData} = useContext(UserDataContext)
