@@ -5,7 +5,7 @@ import { UserDataContext } from "../../contexts/UserDataContext";
 import { myHistory } from "../../utils/myHistory";
 import { setOngoingOrder } from "../../utils/useOngoingOrder";
 
-export function action(){
+export async function action({request}){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
     updateOngoingOrder(
         {
