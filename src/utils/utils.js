@@ -19,6 +19,9 @@ export function setFormDataToObject(formData){
       }
     return formDataObject
 }
+export function setLocalUserAddresses(address){
+    localStorage.setItem('userAddress', JSON.stringify(address))
+}
 export async function storeObject(data, path ,storeInLocalStorage){
     if(storeInLocalStorage) storeInLocalStorage(data)
     if(path){
