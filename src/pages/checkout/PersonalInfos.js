@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
 import { myHistory } from "../../utils/myHistory"
 import { setOngoingOrder } from "../../utils/useOngoingOrder"
-import sendFormData from "../../utils/sendFormData"
+import { setFormDataToObject, setLocalUserData, storeObject } from "../../utils/utils"
 
 export async function action({request}){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
@@ -15,9 +15,9 @@ export async function action({request}){
         }
     )
     try{
-        await sendFormData('users', request)
         const dataForm = await request.formData()
         const dataFormObject = setFormDataToObject(dataForm)
+        await storeObject(dataFormObject, 'users' , setLocalUserData)
         return myHistory.navigate(`checkout/shipping`)
     }
     catch(error){
