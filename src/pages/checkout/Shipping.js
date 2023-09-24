@@ -4,6 +4,7 @@ import { Form, Link, useOutletContext } from "react-router-dom";
 import { UserDataContext } from "../../contexts/UserDataContext";
 import { myHistory } from "../../utils/myHistory";
 import { setOngoingOrder } from "../../utils/useOngoingOrder";
+import { setLocalUserAddresse, setFormDataToObject, storeObject } from "../../utils/utils";
 
 export async function action({request}){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
@@ -13,7 +14,15 @@ export async function action({request}){
             phase: 'payment'
         }
     )
-    return myHistory.navigate(`checkout/payment`)
+    try{
+        const dataForm = await request.formData()
+        const dataFormObject = setFormDataToObject(dataForm)
+        await storeObject(dataFormObject, 'usersAddresses' , setLocalUserAddresse)
+        return myHistory.navigate(`checkout/payment`)
+    }
+    catch(error){
+        return error.message
+    }
 }
 export default function Shipping(){
     const {userData} = useContext(UserDataContext)
