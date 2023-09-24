@@ -11,3 +11,11 @@ export function setLocalUserData(data){
 export function getLocalUserData(){
     return JSON.parse(localStorage.getItem(userData))
 }
+export function setFormDataToObject(formData){
+    const formDataObject = {}
+    for (const key of formData.keys()) {
+        formDataObject[key] = formData.get(key)
+      }
+    return formDataObject
+}
+}
