@@ -25,19 +25,19 @@ export default function Shipping(){
             <Form method="post">
                 <label>
                     Address
-                    <input type='text' defaultValue={address?.number} required/>
+                    <input name='address' type='text' defaultValue={address?.address} required/>
                 </label>
                 <label>
                     Street
-                    <input type='text' defaultValue={address?.street} required/>
+                    <input name='street' type='text' defaultValue={address?.street} required/>
                 </label>
                 <label>
                     City
-                    <input defaultValue={address?.city} type='text' required/>
+                    <input name='city' defaultValue={address?.city} type='text' required/>
                 </label>
                 <label>
                     Postcode
-                    <input defaultValue={address?.zipcode} type='text' required/>
+                    <input name='postcode' defaultValue={address?.zipcode} type='text' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
                     <Link 
