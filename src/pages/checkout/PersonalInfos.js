@@ -16,6 +16,7 @@ export async function action({request}){
     )
     try{
         await sendFormData('users', request)
+        const dataForm = await request.formData()
         return myHistory.navigate(`checkout/shipping`)
     }
     catch(error){
