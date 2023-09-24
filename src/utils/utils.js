@@ -19,7 +19,7 @@ export function setFormDataToObject(formData){
       }
     return formDataObject
 }
-export function setLocalUserAddresses(address){
+export function setLocalUserAddresse(address){
     localStorage.setItem('userAddress', JSON.stringify(address))
 }
 export async function storeObject(data, path ,storeInLocalStorage){
