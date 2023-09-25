@@ -7,6 +7,7 @@ import { getUserData } from "../utils/fetcher"
 import { auth } from "../config/firbase"
 
 export async function loader(){
+    return await getUserData(auth.currentUser.uid)
 }
 export default function Layout(){
     myHistory.navigate = useNavigate()
