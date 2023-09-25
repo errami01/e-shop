@@ -25,6 +25,8 @@ export async function action({request}){
     }
     
 }
+export async function loader(){
+}
 export default function PersonalInfos(){
     const {userData} = useContext(UserDataContext)
     const { cancelOrder } = useOutletContext()
