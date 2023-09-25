@@ -30,6 +30,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     path='/' 
     element={<Layout />}
     errorElement={<ErrorComponent/>}
+    loader={layoutLoader}
     >
     <Route 
       index 
