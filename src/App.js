@@ -16,7 +16,7 @@ import ClosedOrders from './pages/customer/ClosedOrders';
 import CustMailbox from './pages/customer/CustMailbox';
 import CustWishlist from './pages/customer/CustWishlist';
 import CheckoutLayout, {loader as checkoutLayoutLoader} from './layout/CheckoutLayout';
-import PersonalInfos, {action as personalInfosAction} from './pages/checkout/PersonalInfos';
+import PersonalInfos, {action as personalInfosAction, loader as personalInfosLoader} from './pages/checkout/PersonalInfos';
 import Shipping, {action as shippingAction} from './pages/checkout/Shipping';
 import Payment from './pages/checkout/Payment';
 import { requireAuth } from './utils/requireAuth';
@@ -126,6 +126,7 @@ const router = createBrowserRouter(createRoutesFromElements(
           path='personalInfos'
           element={<PersonalInfos />}
           action={personalInfosAction}
+          loader={personalInfosLoader}
         />
         <Route 
           path='shipping'
