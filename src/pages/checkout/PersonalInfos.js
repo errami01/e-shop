@@ -1,7 +1,5 @@
 import { Form, Link, useOutletContext } from "react-router-dom"
 import CheckoutFlow from "../../components/CheckoutFlow"
-import { useContext } from "react"
-import { UserDataContext } from "../../contexts/UserDataContext"
 import { myHistory } from "../../utils/myHistory"
 import { setOngoingOrder } from "../../utils/useOngoingOrder"
 import { setFormDataToObject, setLocalUserData, storeObject } from "../../utils/utils"
@@ -31,7 +29,6 @@ export async function loader(){
     return await getUserData(auth.currentUser.uid)
 }
 export default function PersonalInfos(){
-    const {userData} = useContext(UserDataContext)
     const { cancelOrder } = useOutletContext()
     const {name, phone, email} = userData
     return(
