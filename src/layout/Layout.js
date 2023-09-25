@@ -16,10 +16,9 @@ export default function Layout(){
     return(
         <UserDataContextProvider>
             <CartContextProvider>
-                <Header />
+                <Header userData={userData}/>
                 <Outlet />
             </CartContextProvider>
-        </UserDataContextProvider>
-       
+        </UserDataContextProvider> 
     )
 }
