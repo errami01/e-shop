@@ -4,6 +4,8 @@ import CartContextProvider from "../contexts/CartContext"
 import UserDataContextProvider from "../contexts/UserDataContext"
 import { myHistory } from "../utils/myHistory"
 
+export async function loader(){
+}
 export default function Layout(){
     myHistory.navigate = useNavigate()
     myHistory.location = useLocation()
