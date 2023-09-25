@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 import CartMenu from './CartMenu'
 import { myHistory } from '../utils/myHistory'
+export default function Header({userData}){
     const cart = useContext(CartContext)
     const {cartItemsNumber} = cart
     const [isMenuOpen, setIsMenuOpen] = useState({
