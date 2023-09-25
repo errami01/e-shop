@@ -37,12 +37,6 @@ export default function Header({userData}){
         window.addEventListener('click', handleBarsAndUserMenuOutsideClick)
         return ()=> window.removeEventListener('click', handleBarsAndUserMenuOutsideClick)
     }, [isMenuOpen])
-    useEffect(()=>{
-        //After login, the user data is stored in localStorage. So we need to update the userData state 
-        //and cause a re-render to the header and the whole app to display user info
-        const localUserData = JSON.parse(localStorage.getItem('user'))
-        if(!userData && localUserData) setUserData(localUserData)
-    })
     function showBarsAndUserMenu(event){
         event.stopPropagation()
         const targetId = event.currentTarget.id
