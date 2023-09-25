@@ -31,7 +31,7 @@ export async function loader(){
 export default function PersonalInfos(){
     const userData = useLoaderData()
     const { cancelOrder } = useOutletContext()
-    const {name, phone, email} = userData
+    const {firstname, lastname, phone, email} = userData
     return(
         <CheckoutFlow>
             <h5 className="pageTitle--checkoutFlow">Account Details</h5>
