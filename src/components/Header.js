@@ -85,7 +85,7 @@ export default function Header({userData}){
                     onClick ={showBarsAndUserMenu}
                     >
                         <i className="fa-solid fa-user-check"></i>
-                        <span className='icon-label--header'>Hello {userData.name?.firstname}</span>
+                        <span className='icon-label--header'>Hello {userData.firstname}</span>
                         <UserMenuTop
                             isOpen = {isMenuOpen.loggedInIcon}
                             isBig={false}
