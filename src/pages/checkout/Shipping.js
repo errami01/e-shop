@@ -1,7 +1,5 @@
 import CheckoutFlow from "../../components/CheckoutFlow";
-import { useContext } from "react";
-import { Form, Link, useOutletContext } from "react-router-dom";
-import { UserDataContext } from "../../contexts/UserDataContext";
+import { Form, Link, useLoaderData, useOutletContext } from "react-router-dom";
 import { myHistory } from "../../utils/myHistory";
 import { setOngoingOrder } from "../../utils/useOngoingOrder";
 import { setLocalUserAddresse, setFormDataToObject, storeObject } from "../../utils/utils";
@@ -30,7 +28,7 @@ export async function action({request}){
     }
 }
 export default function Shipping(){
-    const {userData} = useContext(UserDataContext)
+    const userData = useLoaderData()
     const {cancelOrder} = useOutletContext()
     const {address} = userData
     return(
