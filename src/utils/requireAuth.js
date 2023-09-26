@@ -1,4 +1,5 @@
 import { redirect } from "react-router-dom"
+import { auth } from "../config/firbase"
 
 export function requireAuth(request){
     let path
@@ -7,7 +8,7 @@ export function requireAuth(request){
         path = url.pathname
     }
     const param = path? `?redirectTo=${path}` :''
-    if(!JSON.parse(localStorage.getItem('user'))) {
+    if(!auth.currentUser) {
         throw redirect(`/login${param}`)
     }
 }
