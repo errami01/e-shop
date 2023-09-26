@@ -6,6 +6,9 @@ import { myHistory } from "../../utils/myHistory";
 import { setOngoingOrder } from "../../utils/useOngoingOrder";
 import { setLocalUserAddresse, setFormDataToObject, storeObject } from "../../utils/utils";
 
+export async function loader(){
+    
+}
 export async function action({request}){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
     updateOngoingOrder(
