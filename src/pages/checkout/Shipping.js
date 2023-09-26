@@ -5,9 +5,11 @@ import { UserDataContext } from "../../contexts/UserDataContext";
 import { myHistory } from "../../utils/myHistory";
 import { setOngoingOrder } from "../../utils/useOngoingOrder";
 import { setLocalUserAddresse, setFormDataToObject, storeObject } from "../../utils/utils";
+import { getUserData } from "../../utils/fetcher";
+import { auth } from "../../config/firbase";
 
 export async function loader(){
-    
+    return await getUserData(auth.currentUser.uid)
 }
 export async function action({request}){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
