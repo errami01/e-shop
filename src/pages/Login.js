@@ -23,7 +23,7 @@ export async function action({request}){
     try{
          const credentials = await signInWithEmailAndPassword(auth, username, password)
          setLocalIdToken(await credentials.user.getIdToken())
-         await getUserData(credentials.user.uid)
+         await getUserData()
          return redirect(pathToGo)
     }
     catch(e){
