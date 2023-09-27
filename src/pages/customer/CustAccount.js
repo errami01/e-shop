@@ -3,10 +3,11 @@ import "./CustAccount.css"
 import { requireAuth } from "../../utils/requireAuth"
 import { useContext } from "react"
 import { UserDataContext } from "../../contexts/UserDataContext"
+import { getUserData } from "../../utils/fetcher"
 
-export function loader(){
+export async function loader(){
     requireAuth()
-    return null
+    return await getUserData()
 }
 export default function CustAccount(){
     const {userData} = useContext(UserDataContext)
