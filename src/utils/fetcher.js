@@ -1,3 +1,4 @@
+import { auth } from "../config/firbase"
 import { getLocalIdToken, getLocalUserData, setLocalUserData } from "./utils"
 
 export async function sleep(ms) {
@@ -38,8 +39,9 @@ export async function getSingleProduct(id){
     }
     return localData[id]
 }
-export async function getUserData(id){
+export async function getUserData(userId){
     // await sleep(3000)
+    const id = auth.currentUser.uid
     const localData = getLocalUserData()
     const idToken = getLocalIdToken()
     if(!localData){
