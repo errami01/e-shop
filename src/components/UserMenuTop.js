@@ -1,8 +1,7 @@
+import { logOut } from '../utils/authentication'
 import './UserMenuTop.css'
-import { Link, NavLink } from 'react-router-dom'
-import { useSignOut } from '../utils/useSignOut'
+import { NavLink } from 'react-router-dom'
 export default function UserMenuTop(props){
-    const logOut = useSignOut()
     const activeBackgroundColor = '#ffdba8'
     const {isBig=false, isOpen=true} = props
     return(
@@ -67,9 +66,9 @@ export default function UserMenuTop(props){
                 >
                 <i className="fa-regular fa-heart"></i>
                 Your Wishlist</NavLink>
-            <Link to='#' onClick={logOut} className='logout--userMenuTop menu-item--userMenutop'>
+            <li onClick={async()=> await logOut()} className='logout--userMenuTop menu-item--userMenutop'>
                 <i className="fa-solid fa-right-from-bracket"></i>
-                Logout</Link>
+                Logout</li>
         </ul>
     )
 }
