@@ -17,7 +17,7 @@ export async function signUp(email, pass){
                 email:credentials.user.email
             })
         })
-        await getUserData(credentials.user.uid)
+        await getUserData()
     }
     catch(e){
         return e.message
