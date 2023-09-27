@@ -9,8 +9,8 @@ export async function loader(){
     return await getUserData()
 }
 export default function CustAccount(){
-    const {name, email, phone, address} = userData
     const userData = useLoaderData()
+    const {firstname, lastname, email, phone, address} = userData
     return(
         <div className="myAccount-container customer-page-container">
             <h1 className="title--customerLayout">Your Account</h1>
@@ -21,7 +21,7 @@ export default function CustAccount(){
                     </header>
                     <div className="details-section--myAccount">
                         <ul>
-                            <li>{name?.firstname} {name?.lastname}</li>
+                            <li>{firstname} {lastname}</li>
                             <li>{email}</li>
                             <li>{phone}</li>
                         </ul>
