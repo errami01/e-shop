@@ -12,6 +12,9 @@ export function setLocalUserData(data){
 export function getLocalUserData(){
     return JSON.parse(localStorage.getItem(userData))
 }
+export function removeLocalUserData(){
+    localStorage.removeItem('user')
+}
 export function setFormDataToObject(formData){
     const formDataObject = {}
     for (const key of formData.keys()) {
