@@ -9,7 +9,7 @@ import Login, {action as loginAction, loader as loginLoader} from './pages/Login
 import NotFound from './pages/NotFound';
 import ErrorComponent from './components/ErrorComponent';
 import CustomerLayout, {loader as customerLayoutLoader} from './layout/CustomerLayout'
-import CustAccount, {loader as myAccountLoader} from './pages/customer/CustAccount';
+import CustAccount, {loader as custAccountLoader} from './pages/customer/CustAccount';
 import CustOrders from './pages/customer/CustOrders';
 import OpenOrders from './pages/customer/OpenOrders';
 import ClosedOrders from './pages/customer/ClosedOrders';
@@ -44,10 +44,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           index
           element={<CustAccount />}
-          loader={()=>{
-            requireAuth()
-            return null
-          }}
+          loader={custAccountLoader}
         />
         <Route 
           path='orders'
