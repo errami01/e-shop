@@ -1,17 +1,16 @@
 
 import "./CustAccount.css"
 import { requireAuth } from "../../utils/requireAuth"
-import { useContext } from "react"
-import { UserDataContext } from "../../contexts/UserDataContext"
 import { getUserData } from "../../utils/fetcher"
+import { useLoaderData } from "react-router-dom"
 
 export async function loader(){
     requireAuth()
     return await getUserData()
 }
 export default function CustAccount(){
-    const {userData} = useContext(UserDataContext)
     const {name, email, phone, address} = userData
+    const userData = useLoaderData()
     return(
         <div className="myAccount-container customer-page-container">
             <h1 className="title--customerLayout">Your Account</h1>
