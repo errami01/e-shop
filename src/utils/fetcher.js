@@ -1,5 +1,4 @@
 import { getLocalIdToken, getLocalUserData, setLocalUserData } from "./utils"
-import { requireAuth } from "./requireAuth"
 
 export async function sleep(ms) {
     return new Promise((resolve) => {
@@ -41,7 +40,6 @@ export async function getSingleProduct(id){
 }
 export async function getUserData(id){
     // await sleep(3000)
-    if(!id) requireAuth()
     const localData = getLocalUserData()
     const idToken = getLocalIdToken()
     if(!localData){
