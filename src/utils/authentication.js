@@ -1,7 +1,8 @@
 import { auth } from "../config/firbase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { getUserData } from "./fetcher";
-import { setLocalIdToken } from "./utils";
+import { removeLocalUserData, setLocalIdToken } from "./utils";
+import { myHistory } from "./myHistory";
 
 export async function signUp(email, pass){
     try{
@@ -23,4 +24,9 @@ export async function signUp(email, pass){
         return e.message
     }
     
+}
+export const logOut = async ()=> {
+    await signOut(auth)
+    removeLocalUserData()
+    myHistory.navigate("#")
 }
