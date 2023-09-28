@@ -2,9 +2,8 @@ import CheckoutFlow from "../../components/CheckoutFlow";
 import { Form, Link, useLoaderData, useOutletContext } from "react-router-dom";
 import { myHistory } from "../../utils/myHistory";
 import { setOngoingOrder } from "../../utils/useOngoingOrder";
-import { setLocalUserAddresse, setFormDataToObject, storeObject } from "../../utils/utils";
+import { setFormDataToObject, storeObject, setLocalUserData } from "../../utils/utils";
 import { getUserData } from "../../utils/fetcher";
-import { auth } from "../../config/firbase";
 
 export async function loader(){
     return await getUserData('with address')
@@ -20,7 +19,12 @@ export async function action({request}){
     try{
         const dataForm = await request.formData()
         const dataFormObject = setFormDataToObject(dataForm)
-        await storeObject(dataFormObject, 'usersAddresses' , setLocalUserAddresse)
+        await storeObject(dataFormObject, 'usersAddresses' , (newData)=>setLocalUserData((prev)=>({
+            ...prev,
+            address: {
+                ...newData
+            }
+        })))
         return myHistory.navigate(`checkout/payment`)
     }
     catch(error){
@@ -49,7 +53,7 @@ export default function Shipping(){
                 </label>
                 <label>
                     Postcode
-                    <input name='postcode' defaultValue={address?.zipcode} type='text' required/>
+                    <input name='postcode' defaultValue={address?.postcode} type='text' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
                     <Link 
