@@ -8,7 +8,8 @@ export function getLocalIdToken(){
     return JSON.parse(localStorage.getItem('idToken'))
 }
 export function setLocalUserData(data){
-    localStorage.setItem(userData, JSON.stringify(data))
+    const toStore = data instanceof Function ? data(getLocalUserData()) : data
+    localStorage.setItem(userData, JSON.stringify(toStore))
 }
 export function getLocalUserData(){
     return JSON.parse(localStorage.getItem(userData))
