@@ -39,16 +39,23 @@ export async function getSingleProduct(id){
     }
     return localData[id]
 }
-export async function getUserData(userId){
+export async function getUserData(withAddress){
     // await sleep(3000)
     const id = auth.currentUser.uid
-    const localData = getLocalUserData()
+    let localData = getLocalUserData()
     const idToken = getLocalIdToken()
     if(!localData){
-        const data = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json?auth=${idToken}`)
-        setLocalUserData(data)
-        return data
+        localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json?auth=${idToken}`)
+        setLocalUserData(localData)
     }
+    if(withAddress=="with address"){
+        if(!localData.address){
+            localData.address = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/usersAddresses/${id}.json?auth=${idToken}`)        
+            console.log('address '+localData.address)
+            setLocalUserData(localData)
+        }
+    }
+    
     return localData
 }
 export async function myFetch(url){
