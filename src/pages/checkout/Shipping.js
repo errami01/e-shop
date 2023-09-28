@@ -7,7 +7,7 @@ import { getUserData } from "../../utils/fetcher";
 import { auth } from "../../config/firbase";
 
 export async function loader(){
-    return await getUserData()
+    return await getUserData('with address')
 }
 export async function action({request}){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
