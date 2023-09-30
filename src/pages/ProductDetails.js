@@ -12,7 +12,7 @@ export function loader({params}){
     return defer({promises})
 }
 export default function PrdoductDetails(){
-    const productPromise = useLoaderData()
+    const loaderPromises = useLoaderData()
     const cart = useContext(CartContext)
     const awaitChild =(product)=>{
         const stars = rate(product.rating.rate)
