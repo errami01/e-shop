@@ -7,6 +7,7 @@ import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
 import Spinner from "../components/Spinner"
 import Button from "../components/Button"
+import { setLocalCart, storeObject } from "../utils/utils"
 export function loader({params}){
     const promises = Promise.all([getSingleProduct(params.id), getCart()])
     return defer({promises})
@@ -21,6 +22,7 @@ export default function PrdoductDetails(){
         const inCart = cartItems.filter(item => item.id===product.id)[0]
         function handleAddToCart(){
             const newCart = [...carta, {...product, orderedQuantity: 1}]
+            storeObject(newCart, 'carts', setLocalCart)
             setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
         }
         return(
