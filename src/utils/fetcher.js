@@ -1,14 +1,24 @@
 import { auth } from "../config/firbase"
-import { getLocalIdToken, getLocalUserData, setLocalUserData } from "./utils"
+import { getLocalCart, getLocalIdToken, getLocalUserData, setLocalCart, setLocalUserData } from "./utils"
 
-export async function sleep(ms) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve()
-        }, ms)
-    })
+// export async function sleep(ms) {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve()
+//         }, ms)
+//     })
+// }
+export async function myFetch(url){
+    const promiseData = await fetch(url)
+    if(!promiseData.ok){
+        throw{
+            message: "Failed to fetch Data",
+            statusText: promiseData.statusText,
+            statas: promiseData.status
+        }
+    }
+    return promiseData.json()
 }
-
 // Firebase realtime database
 export async function getProductsByCategory(category){
     const localData = JSON.parse(sessionStorage.getItem(category))
@@ -51,21 +61,21 @@ export async function getUserData(withAddress){
     if(withAddress=="with address"){
         if(!localData.address){
             localData.address = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/usersAddresses/${id}.json?auth=${idToken}`)        
-            console.log('address '+localData.address)
             setLocalUserData(localData)
         }
     }
     
     return localData
 }
-export async function myFetch(url){
-    const promiseData = await fetch(url)
-    if(!promiseData.ok){
-        throw{
-            message: "Failed to fetch Data",
-            statusText: promiseData.statusText,
-            statas: promiseData.status
-        }
+export async function getCart(){
+    //cart needs to be an array
+    const localData = getLocalCart()
+    if(!localData && auth.currentUser){
+        const id = auth.currentUser.uid
+        const idToken = await auth.currentUser.getIdToken()
+        localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/carts/${id}.json?auth=${idToken}`)
+        setLocalCart(localData || [])
+        return localData
     }
-    return promiseData.json()
+    return localData
 }
