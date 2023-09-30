@@ -52,7 +52,7 @@ export default function PrdoductDetails(){
     return(
         <div className="productDetails-container">
                     <Suspense fallback={<Spinner />}>
-                        <Await resolve={productPromise.singleProduct}>
+                        <Await resolve={loaderPromises.promises}>
                             {awaitChild}
                         </Await>
                     </Suspense>
