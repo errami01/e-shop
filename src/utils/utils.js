@@ -15,7 +15,12 @@ export function getLocalUserData(){
     return JSON.parse(localStorage.getItem(userData))
 }
 export function removeLocalUserData(){
-    localStorage.removeItem('user')
+    localStorage.removeItem(userData)
+}
+export function setLocalCart(data){
+    const toStore = data instanceof Function ? data(getLocalCart()) : data
+    localStorage.setItem('cart', JSON.stringify(toStore))
+}
 }
 export function setFormDataToObject(formData){
     const formDataObject = {}
