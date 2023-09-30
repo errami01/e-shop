@@ -36,7 +36,7 @@ export function setLocalUserAddresse(address){
 }
 export async function storeObject(data, path ,storeInLocalStorage){
     if(storeInLocalStorage) storeInLocalStorage(data)
-    if(path){
+    if(path && auth.currentUser){
         const user =auth.currentUser
         const idToken = await user.getIdToken()
         const response = await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/${path}/${user.uid}.json?auth=${idToken}`,{
