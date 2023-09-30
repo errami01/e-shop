@@ -21,6 +21,8 @@ export function setLocalCart(data){
     const toStore = data instanceof Function ? data(getLocalCart()) : data
     localStorage.setItem('cart', JSON.stringify(toStore))
 }
+export function getLocalCart(){
+    return JSON.parse(localStorage.getItem('cart'))
 }
 export function setFormDataToObject(formData){
     const formDataObject = {}
