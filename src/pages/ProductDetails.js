@@ -1,4 +1,4 @@
-import { getSingleProduct } from "../utils/fetcher"
+import { getCart, getSingleProduct } from "../utils/fetcher"
 import { useLoaderData, defer, Await } from "react-router-dom"
 import { useContext, Suspense } from "react"
 import { CartContext } from "../contexts/CartContext"
@@ -8,7 +8,8 @@ import QuantityControler from "../components/QuantityControler"
 import Spinner from "../components/Spinner"
 import Button from "../components/Button"
 export function loader({params}){
-    return defer({singleProduct: getSingleProduct(params.id)})
+    const promises = Promise.all([getSingleProduct(params.id), getCart()])
+    return defer({promises})
 }
 export default function PrdoductDetails(){
     const productPromise = useLoaderData()
