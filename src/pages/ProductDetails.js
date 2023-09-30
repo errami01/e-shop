@@ -20,6 +20,7 @@ export default function PrdoductDetails(){
         const {cartItems, setCartItems} = cart;
         const inCart = cartItems.filter(item => item.id===product.id)[0]
         function handleAddToCart(){
+            const newCart = [...carta, {...product, orderedQuantity: 1}]
             setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
         }
         return(
