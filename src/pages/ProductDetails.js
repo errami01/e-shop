@@ -14,7 +14,8 @@ export function loader({params}){
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
     const cart = useContext(CartContext)
-    const awaitChild =(product)=>{
+    const awaitChild =(resolved)=>{
+        const [product, carta] = resolved
         const stars = rate(product.rating.rate)
         const {cartItems, setCartItems} = cart;
         const inCart = cartItems.filter(item => item.id===product.id)[0]
