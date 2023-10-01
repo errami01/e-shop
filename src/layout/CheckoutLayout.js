@@ -30,10 +30,10 @@ export default function CheckoutLayout(){
     const cancelOrder =()=>{
         updateOngoingOrder()
     }
-    const awaitChild = (userLoadedData)=>{
+    const awaitChild = (cartResolvedPromise)=>{
         return(
             <>
-                <Cart />
+                <Cart carta={cartResolvedPromise}/>
             </> 
         )
     }
