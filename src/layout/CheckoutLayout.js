@@ -33,7 +33,6 @@ export default function CheckoutLayout(){
     const awaitChild = (userLoadedData)=>{
         return(
             <>
-                <Outlet context={{ ongoingOrder, cancelOrder }}/>
             </> 
         )
     }
@@ -63,8 +62,9 @@ export default function CheckoutLayout(){
                         Payment <i className="fa-solid fa-circle-check"></i>
                     </CheckoutPhase>
                 </ul>
+                <Outlet context={{ ongoingOrder, cancelOrder }}/>
                 <Suspense fallback={<Spinner />}>
-                    <Await resolve={userDataPromise}>
+                    <Await resolve={loaderPromise.cartPromise}>
                         {awaitChild}
                     </Await>
                 </Suspense>
