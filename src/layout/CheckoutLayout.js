@@ -13,7 +13,6 @@ export async function loader({request}){
 }
 export default function CheckoutLayout(){
     const cart = useContext(CartContext)
-    const {userDataPromise} = useLoaderData()
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
         cart,
         phase: 'personalInfos'
