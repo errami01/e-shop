@@ -75,7 +75,7 @@ export async function getCart(){
         const idToken = await auth.currentUser.getIdToken()
         localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/carts/${id}.json?auth=${idToken}`)
         setLocalCart(localData || [])
-        return localData
+        return getLocalCart()
     }
     return localData
 }
