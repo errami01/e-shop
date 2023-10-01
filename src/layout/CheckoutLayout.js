@@ -1,20 +1,17 @@
 import './CheckoutLayout.css'
-import { Await, Outlet, defer, useLoaderData } from "react-router-dom"
+import { Outlet, useLoaderData } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
-import { getCart, getUserData } from '../utils/fetcher'
-import { useContext, Suspense } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import { setOngoingOrder } from '../utils/useOngoingOrder'
 import CheckoutPhase from '../components/CheckoutPhase'
-import Spinner from '../components/Spinner'
 
 export async function loader({request}){
     requireAuth(request)
-    return defer({cartPromise: getCart()})     
+    return null     
 }
 export default function CheckoutLayout(){
-    const loaderPromise = useLoaderData()
     const cart = useContext(CartContext)
     const {userDataPromise} = useLoaderData()
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
@@ -29,13 +26,6 @@ export default function CheckoutLayout(){
     // const userLoadedData = useLoaderData()
     const cancelOrder =()=>{
         updateOngoingOrder()
-    }
-    const awaitChild = (cartResolvedPromise)=>{
-        return(
-            <>
-                <Cart carta={cartResolvedPromise}/>
-            </> 
-        )
     }
     return(
         <div className="container--checkoutLayout">
@@ -65,11 +55,7 @@ export default function CheckoutLayout(){
                 </ul>
                 <Outlet context={{ ongoingOrder, cancelOrder }}/>
             </div>     
-            <Suspense fallback={<Spinner />}>
-                <Await resolve={loaderPromise.cartPromise}>
-                    {awaitChild}
-                </Await>
-            </Suspense>
+            <Cart />
         </div>
     )
 }
