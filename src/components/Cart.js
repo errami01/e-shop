@@ -8,7 +8,7 @@ import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
 export default function Cart(props){
     const cart = useContext(CartContext)
-    const {isPage, withoutDeliveryDate} = props
+    const {isPage, withoutDeliveryDate, carta} = props
     const {cartItems, cartItemsNumber, totalAmount} = cart
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
