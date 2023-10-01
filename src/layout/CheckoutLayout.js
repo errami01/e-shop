@@ -2,7 +2,7 @@ import './CheckoutLayout.css'
 import { Await, Outlet, defer, useLoaderData } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
-import { getUserData } from '../utils/fetcher'
+import { getCart, getUserData } from '../utils/fetcher'
 import { useContext, Suspense } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import { setOngoingOrder } from '../utils/useOngoingOrder'
@@ -11,7 +11,7 @@ import Spinner from '../components/Spinner'
 
 export async function loader({request}){
     requireAuth(request)
-    return defer({userDataPromise: getUserData(`"drLAqnXla5dpjz1izbyxU4jOuXe2"`)})     
+    return defer({cartPromise: getCart()})     
 }
 export default function CheckoutLayout(){
     const cart = useContext(CartContext)
