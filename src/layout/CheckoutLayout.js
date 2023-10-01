@@ -14,6 +14,7 @@ export async function loader({request}){
     return defer({cartPromise: getCart()})     
 }
 export default function CheckoutLayout(){
+    const loaderPromise = useLoaderData()
     const cart = useContext(CartContext)
     const {userDataPromise} = useLoaderData()
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
