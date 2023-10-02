@@ -4,7 +4,7 @@ import {nanoid} from 'nanoid'
 import { Link } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
-import { countCartItems, getLocalCart } from "../utils/utils"
+import { countCartItems, getLocalCart, setLocalCart, storeObject } from "../utils/utils"
 export default function Cart(props){
     const {isPage, withoutDeliveryDate} = props
     const cartItems = getLocalCart()
@@ -20,6 +20,11 @@ export default function Cart(props){
     const currentLocation = myHistory.location.pathname.slice(1)
     const linkTarget = currentLocation === 'cart'? 'checkout': 'cart'
     const buttonText = currentLocation === 'cart'? 'checkout': 'Go to cart'
+    function removeCartItem(itemId){
+        const newCartItems = cartItems.filter(item=> item.id !== itemId)
+        storeObject(newCartItems, 'carts', setLocalCart)
+        myHistory.navigate('#',{replace: true})
+    }
     return (
             <div className="container--cart">
                 <div className="items-container--cart">
