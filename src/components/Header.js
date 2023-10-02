@@ -1,7 +1,6 @@
 import './Header.css'
 import BarsMenu from './BarsMenu'
-import { useState, useContext, useEffect } from 'react'
-import { CartContext } from '../contexts/CartContext'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 import CartMenu from './CartMenu'
@@ -9,8 +8,6 @@ import { myHistory } from '../utils/myHistory'
 import { getLocalUserData } from '../utils/utils'
 export default function Header(){
     const userData = getLocalUserData()
-    const cart = useContext(CartContext)
-    const {cartItemsNumber} = cart
     const [isMenuOpen, setIsMenuOpen] = useState({
         loggedInIcon: false,
         barsIconContainer:false,
