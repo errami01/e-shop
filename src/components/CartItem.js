@@ -4,13 +4,8 @@ import { Link } from 'react-router-dom'
 //This component is rendered in Cart.js
 export default function CartItem(props){
     const {item, isPage, withoutDeliveryDate} = props
-    const {setCartItems} = props.cart
     const pageClassName = isPage? '-page':''
-    function handleTrashClick(){
-        setCartItems(prev=>{
-            return prev.filter(product=> product.id !== item.id)
-        })
-    }
+   
     return (
         <div className={`cartItem-container${pageClassName}`}>
                 <Link to={`/${item.category}/${item.id}`} className={`image-link-cartItem${pageClassName}`}>
