@@ -3,7 +3,7 @@ import QuantityControler from './QuantityControler'
 import { Link } from 'react-router-dom'
 //This component is rendered in Cart.js
 export default function CartItem(props){
-    const {item, isPage, withoutDeliveryDate} = props
+    const {item, isPage, withoutDeliveryDate, handleTrashClick} = props
     const pageClassName = isPage? '-page':''
    
     return (
