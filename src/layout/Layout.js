@@ -2,7 +2,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import CartContextProvider from "../contexts/CartContext"
 import { myHistory } from "../utils/myHistory"
-import { getUserData } from "../utils/fetcher"
+import { getCart, getUserData } from "../utils/fetcher"
 import { confirmUserState, removeLocalUserData } from "../utils/utils"
 
 export async function loader(){
@@ -14,7 +14,7 @@ export async function loader(){
         //Remvove user data if the user session expires
         removeLocalUserData()
     }
-    return null
+    return defer({cartPromise: getCart()})
     
 }
 export default function Layout(){
