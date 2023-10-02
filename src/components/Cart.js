@@ -1,6 +1,4 @@
 import CartItem from "../components/CartItem"
-import { useContext } from "react"
-import { CartContext } from "../contexts/CartContext"
 import './Cart.css'
 import {nanoid} from 'nanoid'
 import { Link } from "react-router-dom"
@@ -8,15 +6,12 @@ import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
 import { getLocalCart } from "../utils/utils"
 export default function Cart(props){
-    const cart = useContext(CartContext)
     const {isPage, withoutDeliveryDate} = props
     const carta = getLocalCart()
-    const {cartItems, cartItemsNumber, totalAmount} = cart
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
                     key={nanoid()} 
                     item={item} 
-                    cart={cart} 
                     isPage={isPage} 
                     withoutDeliveryDate={withoutDeliveryDate}/>
     })
