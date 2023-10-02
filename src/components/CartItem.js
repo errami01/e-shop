@@ -17,7 +17,7 @@ export default function CartItem(props){
                 </p>} 
                 <span className={`price-carItem${pageClassName}`}>{Number.isInteger(item.price)? item.price+'.00':item.price}$</span>
                 <QuantityControler itemId={item.id} className={`quantity-cartItem${pageClassName}`} quantity={item.orderedQuantity}/>
-                <span className={`trash-cartItem${pageClassName}`} onClick={handleTrashClick}>
+                <span className={`trash-cartItem${pageClassName}`} onClick={()=>handleTrashClick(item.id)}>
                     <i className="fa-solid fa-trash-can"></i>
                 </span>
 
