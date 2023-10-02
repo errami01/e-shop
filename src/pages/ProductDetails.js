@@ -9,8 +9,7 @@ import Spinner from "../components/Spinner"
 import Button from "../components/Button"
 import { setLocalCart, storeObject } from "../utils/utils"
 export function loader({params}){
-    const promises = Promise.all([getSingleProduct(params.id), getCart()])
-    return defer({promises})
+    return defer({productPromise: getSingleProduct(params.id)})
 }
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
