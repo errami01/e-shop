@@ -9,6 +9,7 @@ export default function Cart(props){
     const {isPage, withoutDeliveryDate} = props
     const cartItems = getLocalCart()
     const cartItemsNumber= countCartItems(cartItems)
+    const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
                     key={nanoid()} 
