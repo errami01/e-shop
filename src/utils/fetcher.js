@@ -53,7 +53,7 @@ export async function getUserData(withAddress){
     // await sleep(3000)
     const id = auth.currentUser.uid
     let localData = getLocalUserData()
-    const idToken = getLocalIdToken()
+    const idToken = await auth.currentUser.getIdToken(true)
     if(!localData){
         localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json?auth=${idToken}`)
         setLocalUserData(localData)
@@ -72,7 +72,7 @@ export async function getCart(){
     const localData = getLocalCart()
     if(!localData && auth.currentUser){
         const id = auth.currentUser.uid
-        const idToken = await auth.currentUser.getIdToken()
+        const idToken = await auth.currentUser.getIdToken(true)
         localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/carts/${id}.json?auth=${idToken}`)
         setLocalCart(localData || [])
         return getLocalCart()
