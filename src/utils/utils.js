@@ -65,3 +65,6 @@ export function confirmUserState(){
         })
     })
 }
+function countCartItems(cart){
+    return cart.reduce((acc, curr)=> acc + curr.orderedQuantity,0)
+ }
