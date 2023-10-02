@@ -54,6 +54,6 @@ export async function storeObject(data, path ,storeInLocalStorage){
     }
     
 }
-function countCartItems(cart){
+export function countCartItems(cart){
     return cart.reduce((acc, curr)=> acc + curr.orderedQuantity,0)
  }
