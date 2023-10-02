@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { getUserData } from "./fetcher";
 import { removeLocalUserData, setLocalIdToken } from "./utils";
 import { myHistory } from "./myHistory";
+import { onAuthStateChanged } from "firebase/auth";
 
 export async function signUp(email, pass){
     try{
@@ -29,4 +30,14 @@ export const logOut = async ()=> {
     await signOut(auth)
     removeLocalUserData()
     myHistory.navigate("#")
+}
+export function confirmUserState(){
+    return new Promise((res, rej)=>{
+        onAuthStateChanged(auth, (user)=>{
+            if(user) res(user.uid)
+            else {
+                rej('No user found')
+            }
+        })
+    })
 }

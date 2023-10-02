@@ -1,4 +1,3 @@
-import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firbase";
 const userData = 'user'
 export function setLocalIdToken(id){
@@ -54,16 +53,6 @@ export async function storeObject(data, path ,storeInLocalStorage){
         }
     }
     
-}
-export function confirmUserState(){
-    return new Promise((res, rej)=>{
-        onAuthStateChanged(auth, (user)=>{
-            if(user) res(user.uid)
-            else {
-                rej('No user found')
-            }
-        })
-    })
 }
 function countCartItems(cart){
     return cart.reduce((acc, curr)=> acc + curr.orderedQuantity,0)
