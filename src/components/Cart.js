@@ -14,6 +14,7 @@ export default function Cart(props){
         return <CartItem  
                     key={nanoid()} 
                     item={item} 
+                    handleTrashClick={removeCartItem} 
                     isPage={isPage} 
                     withoutDeliveryDate={withoutDeliveryDate}/>
     })
