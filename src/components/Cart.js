@@ -4,10 +4,11 @@ import {nanoid} from 'nanoid'
 import { Link } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
-import { getLocalCart } from "../utils/utils"
+import { countCartItems, getLocalCart } from "../utils/utils"
 export default function Cart(props){
     const {isPage, withoutDeliveryDate} = props
     const cartItems = getLocalCart()
+    const cartItemsNumber= countCartItems(cartItems)
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
                     key={nanoid()} 
