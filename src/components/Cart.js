@@ -21,10 +21,15 @@ export default function Cart(props){
     const currentLocation = myHistory.location.pathname.slice(1)
     const linkTarget = currentLocation === 'cart'? 'checkout': 'cart'
     const buttonText = currentLocation === 'cart'? 'checkout': 'Go to cart'
-    function removeCartItem(itemId){
+    async function removeCartItem(itemId){
         const newCartItems = cartItems.filter(item=> item.id !== itemId)
-        storeObject(newCartItems, 'carts', setLocalCart)
-        myHistory.navigate('#',{replace: true})
+        try{
+            await storeObject(newCartItems, 'carts', setLocalCart)
+            myHistory.navigate('#',{replace: true})
+        }
+        catch(e){
+
+        }
     }
     return (
             <div className="container--cart">
