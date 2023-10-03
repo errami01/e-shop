@@ -8,6 +8,7 @@ import QuantityControler from "../components/QuantityControler"
 import Spinner from "../components/Spinner"
 import Button from "../components/Button"
 import { setLocalCart, storeObject } from "../utils/utils"
+import { myHistory } from "../utils/myHistory"
 export function loader({params}){
     return defer({productPromise: getSingleProduct(params.id)})
 }
