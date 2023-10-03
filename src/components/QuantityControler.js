@@ -1,6 +1,4 @@
 import './QuantityControler.css'
-import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
 import { getLocalCart, setLocalCart, storeObject } from '../utils/utils'
 import { myHistory } from '../utils/myHistory'
 //This component is rendered in CartItem.js and productDetails
