@@ -14,16 +14,13 @@ export function loader({params}){
 }
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
-    const cart = useContext(CartContext)
     const awaitChild =(resolved)=>{
         const [product, carta] = resolved
         const stars = rate(product.rating.rate)
-        const {cartItems, setCartItems} = cart;
         const inCart = cartItems.filter(item => item.id===product.id)[0]
         function handleAddToCart(){
             const newCart = [...carta, {...product, orderedQuantity: 1}]
             storeObject(newCart, 'carts', setLocalCart)
-            setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
             myHistory.navigate('#', {replace: true})
         }
         return(
