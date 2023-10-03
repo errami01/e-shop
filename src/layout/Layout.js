@@ -1,6 +1,5 @@
 import { Await, Outlet, useLoaderData, useLocation, useNavigate, defer } from "react-router-dom"
 import Header from "../components/Header"
-import CartContextProvider from "../contexts/CartContext"
 import { myHistory } from "../utils/myHistory"
 import { getCart, getUserData } from "../utils/fetcher"
 import { removeLocalUserData } from "../utils/utils"
@@ -25,18 +24,16 @@ export default function Layout(){
     myHistory.location = useLocation()
     const loaderPromise = useLoaderData()
     return(
-            <CartContextProvider>
-                <Suspense fallback={<Spinner />}>
-                    <Await resolve={loaderPromise.cartPromise}>
-                        {(cart)=>
-                         (<>
-                            <Header carta={cart}/>
-                            <Outlet />
-                        </>)
-                        }
-                    </Await>
-                </Suspense>
+            <Suspense fallback={<Spinner />}>
+                <Await resolve={loaderPromise.cartPromise}>
+                    {(cart)=>
+                        (<>
+                        <Header carta={cart}/>
+                        <Outlet />
+                    </>)
+                    }
+                </Await>
+            </Suspense>
                 
-            </CartContextProvider>
     )
 }
