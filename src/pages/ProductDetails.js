@@ -16,11 +16,11 @@ export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
     const cartItems = getLocalCart()
     const awaitChild =(resolved)=>{
-        const [product, carta] = resolved
+        const product= resolved
         const stars = rate(product.rating.rate)
         const inCart = cartItems.filter(item => item.id===product.id)[0]
         function handleAddToCart(){
-            const newCart = [...carta, {...product, orderedQuantity: 1}]
+            const newCart = [...cartItems, {...product, orderedQuantity: 1}]
             storeObject(newCart, 'carts', setLocalCart)
             myHistory.navigate('#', {replace: true})
         }
@@ -55,7 +55,7 @@ export default function PrdoductDetails(){
     return(
         <div className="productDetails-container">
                     <Suspense fallback={<Spinner />}>
-                        <Await resolve={loaderPromises.promises}>
+                        <Await resolve={loaderPromises.productPromise}>
                             {awaitChild}
                         </Await>
                     </Suspense>
