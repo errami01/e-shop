@@ -1,9 +1,8 @@
 import './CheckoutLayout.css'
-import { Outlet, useLoaderData } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
-import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
+
 import { setOngoingOrder } from '../utils/useOngoingOrder'
 import CheckoutPhase from '../components/CheckoutPhase'
 
@@ -12,9 +11,7 @@ export async function loader({request}){
     return null     
 }
 export default function CheckoutLayout(){
-    const cart = useContext(CartContext)
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
-        cart,
         phase: 'personalInfos'
     })
     const phases = ['personalInfos', 'shipping', 'payment']
@@ -22,7 +19,6 @@ export default function CheckoutLayout(){
     const style = {
         borderBottom: '4px solid'
     }
-    // const userLoadedData = useLoaderData()
     const cancelOrder =()=>{
         updateOngoingOrder()
     }
