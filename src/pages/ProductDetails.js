@@ -23,6 +23,7 @@ export default function PrdoductDetails(){
             const newCart = [...carta, {...product, orderedQuantity: 1}]
             storeObject(newCart, 'carts', setLocalCart)
             setCartItems(prev=> [...prev, {...product, orderedQuantity: 1}])
+            myHistory.navigate('#', {replace: true})
         }
         return(
             <>
