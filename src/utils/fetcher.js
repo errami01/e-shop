@@ -68,8 +68,7 @@ export async function getUserData(withAddress){
     return localData
 }
 export async function getCart(){
-    //cart needs to be an array
-    const localData = getLocalCart()
+    let localData = getLocalCart()
     if(!localData && auth.currentUser){
         const id = auth.currentUser.uid
         const idToken = await auth.currentUser.getIdToken(true)
