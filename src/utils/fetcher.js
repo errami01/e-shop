@@ -69,6 +69,35 @@ export async function getUserData(withAddress){
 }
 export async function getCart(){
     let localData = getLocalCart()
+    
+    if(!auth.currentUser) {
+        if(localData?.length>0) {
+            localStorage.setItem('offlineCart', JSON.stringify(localData))
+            return localData
+        }
+        setLocalCart([])
+        return []
+    }
+    if(auth.currentUser){
+        const id = auth.currentUser.uid
+        const idToken = await auth.currentUser.getIdToken(true)
+        const fetchedCart = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/carts/${id}.json?auth=${idToken}`)
+        if(!localData){
+            setLocalCart(fetchedCart || [])
+            return getLocalCart()
+        }
+        const offlineCart = JSON.parse(localStorage.getItem('offlineCart'))
+        if(offlineCart && fetchedCart){
+            const rslt = combineOfflineAndOnlineCarts(offlineCart, fetchedCart)
+            storeObject(rslt, 'carts',setLocalCart)
+            localStorage.removeItem('offlineCart')
+            console.log(rslt)
+            return rslt
+        }
+
+    }
+    return localData
+}
     if(!localData && auth.currentUser){
         const id = auth.currentUser.uid
         const idToken = await auth.currentUser.getIdToken(true)
