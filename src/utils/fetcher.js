@@ -78,3 +78,24 @@ export async function getCart(){
     }
     return localData
 }
+function combineOfflineAndOnlineCarts(input, target){
+    const rslt = [...target]
+    input.forEach(element=>{
+        const targetIndex = rslt.findIndex((student)=>{
+            return element.id <= student.id
+        })
+        if(targetIndex >= 0){
+            if(element.id === rslt[targetIndex].id) {
+                rslt[targetIndex].orderedQuantity = element.orderedQuantity + rslt[targetIndex].orderedQuantity
+            }
+            if(element.id < rslt[targetIndex].id){
+                rslt.splice(targetIndex, 0, element)
+            }
+        }
+        else{
+            rslt.push(element)
+        }
+    })
+    console.log(rslt)
+     return rslt
+}
