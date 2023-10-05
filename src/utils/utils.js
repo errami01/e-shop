@@ -30,6 +30,9 @@ export function setLocalOnGoingCheckout(data){
     const toStore = data instanceof Function ? data(getLocalOnGoingCheckout()) : data
     localStorage.setItem('onGoingCheckout', JSON.stringify(toStore))
 }
+export function getLocalOnGoingCheckout(){
+    return JSON.parse(localStorage.getItem('onGoingCheckout'))
+}
 export function setFormDataToObject(formData){
     const formDataObject = {}
     for (const key of formData.keys()) {
