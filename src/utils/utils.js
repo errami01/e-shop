@@ -23,6 +23,9 @@ export function setLocalCart(data){
 export function getLocalCart(){
     return JSON.parse(localStorage.getItem('cart'))
 }
+export function removeLocalCart(){
+    localStorage.removeItem('cart')
+}
 export function setFormDataToObject(formData){
     const formDataObject = {}
     for (const key of formData.keys()) {
