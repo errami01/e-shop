@@ -1,5 +1,5 @@
 import { auth } from "../config/firbase"
-import { getLocalCart, getLocalIdToken, getLocalUserData, setLocalCart, setLocalUserData } from "./utils"
+import { getLocalCart, getLocalOnGoingCheckout, getLocalUserData, setLocalCart, setLocalOnGoingCheckout, setLocalUserData, storeObject } from "./utils"
 
 // export async function sleep(ms) {
 //     return new Promise((resolve) => {
@@ -98,12 +98,14 @@ export async function getCart(){
     }
     return localData
 }
+export async function getOnGoingCheckout(){
+    let localData = getLocalOnGoingCheckout()
     if(!localData && auth.currentUser){
         const id = auth.currentUser.uid
         const idToken = await auth.currentUser.getIdToken(true)
-        localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/carts/${id}.json?auth=${idToken}`)
-        setLocalCart(localData || [])
-        return getLocalCart()
+        localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/onGoingCheckouts/${id}.json?auth=${idToken}`)
+        setLocalOnGoingCheckout(localData || [])
+        return getLocalOnGoingCheckout()
     }
     return localData
 }
