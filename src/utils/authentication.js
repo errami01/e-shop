@@ -1,7 +1,7 @@
 import { auth } from "../config/firbase";
 import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { getUserData } from "./fetcher";
-import { removeLocalUserData, setLocalIdToken } from "./utils";
+import { removeLocalCart, removeLocalUserData, setLocalIdToken } from "./utils";
 import { myHistory } from "./myHistory";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -29,6 +29,7 @@ export async function signUp(email, pass){
 export const logOut = async ()=> {
     await signOut(auth)
     removeLocalUserData()
+    removeLocalCart()
     myHistory.navigate("#")
 }
 export function confirmUserState(){
