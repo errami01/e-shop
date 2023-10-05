@@ -43,13 +43,12 @@ export function setFormDataToObject(formData){
 export function setLocalUserAddresse(address){
     localStorage.setItem('userAddress', JSON.stringify(address))
 }
-export async function storeObject(data, path ,storeInLocalStorage){
-    if(storeInLocalStorage) storeInLocalStorage(data)
+export async function storeObject(data, path ,storeInLocalStorage, methode='PUT'){
     if(path && auth.currentUser){
         const user =auth.currentUser
         const idToken = await user.getIdToken(true)
         const response = await fetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/${path}/${user.uid}.json?auth=${idToken}`,{
-        method: 'PUT',
+        method: methode,
         headers: {
             'Content-Type': 'application/json'
         },
