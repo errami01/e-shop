@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 import CartMenu from './CartMenu'
 import { myHistory } from '../utils/myHistory'
-import { getLocalCart, getLocalUserData, countCartItems } from '../utils/utils'
-export default function Header(){
+import { getLocalUserData, countCartItems } from '../utils/utils'
+export default function Header({carta}){
     const userData = getLocalUserData()
-    const cartItemsNumber = countCartItems(getLocalCart())
+    const cartItemsNumber = countCartItems(carta)
     const [isMenuOpen, setIsMenuOpen] = useState({
         loggedInIcon: false,
         barsIconContainer:false,
