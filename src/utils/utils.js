@@ -61,7 +61,7 @@ export async function storeObject(data, path ,storeInLocalStorage, methode='PUT'
             }
         }
     }
-    
+    if(storeInLocalStorage) storeInLocalStorage(data)
 }
 export function countCartItems(cart){
     return cart.reduce((acc, curr)=> acc + curr.orderedQuantity,0)
