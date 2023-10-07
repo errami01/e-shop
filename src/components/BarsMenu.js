@@ -4,6 +4,7 @@ import {nanoid} from 'nanoid'
 import { Link, Await } from 'react-router-dom'
 import { getCategories } from '../utils/fetcher'
 import Spinner from './Spinner'
+import { myHistory } from '../utils/myHistory'
 
 export default function BarsMenu({isOpen}){
     const container = useRef()  
@@ -20,6 +21,7 @@ export default function BarsMenu({isOpen}){
     function handleLocalStorage(){
         localStorage.clear()
         sessionStorage.clear()
+        myHistory.navigate('#')
     }
     return(
         <div 
