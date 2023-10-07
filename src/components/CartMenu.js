@@ -1,7 +1,7 @@
 import './CartMenu.css'
 import Cart from './Cart'
 export default function CartMenu(props){
-    const {isOpen} = props
+    const {isOpen, cart} = props
     return(
         <div  
             className={`container--cartMenu ${!isOpen && 'closed--cartMenu'}`}
@@ -12,7 +12,7 @@ export default function CartMenu(props){
             }
             }
         >
-            <Cart withoutDeliveryDate/>
+            <Cart cart={cart} withoutDeliveryDate/>
         </div>
     )
 }
