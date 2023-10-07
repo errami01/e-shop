@@ -23,17 +23,18 @@ export default function Layout(){
     myHistory.navigate = useNavigate()
     myHistory.location = useLocation()
     const loaderPromise = useLoaderData()
+    const awaitChild = (cart)=>{
+        return (
+                <>
+                    <Header cart={cart}/>
+                    <Outlet context={{cart}}/>
+                </>)
+                }
     return(
             <Suspense fallback={<Spinner />}>
                 <Await resolve={loaderPromise.cartPromise}>
-                    {(cart)=>
-                        (<>
-                        <Header carta={cart}/>
-                        <Outlet />
-                    </>)
-                    }
+                    {awaitChild}
                 </Await>
-            </Suspense>
-                
+            </Suspense> 
     )
 }
