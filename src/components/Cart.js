@@ -4,10 +4,10 @@ import {nanoid} from 'nanoid'
 import { Link } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
-import { countCartItems, getLocalCart, setLocalCart, storeObject } from "../utils/utils"
+import { countCartItems, setLocalCart, storeObject } from "../utils/utils"
 export default function Cart(props){
-    const {isPage, withoutDeliveryDate} = props
-    const cartItems = getLocalCart()
+    const {isPage, withoutDeliveryDate, cart} = props
+    const cartItems = cart
     const cartItemsNumber= countCartItems(cartItems)
     const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
     const cartItemsElements = cartItems.map((item)=>{
