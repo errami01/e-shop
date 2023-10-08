@@ -3,7 +3,7 @@ import QuantityControler from './QuantityControler'
 import { Link } from 'react-router-dom'
 //This component is rendered in Cart.js
 export default function CartItem(props){
-    const {item, isPage, withoutDeliveryDate, handleTrashClick} = props
+    const {item, isPage, withoutDeliveryDate, handleTrashClick, cart} = props
     const pageClassName = isPage? '-page':''
    
     return (
@@ -16,8 +16,11 @@ export default function CartItem(props){
                     Delivery between Wednesday, May 17, 2023 and Friday, May 19, 2023
                 </p>} 
                 <span className={`price-carItem${pageClassName}`}>{Number.isInteger(item.price)? item.price+'.00':item.price}$</span>
-                <QuantityControler itemId={item.id} className={`quantity-cartItem${pageClassName}`} quantity={item.orderedQuantity}/>
-                <span className={`trash-cartItem${pageClassName}`} onClick={()=>handleTrashClick(item.id)}>
+                <QuantityControler cart={cart} itemId={item.id} className={`quantity-cartItem${pageClassName}`} quantity={item.orderedQuantity}/>
+                <span 
+                    className={`trash-cartItem${pageClassName}`} 
+                    onClick={()=>{handleTrashClick(item.id)}}
+                >
                     <i className="fa-solid fa-trash-can"></i>
                 </span>
 
