@@ -100,6 +100,12 @@ export async function getCart(){
             localStorage.removeItem('offlineCart')
             return offlineCart
         }
+        //if the offlineCart is empty and the fetchedCart is not then
+        //store the offlineCart in the localStorage
+        if(fetchedCart){
+            setLocalCart(fetchedCart)
+            return fetchedCart
+        }
 
     }
     return localData
