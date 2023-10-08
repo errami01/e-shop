@@ -19,10 +19,13 @@ export default function PrdoductDetails(){
         const product= resolved
         const stars = rate(product.rating.rate)
         const inCart = cartItems.filter(item => item.id===product.id)[0]
-        function handleAddToCart(){
-            const newCart = [...cartItems, {...product, orderedQuantity: 1}]
-            storeObject(newCart, 'carts', setLocalCart)
-            myHistory.navigate('#', {replace: true})
+        async function handleAddToCart(){
+            try{
+                const newCart = [...cartItems, {...product, orderedQuantity: 1}]
+                await storeObject(newCart, 'carts', setLocalCart)
+                myHistory.navigate('#', {replace: true})
+            }
+            catch(e){}
         }
         return(
             <>
