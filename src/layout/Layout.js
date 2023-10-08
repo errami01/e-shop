@@ -1,11 +1,9 @@
-import { Await, Outlet, useLoaderData, useLocation, useNavigate, defer } from "react-router-dom"
+import { Outlet, useLoaderData, useLocation, useNavigate} from "react-router-dom"
 import Header from "../components/Header"
 import { myHistory } from "../utils/myHistory"
 import { getCart, getUserData } from "../utils/fetcher"
 import { removeLocalUserData } from "../utils/utils"
 import { confirmUserState } from "../utils/authentication"
-import { Suspense } from "react"
-import Spinner from "../components/Spinner"
 
 export async function loader(){
     try{
@@ -16,25 +14,16 @@ export async function loader(){
         //Remvove user data if the user session expires
         removeLocalUserData()
     }
-    return defer({cartPromise: getCart()})
-    
+    return await getCart()
 }
 export default function Layout(){
     myHistory.navigate = useNavigate()
     myHistory.location = useLocation()
-    const loaderPromise = useLoaderData()
-    const awaitChild = (cart)=>{
-        return (
-                <>
-                    <Header cart={cart}/>
-                    <Outlet context={{cart}}/>
-                </>)
-                }
+    const cart = useLoaderData()
     return(
-            <Suspense fallback={<Spinner />}>
-                <Await resolve={loaderPromise.cartPromise}>
-                    {awaitChild}
-                </Await>
-            </Suspense> 
+        <>
+            <Header cart={cart}/>
+            <Outlet context={{cart}}/>
+        </>
     )
 }
