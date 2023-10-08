@@ -89,7 +89,7 @@ export async function getCart(){
         const offlineCart = JSON.parse(localStorage.getItem('offlineCart'))
         if(offlineCart && fetchedCart){
             const rslt = combineOfflineAndOnlineCarts(offlineCart, fetchedCart)
-            storeObject(rslt, 'carts',setLocalCart)
+            await storeObject(rslt, 'carts',setLocalCart)
             localStorage.removeItem('offlineCart')
             console.log(rslt)
             return rslt
