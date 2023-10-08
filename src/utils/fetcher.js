@@ -91,8 +91,14 @@ export async function getCart(){
             const rslt = combineOfflineAndOnlineCarts(offlineCart, fetchedCart)
             await storeObject(rslt, 'carts',setLocalCart)
             localStorage.removeItem('offlineCart')
-            console.log(rslt)
             return rslt
+        }
+        //if there is no cart in database and the offlineCart is not empty then 
+        //send the offlineCart to database
+        if(offlineCart){
+            await storeObject(offlineCart, 'carts',setLocalCart)
+            localStorage.removeItem('offlineCart')
+            return offlineCart
         }
 
     }
