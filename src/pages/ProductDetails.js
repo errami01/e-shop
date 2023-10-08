@@ -1,19 +1,20 @@
 import { getSingleProduct } from "../utils/fetcher"
-import { useLoaderData, defer, Await } from "react-router-dom"
+import { useLoaderData, defer, Await, useOutletContext } from "react-router-dom"
 import { Suspense } from "react"
 import "./ProductDetails.css"
 import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
 import Spinner from "../components/Spinner"
 import Button from "../components/Button"
-import { getLocalCart, setLocalCart, storeObject } from "../utils/utils"
+import { setLocalCart, storeObject } from "../utils/utils"
 import { myHistory } from "../utils/myHistory"
 export function loader({params}){
     return defer({productPromise: getSingleProduct(params.id)})
 }
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
-    const cartItems = getLocalCart()
+    const {cart} = useOutletContext()
+    const cartItems = cart
     const awaitChild =(resolved)=>{
         const product= resolved
         const stars = rate(product.rating.rate)
