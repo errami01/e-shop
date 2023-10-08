@@ -1,9 +1,9 @@
 import './QuantityControler.css'
-import { getLocalCart, setLocalCart, storeObject } from '../utils/utils'
+import { setLocalCart, storeObject } from '../utils/utils'
 import { myHistory } from '../utils/myHistory'
 //This component is rendered in CartItem.js and productDetails
 export  default function QuantityControler(props){
-    const cartItems= getLocalCart()
+    const cartItems= props.cart
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
     const targetItemIndex = cartItems.indexOf(targetItem)
     async function handleQuantity(event){
