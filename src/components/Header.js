@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import UserMenuTop from './UserMenuTop'
 import CartMenu from './CartMenu'
 import { myHistory } from '../utils/myHistory'
-import { getLocalUserData, countCartItems, getLocalCart } from '../utils/utils'
+import { getLocalUserData, countCartItems } from '../utils/utils'
 export default function Header({cart}){
     const userData = getLocalUserData()
     const cartItemsNumber = countCartItems(cart)
