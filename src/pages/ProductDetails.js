@@ -31,6 +31,7 @@ export default function PrdoductDetails(){
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
                     {inCart? 
                             <QuantityControler 
+                            cart = {cart}
                             itemId={product.id} 
                             quantity={inCart.orderedQuantity} 
                             className='quantity-cartItem'/> 
