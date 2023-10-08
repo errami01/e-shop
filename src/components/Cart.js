@@ -13,6 +13,7 @@ export default function Cart(props){
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
                     key={nanoid()} 
+                    cart={cart}
                     item={item} 
                     handleTrashClick={removeCartItem} 
                     isPage={isPage} 
