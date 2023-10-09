@@ -13,6 +13,7 @@ export default function CheckoutLayout(){
     const {cart} = useOutletContext()
     const onGoingCheckout = useLoaderData()
     const phases = ['personalInfos', 'shipping', 'payment']
+    const currentPhaseIndex = phases.indexOf(onGoingCheckout.phase)
     const style = {
         borderBottom: '4px solid'
     }
@@ -43,6 +44,7 @@ export default function CheckoutLayout(){
                         Payment <i className="fa-solid fa-circle-check"></i>
                     </CheckoutPhase>
                 </ul>
+                <Outlet context={{ onGoingCheckout, cancelOrder }}/>
             </div>     
             <Cart cart={cart}/>
         </div>
