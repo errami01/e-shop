@@ -5,10 +5,11 @@ import {requireAuth} from  '../utils/requireAuth'
 
 import { setOngoingOrder } from '../utils/useOngoingOrder'
 import CheckoutPhase from '../components/CheckoutPhase'
+import { getOnGoingCheckout } from '../utils/fetcher'
 
 export async function loader({request}){
     requireAuth(request)
-    return null     
+    return await getOnGoingCheckout()     
 }
 export default function CheckoutLayout(){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
