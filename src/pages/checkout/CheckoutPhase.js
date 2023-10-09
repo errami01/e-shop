@@ -1,8 +1,8 @@
 import { Navigate, useOutletContext } from "react-router-dom"
 
 export default function CheckoutPhase(){
-    const {ongoingOrder} = useOutletContext()
+    const {onGoingCheckout} = useOutletContext()
     return(
-        <Navigate to={ongoingOrder.phase} replace/>
+        <Navigate to={onGoingCheckout.phase} replace/>
     )
 }
