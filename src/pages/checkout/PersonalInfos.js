@@ -1,19 +1,10 @@
 import { Form, Link, useLoaderData, useOutletContext } from "react-router-dom"
 import CheckoutFlow from "../../components/CheckoutFlow"
 import { myHistory } from "../../utils/myHistory"
-import { setOngoingOrder } from "../../utils/useOngoingOrder"
 import { setFormDataToObject, setLocalUserData, storeObject } from "../../utils/utils"
 import { getUserData } from "../../utils/fetcher"
-import { auth } from "../../config/firbase"
 
 export async function action({request}){
-    const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
-    updateOngoingOrder(
-        {
-            ...ongoingOrder,
-            phase: 'shipping'
-        }
-    )
     try{
         const dataForm = await request.formData()
         const dataFormObject = setFormDataToObject(dataForm)
