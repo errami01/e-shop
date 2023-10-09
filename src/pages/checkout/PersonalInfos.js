@@ -1,7 +1,7 @@
 import { Form, Link, useLoaderData, useOutletContext } from "react-router-dom"
 import CheckoutFlow from "../../components/CheckoutFlow"
 import { myHistory } from "../../utils/myHistory"
-import { setFormDataToObject, setLocalUserData, storeObject } from "../../utils/utils"
+import { setFormDataToObject, setLocalOnGoingCheckout, setLocalUserData, storeObject } from "../../utils/utils"
 import { getUserData } from "../../utils/fetcher"
 
 export async function action({request}){
@@ -9,6 +9,7 @@ export async function action({request}){
         const dataForm = await request.formData()
         const dataFormObject = setFormDataToObject(dataForm)
         await storeObject(dataFormObject, 'users' , setLocalUserData)
+        await storeObject({phase: 'shipping'}, 'onGoingCheckouts' , setLocalOnGoingCheckout)
         return myHistory.navigate(`checkout/shipping`)
     }
     catch(error){
