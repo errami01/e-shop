@@ -123,9 +123,10 @@ export async function getOnGoingCheckout(){
 }
 function combineOfflineAndOnlineCarts(input, target){
     const rslt = [...target]
+    rslt.sort((a,b)=> a.id - b.id)
     input.forEach(element=>{
-        const targetIndex = rslt.findIndex((student)=>{
-            return element.id <= student.id
+        const targetIndex = rslt.findIndex((item)=>{
+            return element.id <= item.id
         })
         if(targetIndex >= 0){
             if(element.id === rslt[targetIndex].id) {
