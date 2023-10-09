@@ -1,5 +1,5 @@
 import './CheckoutLayout.css'
-import { Outlet } from "react-router-dom"
+import { Outlet, useOutletContext } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 
@@ -14,6 +14,7 @@ export default function CheckoutLayout(){
     const [ongoingOrder, updateOngoingOrder] = setOngoingOrder({
         phase: 'personalInfos'
     })
+    const {cart} = useOutletContext()
     const phases = ['personalInfos', 'shipping', 'payment']
     const currentPhaseIndex = phases.indexOf(ongoingOrder.phase)
     const style = {
@@ -50,7 +51,7 @@ export default function CheckoutLayout(){
                 </ul>
                 <Outlet context={{ ongoingOrder, cancelOrder }}/>
             </div>     
-            <Cart />
+            <Cart cart={cart}/>
         </div>
     )
 }
