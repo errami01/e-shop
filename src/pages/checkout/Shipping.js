@@ -1,7 +1,7 @@
 import CheckoutFlow from "../../components/CheckoutFlow";
 import { Form, Link, useLoaderData, useOutletContext } from "react-router-dom";
 import { myHistory } from "../../utils/myHistory";
-import { setFormDataToObject, storeObject, setLocalUserData } from "../../utils/utils";
+import { setFormDataToObject, storeObject, setLocalUserData, setLocalOnGoingCheckout } from "../../utils/utils";
 import { getUserData } from "../../utils/fetcher";
 
 export async function loader(){
@@ -17,6 +17,7 @@ export async function action({request}){
                 ...newData
             }
         })))
+        await storeObject({phase: 'payment'}, 'onGoingCheckouts' , setLocalOnGoingCheckout)
         return myHistory.navigate(`checkout/payment`)
     }
     catch(error){
