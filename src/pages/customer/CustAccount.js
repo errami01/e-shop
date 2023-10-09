@@ -4,8 +4,8 @@ import { requireAuth } from "../../utils/requireAuth"
 import { getUserData } from "../../utils/fetcher"
 import { useLoaderData } from "react-router-dom"
 
-export async function loader(){
-    requireAuth()
+export async function loader({request}){
+    requireAuth(request)
     return await getUserData()
 }
 export default function CustAccount(){
