@@ -3,6 +3,7 @@ import { Outlet, useLoaderData, useOutletContext } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 import CheckoutPhase from '../components/CheckoutPhase'
+import { setLocalOnGoingCheckout, storeObject } from '../utils/utils'
 import { getOnGoingCheckout } from '../utils/fetcher'
 
 export async function loader({request}){
@@ -17,6 +18,13 @@ export default function CheckoutLayout(){
     const style = {
         borderBottom: '4px solid'
     }
+    const cancelOrder =async ()=>{
+        try{
+            await storeObject({phase: 'personalInfos'}, 'onGoingCheckouts', setLocalOnGoingCheckout)
+        }
+        catch(e){
+
+        }
     }
     return(
         <div className="container--checkoutLayout">
