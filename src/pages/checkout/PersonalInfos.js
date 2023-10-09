@@ -26,7 +26,7 @@ export async function action({request}){
     
 }
 export async function loader(){
-    return await getUserData(auth.currentUser.uid)
+    return await getUserData()
 }
 export default function PersonalInfos(){
     const userData = useLoaderData()
