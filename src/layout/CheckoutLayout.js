@@ -1,5 +1,5 @@
 import './CheckoutLayout.css'
-import { Outlet, useOutletContext } from "react-router-dom"
+import { Outlet, useLoaderData, useOutletContext } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 
@@ -16,6 +16,7 @@ export default function CheckoutLayout(){
         phase: 'personalInfos'
     })
     const {cart} = useOutletContext()
+    const onGoingCheckout = useLoaderData()
     const phases = ['personalInfos', 'shipping', 'payment']
     const currentPhaseIndex = phases.indexOf(ongoingOrder.phase)
     const style = {
