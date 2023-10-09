@@ -1,7 +1,6 @@
 import CheckoutFlow from "../../components/CheckoutFlow";
 import { Form, Link, useLoaderData, useOutletContext } from "react-router-dom";
 import { myHistory } from "../../utils/myHistory";
-import { setOngoingOrder } from "../../utils/useOngoingOrder";
 import { setFormDataToObject, storeObject, setLocalUserData } from "../../utils/utils";
 import { getUserData } from "../../utils/fetcher";
 
@@ -9,13 +8,6 @@ export async function loader(){
     return await getUserData('with address')
 }
 export async function action({request}){
-    const [ongoingOrder, updateOngoingOrder] = setOngoingOrder()
-    updateOngoingOrder(
-        {
-            ...ongoingOrder,
-            phase: 'payment'
-        }
-    )
     try{
         const dataForm = await request.formData()
         const dataFormObject = setFormDataToObject(dataForm)
