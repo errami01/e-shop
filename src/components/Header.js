@@ -23,7 +23,7 @@ export default function Header({cart}){
             const targetId = event.target.id
             const keys = Object.keys(isMenuOpen)
             const openedMenu = getKeyByValue(isMenuOpen, true)
-            if( openedMenu && !keys.find((key)=> targetId == key)){
+            if( openedMenu && !keys.find((key)=> targetId === key)){
                 setIsMenuOpen(
                     (prev)=>(
                         {
@@ -46,7 +46,7 @@ export default function Header({cart}){
                 ...prev,
             }
             //Close any other menu if open
-            if(openMenu && openMenu != targetId) newObj[openMenu] = false
+            if(openMenu && openMenu !== targetId) newObj[openMenu] = false
             newObj[targetId] = !newObj[targetId]
             return newObj
         })
@@ -57,7 +57,7 @@ export default function Header({cart}){
         const newState = {
             loggedInIcon: false,
             barsIconContainer:false,
-            cartMenu: myHistory.location.pathname.slice(1)=='cart'? false : !isMenuOpen[targetId]
+            cartMenu: myHistory.location.pathname.slice(1)==='cart'? false : !isMenuOpen[targetId]
         }
         setIsMenuOpen(newState)
     }
