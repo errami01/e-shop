@@ -55,10 +55,10 @@ export async function storeObject(data, path ,storeInLocalStorage, methode='PUT'
         body: JSON.stringify(data)
         })
         if(!response.ok){
-            throw{
+            throw new Error({
                 message : response.statusText,
                 status: response.status
-            }
+            })
         }
     }
     if(storeInLocalStorage) storeInLocalStorage(data)
