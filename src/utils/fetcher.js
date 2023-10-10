@@ -58,7 +58,7 @@ export async function getUserData(withAddress){
         localData = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json?auth=${idToken}`)
         setLocalUserData(localData)
     }
-    if(withAddress=="with address"){
+    if(withAddress==="with address"){
         if(!localData.address){
             localData.address = await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/usersAddresses/${id}.json?auth=${idToken}`)        
             setLocalUserData(localData)
