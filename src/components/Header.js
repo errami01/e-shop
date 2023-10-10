@@ -65,47 +65,47 @@ export default function Header({cart}){
     return(
         <header className="header-container">
             <div className='header-items-container--header'>
-            <div 
-                id='barsIconContainer'
-                className='icon-container--header bars-icon-container--header' 
-                onClick={showBarsAndUserMenu}
-                >     
-                <i className="fa-solid fa-bars" ></i>
-                <BarsMenu isOpen={isMenuOpen.barsIconContainer} />
-            </div>
-            <Link to={''} className='logo'>E-commerce</Link>
-            <SearchBar />
-            {userData?
                 <div 
-                    id='loggedInIcon' 
-                    className='user-icon-header icon-container--header' 
-                    onClick ={showBarsAndUserMenu}
+                    id='barsIconContainer'
+                    className='icon-container--header bars-icon-container--header' 
+                    onClick={showBarsAndUserMenu}
+                    >     
+                    <i className="fa-solid fa-bars" ></i>
+                    <BarsMenu isOpen={isMenuOpen.barsIconContainer} />
+                </div>
+                <Link to={''} className='logo'>E-commerce</Link>
+                <SearchBar />
+                {userData?
+                    <div 
+                        id='loggedInIcon' 
+                        className='user-icon-header icon-container--header' 
+                        onClick ={showBarsAndUserMenu}
+                        >
+                            <i className="fa-solid fa-user-check"></i>
+                            <span className='icon-label--header'>Hello {userData.firstname}</span>
+                            <UserMenuTop
+                                isOpen = {isMenuOpen.loggedInIcon}
+                                isBig={false}
+                            />
+                    </div>               
+                    :
+                    <Link to='login' className='user-icon-header icon-container--header'>
+                        <i className="fa-regular fa-user" ></i>
+                        <span className='icon-label--header'>Sign in</span>
+                    </Link>
+                }
+                
+                <div 
+                    id='cartMenu'
+                    className='cartIconLink-header icon-container--header' 
+                    onClick={showAndHideCartMenu}
                     >
-                        <i className="fa-solid fa-user-check"></i>
-                        <span className='icon-label--header'>Hello {userData.firstname}</span>
-                        <UserMenuTop
-                            isOpen = {isMenuOpen.loggedInIcon}
-                            isBig={false}
-                        />
-                </div>               
-                :
-                <Link to='login' className='user-icon-header icon-container--header'>
-                    <i className="fa-regular fa-user" ></i>
-                    <span className='icon-label--header'>Sign in</span>
-                </Link>
-            }
-            
-            <div 
-                id='cartMenu'
-                className='cartIconLink-header icon-container--header' 
-                onClick={showAndHideCartMenu}
-                >
-                 <i className="fa-solid fa-cart-shopping">
-                    {cartItemsNumber>0 && <span className='items-counter-header'>{cartItemsNumber}</span>}
-                 </i>
-                <span className='icon-label--header'>My cart</span>
-                <CartMenu cart={cart} isOpen={isMenuOpen.cartMenu}/>
-            </div>   
+                    <i className="fa-solid fa-cart-shopping">
+                        {cartItemsNumber>0 && <span className='items-counter-header'>{cartItemsNumber}</span>}
+                    </i>
+                    <span className='icon-label--header'>My cart</span>
+                    <CartMenu cart={cart} isOpen={isMenuOpen.cartMenu}/>
+                </div>   
             </div>    
         </header>
     )
