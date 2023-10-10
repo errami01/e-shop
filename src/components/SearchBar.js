@@ -1,5 +1,5 @@
-export default function SearchBar(){
+export default function SearchBar({...rest}){
     return(
-        <input type="search"/>
+        <input type="search" {...rest}/>
     )
 }
