@@ -6,6 +6,7 @@ import UserMenuTop from './UserMenuTop'
 import CartMenu from './CartMenu'
 import { myHistory } from '../utils/myHistory'
 import { getLocalUserData, countCartItems } from '../utils/utils'
+import SearchBar from './SearchBar'
 export default function Header({cart}){
     const userData = getLocalUserData()
     const cartItemsNumber = countCartItems(cart)
@@ -72,6 +73,7 @@ export default function Header({cart}){
                 <BarsMenu isOpen={isMenuOpen.barsIconContainer} />
             </div>
             <Link to={''} className='logo'>E-commerce</Link>
+            <SearchBar />
             {userData?
                 <div 
                     id='loggedInIcon' 
