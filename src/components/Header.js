@@ -64,6 +64,7 @@ export default function Header({cart}){
     }
     return(
         <header className="header-container">
+            <div className='header-items-container--header'>
             <div 
                 id='barsIconContainer'
                 className='icon-container--header bars-icon-container--header' 
@@ -104,7 +105,8 @@ export default function Header({cart}){
                  </i>
                 <span className='icon-label--header'>My cart</span>
                 <CartMenu cart={cart} isOpen={isMenuOpen.cartMenu}/>
-            </div>       
+            </div>   
+            </div>    
         </header>
     )
 }
