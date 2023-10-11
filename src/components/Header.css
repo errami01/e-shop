@@ -74,6 +74,7 @@
     width: 80%;
     height: 40px;
     margin: 0 auto;
+    border: none;
 }
 
 @media screen and (min-width: 700px){
