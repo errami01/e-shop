@@ -77,6 +77,9 @@
     border: none;
     border-radius: 12px;
 }
+.search-input--header:focus{
+    outline: 2px solid var(--second-Color);
+}
 
 @media screen and (min-width: 700px){
     .icon-label--header{
