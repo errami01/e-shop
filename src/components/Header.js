@@ -74,7 +74,7 @@ export default function Header({cart}){
                     <BarsMenu isOpen={isMenuOpen.barsIconContainer} />
                 </div>
                 <Link to={''} className='logo'>E-commerce</Link>
-                <SearchBar />
+                <SearchBar className='search-input--header'/>
                 {userData?
                     <div 
                         id='loggedInIcon' 
