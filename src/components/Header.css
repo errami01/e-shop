@@ -3,7 +3,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
-    height: var(--header-height);
+    /* height: var(--header-height); */
     width: 100%;
     padding: 0 20px;
     background-color: var(--first-Color);
@@ -19,7 +19,7 @@
     height: 100%;
     width: 100%;
     max-width: 1400px;
-    margin: auto
+    margin: 20px auto;
 }
 .logo{
     display: flex;
@@ -66,14 +66,12 @@
     height: 15px; 
 }
 .bars-icon-container--header{
-    flex-basis: 40px;
     position: relative;
     align-items: flex-start;
     cursor: pointer;
 }
 .search-input--header{
-    flex-grow: 1;
-    height: 50px;
+    height: 40px;
     margin: 0 20px;
 }
 
@@ -86,5 +84,16 @@
         display: inline;
     }
 }
+@media screen and (max-width: 600px) {
+    .header-items-container--header {
+      grid-template-areas: "a b c d"
+        "e e e e"
+    }
+    .search-input--header{
+      grid-area: e;
+      margin: 20px auto 0 auto;
+      width: 100%
+    }
+  }
     
 
