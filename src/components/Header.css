@@ -69,6 +69,11 @@
     align-items: flex-start;
     cursor: pointer;
 }
+.search-input--header{
+    flex-grow: 1;
+    height: 50px;
+    margin: 0 20px;
+}
 
 @media screen and (min-width: 700px){
     .icon-label--header{
