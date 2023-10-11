@@ -13,7 +13,8 @@
     z-index: 1;
 }
 .header-items-container--header{
-    display: flex;
+    display: grid;
+    grid-template-columns: 40px max-content 1fr max-content max-content;
     align-items: center;
     height: 100%;
     width: 100%;
