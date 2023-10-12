@@ -75,6 +75,7 @@ export default function Header({cart}){
                 </div>
                 <Link to={''} className='logo'>E-commerce</Link>
                 <SearchBar 
+                    className='search-bar-container--header' 
                     inputField={<input type="search" className='search-input--header' placeholder='Search for a product...'/>}
                     />
                 {userData?
