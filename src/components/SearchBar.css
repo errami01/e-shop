@@ -2,5 +2,11 @@
     position: relative;
 }
 .suggestion-list--searchbar{
+    margin: 0;
     background-color: white;
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }
