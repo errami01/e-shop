@@ -1,5 +1,6 @@
 .container--searchbar{
     position: relative;
+    --input-padding-left: 20px
 }
 .suggestion-list--searchbar{
     margin: 0;
