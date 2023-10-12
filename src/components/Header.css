@@ -79,6 +79,9 @@
     font-weight: 700;
     color: var(--text-color);
 }
+.search-input--header:focus + ul{
+    display: block;
+}
 .search-input--header::placeholder{
     font-weight: 700;
     color: rgb(172, 172, 172);
