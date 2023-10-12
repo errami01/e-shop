@@ -1,3 +1,6 @@
 .container--searchbar{
     position: relative;
 }
+.suggestion-list--searchbar{
+    background-color: white;
+}
