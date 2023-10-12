@@ -29,6 +29,7 @@ export default function SearchBar({className,inputClassName, ...rest}){
                     onChange={handleInputChange}
                 />
                 <ul className="suggestion-list--searchbar">
+                    {suggestionElements}
                 </ul>
             </Form>
         </div>
