@@ -6,9 +6,16 @@ export default function SearchBar({inputField,className, ...rest}){
         <div className={`container--searchbar ${className}`}{...rest}>
             <Form>
                 {inputField}
+                <ul className="suggestion-list--searchbar">
+                    <li>Ali</li>
+                    <li>Ali</li>
+                    <li>Ali</li>
+                    <li>Ali</li>
+                    <li>Ali</li>
+                    <li>Ali</li>
+                    <li>Ali</li>
+                </ul>
             </Form>
-            <ul className="suggestion-list--searchbar">
-            </ul>
         </div>
     )
 }
