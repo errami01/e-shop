@@ -16,6 +16,9 @@ export default function SearchBar({className,inputClassName, ...rest}){
         const myReg = new RegExp('^'+str, 'i')
         return sourceArr.filter((country)=> myReg.test(country))
     }
+    const suggestionElements= suggestions.map((element)=>{
+        return <li>{element}</li>
+    })
     return(
         <div className={`container--searchbar ${className}`}{...rest}>
             <Form autoComplete="off">
