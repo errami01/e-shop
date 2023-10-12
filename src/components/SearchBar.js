@@ -1,9 +1,9 @@
 import { Form } from "react-router-dom";
 import './SearchBar.css'
 
-export default function SearchBar({inputField, ...rest}){
+export default function SearchBar({inputField,className, ...rest}){
     return(
-        <div className="container--searchbar"{...rest}>
+        <div className={`container--searchbar ${className}`}{...rest}>
             <Form>
                 {inputField}
             </Form>
