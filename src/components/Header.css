@@ -75,7 +75,7 @@
     height: 40px;
     border: none;
     border-radius: 12px;
-    padding-left: 20px;
+    padding-left: var(--input-padding-left);
     font-weight: 700;
     color: var(--text-color);
 }
