@@ -1,5 +1,7 @@
-export default function SearchBar({...rest}){
+export default function SearchBar({inputField, ...rest}){
     return(
-        <input type="search" {...rest}/>
+        <div {...rest}>
+                {inputField}
+        </div>
     )
 }
