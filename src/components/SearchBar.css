@@ -33,3 +33,13 @@
 .suggestion-list--searchbar:hover {
     display: block;
 }
+.search-icon--searchbar{
+    position: absolute;
+    color: var(--first-Color);
+    color: gray;
+    top: 25%;
+    bottom: 25%;
+    right: 20px;
+    font-size: 1.1rem;
+
+}
