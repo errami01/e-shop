@@ -15,4 +15,6 @@
     font-size: medium;
     list-style-type: none;
     padding: 30px var(--input-padding-left);
+.suggestion-list--searchbar:hover {
+    display: block;
 }
