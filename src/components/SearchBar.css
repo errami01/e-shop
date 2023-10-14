@@ -27,6 +27,9 @@
 .suggestion--searchbar:first-child{
     margin-top: 20px
 }
+.suggestion--searchbar:last-child{
+    margin-bottom: 20px
+}
 .suggestion-list--searchbar:hover {
     display: block;
 }
