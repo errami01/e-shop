@@ -16,7 +16,14 @@ export default function SearchBar({className,inputClassName, ...rest}){
         else setSuggestions([])
     }
     const suggestionElements= suggestions.map((element)=>{
-        return <Link key={nanoid()} to={`/${element.category}/${element.id}`}>{element.title}</Link>
+        return (
+        <Link 
+            key={nanoid()} 
+            to={`/${element.category}/${element.id}`} 
+            className="suggestion--searchbar"
+        >
+            {element.title}
+        </Link>)
     })
     return(
         <div className={`container--searchbar ${className}`}{...rest}>
