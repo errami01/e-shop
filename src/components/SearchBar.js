@@ -28,6 +28,7 @@ export default function SearchBar({className,inputClassName, ...rest}){
     return(
         <div className={`container--searchbar ${className}`}{...rest}>
             <Form autoComplete="off">
+                <i className="fa-solid fa-magnifying-glass search-icon--searchbar"></i>
                 <input
                     type="search"
                     className={`${inputClassName}`}
