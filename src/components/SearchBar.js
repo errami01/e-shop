@@ -1,4 +1,5 @@
 import { Form, Link } from "react-router-dom";
+import {nanoid} from "nanoid"
 import './SearchBar.css'
 import { useState } from "react";
 import { myFetch } from "../utils/fetcher";
@@ -15,7 +16,7 @@ export default function SearchBar({className,inputClassName, ...rest}){
         else setSuggestions([])
     }
     const suggestionElements= suggestions.map((element)=>{
-        return <Link to={`/${element.category}/${element.id}`}>{element.title}</Link>
+        return <Link key={nanoid()} to={`/${element.category}/${element.id}`}>{element.title}</Link>
     })
     return(
         <div className={`container--searchbar ${className}`}{...rest}>
