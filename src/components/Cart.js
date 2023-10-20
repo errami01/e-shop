@@ -3,7 +3,7 @@ import './Cart.css'
 import { Link, useSubmit } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
-import { countCartItems, setLocalCart, storeObject } from "../utils/utils"
+import { countCartItems } from "../utils/utils"
 import { useRef, useState } from "react"
 export default function Cart(props){
     const [updateCartState, setUpdateCartState] = useState(false)
@@ -33,14 +33,13 @@ export default function Cart(props){
     const linkTarget = currentLocation === 'cart'? 'checkout': 'cart'
     const buttonText = currentLocation === 'cart'? 'checkout': 'Go to cart'
     async function removeCartItem(itemId){
-        const newCartItems = cartItems.filter(item=> item.id !== itemId)
-        try{
-            await storeObject(newCartItems, 'carts', setLocalCart)
-            myHistory.navigate('#',{replace: true})
-        }
-        catch(e){
-
-        }
+        const newCart = cartItems.filter(cartItem=> cartItem.id !== itemId)
+        const formData = new FormData()
+        formData.append('newCart', JSON.stringify(newCart))
+        submit(formData, {
+            method: 'post',
+            action: `/?redirect=${myHistory.location.pathname}`,
+        })
     }
     return (
             <div className="container--cart">
