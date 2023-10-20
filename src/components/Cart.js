@@ -22,6 +22,7 @@ export default function Cart(props){
                     key={item.id} 
                     cart={cart}
                     item={item} 
+                    toRemove = {itemsToRemove.current.indexOf(item.id) >= 0}
                     addItemToRemove={addItemToRemove}
                     handleTrashClick={removeCartItem} 
                     setUpdateCartState={setUpdateCartState}
