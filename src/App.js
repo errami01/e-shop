@@ -1,7 +1,7 @@
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import Home, {loader as homeLoader} from './pages/Home'
-import Layout, {loader as layoutLoader} from './layout/Layout';
+import Layout, {loader as layoutLoader, action as layoutAction} from './layout/Layout';
 import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import CartPage from './pages/CartPage';
@@ -31,6 +31,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     element={<Layout />}
     errorElement={<ErrorComponent/>}
     loader={layoutLoader}
+    action={layoutAction}
     >
     <Route 
       index 
