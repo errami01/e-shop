@@ -1,6 +1,6 @@
 import CartItem from "../components/CartItem"
 import './Cart.css'
-import { Link } from "react-router-dom"
+import { Link, useSubmit } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
 import { countCartItems, setLocalCart, storeObject } from "../utils/utils"
@@ -13,6 +13,7 @@ export default function Cart(props){
     itemsToRemove.current = itemsToRemove.current.filter(
         (itemId)=> cartItems.findIndex(item=>item.id === itemId)!== -1
         )
+    const submit = useSubmit()
     const cartItemsNumber= countCartItems(cartItems)
     const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
     const addItemToRemove =(itemId)=> itemsToRemove.current.push(itemId)
