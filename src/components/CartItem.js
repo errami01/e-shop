@@ -1,6 +1,8 @@
 import './CartItem.css'
 import QuantityControler from './QuantityControler'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import Spinner from './Spinner'
 //This component is rendered in Cart.js
 export default function CartItem(props){
     const navigation = useNavigation()
@@ -13,6 +15,9 @@ export default function CartItem(props){
         addItemToRemove,
         setUpdateCartState} = props
     const pageClassName = isPage? '-page':''
+    useEffect( ()=>{
+        }
+    })
    
     return (
         <div className={`cartItem-container${pageClassName}`}>
