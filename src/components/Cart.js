@@ -4,7 +4,9 @@ import { Link } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
 import { countCartItems, setLocalCart, storeObject } from "../utils/utils"
+import { useState } from "react"
 export default function Cart(props){
+    const [updateCartState, setUpdateCartState] = useState(false)
     const {isPage, withoutDeliveryDate, cart} = props
     const cartItems = cart
     const cartItemsNumber= countCartItems(cartItems)
@@ -15,6 +17,7 @@ export default function Cart(props){
                     cart={cart}
                     item={item} 
                     handleTrashClick={removeCartItem} 
+                    setUpdateCartState={setUpdateCartState}
                     isPage={isPage} 
                     withoutDeliveryDate={withoutDeliveryDate}/>
     })
