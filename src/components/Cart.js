@@ -1,6 +1,5 @@
 import CartItem from "../components/CartItem"
 import './Cart.css'
-import {nanoid} from 'nanoid'
 import { Link } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
@@ -12,7 +11,7 @@ export default function Cart(props){
     const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
-                    key={nanoid()} 
+                    key={item.id} 
                     cart={cart}
                     item={item} 
                     handleTrashClick={removeCartItem} 
