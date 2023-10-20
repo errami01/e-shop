@@ -15,11 +15,13 @@ export default function Cart(props){
         )
     const cartItemsNumber= countCartItems(cartItems)
     const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
+    const addItemToRemove =(itemId)=> itemsToRemove.current.push(itemId)
     const cartItemsElements = cartItems.map((item)=>{
         return <CartItem  
                     key={item.id} 
                     cart={cart}
                     item={item} 
+                    addItemToRemove={addItemToRemove}
                     handleTrashClick={removeCartItem} 
                     setUpdateCartState={setUpdateCartState}
                     isPage={isPage} 
