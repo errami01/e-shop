@@ -4,11 +4,15 @@ import { Link } from "react-router-dom"
 import Button from "./Button"
 import { myHistory } from "../utils/myHistory"
 import { countCartItems, setLocalCart, storeObject } from "../utils/utils"
-import { useState } from "react"
+import { useRef, useState } from "react"
 export default function Cart(props){
     const [updateCartState, setUpdateCartState] = useState(false)
     const {isPage, withoutDeliveryDate, cart} = props
     const cartItems = cart
+    const itemsToRemove = useRef([])
+    itemsToRemove.current = itemsToRemove.current.filter(
+        (itemId)=> cartItems.findIndex(item=>item.id === itemId)!== -1
+        )
     const cartItemsNumber= countCartItems(cartItems)
     const totalAmount = cartItems.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
     const cartItemsElements = cartItems.map((item)=>{
