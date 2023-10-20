@@ -1,6 +1,6 @@
 import './CartItem.css'
 import QuantityControler from './QuantityControler'
-import { Link } from 'react-router-dom'
+import { Link, useNavigation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Spinner from './Spinner'
 //This component is rendered in Cart.js
@@ -12,10 +12,13 @@ export default function CartItem(props){
         withoutDeliveryDate,
         handleTrashClick,
         cart,
+        toRemove,
         addItemToRemove,
         setUpdateCartState} = props
     const pageClassName = isPage? '-page':''
     useEffect( ()=>{
+        if(toRemove && navigation.state==='idle'){
+            handleTrashClick(item.id)
         }
     })
    
@@ -33,8 +36,8 @@ export default function CartItem(props){
                 {toRemove ?
                     <Spinner className= {`trash-cartItem${pageClassName}`}/>
                     :
-                    <span 
-                        className={`trash-cartItem${pageClassName}`} 
+                    <span
+                        className={`trash-cartItem${pageClassName}`}
                         onClick={
                             ()=>{
                                 addItemToRemove(item.id)
