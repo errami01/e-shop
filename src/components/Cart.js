@@ -58,24 +58,19 @@ export default function Cart(props){
                             >Your cart is empty</h5>
                     }
                 </div> 
-                {
-                    cartItemsNumber?
-                    <div className="totals--cart">
-                        <div className="total--cart items-total--cart">
-                            <span className="total-label--cart">Total items </span>
-                            <span className="amount--cart">{cartItemsNumber}</span>
-                        </div>
-                        <div className="total--cart prices-total--cart">
-                            <span className="total-label--cart">TOTAL </span>
-                            <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
-                        </div>
-                        <Link to={`/${linkTarget}`}>
-                            <Button id='go-to-cart-btn' style={{width: '100%', marginTop: '10px'}}>{buttonText}</Button>
-                        </Link>
+                <div className="totals--cart">
+                    <div className="total--cart items-total--cart">
+                        <span className="total-label--cart">Total items </span>
+                        <span className="amount--cart">{cartItemsNumber}</span>
                     </div>
-                    :
-                    <></>
-                }
+                    <div className="total--cart prices-total--cart">
+                        <span className="total-label--cart">TOTAL </span>
+                        <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
+                    </div>
+                    <Link to={`/${linkTarget}`}>
+                        <Button id='go-to-cart-btn' style={{width: '100%', marginTop: '10px'}}>{buttonText}</Button>
+                    </Link>
+                </div>
             </div>
     )
 } 
