@@ -45,10 +45,17 @@ export default function Cart(props){
             <div className="container--cart">
                 <div className="items-container--cart">
                     <h2 className="title--cart">My Cart</h2>
-                    {cartItemsElements}
-                </div>
+                    {
+                        cartItemsNumber ?
+                            <>
+                                {cartItemsElements}
+                            </>
+                        :
+                            <h5 className="empty-item--cart">Your cart is empty</h5>
+                    }
+                </div> 
                 {
-                    cartItemsNumber ? 
+                    cartItemsNumber?
                     <div className="totals--cart">
                         <div className="total--cart items-total--cart">
                             <span className="total-label--cart">Total items </span>
@@ -63,9 +70,8 @@ export default function Cart(props){
                         </Link>
                     </div>
                     :
-                    <h1 className="empty--cart">Your cart is empty</h1>
+                    <></>
                 }
-                
             </div>
     )
 } 
