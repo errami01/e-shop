@@ -30,8 +30,10 @@ export default function Cart(props){
                     withoutDeliveryDate={withoutDeliveryDate}/>
     })
     const currentLocation = myHistory.location.pathname.slice(1)
-    const linkTarget = currentLocation === 'cart'? 'checkout': 'cart'
     const buttonText = currentLocation === 'cart'? 'checkout': 'Go to cart'
+    const linkTargetFullCart = currentLocation === 'cart'? 'checkout': 'cart'
+    const linkTargetEmptyCart = currentLocation === 'cart'? '' : currentLocation
+    const linkTarget = cartItemsNumber? linkTargetFullCart : linkTargetEmptyCart
     async function removeCartItem(itemId){
         const newCart = cartItems.filter(cartItem=> cartItem.id !== itemId)
         const formData = new FormData()
