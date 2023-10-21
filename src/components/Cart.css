@@ -16,7 +16,7 @@
     color: white;
     border-bottom: 1px solid var(--first-Color);
 }
-.empty-item--cart{
+.empty--cart{
     display: flex;
     align-items: center;
     justify-content: center;
