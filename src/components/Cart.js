@@ -53,7 +53,9 @@ export default function Cart(props){
                                 {cartItemsElements}
                             </>
                         :
-                            <h5 className="empty-item--cart">Your cart is empty</h5>
+                            <h5 
+                                className="empty--cart"
+                            >Your cart is empty</h5>
                     }
                 </div> 
                 {
