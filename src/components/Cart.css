@@ -16,6 +16,16 @@
     color: white;
     border-bottom: 1px solid var(--first-Color);
 }
+.empty-item--cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    margin: 10px;
+    height: 100px;
+}
 .totals--cart{
     padding: 10px;
     background-color: rgb(250, 204, 139);
