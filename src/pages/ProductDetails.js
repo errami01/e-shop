@@ -12,6 +12,15 @@ export function loader({params}){
     return defer({productPromise: getSingleProduct(params.id)})
 }
 export async function action({request}){
+    const formData = await request.formData()
+    const newCart= JSON.parse(formData.get('add-to-cart'))
+    try{
+        
+        return await storeObject(newCart, 'carts', setLocalCart)
+    }
+    catch(e){
+        return e
+    }
 }
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
