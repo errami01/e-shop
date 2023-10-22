@@ -34,6 +34,7 @@ export default function PrdoductDetails(){
         const product= resolved
         const stars = rate(product.rating.rate)
         const inCart = cartItems.filter(item => item.id===product.id)[0]
+        isClicked.current = isClicked.current && !inCart
         return(
             <>
                 <div className="img-section-prdctDetails">
