@@ -48,6 +48,14 @@ export default function PrdoductDetails(){
                             className='quantity-cartItem'/> 
                         :
                             <Form method="POST">
+                                {isClicked.current?
+                                    <Button
+                                        className="add-to-cart-btn--productsDetails"
+                                        disabled
+                                    >
+                                        Adding it ...
+                                    </Button>
+                                :
                                     <Button 
                                         name="add-to-cart"
                                         className="add-to-cart-btn--productsDetails" 
@@ -56,6 +64,7 @@ export default function PrdoductDetails(){
                                     >
                                         Add to Cart
                                     </Button>
+                                }
                             </Form>
                     }
                     
