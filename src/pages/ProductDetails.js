@@ -27,18 +27,13 @@ export default function PrdoductDetails(){
     const {cart} = useOutletContext()
     const isClicked = useRef(false)
     const cartItems = cart
+    async function handleAddToCart(){
+        isClicked.current = true
+    }
     const awaitChild =(resolved)=>{
         const product= resolved
         const stars = rate(product.rating.rate)
         const inCart = cartItems.filter(item => item.id===product.id)[0]
-        async function handleAddToCart(){
-            try{
-                const newCart = [...cartItems, {...product, orderedQuantity: 1}]
-                await storeObject(newCart, 'carts', setLocalCart)
-                myHistory.navigate('#', {replace: true})
-            }
-            catch(e){}
-        }
         return(
             <>
                 <div className="img-section-prdctDetails">
