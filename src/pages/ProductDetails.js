@@ -16,11 +16,13 @@ export async function action({request}){
     const newCart= JSON.parse(formData.get('add-to-cart'))
     try{
         
-        return await storeObject(newCart, 'carts', setLocalCart)
+         await storeObject(newCart, 'carts', setLocalCart)
+        
     }
     catch(e){
         return e
     }
+    return null
 }
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
