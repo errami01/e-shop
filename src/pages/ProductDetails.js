@@ -1,6 +1,6 @@
 import { getSingleProduct } from "../utils/fetcher"
-import { useLoaderData, defer, Await, useOutletContext } from "react-router-dom"
 import { Suspense } from "react"
+import { useLoaderData, defer, Await, useOutletContext, Form } from "react-router-dom"
 import "./ProductDetails.css"
 import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
