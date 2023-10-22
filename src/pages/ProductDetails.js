@@ -1,6 +1,6 @@
 import { getSingleProduct } from "../utils/fetcher"
-import { Suspense } from "react"
 import { useLoaderData, defer, Await, useOutletContext, Form } from "react-router-dom"
+import { Suspense, useRef } from "react"
 import "./ProductDetails.css"
 import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
@@ -25,6 +25,7 @@ export async function action({request}){
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
     const {cart} = useOutletContext()
+    const isClicked = useRef(false)
     const cartItems = cart
     const awaitChild =(resolved)=>{
         const product= resolved
