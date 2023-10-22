@@ -47,3 +47,9 @@
 .add-to-cart-btn--productsDetails{
     width: var(--image-width)
 }
+.add-to-cart-btn--productsDetails:disabled{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--second-Color);
+}
