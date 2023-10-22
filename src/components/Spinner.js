@@ -1,8 +1,6 @@
 import './Spinner.css'
-export default function Spinner({className}){
+export default function Spinner({className, ...rest}){
     return(
-        <div className={`spinner--container ${className}`}>
-            <div className="spinner"></div>
-        </div>
+        <div className="spinner" {...rest}></div>
     )
 }
