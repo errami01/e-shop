@@ -40,6 +40,7 @@
     grid-column: 6;
     color: red;
     cursor: pointer;
+    margin: auto
 }
 .price-carItem, .price-carItem-page{
     grid-column: 5;
