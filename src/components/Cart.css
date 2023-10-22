@@ -41,6 +41,7 @@
 }
 .items-total--cart{
     border-radius: 5px 5px 0 0;
+    color: var(--second-Color);
 }
 .items-total--cart span{
     flex-basis: 50%;
