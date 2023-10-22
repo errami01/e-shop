@@ -38,12 +38,17 @@ export default function PrdoductDetails(){
                             itemId={product.id} 
                             quantity={inCart.orderedQuantity} 
                             className='quantity-cartItem'/> 
-                        : 
-                            <Button 
-                            className="add-to-cart-btn--productsDetails" 
-                            onClick={handleAddToCart}>
-                                Add to Cart
-                            </Button>
+                        :
+                            <Form method="POST">
+                                    <Button 
+                                        name="add-to-cart"
+                                        className="add-to-cart-btn--productsDetails" 
+                                        value={JSON.stringify([...cartItems, {...product, orderedQuantity: 1}])}
+                                        onClick={handleAddToCart}
+                                    >
+                                        Add to Cart
+                                    </Button>
+                            </Form>
                     }
                     
                     <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>                  
