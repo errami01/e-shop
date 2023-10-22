@@ -2,7 +2,7 @@ import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import Home, {loader as homeLoader} from './pages/Home'
 import Layout, {loader as layoutLoader, action as layoutAction} from './layout/Layout';
-import PrdoductDetails, {loader as productDetailLoader} from './pages/ProductDetails';
+import PrdoductDetails, {loader as productDetailLoader, action as productDetailAction} from './pages/ProductDetails';
 import CategoryPage, {loader as categoryPageLoader} from './pages/CategoryPage';
 import CartPage from './pages/CartPage';
 import Login, {action as loginAction, loader as loginLoader} from './pages/Login';
@@ -110,6 +110,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       path=':category/:id'
       loader={productDetailLoader}
       element={<PrdoductDetails />}
+      action={productDetailAction}
       />
     <Route 
       path='checkout'
