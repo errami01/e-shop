@@ -15,9 +15,7 @@ export async function action({request}){
     const formData = await request.formData()
     const newCart= JSON.parse(formData.get('add-to-cart'))
     try{
-        
          await storeObject(newCart, 'carts', setLocalCart)
-        
     }
     catch(e){
         return e
@@ -68,14 +66,12 @@ export default function PrdoductDetails(){
                                     </Button>
                                 }
                             </Form>
-                    }
-                    
+                    }  
                     <span className="rating-productDetails">({product.rating.count}) {stars} {product.rating.rate}</span>                  
                 </div>
                 <div className="details-productDetails">
                     <h5 className="title-productDetails">{product.title}</h5>
-                    <div className="descr-productDetails">{product.description}</div>
-                    
+                    <div className="descr-productDetails">{product.description}</div>  
                 </div>
             </>
         )
@@ -86,8 +82,7 @@ export default function PrdoductDetails(){
                         <Await resolve={loaderPromises.productPromise}>
                             {awaitChild}
                         </Await>
-                    </Suspense>
-                
+                    </Suspense>    
         </div>
     )
 }
