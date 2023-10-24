@@ -1,7 +1,7 @@
 import './QuantityControler.css'
 import { myHistory } from '../utils/myHistory'
-import { useRef, useState } from 'react'
 import { useSubmit } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
 //This component is rendered in CartItem.js and productDetails
 export  default function QuantityControler(props){
     const cartItems= props.cart
@@ -10,6 +10,11 @@ export  default function QuantityControler(props){
     const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
     let timeOutId = useRef()
     const targetItemIndex = cartItems.indexOf(targetItem)
+    
+    useEffect(()=>{
+        if(qteInput !== targetItem.orderedQuantity)
+        setQteInput(targetItem.orderedQuantity)
+    })
 
     function updateQte(timeOutId, sign, event){
         let oldValue = qteInput
