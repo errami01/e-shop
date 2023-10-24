@@ -2,9 +2,11 @@ import './QuantityControler.css'
 import { setLocalCart, storeObject } from '../utils/utils'
 import { myHistory } from '../utils/myHistory'
 import { useRef, useState } from 'react'
+import { useSubmit } from 'react-router-dom'
 //This component is rendered in CartItem.js and productDetails
 export  default function QuantityControler(props){
     const cartItems= props.cart
+    const submit = useSubmit()
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
     const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
     let timeOutId = useRef()
