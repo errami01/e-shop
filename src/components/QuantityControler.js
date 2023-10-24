@@ -1,5 +1,4 @@
 import './QuantityControler.css'
-import { setLocalCart, storeObject } from '../utils/utils'
 import { myHistory } from '../utils/myHistory'
 import { useRef, useState } from 'react'
 import { useSubmit } from 'react-router-dom'
@@ -11,19 +10,7 @@ export  default function QuantityControler(props){
     const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
     let timeOutId = useRef()
     const targetItemIndex = cartItems.indexOf(targetItem)
-    async function handleQuantity(event){
-        const eventTargetValue = event.target.innerHTML
-        if(eventTargetValue === '-' && targetItem.orderedQuantity > 1){
-            const newCartItems = [...cartItems]
-            newCartItems[targetItemIndex] = {...targetItem, orderedQuantity: targetItem.orderedQuantity - 1}
-            try{
-                await storeObject(newCartItems, 'carts', setLocalCart)
-                myHistory.navigate('#', {replace: true})
-            }
-            catch(e){
 
-            }
-            return null 
     function updateQte(timeOutId, sign, event){
         let oldValue = qteInput
         let newValue = oldValue
@@ -31,12 +18,6 @@ export  default function QuantityControler(props){
             newValue = oldValue - 1
             setQteInput(newValue)
         }
-        if(eventTargetValue === '+'){ 
-            const newCartItems = [...cartItems]
-            newCartItems[targetItemIndex] = {...targetItem, orderedQuantity: targetItem.orderedQuantity + 1}
-            try{
-                await storeObject(newCartItems, 'carts', setLocalCart)
-                myHistory.navigate('#', {replace: true})
         else if(sign === 'plus' && qteInput <10){
             newValue = oldValue + 1
             setQteInput(newValue)
@@ -47,8 +28,6 @@ export  default function QuantityControler(props){
                 newValue = 1
                 setQteInput(newValue)
             }
-            catch(e){
-
             else if(value > 20) {
                 newValue = 20
                 setQteInput(newValue)
