@@ -55,11 +55,15 @@ export  default function QuantityControler(props){
             },2000)
         }
     }
+
     return(
         <div className={`quantityControler-container ${props.className}`}>
-            <span className="minus-quantityControler" onClick={handleQuantity} value='-'>-</span>
             <span className="result-quantityControler">{targetItem.orderedQuantity}</span>
             <span className="plus-quantityControler" onClick={handleQuantity}>+</span>
+                <span
+                    className="minus-quantityControler"
+                    onClick={()=>{updateQte(timeOutId, 'minus')}}
+                >-</span>
         </div>
     )
 }
