@@ -58,7 +58,6 @@ export  default function QuantityControler(props){
 
     return(
         <div className={`quantityControler-container ${props.className}`}>
-            <span className="plus-quantityControler" onClick={handleQuantity}>+</span>
                 <span
                     className="minus-quantityControler"
                     onClick={()=>{updateQte(timeOutId, 'minus')}}
@@ -71,6 +70,12 @@ export  default function QuantityControler(props){
                     onChange={(e)=> updateQte(timeOutId, null, e)}
                     value={qteInput}
                 />
+                <span
+                    className="plus-quantityControler"
+                    onClick={()=> updateQte(timeOutId, 'plus')}
+                >
+                    +
+                </span>
         </div>
     )
 }
