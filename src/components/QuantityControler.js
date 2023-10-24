@@ -24,6 +24,12 @@ export  default function QuantityControler(props){
 
             }
             return null 
+    function updateQte(timeOutId, sign, event){
+        let oldValue = qteInput
+        let newValue = oldValue
+        if(sign === 'minus' && qteInput > 1){
+            newValue = oldValue - 1
+            setQteInput(newValue)
         }
         if(eventTargetValue === '+'){ 
             const newCartItems = [...cartItems]
@@ -31,11 +37,38 @@ export  default function QuantityControler(props){
             try{
                 await storeObject(newCartItems, 'carts', setLocalCart)
                 myHistory.navigate('#', {replace: true})
+        else if(sign === 'plus' && qteInput <10){
+            newValue = oldValue + 1
+            setQteInput(newValue)
+        }
+        else if(!sign){
+            const value = parseInt(event.target.value)
+            if(isNaN(value) || value < 1){
+                newValue = 1
+                setQteInput(newValue)
             }
             catch(e){
 
+            else if(value > 20) {
+                newValue = 20
+                setQteInput(newValue)
             }
-            
+            else {
+                newValue = value
+                setQteInput(newValue)
+            }
+        }
+        if(oldValue !== newValue){
+            clearTimeout(timeOutId.current)
+            timeOutId.current = setTimeout(()=>{
+                cartItems[targetItemIndex] = {...targetItem, orderedQuantity: newValue}
+                const formData = new FormData()
+                formData.append('newCart', JSON.stringify(cartItems))
+                submit(formData, {
+                    method: 'post',
+                    action: `/?redirect=${myHistory.location.pathname}`,
+                })
+            },2000)
         }
     }
     return(
