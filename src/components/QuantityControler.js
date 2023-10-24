@@ -1,10 +1,12 @@
 import './QuantityControler.css'
 import { setLocalCart, storeObject } from '../utils/utils'
 import { myHistory } from '../utils/myHistory'
+import { useState } from 'react'
 //This component is rendered in CartItem.js and productDetails
 export  default function QuantityControler(props){
     const cartItems= props.cart
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
+    const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
     const targetItemIndex = cartItems.indexOf(targetItem)
     async function handleQuantity(event){
         const eventTargetValue = event.target.innerHTML
