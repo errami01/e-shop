@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 export  default function QuantityControler(props){
     const cartItems= props.cart
     const submit = useSubmit()
+    const isToUpdate = useRef(false)
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
     const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
     let timeOutId = useRef()
