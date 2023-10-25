@@ -5,9 +5,9 @@ export default function Button({children,className, ...rest}){
             {children 
             || 
             <>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span className='processing--button'></span>
+                <span className='processing--button'></span>
+                <span className='processing--button'></span>
             </>
             }
         </button>
