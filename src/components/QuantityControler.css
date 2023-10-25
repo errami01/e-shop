@@ -1,9 +1,13 @@
-.quantityControler-container span, .number-input--quantityControler{
+.quantityControler-container{
+    --controler-element-width: 64px;
+    --controler-element-height: calc( var(--controler-element-width) * 3 / 5 );
+}
+.minus-quantityControler, .plus-quantityControler, .number-input--quantityControler{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 32px;
+    width: var(--controler-element-width);
+    height: var(--controler-element-height);
     text-align: center;
     border: 1px solid var(--first-Color)
 }
