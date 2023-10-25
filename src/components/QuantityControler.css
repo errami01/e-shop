@@ -29,3 +29,7 @@
 .plus-quantityControler{
     border-radius: 0 5px 5px 0;
 }
+.processing-btn--quantity-controler{
+    width: calc(var(--controler-element-width) * 3);
+    height: var(--controler-element-height);
+}
