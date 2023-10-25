@@ -14,7 +14,7 @@ export  default function QuantityControler(props){
     useEffect(()=>{
         if(qteInput !== targetItem.orderedQuantity)
         setQteInput(targetItem.orderedQuantity)
-    })
+    },[targetItem.orderedQuantity])
 
     function updateQte(timeOutId, sign, event){
         let oldValue = qteInput
