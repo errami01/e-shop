@@ -7,6 +7,14 @@
     text-align: center;
     border: 1px solid var(--first-Color)
 }
+.number-input--quantityControler{
+    appearance: textfield;
+}
+.number-input--quantityControler::-webkit-outer-spin-button,
+.number-input--quantityControler::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .minus-quantityControler, .plus-quantityControler{
     background-color: var(--first-Color) ;
     cursor: pointer;
