@@ -2,6 +2,7 @@ import './QuantityControler.css'
 import { myHistory } from '../utils/myHistory'
 import { useSubmit } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import Button from './Button'
 //This component is rendered in CartItem.js and productDetails
 export  default function QuantityControler(props){
     const cartItems= props.cart
@@ -59,24 +60,30 @@ export  default function QuantityControler(props){
 
     return(
         <div className={`quantityControler-container ${props.className}`}>
-                <span
-                    className="minus-quantityControler"
-                    onClick={()=>{updateQte(timeOutId, 'minus')}}
-                >-</span>
-                <input
-                    type='number'
-                    className='number-input--quantityControler'
-                    min="1"
-                    max="5"
-                    onChange={(e)=> updateQte(timeOutId, null, e)}
-                    value={qteInput}
-                />
-                <span
-                    className="plus-quantityControler"
-                    onClick={()=> updateQte(timeOutId, 'plus')}
-                >
-                    +
-                </span>
+                {isToUpdate.current?
+                    <Button className='processing-btn--quantity-controler'></Button>
+                :
+                    <>
+                        <span
+                        className="minus-quantityControler"
+                        onClick={()=>{updateQte(timeOutId, 'minus')}}
+                        >-</span>
+                        <input
+                            type='number'
+                            className='number-input--quantityControler'
+                            min="1"
+                            max="5"
+                            onChange={(e)=> updateQte(timeOutId, null, e)}
+                            value={qteInput}
+                        />
+                        <span
+                            className="plus-quantityControler"
+                            onClick={()=> updateQte(timeOutId, 'plus')}
+                        >
+                            +
+                        </span>
+                    </>
+                }
         </div>
     )
 }
