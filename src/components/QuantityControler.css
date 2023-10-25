@@ -1,4 +1,4 @@
-.quantityControler-container >span{
+.quantityControler-container span, .number-input--quantityControler{
     display: flex;
     align-items: center;
     justify-content: center;
