@@ -45,7 +45,8 @@
     font-size: 1.5em;
 }
 .add-to-cart-btn--productsDetails{
-    width: var(--image-width)
+    width: var(--image-width);
+    height: calc(var(--image-width) / 5);
 }
 .add-to-cart-btn--productsDetails:disabled{
     display: flex;
