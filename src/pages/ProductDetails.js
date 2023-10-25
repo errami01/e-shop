@@ -53,7 +53,6 @@ export default function PrdoductDetails(){
                                         className="add-to-cart-btn--productsDetails"
                                         disabled
                                     >
-                                        Adding it <Spinner style={{width: '25px', height: '25px', marginLeft: '10px'}}/>
                                     </Button>
                                 :
                                     <Button 
