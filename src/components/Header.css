@@ -1,11 +1,12 @@
 
 .header-container{
+    --header-top-padding: 10px;
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
     /* height: var(--header-height); */
     width: 100%;
-    padding: 10px 20px;
+    padding: var(--header-top-padding) 20px;
     background-color: var(--first-Color);
     margin-bottom: 20px;
     position: sticky;
