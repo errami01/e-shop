@@ -58,7 +58,7 @@ export  default function QuantityControler(props){
                     method: 'post',
                     action: `/?redirect=${myHistory.location.pathname}`,
                 })
-            },2000)
+            },1000)
         }
     }
 
