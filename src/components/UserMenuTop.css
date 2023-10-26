@@ -3,7 +3,7 @@
     min-width: 150px;
     position: absolute;
     background-color: var(--first-Color);
-    top: 100%;
+    top: calc(100% + var(--header-top-padding));
     margin:0;
     overflow: hidden;
     padding: 0;
