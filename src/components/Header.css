@@ -1,10 +1,10 @@
 
 .header-container{
-    --header-top-padding: 10px;
+    position: relative;
+    --header-top-padding: 20px;
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
-    /* height: var(--header-height); */
     width: 100%;
     padding: var(--header-top-padding) 20px;
     background-color: var(--first-Color);
