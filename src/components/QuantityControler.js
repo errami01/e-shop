@@ -1,6 +1,6 @@
 import './QuantityControler.css'
 import { myHistory } from '../utils/myHistory'
-import { useSubmit } from 'react-router-dom'
+import { useNavigation, useSubmit } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import Button from './Button'
 //This component is rendered in CartItem.js and productDetails
@@ -8,6 +8,7 @@ export  default function QuantityControler(props){
     const cartItems= props.cart
     const submit = useSubmit()
     const isToUpdate = useRef(false)
+    const navigation = useNavigation()
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
     const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
     let timeOutId = useRef()
