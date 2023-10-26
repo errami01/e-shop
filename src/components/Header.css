@@ -14,6 +14,7 @@
     z-index: 1;
 }
 .header-items-container--header{
+    position: relative;
     display: grid;
     grid-template-columns: 40px max-content 1fr max-content max-content;
     align-items: center;
