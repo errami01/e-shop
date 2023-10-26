@@ -68,7 +68,7 @@ export default function Cart(props){
                         <span className="amount--cart">{totalAmount.toFixed(2)}$</span>
                     </div>
                     <Link to={`/${linkTarget}`}>
-                        <Button id='go-to-cart-btn' style={{width: '100%', marginTop: '10px'}}>{buttonText}</Button>
+                        <Button id='go-to-cart-btn' style={{width: '100%', height:50, marginTop: '10px'}}>{buttonText}</Button>
                     </Link>
                 </div>
             </div>
