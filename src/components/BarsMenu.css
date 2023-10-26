@@ -2,7 +2,7 @@
     width: 200px;
     background-color: var(--first-Color);
     position: absolute;
-    top: calc(100% + var(--header-top-padding));
+    top: 100% ;
     overflow: hidden;
     /* transition: max-height 0.5s; */
 }
