@@ -9,11 +9,12 @@ export  default function QuantityControler(props){
     const submit = useSubmit()
     const isToUpdate = useRef(false)
     const navigation = useNavigation()
+    isToUpdate.current = isToUpdate.current && navigation.state !== 'idle'
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
     const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
     let timeOutId = useRef()
     const targetItemIndex = cartItems.indexOf(targetItem)
-    
+
     useEffect(()=>{
         if(qteInput !== targetItem.orderedQuantity)
         setQteInput(targetItem.orderedQuantity)
