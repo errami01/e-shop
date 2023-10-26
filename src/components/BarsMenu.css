@@ -2,10 +2,9 @@
     width: 200px;
     background-color: var(--first-Color);
     position: absolute;
-    top: var(--header-height);
+    top: calc(100% + var(--header-top-padding));
     overflow: hidden;
-    left: 0;
-    transition: max-height 0.5s;
+    /* transition: max-height 0.5s; */
 }
 .closedMenu{
     max-height: 0;
