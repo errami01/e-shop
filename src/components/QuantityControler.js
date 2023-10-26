@@ -16,8 +16,9 @@ export  default function QuantityControler(props){
     const targetItemIndex = cartItems.indexOf(targetItem)
 
     useEffect(()=>{
-        if(qteInput !== targetItem.orderedQuantity)
-        setQteInput(targetItem.orderedQuantity)
+        if(qteInput !== targetItem.orderedQuantity){
+            setQteInput(targetItem.orderedQuantity)
+        }
     },[targetItem.orderedQuantity])
 
     function updateQte(timeOutId, sign, event){
