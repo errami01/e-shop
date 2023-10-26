@@ -1,12 +1,14 @@
 import './CheckoutLayout.css'
-import { Outlet, useLoaderData, useOutletContext } from "react-router-dom"
+import { Outlet, redirect, useLoaderData, useOutletContext } from "react-router-dom"
 import Cart from "../components/Cart"
 import {requireAuth} from  '../utils/requireAuth'
 import CheckoutPhase from '../components/CheckoutPhase'
-import { setLocalOnGoingCheckout, storeObject } from '../utils/utils'
+import { getLocalCart, setLocalOnGoingCheckout, storeObject } from '../utils/utils'
 import { getOnGoingCheckout } from '../utils/fetcher'
 
 export async function loader({request}){
+    const cart = getLocalCart()
+    if(!cart.length) throw redirect('/cart')
     requireAuth(request)
     return await getOnGoingCheckout()     
 }
