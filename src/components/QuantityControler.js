@@ -50,6 +50,7 @@ export  default function QuantityControler(props){
         if(oldValue !== newValue){
             clearTimeout(timeOutId.current)
             timeOutId.current = setTimeout(()=>{
+                isToUpdate.current = true;
                 cartItems[targetItemIndex] = {...targetItem, orderedQuantity: newValue}
                 const formData = new FormData()
                 formData.append('newCart', JSON.stringify(cartItems))
