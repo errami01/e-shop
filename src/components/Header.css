@@ -42,7 +42,6 @@
     display: none;
 }
 .user-icon-header{
-    position: relative;
     margin-left: auto;
     margin-right: 20px;
     color: white;
@@ -68,7 +67,6 @@
     height: 15px; 
 }
 .bars-icon-container--header{
-    position: relative;
     align-items: flex-start;
     cursor: pointer;
 }
