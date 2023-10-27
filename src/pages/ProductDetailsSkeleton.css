@@ -1,0 +1,14 @@
+.image--product-details-skel{
+    height: 300px;
+    border-radius: 20px;
+}
+.add-to-cart-btn--productsDetails{
+    box-shadow: none;
+}
+.img-section-inner-container--prdct-details{
+    display: flex;
+    flex-direction: column;
+}
+.img-section-inner-container--prdct-details *{
+    margin-bottom: 10px;
+}
