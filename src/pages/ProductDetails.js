@@ -4,9 +4,9 @@ import { Suspense, useRef } from "react"
 import "./ProductDetails.css"
 import { useRate as rate } from "../utils/useRate"
 import QuantityControler from "../components/QuantityControler"
-import Spinner from "../components/Spinner"
 import Button from "../components/Button"
 import { setLocalCart, storeObject } from "../utils/utils"
+import ProductDetailsSkeleton from "./ProductDetailsSkeleton"
 
 export function loader({params}){
     return defer({productPromise: getSingleProduct(params.id)})
@@ -77,7 +77,7 @@ export default function PrdoductDetails(){
     }
     return(
         <div className="productDetails-container">
-                    <Suspense fallback={<Spinner />}>
+                    <Suspense fallback={<ProductDetailsSkeleton />}>
                         <Await resolve={loaderPromises.productPromise}>
                             {awaitChild}
                         </Await>
