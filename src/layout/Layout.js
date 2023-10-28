@@ -1,9 +1,10 @@
-import { Outlet, redirect, useLoaderData, useLocation, useNavigate} from "react-router-dom"
+import { Outlet, redirect, useLoaderData, useLocation, useNavigate, defer, Await} from "react-router-dom"
 import Header from "../components/Header"
 import { myHistory } from "../utils/myHistory"
 import { getCart, getUserData } from "../utils/fetcher"
 import { removeLocalUserData, setLocalCart, storeObject } from "../utils/utils"
 import { confirmUserState } from "../utils/authentication"
+import { Suspense } from "react"
 
 export async function loader(){
     try{
@@ -15,7 +16,7 @@ export async function loader(){
         removeLocalUserData()
     }
     console.log('Layout loader')
-    return await getCart()
+    return defer({cartPromise: getCart()}) 
 }
 export async function action({request}){
     console.log('Layout action')
@@ -30,17 +31,26 @@ export async function action({request}){
     catch(e){
         return e.message
     }
-    return null
 }
 export default function Layout(){
     myHistory.navigate = useNavigate()
     myHistory.location = useLocation()
-    const cart = useLoaderData()
+    const loaderPromises = useLoaderData()
     console.log('layout component')
     return(
         <>
-            <Header cart={cart}/>
-            <Outlet context={{cart}}/>
+        <Suspense fallback={<div className="skeleton" style={{height: 50}}>Loading...</div>}>
+            <Await resolve={loaderPromises.cartPromise}>
+                {
+                    (cart)=>{
+                        return(
+                            <Header cart={cart}/>
+                            )
+                        }
+                    }
+            </Await>
+        </Suspense>
+        <Outlet /> 
         </>
     )
 }
