@@ -9,7 +9,7 @@ import { setLocalCart, storeObject } from "../utils/utils"
 import ProductDetailsSkeleton from "./ProductDetailsSkeleton"
 
 export async function loader({params}){
-    return defer({productPromise: getSingleProduct(params.id), cartItems: await getCart()})
+    return defer({productPromise: getSingleProduct(params.id)})
 }
 export async function action({request}){
     const formData = await request.formData()
@@ -24,8 +24,9 @@ export async function action({request}){
 }
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
+    const {cart} = useOutletContext()
     const isClicked = useRef(false)
-    const cartItems = loaderPromises.cartItems
+    const cartItems = cart
     async function handleAddToCart(){
         isClicked.current = true
     }
@@ -77,6 +78,7 @@ export default function PrdoductDetails(){
     return(
         <div className="productDetails-container">
                     <Suspense fallback={<ProductDetailsSkeleton />}>
+                        {/* <Await resolve={Promise.all([loaderPromises.productPromise, loaderPromises.cartPromise])}> */}
                         <Await resolve={loaderPromises.productPromise}>
                             {awaitChild}
                         </Await>
