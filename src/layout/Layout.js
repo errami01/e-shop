@@ -44,13 +44,14 @@ export default function Layout(){
                 {
                     (cart)=>{
                         return(
+                            <>
                             <Header cart={cart}/>
+                            <Outlet context={{cart}}/> 
+                            </>
                             )
                         }
                     }
             </Await>
         </Suspense>
-        <Outlet /> 
-        </>
     )
 }
