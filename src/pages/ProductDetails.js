@@ -1,4 +1,4 @@
-import { getSingleProduct } from "../utils/fetcher"
+import { getCart, getSingleProduct } from "../utils/fetcher"
 import { useLoaderData, defer, Await, useOutletContext, Form } from "react-router-dom"
 import { Suspense, useRef } from "react"
 import "./ProductDetails.css"
@@ -8,8 +8,8 @@ import Button from "../components/Button"
 import { setLocalCart, storeObject } from "../utils/utils"
 import ProductDetailsSkeleton from "./ProductDetailsSkeleton"
 
-export function loader({params}){
-    return defer({productPromise: getSingleProduct(params.id)})
+export async function loader({params}){
+    return defer({productPromise: getSingleProduct(params.id), cartItems: await getCart()})
 }
 export async function action({request}){
     const formData = await request.formData()
@@ -24,9 +24,8 @@ export async function action({request}){
 }
 export default function PrdoductDetails(){
     const loaderPromises = useLoaderData()
-    const {cart} = useOutletContext()
     const isClicked = useRef(false)
-    const cartItems = cart
+    const cartItems = loaderPromises.cartItems
     async function handleAddToCart(){
         isClicked.current = true
     }
@@ -42,7 +41,7 @@ export default function PrdoductDetails(){
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
                     {inCart? 
                             <QuantityControler 
-                            cart = {cart}
+                            cart = {cartItems}
                             itemId={product.id} 
                             quantity={inCart.orderedQuantity} 
                             className='quantity-cartItem'/> 
