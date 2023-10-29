@@ -6,6 +6,7 @@ import { removeLocalUserData, setLocalCart, storeObject } from "../utils/utils"
 import { confirmUserState } from "../utils/authentication"
 import { Suspense } from "react"
 import Skeleton from "../components/Skeleton"
+import HeaderSkeleton from "../components/HeaderSkeleton"
 
 export async function loader(){
     try{
@@ -42,6 +43,7 @@ export default function Layout(){
         <Suspense 
             fallback={
                 <Skeleton>
+                    <HeaderSkeleton />
                 </Skeleton>
             }>
             <Await resolve={loaderPromises.cartPromise}>
