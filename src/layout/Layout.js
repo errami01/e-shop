@@ -5,6 +5,7 @@ import { getCart, getUserData } from "../utils/fetcher"
 import { removeLocalUserData, setLocalCart, storeObject } from "../utils/utils"
 import { confirmUserState } from "../utils/authentication"
 import { Suspense } from "react"
+import Skeleton from "../components/Skeleton"
 
 export async function loader(){
     try{
@@ -38,8 +39,11 @@ export default function Layout(){
     const loaderPromises = useLoaderData()
     console.log('layout component')
     return(
-        <>
-        <Suspense fallback={<div className="skeleton" style={{height: 50}}>Loading...</div>}>
+        <Suspense 
+            fallback={
+                <Skeleton>
+                </Skeleton>
+            }>
             <Await resolve={loaderPromises.cartPromise}>
                 {
                     (cart)=>{
