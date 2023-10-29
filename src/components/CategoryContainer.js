@@ -6,8 +6,6 @@ import {nanoid} from 'nanoid'
 import { getProductsByCategory } from "../utils/fetcher"; 
 import Spinner from "./Spinner";
 
-
-
 export default function CategoryContainer({category}){
     const[productsToRender, setProductsToRender] = useState(setNumberOfProduct())
     const navigate = useNavigate()
@@ -41,7 +39,6 @@ export default function CategoryContainer({category}){
                 </Suspense>
             </div>
         </div>
-
         </>
     )
 }
