@@ -24,6 +24,7 @@ import CheckoutPhase from './pages/checkout/CheckoutPhase';
 import AdminLayout from './layout/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
 import SignUp, { action as signUpAction} from './pages/SignUp';
+import ProductDetailsSkeleton from './pages/ProductDetailsSkeleton';
 const router = createBrowserRouter(createRoutesFromElements(
   <>
   <Route 
@@ -111,6 +112,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       loader={productDetailLoader}
       element={<PrdoductDetails />}
       action={productDetailAction}
+      handle={<ProductDetailsSkeleton/>}
       />
     <Route 
       path='checkout'
