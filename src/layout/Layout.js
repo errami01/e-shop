@@ -54,8 +54,8 @@ export default function Layout(){
                     (cart)=>{
                         return(
                             <>
-                            <Header cart={cart}/>
-                            <Outlet context={{cart}}/> 
+                                <Header cart={cart}/>
+                                <Outlet context={{cart}}/>
                             </>
                             )
                         }
