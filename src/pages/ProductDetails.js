@@ -36,7 +36,7 @@ export default function PrdoductDetails(){
         const inCart = cartItems.filter(item => item.id===product.id)[0]
         isClicked.current = isClicked.current && !inCart
         return(
-            <>
+            <div className="productDetails-container">
                 <div className="img-section-prdctDetails">
                     <img alt='product-image' className="prdct-img-prdctDetails" src={product.image} />
                     <span className="price-productDetails">{Number.isInteger(product.price)? product.price+'.00':product.price}$</span>
@@ -72,17 +72,15 @@ export default function PrdoductDetails(){
                     <h5 className="title-productDetails">{product.title}</h5>
                     <div className="descr-productDetails">{product.description}</div>  
                 </div>
-            </>
+            </div>
         )
     }
     return(
-        <div className="productDetails-container">
-                    <Suspense fallback={<ProductDetailsSkeleton />}>
-                        {/* <Await resolve={Promise.all([loaderPromises.productPromise, loaderPromises.cartPromise])}> */}
-                        <Await resolve={loaderPromises.productPromise}>
-                            {awaitChild}
-                        </Await>
-                    </Suspense>    
-        </div>
+        <Suspense fallback={<ProductDetailsSkeleton />}>
+            {/* <Await resolve={Promise.all([loaderPromises.productPromise, loaderPromises.cartPromise])}> */}
+            <Await resolve={loaderPromises.productPromise}>
+                {awaitChild}
+            </Await>
+        </Suspense>    
     )
 }
