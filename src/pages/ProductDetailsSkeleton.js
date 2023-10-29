@@ -3,11 +3,11 @@ import './ProductDetailsSkeleton.css'
 import Button from '../components/Button'
 export default function ProductDetailsSkeleton(){
     return(
-        <>
+        <div className="productDetails-container">
             <div className="img-section-prdctDetails" style={{padding: 20}}>
                 <div className='img-section-inner-container--prdct-details'>
                     <div className="image--product-details-skel skeleton" ></div>
-                    <span className="skeleton-text skeleton"></span>                   
+                    <span className="skeleton-text skeleton"></span>
                     <Button
                         className="add-to-cart-btn--productsDetails skeleton"
                         disabled
@@ -31,6 +31,6 @@ export default function ProductDetailsSkeleton(){
                     <span></span>
                 </div>   
             </div>
-        </>
+        </div>
     )
 }
