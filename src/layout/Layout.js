@@ -46,6 +46,7 @@ export default function Layout(){
             fallback={
                 <Skeleton>
                     <HeaderSkeleton />
+                    {outletSkeleton}
                 </Skeleton>
             }>
             <Await resolve={loaderPromises.cartPromise}>
