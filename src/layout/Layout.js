@@ -1,4 +1,4 @@
-import { Outlet, redirect, useLoaderData, useLocation, useNavigate, defer, Await} from "react-router-dom"
+import { Outlet, redirect, useLoaderData, useLocation, useNavigate, defer, Await, useMatches} from "react-router-dom"
 import Header from "../components/Header"
 import { myHistory } from "../utils/myHistory"
 import { getCart, getUserData } from "../utils/fetcher"
@@ -38,6 +38,8 @@ export default function Layout(){
     myHistory.navigate = useNavigate()
     myHistory.location = useLocation()
     const loaderPromises = useLoaderData()
+    const matches = useMatches()
+    const outletSkeleton = matches[matches.length-1].handle
     console.log('layout component')
     return(
         <Suspense 
