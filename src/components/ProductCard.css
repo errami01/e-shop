@@ -20,14 +20,14 @@
     max-height: 100%;
     padding-top: 5px;
 }
+.name-and-rating{
+    width: 85%;
+    margin: 10px auto 0 auto;
+    padding: 5px;
 }
 .price{
     font-size: 1.5em;
     font-weight: 900;
-}
-.name-and-rating{
-    margin-top: 20px;
-    padding: 5px;
 }
 .product-name{
     white-space : nowrap;
