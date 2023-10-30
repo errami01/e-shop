@@ -7,22 +7,11 @@ import { getProductsByCategory } from "../utils/fetcher";
 import Spinner from "./Spinner";
 
 export default function CategoryContainer({category}){
-    const[productsToRender, setProductsToRender] = useState(setNumberOfProduct())
+    const nbreOfItemToRender = 4
     const navigate = useNavigate()
-    function setNumberOfProduct(){
-        const windowWidth= parseInt(document.documentElement.clientWidth)
-        // if(windowWidth > 900 ) return 5;
-        if(windowWidth > 1060 ) return 4;
-        if(windowWidth > 800 ) return 3;
-        if(windowWidth > 550 ) return 2;
-        return 1
     }
-    window.addEventListener('resize',()=> {
-        setProductsToRender(setNumberOfProduct())
-    })
-    const awaitChild = (products)=>{
         products = Object.values(products)
-        products.length = productsToRender
+        products.length = nbreOfItemToRender
         const cards = products.map(
             product=> <ProductCard key={nanoid()}  {...product}/>
         )
