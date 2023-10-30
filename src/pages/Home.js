@@ -1,25 +1,37 @@
 import CategoryContainer from "../components/CategoryContainer"
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, defer, Await } from "react-router-dom"
 import { getCategories } from "../utils/fetcher"
 import "./Home.css"
+import { Suspense } from "react"
+import HomeSkeleton from "./HomeSkeleton"
 
 export async function loader(){
-    const categories =  await getCategories('categories')
-    return {categories}     
+    return defer({categories: getCategories()})
 }
 export default function Home(){
-    const loadedData = useLoaderData()
-    const categoryElements = loadedData.categories.map(
-        category=>{
-            return <CategoryContainer 
-                    category={category}
-                    key={category}
-                    />
-        }
-    )
+    const loadedPromises = useLoaderData()
+    const awaitChildren = (categories)=>{
+         const categoryContainers =  categories.map(
+                category=>{
+                    return (
+                        <CategoryContainer
+                            category={category}
+                            key={category}
+                        />
+                    )
+                }
+            )
+        return (
+                <div className="home-container">
+                    {categoryContainers}
+                </div>  
+            )
+    }
     return(
-        <div className="home-container">
-        {categoryElements}
-        </div>
+        <Suspense fallback={<HomeSkeleton />}>
+            <Await resolve={loadedPromises.categories}>
+                {awaitChildren}
+            </Await>
+        </Suspense>
         )
 }
