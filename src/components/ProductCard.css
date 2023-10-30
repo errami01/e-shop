@@ -16,8 +16,10 @@
     height: 70%;
 }
 .product-image{
-    width: 80%;
+    width: 85%;
     max-height: 100%;
+    padding-top: 5px;
+}
 }
 .price{
     font-size: 1.5em;
