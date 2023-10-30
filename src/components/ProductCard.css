@@ -36,6 +36,7 @@
     color: #57504f;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 5px 0;
    }
 .product-rating{
     display: flex;
