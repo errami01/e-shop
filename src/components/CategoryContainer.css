@@ -6,17 +6,16 @@
 }
 
 .products-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    column-gap: 10px;
+    grid-template-rows: 400px;
+    grid-auto-rows: 0px;
+    overflow-y: hidden;
     justify-content: space-around;
+    align-items: center;
     flex-grow: 1;
-    padding: 16px;
-    height: 400px;
     border-radius: 0px 10px 10px 0;
-    /* gap: 10px; */
-    /* background-color: white; */
-    /* border: 1px solid var(--first-Color); */
-    /* border-bottom: 1px solid var(--first-Color); */
-    /* border: solid red */
 }
 .category-name{
     writing-mode: vertical-rl;
