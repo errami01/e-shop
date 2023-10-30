@@ -41,7 +41,6 @@
 .product-rating{
     display: flex;
     align-items: center;
-    margin-top: 10px;
 }
 .rate{
     font-size: 1.2em;
