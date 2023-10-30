@@ -1,9 +1,8 @@
 .product-container{
     background-color: white;
-    width: 200px;
+    width: 250px;
     height: 100%;
     font-size: 0.9em;
-    padding: 1px;
     cursor: pointer;
     border-radius: 10px;
 }
