@@ -4,11 +4,18 @@ import ProductCard from "./ProductCard";
 import './CategoryContainer.css'
 import {nanoid} from 'nanoid'
 import { getProductsByCategory } from "../utils/fetcher"; 
-import Spinner from "./Spinner";
+import ProductCardSkeleton from "./ProductCardSkeleton";
 
 export default function CategoryContainer({category}){
     const nbreOfItemToRender = 4
     const navigate = useNavigate()
+    
+    const cardSkeletons = (numberToRender)=>{
+        const skeletons = []
+        for(let i = 0; i < numberToRender; i++){
+            skeletons.push(<ProductCardSkeleton key={i}/>)
+        }
+        return skeletons
     }
         products = Object.values(products)
         products.length = nbreOfItemToRender
