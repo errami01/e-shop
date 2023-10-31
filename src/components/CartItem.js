@@ -28,9 +28,9 @@ export default function CartItem(props){
                     <img className={`img-cartItem${pageClassName}`} src={item.image} alt='cart item'/>
                 </Link>
                 <h5 className={`item-title-cartItem${pageClassName}`}>{item.title}</h5>
-                {!withoutDeliveryDate && <p className={`delevery-date-cartItem${pageClassName}`}>
+                {/* {!withoutDeliveryDate && <p className={`delevery-date-cartItem${pageClassName}`}>
                     Delivery between Wednesday, May 17, 2023 and Friday, May 19, 2023
-                </p>} 
+                </p>}  */}
                 <span className={`price-carItem${pageClassName}`}>{Number.isInteger(item.price)? item.price+'.00':item.price}$</span>
                 <QuantityControler cart={cart} itemId={item.id} className={`quantity-cartItem${pageClassName}`} quantity={item.orderedQuantity}/>
                 {toRemove ?
