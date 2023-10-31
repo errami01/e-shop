@@ -8,7 +8,7 @@ import ProductCardSkeleton from "./ProductCardSkeleton";
 
 export default function CategoryContainer({category}){
     const [products, setProducts] = useState()
-    const nbreOfItemToRender = 4
+    const nbreOfItemsToRender = 4
     const navigate = useNavigate()
     
     const cardSkeletons = (numberToRender)=>{
@@ -26,7 +26,7 @@ export default function CategoryContainer({category}){
     },[])
     const itemCards = (products)=>{
         products = Object.values(products)
-        products.length = nbreOfItemToRender
+        products.length = nbreOfItemsToRender
         const cards = products.map(
             product=> <ProductCard key={nanoid()}  {...product}/>
         )
@@ -40,7 +40,7 @@ export default function CategoryContainer({category}){
                     products?
                         itemCards(products)
                     :
-                        cardSkeletons(5)
+                        cardSkeletons(nbreOfItemsToRender)
                 }
             </div>
         </div>
