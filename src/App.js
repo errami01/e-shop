@@ -26,6 +26,7 @@ import Dashboard from './pages/admin/Dashboard';
 import SignUp, { action as signUpAction} from './pages/SignUp';
 import ProductDetailsSkeleton from './pages/ProductDetailsSkeleton';
 import HomeSkeleton from './pages/HomeSkeleton';
+import CategoryPageSkeleton from './pages/CategoryPageSkeleton';
 const router = createBrowserRouter(createRoutesFromElements(
   <>
   <Route 
@@ -109,6 +110,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       path='category/:category'
       loader= {categoryPageLoader}
       element={<CategoryPage />}
+      handle={<CategoryPageSkeleton />}
     />
     <Route 
       path=':category/:id'
