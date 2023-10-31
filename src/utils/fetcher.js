@@ -140,6 +140,5 @@ function combineOfflineAndOnlineCarts(input, target){
             rslt.push(element)
         }
     })
-    console.log(rslt)
      return rslt
 }
