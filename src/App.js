@@ -25,6 +25,7 @@ import AdminLayout from './layout/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
 import SignUp, { action as signUpAction} from './pages/SignUp';
 import ProductDetailsSkeleton from './pages/ProductDetailsSkeleton';
+import HomeSkeleton from './pages/HomeSkeleton';
 const router = createBrowserRouter(createRoutesFromElements(
   <>
   <Route 
@@ -37,7 +38,9 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route 
       index 
       element={<Home />}
-      loader={homeLoader}/>
+      loader={homeLoader}
+      handle={<HomeSkeleton />}
+    />
     <Route
       path='customer'
       loader={customerLayoutLoader}
