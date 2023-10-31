@@ -110,7 +110,7 @@ export default function SignUp(){
                     ) }
                     required
                 />  
-                <Button type='submit' disabled={!validateForm()}>Sign up</Button>
+                <Button type='submit' disabled={!validateForm()} style={{width: "60%", height: 50}}>Sign up</Button>
             </Form>
         </div>
     )
