@@ -1,9 +1,9 @@
 import ProductCard from "../components/ProductCard"
 import "./CategoryPage.css"
-import {fetchData, getProductsByCategory } from "../utils/fetcher" 
+import { getProductsByCategory } from "../utils/fetcher" 
 import { useLoaderData, defer, Await } from "react-router-dom"
 import { Suspense } from "react"
-import Spinner from "../components/Spinner"
+import CategoryPageSkeleton from "./CategoryPageSkeleton"
 
 export function loader({params}){
     return defer({productsPromise: getProductsByCategory(params.category)})
@@ -20,20 +20,20 @@ export default function CategoryPage(){
                 />
             }   
         )
-        return productComponents
+        return (
+            <div className="categorypage-container">
+                <div className="products-grid">
+                    {productComponents}
+                </div>
+            </div>
+        )
     }
     
-    return(
-        <div className="categorypage-container">
-            
-            <div className="products-grid">
-            <Suspense fallback={<Spinner/>}>
-                <Await resolve={loadedData.productsPromise}>
-                    {awaitChild}
-                </Await>
-            </Suspense>
-                
-            </div>
-        </div>
+    return( 
+        <Suspense fallback={<CategoryPageSkeleton/>}>
+            <Await resolve={loadedData.productsPromise}>
+                {awaitChild}
+            </Await>
+        </Suspense>       
     )
 }
