@@ -55,7 +55,7 @@ export default function Login(){
                     icon={<i className="fa-solid fa-key fa"></i>}
                     required
                 />  
-                <Button style={{width: '60%'}}>Login</Button>
+                <Button style={{width: '60%', height: 50}}>Login</Button>
             </Form>
             <p className='customer--login'>Don't have an account? 
             <Link to='/signup'> Sign-up</Link></p>
