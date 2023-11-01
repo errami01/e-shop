@@ -28,9 +28,10 @@
     border-radius: 5px;
 }
 .bottom-btns--checkoutFlow{
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
     margin-top: 20px;
+    gap: 5px;
 }
 .cancel-btn--checkoutFlow{
     display: flex;
