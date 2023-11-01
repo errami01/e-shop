@@ -39,10 +39,10 @@
     justify-content: center;
     height: 50px;
     border: unset;
+    border-radius: 5px;
     font-size: inherit;
     color: inherit;
     font-weight: inherit;
-    margin-right: 10px;
     padding: 0 20px;
     cursor: pointer;
 }
