@@ -66,7 +66,7 @@ export async function storeObject(data, path ,storeInLocalStorage, methode='PUT'
 export function countCartItems(cart){
     return cart.reduce((acc, curr)=> acc + curr.orderedQuantity,0)
  }
- export function getDeliveryDate(deleveryTime){
+ export function getDeliveryDate(deleveryTime=0){
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const deleveryTimeInMs = deleveryTime*24*60*60*1000
