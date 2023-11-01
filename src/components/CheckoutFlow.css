@@ -36,6 +36,8 @@
 .cancel-btn--checkoutFlow{
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 50px;
     border: unset;
     font-size: inherit;
     color: inherit;
