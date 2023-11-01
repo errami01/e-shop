@@ -68,14 +68,16 @@ export function countCartItems(cart){
  }
  export function getDeliveryDate(deleveryTime){
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const deleveryTimeInMs = deleveryTime*24*60*60*1000
     const currenTimeInMs = new Date().getTime()
     const date = new Date(deleveryTimeInMs + currenTimeInMs)
-    const day = weekday[date.getDay()]
-    const month = date.getMonth()+1
+    const deleveryWeekday = weekday[date.getDay()]
+    const deleveryDay = date.getDate()
+    const month = months[date.getMonth()]
     const year = date.getFullYear()
     return {
-        day,
+        day:{deleveryDay, deleveryWeekday},
         month, 
         year
     }
