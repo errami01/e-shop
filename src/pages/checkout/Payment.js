@@ -31,13 +31,13 @@ export default function Payment(){
                     </label>
                 </div>
                 <div className="bottom-btns--checkoutFlow">
+                    <button className="continue-btn--checkoutFlow btn--app">Complete order</button>
                     <Link 
                         to='/cart' 
                         className="cancel-btn--checkoutFlow " 
                         onClick={cancelOrder}>
                     Cancel order
                     </Link>
-                    <button className="continue-btn--checkoutFlow btn--app">Complete order</button>
                 </div>
             </Form>
         </CheckoutFlow>

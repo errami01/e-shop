@@ -45,13 +45,13 @@ export default function PersonalInfos(){
                     <input name='email' defaultValue={email} type='email' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
+                    <button className="continue-btn--checkoutFlow btn--app">Shipping details</button>
                     <Link 
                         to='/cart' 
                         className="cancel-btn--checkoutFlow " 
                         onClick={cancelOrder}>
                     Cancel order
                     </Link>
-                    <button className="continue-btn--checkoutFlow btn--app">Shipping details</button>
                 </div>
             </Form>
             

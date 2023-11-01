@@ -49,13 +49,13 @@ export default function Shipping(){
                     <input name='postcode' defaultValue={address?.postcode} type='text' required/>
                 </label>
                 <div className="bottom-btns--checkoutFlow">
+                    <button className="continue-btn--checkoutFlow btn--app">Payment</button>
                     <Link 
                         to='/cart' 
                         className="cancel-btn--checkoutFlow " 
                         onClick={cancelOrder}>
                     Cancel order
                     </Link>
-                    <button className="continue-btn--checkoutFlow btn--app">Payment</button>
                 </div>
             </Form>
         </CheckoutFlow>
