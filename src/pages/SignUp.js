@@ -98,10 +98,10 @@ export default function SignUp(){
                     type='password'
                     icon={<i className="fa-solid fa-key fa"></i>}
                     onBlur= {()=> checkNegativeValidity(
-                        /^[a-zA-Z0-9]{4,}$/,
+                        /^[a-zA-Z0-9]{6,}$/,
                         passInputElement,
                         passContainerElement,
-                        'Minimum 4 alphanum characters (ex: 1234 ) :)'
+                        'Minimum 6 alphanum characters (ex: 123456 ) :)'
                     )}
                     onChange= { ()=> checkPositiveValidity(
                         /^[a-zA-Z0-9]{6,}$/,
