@@ -1,10 +1,23 @@
-import { Form, Link, useOutletContext } from "react-router-dom";
+import { Form, Link, redirect, useOutletContext } from "react-router-dom";
 import CheckoutFlow from "../../components/CheckoutFlow";
 import './Payment.css'
 import { CheckoutInput } from "../../components/CheckoutInput";
 import { useState } from "react";
+import { getLocalCart, setLocalCart, setLocalOnGoingCheckout, storeObject } from "../../utils/utils";
 
 export async function action(){
+    const cart = getLocalCart()
+    if(cart.length){
+        try{
+            await storeObject(cart, 'closedOrders', null, 'POST')
+            await storeObject({phase: 'personalInfos'}, 'onGoingCheckouts', setLocalOnGoingCheckout)
+            await storeObject([], 'carts', setLocalCart)
+            return redirect('/customer/orders/closed')
+        }
+        catch(e){
+            return e
+        }
+    }
     return null
 }
 export default function Payment(){
