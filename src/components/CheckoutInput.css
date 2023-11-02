@@ -1,0 +1,21 @@
+.input-container--checkout-input{
+    --theme-color: var(--first-Color);
+    --label-position-left: 15%;
+    position: relative;
+    margin-bottom: 10px;
+}
+.invalid--checkout-input input{
+    outline: 2px solid var(--theme-color);
+}
+.invalid--checkout-input::after{
+    content: attr(invalidMessage);
+    position: absolute;
+    color: red;
+    top: 90%;
+    left: 10px;
+    margin-top: 2px;
+    font-size: 0.8rem;
+}
+.input-container--checkout-input input:focus{
+    outline: 2px solid var(--theme-color);
+}
