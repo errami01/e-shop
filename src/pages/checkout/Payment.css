@@ -1,6 +1,7 @@
 .expiration-cvc--payment{
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
 .expiration-cvc--payment .date--payment{
     width: 50%;
@@ -16,7 +17,4 @@
 .slash--payment{
     width: 20px;
     text-align: center;
-}
-.cvc--payment{
-    padding-left: 20px;
 }
