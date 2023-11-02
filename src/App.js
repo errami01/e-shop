@@ -18,7 +18,7 @@ import CustWishlist from './pages/customer/CustWishlist';
 import CheckoutLayout, {loader as checkoutLayoutLoader} from './layout/CheckoutLayout';
 import PersonalInfos, {action as personalInfosAction, loader as personalInfosLoader} from './pages/checkout/PersonalInfos';
 import Shipping, {action as shippingAction, loader as shippingLoader} from './pages/checkout/Shipping';
-import Payment from './pages/checkout/Payment';
+import Payment, {action as paymentAction} from './pages/checkout/Payment';
 import { requireAuth } from './utils/requireAuth';
 import CheckoutPhase from './pages/checkout/CheckoutPhase';
 import AdminLayout from './layout/AdminLayout';
@@ -143,6 +143,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
           path='payment'
           element={<Payment />}
+          action={paymentAction}
         />
     </Route>
     <Route
