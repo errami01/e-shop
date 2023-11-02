@@ -4,6 +4,9 @@ import './Payment.css'
 import { CheckoutInput } from "../../components/CheckoutInput";
 import { useState } from "react";
 
+export async function action(){
+    return null
+}
 export default function Payment(){
     const [isFormReady, setIsFormReady] = useState({})
     const { cancelOrder } = useOutletContext()
