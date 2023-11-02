@@ -13,7 +13,7 @@ export default function Payment(){
     return(
         <CheckoutFlow>
             <h5 className="pageTitle--checkoutFlow">Paymet Details</h5>
-            <Form>
+            <Form method="post">
                 <CheckoutInput 
                     label = "Name on card"
                     setIsFormReady = {setIsFormReady}
