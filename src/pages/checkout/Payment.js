@@ -1,34 +1,63 @@
 import { Form, Link, useOutletContext } from "react-router-dom";
 import CheckoutFlow from "../../components/CheckoutFlow";
 import './Payment.css'
+import { CheckoutInput } from "../../components/CheckoutInput";
+import { useState } from "react";
 
 export default function Payment(){
+    const [isFormReady, setIsFormReady] = useState({})
     const { cancelOrder } = useOutletContext()
     return(
         <CheckoutFlow>
             <h5 className="pageTitle--checkoutFlow">Paymet Details</h5>
             <Form>
-                <label>
-                    Name on card
-                    <input type="text"/>
-                </label>
-                <label>
-                    Card number
-                    <input id="ccn" type="tel" inputMode="numeric" pattern="[0-9\s]{13,19}" autoComplete="cc-number" maxLength="19" placeholder="xxxx xxxx xxxx xxxx"/>
-                </label>
+                <CheckoutInput 
+                    label = "Name on card"
+                    setIsFormReady = {setIsFormReady}
+                    pattern={/^((?:[A-Za-z]+ ?){1,3})$/}
+                    message = "Please enter a valid name"
+                />
+                <CheckoutInput                     
+                    label = "Card number"
+                    setIsFormReady = {setIsFormReady}
+                    pattern={/[0-9\s]{13,19}/}
+                    inputMode="numeric"
+                    autoComplete="cc-number"
+                    type="tel"
+                    placeholder="xxxx xxxx xxxx xxxx"
+                    message = "Please enter a valid card number"
+                />
                 <div className="expiration-cvc--payment">
                     <label >
                         Expiration
                         <div className="card-expiration--payment">
-                            <input className="date--payment" type="number" placeholder="mm" min='1' max='12'/> 
+                            <CheckoutInput 
+                                name = "month"
+                                type = "number"
+                                placeholder="mm"
+                                pattern={/^(0?[1-9]|1[012])$/}
+                                message={""}
+                                setIsFormReady = {setIsFormReady}
+                            />
                             <span className="slash--payment">/</span>
-                            <input className='date--payment' type="number" placeholder="yy"/>
+                            <CheckoutInput 
+                                name = "year"
+                                type = "number"
+                                placeholder="yy"
+                                pattern={/2[3-8]/}
+                                message={""}
+                                setIsFormReady = {setIsFormReady}
+                            />
                         </div>
                     </label> 
-                    <label className="cvc--payment">
-                        CVC
-                        <input type="tel"/>
-                    </label>
+                        <CheckoutInput 
+                            name = "cardNumber"
+                            className="cvc--payment"
+                            setIsFormReady = {setIsFormReady}
+                            label={'CVV'}
+                            pattern={/^[0-9]{3,4}$/}
+                            message={'Invalid number'}
+                        />
                 </div>
                 <div className="bottom-btns--checkoutFlow">
                     <button className="continue-btn--checkoutFlow btn--app">Complete order</button>
