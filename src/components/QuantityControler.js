@@ -7,14 +7,13 @@ import Button from './Button'
 export  default function QuantityControler(props){
     const cartItems= props.cart
     const submit = useSubmit()
-    const isToUpdate = useRef(false)
     const navigation = useNavigation()
-    isToUpdate.current = isToUpdate.current && navigation.state !== 'idle'
+    const isProcessing = useRef(false)
     const targetItem = cartItems.filter(item=> item.id === props.itemId)[0]
     const [qteInput, setQteInput] = useState(targetItem.orderedQuantity)
+    isProcessing.current = isProcessing.current && targetItem.orderedQuantity !==qteInput
     let timeOutId = useRef()
     const targetItemIndex = cartItems.indexOf(targetItem)
-
     useEffect(()=>{
         if(qteInput !== targetItem.orderedQuantity){
             setQteInput(targetItem.orderedQuantity)
@@ -50,8 +49,8 @@ export  default function QuantityControler(props){
         if(oldValue !== newValue){
             clearTimeout(timeOutId.current)
             timeOutId.current = setTimeout(()=>{
-                isToUpdate.current = true;
                 cartItems[targetItemIndex] = {...targetItem, orderedQuantity: newValue}
+                isProcessing.current = true;
                 const formData = new FormData()
                 formData.append('newCart', JSON.stringify(cartItems))
                 submit(formData, {
@@ -64,7 +63,7 @@ export  default function QuantityControler(props){
 
     return(
         <div className={`quantityControler-container ${props.className}`}>
-                {isToUpdate.current?
+                {isProcessing.current?
                     <Button className='processing-btn--quantity-controler'></Button>
                 :
                     <>
