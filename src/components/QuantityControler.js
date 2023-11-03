@@ -48,10 +48,11 @@ export  default function QuantityControler(props){
         if(oldValue !== newValue){
             clearTimeout(timeOutId.current)
             timeOutId.current = setTimeout(()=>{
-                cartItems[targetItemIndex] = {...targetItem, orderedQuantity: newValue}
                 isProcessing.current = true;
+                const newCart = [...cartItems]
+                newCart[targetItemIndex] = {...targetItem, orderedQuantity: newValue}
                 const formData = new FormData()
-                formData.append('newCart', JSON.stringify(cartItems))
+                formData.append('newCart', JSON.stringify(newCart))
                 submit(formData, {
                     method: 'post',
                     action: `/?redirect=${myHistory.location.pathname}`,
