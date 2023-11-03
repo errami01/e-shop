@@ -1,3 +1,4 @@
+import "./ClosedOrderItem"
 export default function ClosedOrderItem(){
     return(
         <div className="container--closed-order-item">
