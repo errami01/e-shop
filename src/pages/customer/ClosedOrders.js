@@ -1,4 +1,8 @@
 import EmptyCustPage from '../../components/EmptyCustPage'
+
+export async function loader(){
+    return null
+} 
 export default function ClosedOrders(){
     return(
         <div className='container--closedOrders'>
