@@ -4,7 +4,9 @@ export default function ClosedOrderItem({item}){
         <div className="container--closed-order-item">
             <h5 className="item-title--closed-order-item">The order date</h5>
             <img className={`img-closed-order-item`} src={item.image} alt='cart item'/>
-            <div className="quantity-table--closed-order-item"></div>
+            <div className="quantity-table--closed-order-item">
+                <span className="quantity-label--closed-order-item"></span>
+            </div>
         </div >
     )
 }
