@@ -142,3 +142,9 @@ function combineOfflineAndOnlineCarts(input, target){
     })
      return rslt
 }
+
+export async function getClosedOrders(){
+    const id = auth.currentUser.uid
+    const idToken = await auth.currentUser.getIdToken(true)
+    return await myFetch(`https://e-commerce-8a744-default-rtdb.europe-west1.firebasedatabase.app/closedOrders/${id}.json?auth=${idToken}`)
+}
