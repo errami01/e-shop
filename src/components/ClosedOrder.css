@@ -14,3 +14,7 @@
     background-color: white;
     border-radius: 10px;
 }
+.total-items-label--closed-order, .total-amount-label--closed-order{
+    grid-column: 2/3;
+    margin: auto;
+}
