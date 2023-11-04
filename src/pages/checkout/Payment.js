@@ -3,13 +3,31 @@ import CheckoutFlow from "../../components/CheckoutFlow";
 import './Payment.css'
 import { CheckoutInput } from "../../components/CheckoutInput";
 import { useState } from "react";
-import { getLocalCart, setLocalCart, setLocalOnGoingCheckout, storeObject } from "../../utils/utils";
+import { countCartItems, getLocalCart, setLocalCart, setLocalOnGoingCheckout, storeObject } from "../../utils/utils";
 
 export async function action(){
     const cart = getLocalCart()
     if(cart.length){
+        const date = new Date()
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric'
+          };
+        const time = date.toLocaleDateString(undefined, options) 
+        const totalItems = countCartItems(cart)
+        const totalAmount = cart.reduce((acc, curr)=>  acc+(curr.price*curr.orderedQuantity),0)
+        const cartObject = {
+            cart,
+            totalItems,
+            totalAmount, 
+            time
+        }
         try{
-            await storeObject(cart, 'closedOrders', null, 'POST')
+            await storeObject(cartObject, 'closedOrders', null, 'POST')
             await storeObject({phase: 'personalInfos'}, 'onGoingCheckouts', setLocalOnGoingCheckout)
             await storeObject([], 'carts', setLocalCart)
             return redirect('/customer/orders/closed')
