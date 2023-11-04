@@ -1,5 +1,5 @@
 import CheckoutFlow from "../../components/CheckoutFlow";
-import { Form, Link, useLoaderData, useOutletContext } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { myHistory } from "../../utils/myHistory";
 import { setFormDataToObject, storeObject, setLocalUserData, setLocalOnGoingCheckout } from "../../utils/utils";
 import { getUserData } from "../../utils/fetcher";
@@ -26,12 +26,12 @@ export async function action({request}){
 }
 export default function Shipping(){
     const userData = useLoaderData()
-    const {cancelOrder} = useOutletContext()
     const {address} = userData
     return(
-        <CheckoutFlow>
-            <h5 className="pageTitle--checkoutFlow">Shipping details</h5>
-            <Form method="post">
+        <CheckoutFlow
+            btnText={'Payment'}
+            pageTitle={'Shipping details'}
+        >
                 <label>
                     Address
                     <input name='address' type='text' defaultValue={address?.address} required/>
@@ -48,16 +48,6 @@ export default function Shipping(){
                     Postcode
                     <input name='postcode' defaultValue={address?.postcode} type='text' required/>
                 </label>
-                <div className="bottom-btns--checkoutFlow">
-                    <button className="continue-btn--checkoutFlow btn--app">Payment</button>
-                    <Link 
-                        to='/cart' 
-                        className="cancel-btn--checkoutFlow " 
-                        onClick={cancelOrder}>
-                    Cancel order
-                    </Link>
-                </div>
-            </Form>
         </CheckoutFlow>
     )
 }
