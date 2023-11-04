@@ -11,7 +11,10 @@ export default function ClosedOrder({items}){
             </h4>
             {closedOrderItems}
             <div className="totals--closed-order">
-                
+                <span className="total-items-label--closed-order">Total Items</span>
+                <span className="total-items--closed-order">100</span>
+                <span className="total-amount-label--closed-order">Total</span>
+                <span className="total-amount--closed-order">100</span>
             </div>
         </div>
     )
