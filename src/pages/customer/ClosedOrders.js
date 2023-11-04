@@ -1,7 +1,8 @@
 import EmptyCustPage from '../../components/EmptyCustPage'
+import { getClosedOrders } from '../../utils/fetcher'
 
 export async function loader(){
-    return null
+    return await getClosedOrders()
 } 
 export default function ClosedOrders(){
     return(
