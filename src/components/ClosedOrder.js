@@ -10,6 +10,9 @@ export default function ClosedOrder({items}){
                 Closed Order header
             </h4>
             {closedOrderItems}
+            <div className="totals--closed-order">
+                
+            </div>
         </div>
     )
 } 
