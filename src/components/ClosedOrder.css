@@ -1,3 +1,9 @@
 .container--closed-order{
     background-color: var(--third-Color);
+    margin: 10px;
+    padding : 10px;
+    border-radius: 10px;
+}
+.header--closed-order{
+    margin: 10px 20px;
 }
