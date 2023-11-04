@@ -7,3 +7,10 @@
 .header--closed-order{
     margin: 10px 20px;
 }
+.totals--closed-order{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 50px;
+    background-color: white;
+    border-radius: 10px;
+}
