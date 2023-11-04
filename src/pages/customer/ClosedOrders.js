@@ -1,3 +1,4 @@
+import { useLoaderData } from 'react-router-dom'
 import EmptyCustPage from '../../components/EmptyCustPage'
 import { getClosedOrders } from '../../utils/fetcher'
 
@@ -5,6 +6,7 @@ export async function loader(){
     return await getClosedOrders()
 } 
 export default function ClosedOrders(){
+    const loaderData = useLoaderData()
     return(
         <div className='container--closedOrders'>
             <EmptyCustPage
