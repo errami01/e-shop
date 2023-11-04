@@ -1,4 +1,4 @@
-import { Form, Link, redirect, useOutletContext } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import CheckoutFlow from "../../components/CheckoutFlow";
 import './Payment.css'
 import { CheckoutInput } from "../../components/CheckoutInput";
@@ -40,11 +40,11 @@ export async function action(){
 }
 export default function Payment(){
     const [isFormReady, setIsFormReady] = useState({})
-    const { cancelOrder } = useOutletContext()
     return(
-        <CheckoutFlow>
-            <h5 className="pageTitle--checkoutFlow">Paymet Details</h5>
-            <Form method="post">
+        <CheckoutFlow
+            btnText={'Complete order'}
+            pageTitle={'Paymet Details'}
+        >
                 <CheckoutInput 
                     label = "Name on card"
                     setIsFormReady = {setIsFormReady}
@@ -93,16 +93,6 @@ export default function Payment(){
                             message={'Invalid number'}
                         />
                 </div>
-                <div className="bottom-btns--checkoutFlow">
-                    <button className="continue-btn--checkoutFlow btn--app">Complete order</button>
-                    <Link 
-                        to='/cart' 
-                        className="cancel-btn--checkoutFlow " 
-                        onClick={cancelOrder}>
-                    Cancel order
-                    </Link>
-                </div>
-            </Form>
         </CheckoutFlow>
         
     )
