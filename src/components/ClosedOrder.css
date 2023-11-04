@@ -1,8 +1,9 @@
 .container--closed-order{
+    --border-radius : 10px;
     background-color: var(--third-Color);
     margin: 10px;
     padding : 10px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 .header--closed-order{
     margin: 10px 20px;
@@ -11,10 +12,36 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 50px 50px;
-    background-color: white;
     border-radius: 10px;
+    color: var(--second-Color);
+    font-weight: 600;
 }
 .total-items-label--closed-order, .total-amount-label--closed-order{
     grid-column: 2/3;
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.total-items--closed-order, .total-amount--closed-order{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.total-items-label--closed-order{
+    border-top-left-radius: var(--border-radius);
+    border-bottom: 1px solid var(--third-Color);
+    border-right: 1px solid var(--third-Color);
+}
+.total-amount-label--closed-order{
+    border-bottom-left-radius: var(--border-radius);
+    border-right: 1px solid var(--third-Color);
+}
+.total-items--closed-order{
+    border-top-right-radius: var(--border-radius);
+    border-bottom: 1px solid var(--third-Color);
+}
+.total-amount--closed-order{
+    border-bottom-right-radius: var(--border-radius);
 }
