@@ -1,3 +1,5 @@
 .container--footer{
     min-height: 100px;
+    width: 100%;
+    background-color: var(--first-Color);
 }
