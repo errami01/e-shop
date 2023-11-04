@@ -8,8 +8,8 @@ export async function loader(){
 } 
 export default function ClosedOrders(){
     const loaderData = useLoaderData()
-    const closedOrders = loaderData && Object.values(loaderData).map((arr)=>{
-        return <ClosedOrder items={arr}/>
+    const closedOrders = loaderData && Object.values(loaderData).map((arr, index)=>{
+        return <ClosedOrder key={index} items={arr}/>
     })
     return(
         <div className='container--closedOrders'>
