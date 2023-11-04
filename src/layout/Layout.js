@@ -7,6 +7,7 @@ import { confirmUserState } from "../utils/authentication"
 import { Suspense } from "react"
 import Skeleton from "../components/Skeleton"
 import HeaderSkeleton from "../components/HeaderSkeleton"
+import Footer from "../components/Footer"
 
 export async function loader(){
     try{
@@ -56,6 +57,7 @@ export default function Layout(){
                             <>
                                 <Header cart={cart}/>
                                 <Outlet context={{cart}}/>
+                                <Footer />
                             </>
                             )
                         }
