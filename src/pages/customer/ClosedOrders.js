@@ -8,7 +8,7 @@ export async function loader(){
 } 
 export default function ClosedOrders(){
     const loaderData = useLoaderData()
-    const closedOrders = Object.values(loaderData).map((arr)=>{
+    const closedOrders = loaderData && Object.values(loaderData).map((arr)=>{
         return <ClosedOrder items={arr}/>
     })
     return(
