@@ -19,6 +19,7 @@
 .container--EmptyCustPage p{
     text-align: center;
     font-size: 0.9em;
+    max-width: 400px;
     color: var(--text-color);
     margin:0
 }
